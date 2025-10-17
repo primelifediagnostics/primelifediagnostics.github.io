@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Life Diagnostics - Health Made Simple</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .test-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex items-center">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/primelifediagnostics/resolve/main/images/Gemini_Generated_Image_2nvfni2nvfni2nvf.jpg" alt="Prime Life Diagnostics Logo" class="h-12 mr-4">
+<span class="text-2xl font-light tracking-tighter">
+                            <span class="text-[#1a237e]">Prime</span>
+                            <span class="text-[#2196f3]"> Life</span>
+                            <span class="text-[#757575]"> Diagnostics Ltd</span>
+</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#tests" class="text-gray-600 hover:text-purple-600 transition-colors">Blood tests</a>
+<a href="#mission" class="text-gray-600 hover:text-purple-600 transition-colors">Our Mission</a>
+                    <a href="location.html" class="text-gray-600 hover:text-purple-600 transition-colors">Find Us</a>
+                    <a href="terms.html" class="text-gray-600 hover:text-purple-600 transition-colors">Terms</a>
+                    <a href="appointment.html" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">Book Appointment</a>
+</div>
+<div class="md:hidden flex items-center space-x-4">
+                    <button id="menu-btn" class="text-gray-600">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+</div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+<a href="panels.html" class="text-xl text-gray-600 hover:text-purple-600">Blood Test Panels</a>
+            <a href="#tests" class="text-xl text-gray-600 hover:text-purple-600">Blood Tests</a>
+            <a href="#mission" class="text-xl text-gray-600 hover:text-purple-600">Our Mission</a>
+            <a href="#booking" class="text-xl bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700">Book Appointment</a>
+            <button id="close-menu" class="absolute top-4 right-4 text-gray-600">
+                <i data-feather="x"></i>
+            </button>
+        </div>
+</div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-24 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Your Blood Tests. Simplified.</h1>
+                    <p class="text-xl mb-8 opacity-90">Health. Made. Simple</p>
+                    <p class="text-lg mb-8">Blood tests offer a quick and easy window into your health. They're fundamental for early detection, condition monitoring, and achieving peak well-being.</p>
+                    <a href="#booking" class="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center">
+                        Book Your Test
+                        <i data-feather="arrow-right" class="ml-2"></i>
+                    </a>
+                </div>
+                <div data-aos="fade-left" class="flex justify-center">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/primelifediagnostics/resolve/main/images/hand-blood-test-tube-sample-600nw-2265379195.webp" alt="Blood Test Sample" class="rounded-lg shadow-2xl max-w-full h-auto hovered-element">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-8 gradient-text">Our Mission</h2>
+            <p class="text-xl text-gray-700 leading-relaxed">
+                Based in <strong>Doncaster</strong> and serving communities across South Yorkshire, our mission is to partner with you on your journey to optimal health and longevity. We do this by delivering precise private blood tests for early detection and health optimisation, providing the foundational data for a truly bespoke approach to taking charge of your health. 
+</p>
+        </div>
+    </section>
+
+    <!-- Blood Tests Section -->
+    <section id="tests" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Blood Tests We Offer</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto" data-aos="fade-up">
+                Please follow the links below to find out more about the available blood tests
+            </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Test Panels - Prime Life Diagnostics</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .panel-card {
+            transition: all 0.3s ease;
+        }
+        .panel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex items-center">
+                        <img src="https://huggingface.co/spaces/ahmadsalha/primelifediagnostics/resolve/main/images/Gemini_Generated_Image_2nvfni2nvfni2nvf.jpg" alt="Prime Life Diagnostics Logo" class="h-10 mr-4 hovered-element">
+<span class="text-2xl font-light tracking-tighter">
+                            <span class="text-[#1a237e]">Prime</span>
+                            <span class="text-[#2196f3]"> Life</span>
+                            <span class="text-[#757575]"> Diagnostics Ltd</span>
+</span>
+            </div>
+        </div>
+<div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#tests" class="text-gray-600 hover:text-purple-600 transition-colors">Home</a>
+                    <a href="panels.html" class="text-gray-600 hover:text-purple-600 transition-colors">Blood Test Panels</a>
+                    <a href="index.html#mission" class="text-gray-600 hover:text-purple-600 transition-colors">Our Mission</a>
+                    <a href="location.html" class="text-gray-600 hover:text-purple-600 transition-colors">Find Us</a>
+                    <a href="appointment.html" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-极数据-700 transition-colors">Book Appointment</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-600">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="index.html#tests" class="text-xl text-gray-600 hover:text-purple-600">Home</a>
+            <a href="panels.html" class="text-xl text-gray-600 hover:text-purple-600">Blood Test Panels</a>
+            <a href="index.html#mission" class="text-xl text-gray-600 hover:text-purple-600">Our Mission</a>
+            <a href="appointment.html" class="text-xl bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700">Book Appointment</a>
+            <button id="close-menu" class="absolute top-4 right-4 text-gray-600">
+                <i data-feather="x"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Panels Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Panel 1: Comprehensive Male Package -->
+                <div class="panel-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/two-men-athletes-running-park-30059233.webp" alt="Comprehensive Male Package" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-semibold text-purple-600">Comprehensive Male Package</h3>
+<span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold font-bold">£185</span>
+</div>
+                        <ul class="text-sm text-gray-600 space-y-1 mb-4">
+<li>The comprehensive package looks at 60+ markers including male hormone screening for a broad range of diseases and abnormalities </li>
+</ul>
+<a href="comprehensive_male.html" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-200 transition-colors inline-flex items-center">
+                            Learn More <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+</div>
+                </div>
+
+                <!-- Panel 2: Comprehensive Female Package -->
+                <div class="panel-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/woman-practicing-yoga-room-with-window-her_911712-644.jpg" alt="Comprehensive Female Package" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="text-xl font-semibold text-purple-600">Comprehensive Female Package</h3>
+                        <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">£185</span>
+                    </div>
+                        
+<ul class="text-sm text-gray-600 space-y-1 mb-4">
+                            <li> The comprehensive package provides 60+ markers, including a female hormone screen, to look for a broad range of diseases and abnormalities, with a focus on areas such as fertility, thyroid function, and menopause. </li>
+                        </ul>
+<a href="comprehensive_female.html" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-200 transition-colors inline-flex items-center">
+                            Learn More <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+</div>
+                </div>
+
+                <!-- Panel 3: Well Man Screen -->
+                <div class="panel-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/cancer-male-body-fit.jpg" alt="Well Man Screen" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                      <div class="flex justify-between items-center mb-3">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-600">Male Hormone Screen</h3>
+                         <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">£50</span> 
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                          
+                            <li>The Male Hormone screen tests for testosterone to give you a clear overview of your testosterone hormone levels.
+                            <li></li>
+                        </ul>
+<a href="wellman_screen.html" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-200 transition-colors inline-flex items-center">
+  
+                            Learn More <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+</div>
+                </div>
+
+                <!-- Panel 4: Well Woman Screen -->
+                <div class="panel-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/155514510_3027777007504511_2600608296980395390_n.jpg" alt="Well Woman Screen" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                      <div class="flex justify-between items-center mb-3">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-600">Female Hormone Screen</h3>
+                        <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">£50</span> 
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                            <li> The Female Hormone screen offers range of female hormone tests, to give you a clear overview of your hormone levels.</li>
+                        </ul>
+<a href="wellwoman_screen.html" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-200 transition-colors inline-flex items-center">
+                            Learn More <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+</div>
+                </div>
+
+                <!-- Panel 5: Heart Health Screen -->
+                <div class="panel-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/hand-holding-an-anatomical-human-heart-model-on-and-simulates-the-human-body-with-organ-systems-for-student-education-on-human-heart-health-photo.jpg" alt="Heart Health Screen" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-semibold text-purple-600">Heart Health Screen</h3>
+<span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold font-bold">£50</span>
+</div>
+<ul class="text-sm text-gray-600 space-y-1 mb-4">
+                            <li>This screen assesses your heart health by checking key markers such as cholesterol levels, diabetes risk and kidney health, which can indicate cardiovascular risk.</li>
+                        </ul>
+<a href="heart_health_screen.html" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-200 transition-colors inline-flex items-center">
+                            Learn More <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+</div>
+                </div>
+
+                <!-- Panel 6: Abdominal Organ Screen -->
+                <div class="panel-card bg-white rounded-xl shadow-md overflow-hidden"data-aos="fade-up">
+
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/istockphoto-175497396-612x612.jpg" alt="Abdominal Organ Screen" class="w-full h-48 object-cover" alt="Abdominal organ scrren" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-semibold text-purple-600">Abdominal Health Screen</h3>
+<span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold font-bold">£--</span>
+</div>
+                      
+                        <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                            <li>This screen evaluates the function of your vital abdominal organs, including liver and kidney function and can also look for inflammatory markers and pancreatic enzymes.                                   </li>
+                        </ul>
+<a href="abdominal_organ.html" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-200 transition-colors inline-flex items-center">
+                            Learn More <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+</div>
+                </div>
+
+                <!-- Panel 7: Thyroid Function Screen -->
+                <div class="panel-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/thyroid-conditions-hero-image.jpg" alt="Thyroid Function Screen" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-semibold text-purple-600">Thyroid Function Screen</h3>
+                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">£50</span>
+                        </div>
+<ul class="text-sm text-gray-600 space-y-1 mb-4">
+                            <li>
+                                Focussed on measuring thyroid function (TSH, Free T4)
+                            </li>
+                        </ul>
+<a href="thyroid-screen.html" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-200 transition-colors inline-flex items-center">
+                            Learn More <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+</div>
+                </div>
+                <!-- Panel 8: Fatigue Screen -->
+                <div class="panel-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/shutterstock_1065757685-1613995517-hero.jpg" alt="Fatigue Screen" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-semibold text-purple-600">Fatigue Screen</h3>
+                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">£--</span>
+                        </div>
+<ul class="text-sm text-gray-600 space-y-1 mb-4">
+                            <li>Designed to uncover underlying causes of persistent tiredness, this screen includes tests for thyroid function (TSH, Free T4), iron markers, and essential vitamins like B12 and vitamin D.
+
+</li>
+                        </ul>
+<a href="fatigue-screen.html" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-200 transition-colors inline-flex items-center">
+                            Learn More <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+</div>
+                </div>
+                <!-- Panel 9: Vitamin Screen -->
+                <div class="panel-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/istockphoto-1270726834-612x612.jpg" alt="Vitamin Screen" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-semibold text-purple-600">Vitamin Screen</h3>
+<span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold font-bold">£50</span>
+</div>
+<ul class="text-sm text-gray-600 space-y-1 mb-4">
+                            <li>Vitamin testing: Vitamin D, Folate and Vitamin B12</li>
+                        </ul>
+<a href="vitamin-screen.html" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-200 transition-colors inline-flex items-center">
+                            Learn More <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+</div>
+                </div>
+                <!-- Panel 10: Ovarian Cancer Marker -->
+                <div class="panel-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/Screenshot%202025-10-11%20at%2019.14.01.png" alt="Ovarian Cancer Marker" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-semibold text-purple-600">Ovarian Cancer Marker</h3>
+<span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold font-bold">£35</span>
+</div>
+<ul class="text-sm text-gray-600 space-y-1 mb-4">
+                            <li>CA-125 screening for ovarian cancer risk assessment</li>
+                        </ul>
+<a href="ovarian-marker.html" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-200 transition-colors inline-flex items-center">
+                            Learn More <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+</div>
+                </div>
+                <!-- Panel 11: Prostate Cancer Marker -->
+                <div class="panel-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/Screenshot%202025-10-11%20at%2019.08.11.png" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-semibold text-purple-600">Prostate Cancer Marker</h3>
+                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">£35</span>
+                        </div>
+<ul class="text-sm text-gray-600 space-y-1 mb-4">
+                            <li>Specialised screening for prostate health: PSA (Prostate-Specific Antigen) to help detect potential prostate issues early.</li>
+                        </ul>
+<a href="prostate-marker.html" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-200 transition-colors inline-flex items-center">
+                            Learn More <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+</div>
+                </div>
+                <!-- Panel 12: Diabetes Screen -->
+                <div class="panel-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/AdobeStock_571464594-1536x788.jpeg"" alt="Diabetes Screen" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-semibold text-purple-600">Diabetes Screen</h3>
+                             <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">£35</span>
+                        </div>
+                        <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                            <li>This helps identify diabetes or helps blood sugar monitoring if you are a known diabetic </li>
+                                                   </ul>
+<a href="diabetes-screen.html" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-200 transition-colors inline-flex items-center">
+                            Learn More <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+</div>
+                </div>
+
+                <!-- Panel 13: Coeliac Screen -->
+                <div class="md:col-span-2 lg:col-span-3 flex justify-center mx-auto" data-aos="fade-up">
+                    <div class="panel-card bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm">
+                        <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/gut-opener-scaled.jpg"  alt="Coeliac Screen" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-3">
+                                <h3 class="text-xl font-semibold text-purple-600">Coeliac Screen</h3>
+                                <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">£50</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                                <li> This helps identify coeliac disease</li>    
+                            </ul>     
+                            <a href="celiac-screen.html" class="bg-purple-100 text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-200 transition-colors inline-flex items-center">
+                                Learn More <i
+                                data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="booking" class="py-20 bg-cover bg-center text-white" style="background-image: url('https://huggingface.co/spaces/ahmadsalha/primelifediagnostics/resolve/main/images/hand-blood-test-tube-sample-600nw-2265379195.webp')">
+        <div class="max-w-4xl mx-auto px-4 sm:px-极数据 lg:px-8 text-center" data-aos="fade-up">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/primelifediagnostics/resolve/main/images/Gemini_Generated_Image_2nvfni2nvfni2nvf.jpg" alt="Prime Life Diagnostics" class="mx-auto mb-8 h-24 hovered-element">
+<h2 class="text-3xl font-bold mb-6 text-white">Begin Your Health Journey Today</h2>
+<p class="text-xl mb-8 opacity-90">Follow the Link to book your appointment and to begin your journey with Prime Life Diagnostics!</p>
+            <a href="appointment.html" class="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center">
+                Book Your Appointment
+                <i data-feather="calendar" class="ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Prime Life Diagnostics</h3>
+                    <p class="text-gray-400">Your partner in health optimisation through precise blood testing.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#tests" class="text-gray-400 hover:text-white transition-colors">Blood Tests</a></li>
+                        <li><a href="panels.html" class="text-gray-400 hover:text-white transition-colors">Test Panels</a></li>
+                        <li><a href="#mission" class="text-gray-400 hover:text-white transition-colors">Our Mission</a></li>
+                        <li><a href="appointment.html" class="text-gray-400 hover:text-white transition-colors">Book Appointment</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-400">Email: info@primelifediagnostics.co.uk</p>
+                    <p class="text-gray-400">Phone: +44 [Phone Number]</p>
+                    <p class="text-gray-400">Address: 105 Scrooby Road, Bircotes, Doncaster, DN11 8JN</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Prime Life Diagnostics. All rights reserved.</p>
+                <div class="flex justify-center items-center space-x-8 mt-4">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/cqc%20logo.webp" alt="CQC Regulated" class="h-16">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/UKAS-Accreditation-Symbol-purple-on-white-Medical.png" alt="UKAS Accredited" class="h-16">
+                </div>
+</div>
+</div>
+    </footer>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+feather.replace();
+        // Mobile menu functionality
+const menuBtn = document.getElementById('menu-btn');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+        // Close menu when clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                if (link.textContent.includes('Blood Test Panels')) {
+                    searchInput.value = '';
+                    testCards.forEach(card => {
+                        card.style.display = 'block';
+                    });
+                }
+            });
+        });
+</script>
+</body>
+</html>
+
+
+
