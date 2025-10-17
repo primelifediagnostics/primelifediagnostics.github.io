@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Us - Prime Life Diagnostics</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .map-container {
+            height: 400px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex items-center">
+                        <img src="https://huggingface.co/spaces/ahmadsalha/primelifediagnostics/resolve/main/images/Gemini_Generated_Image_2nvfni2nvfni2nvf.jpg" alt="Prime Life Diagnostics Logo" class="h-10 mr-4">
+<span class="text-2xl font-light tracking-tighter">
+                            <span class="text-[#1a237e]">Prime</span>
+                            <span class="text-[#2196f3]"> Life</span>
+                            <span class="text-[#757575]"> Diagnostics Ltd</span>
+</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#tests" class="text-gray-600 hover:text-purple-600 transition-colors">Home</a>
+                    <a href="panels.html" class="text-gray-600 hover:text-purple-600 transition-colors">Blood Test Panels</a>
+                    <a href="index.html#mission" class="text-gray-600 hover:text-purple-600 transition-colors">Our Mission</a>
+                    <a href="appointment.html" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">Book Appointment</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-600">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="index.html#tests" class="text-xl text-gray-600 hover:text-purple-600">Home</a>
+            <a href="panels.html" class="text-xl text-gray-600 hover:text-purple-极数据-600">Blood Test Panels</a>
+            <a href="index.html#mission" class="text-xl text-gray-600 hover:text-purple-600">Our Mission</a>
+            <a href="appointment.html" class="text-xl bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700">Book Appointment</a>
+            <a href="location.html" class="text-xl text-gray-600 hover:text-purple-600">Find Us</a>
+            <button id="close-menu" class="absolute top-4 right-4 text-gray-600">
+                <i data-feather="x"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <section class="pt-24 pb-12 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-bold mb-6 gradient-text" data-aos="fade-up">Find Us</h1>
+            <p class="text-xl text-gray-600 aos-init aos-animate hovered-element" data-aos="fade-up" data-aos-delay="100">
+                Your health journey starts here...
+            </p>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">Our Location</h2>
+                    <div class="space-y-4 text-gray-700">
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i data-feather="map-pin" class="text-purple-600 w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Address:</p>
+                                <p>105 Scrooby Road<br>Bircotes<br>Doncaster<br>DN11 8JN</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i data-feather="clock" class="text-purple-600 w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Opening Hours:</p>
+                                <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: Closed<br>Sunday: 9:00 AM - 12:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i data-feather="phone" class="text-purple-600 w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Phone:</p>
+                                <p>+44 [Phone Number]</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i data-feather="mail" class="text-purple-600 w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Email:</p>
+                                <p>info@primelifediagnostics.co.uk</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2377.8821093647525!2d-1.0603221999999999!3d53.416934499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879084dddfbed25%3A0xa3433b4ff561a19b!2s105%20Scrooby%20Rd%2C%20Bircotes%2C%20Doncaster%20DN11%208JN!5e0!3m2!1sen!2suk!4v1758451477072!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                 
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6 gradient-text">Ready to Visit Us?</h2>
+            <p class="text-xl text-gray-600 mb-8">Book your appointment today and we'll be ready to welcome you</p>
+            <a href="appointment.html" class="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-colors inline-flex items-center">
+                Book Your Appointment
+                <i data-feather="calendar" class="ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px极数据-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Prime Life Diagnostics</h3>
+                    <p class="text-gray-400">Your partner in health optimisation through precise blood testing.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#tests" class="text-gray-400 hover:text-white transition-colors">Blood Tests</a></li>
+                        <li><a href="panels.html" class="text-gray-400 hover:text-white transition-colors">Test Panels</a></li>
+                        <a href="index.html#mission" class="text-gray-400 hover:text-white transition-colors">Our Mission</a></li>
+                        <li><a href="appointment.html" class="text-gray-400 hover:text-white transition-colors">Book Appointment</a></li>
+                        <li><a href="location.html" class="text-gray-400 hover:text-white transition-colors">Find Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-400">Email: info@primelifediagnostics.co.uk</p>
+                    <p class="text-gray-400">Phone: +44 [Phone Number]</p>
+                    <p class="text-gray-400">Address: 105 Scrooby Road, Bircotes, Doncaster, DN11 8JN</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Prime Life Diagnostics. All rights reserved.</p>
+                <div class="flex justify-center items-center space-x-8 mt-4">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/1--CQC-Regulated-by-PURPLE-135px.jpg" alt="CQC Regulated" class="h-16">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/UKAS-Accreditation-Symbol-purple-on-white-Medical.png" alt="UKAS Accredited" class="h-16">
+                </div>
+</div>
+</div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        feather.replace();
+        
+        // Mobile menu functionality
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+        
+        // Close menu when clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
