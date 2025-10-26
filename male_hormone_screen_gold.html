@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Male Hormone Screen Gold - Prime Life Diagnostics</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+<nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex items-center">
+                        <img src="https://huggingface.co/spaces/ahmadsalha/primelifediagnostics/resolve/main/images/Gemini_Generated_Image_2nvfni2nvfni2nvf.jpg" alt="Prime Life Diagnostics Logo" class="h-10 mr-4">
+                        <span class="text-2xl font-light tracking-tighter">
+                            <span class="text-[#1a237e]">Prime</span>
+                            <span class="text-[#2196f3]"> Life</span>
+                            <span class="text-[#757575]"> Diagnostics Ltd</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#tests" class="text-gray-600 hover:text-purple-600 transition-colors">Home</a>
+                    <a href="panels.html" class="text-gray-600 hover:text-purple-600 transition-colors">Blood Test Panels</a>
+                    <a href="index.html#mission" class="text-gray-600 hover:text-purple-600 transition-colors">Our Mission</a>
+                    <a href="location.html" class="text-gray-600 hover:text-purple-600 transition-colors">Find Us</a>
+                    <a href="appointment.html" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">Book Appointment</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-600">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="index.html#tests" class="text-xl text-gray-600 hover:text-purple-600">Home</a>
+            <a href="panels.html" class="text-xl text-gray-600 hover:text-purple-600">Blood Test Panels</a>
+            <a href="index.html#mission" class="text-xl text-gray-600 hover:text-purple-600">Our Mission</a>
+            <a href="appointment.html" class="text-xl bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700">Book Appointment</a>
+            <button id="close-menu" class="absolute top-4 right-4 text-gray-600">
+                <i data-feather="x"></i>
+            </button>
+        </div>
+    </div>
+    <div class="pt-24 pb-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="rounded-xl shadow-lg overflow-hidden" data-aos="fade-right">
+                <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/Muscular-man-working-out-in-gym-doing-exercises-with-dumbbells.jpg" alt="Male Hormone Screen Gold" class="w-full h-full object-cover">
+            </div>
+            
+            <div data-aos="fade-left">
+                <div class="flex justify-between items-center mb-6">
+                    <h1 class="text-3xl font-bold gradient-text">Male Hormone Screen Gold</h1>
+                    <div class="bg-purple-600 text-white px-4 py-2 rounded-full font-semibold font-bold">£100</div>
+                </div>
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-4">
+                    <h2 class="text-xl font-semibold mb-4 text-purple-600">What the Panel Is</h2>
+                    <p class="text-gray-700">This gold male hormone package is designed to measure testosterone along with other key male hormones that influence muscle strength, energy, and overall wellbeing. Supporting proactive men's health management.</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
+                    <h2 class="text-xl font-semibold mb-4 text-purple-600">Tests Included</h2>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li>Total Testosterone</li>
+                        <li>Free Testosterone</li>
+                        <li>Sex Hormone Binding Globulin (SHBG)</li>
+                        <li>Luteinizing Hormone (LH)</li>
+                        <li>Follicle Stimulating Hormone (FSH)</li>
+                        <li>Albumin</li>
+                  
+                    </ul>
+                </div>
+                <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
+                    <h2 class="text-xl font-semibold mb-4 text-purple-600">Important Pre-Test Information</h2>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li><strong>Testosterone:</strong> For most accurate results, the sample should be collected in the morning (between 7:00 AM and 10:00 AM).</li>
+                    </ul>
+                </div>
+                
+                <div class="text-center">
+                    <a href="appointment.html" class="bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors inline-flex items-center">
+                        Book Now
+                        <i data-feather="calendar" class="ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Prime Life Diagnostics</h3>
+                    <p class="text-gray-400">Your partner in health optimisation through precise blood testing.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#tests" class="text-gray-400 hover:text-white transition-colors">Blood Tests</a></li>
+                        <li><a href="panels.html" class="text-gray-400 hover:text-white transition-colors">Test Panels</a></li>
+                        <li><a href="index.html#mission" class="text-gray-400 hover:text-white transition-colors">Our Mission</a></li>
+                        <li><a href="appointment.html" class="text-gray-400 hover:text-white transition-colors">Book Appointment</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-400">Email: info@primelifediagnostics.co.uk</p>
+                    <p class="text-gray-400">Phone: +44 [Phone Number]</p>
+                    <p class="text-gray-400">Address: 105 Scrooby Road, Bircotes, Doncaster, DN11 8JN</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Prime Life Diagnostics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        feather.replace();
+        
+        // Mobile menu functionality
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+        
+        // Close menu when clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
