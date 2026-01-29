@@ -92,6 +92,81 @@
             </div>
         </div>
     </section>
+     <section id="tests" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-center mb-4 gradient-text" data-aos="fade-up">
+      Available Blood Test Panels
+    </h2>
+
+    <!-- Search Box -->
+    <div class="max-w-2xl mx-auto mb-16" data-aos="fade-up">
+      <div class="relative">
+        <input type="text" id="panel-search" placeholder="Search for a specific test (e.g. 'Vitamin', 'Hormone', 'Male')..." 
+               class="w-full px-6 py-4 border-2 border-purple-100 rounded-full shadow-sm focus:outline-none focus:border-purple-500 transition-all"
+               aria-label="Search blood test panels">
+        <button id="search-btn" class="absolute right-3 top-2 bottom-2 bg-purple-600 text-white px-6 rounded-full hover:bg-purple-700" aria-label="Search">
+          <i data-feather="search" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+<!-- JS -->
+<script>
+  // Initialize Feather icons
+  feather.replace();
+
+  const searchInput = document.getElementById('panel-search');
+  const panels = document.querySelectorAll('#test-panels .panel');
+
+  // Save original HTML content for highlighting reset
+  panels.forEach(panel => {
+    panel.dataset.originalText = panel.innerHTML;
+  });
+
+  // Function to remove previous highlights
+  function removeHighlights(panel) {
+    const originalText = panel.dataset.originalText;
+    if (originalText) {
+      panel.innerHTML = originalText;
+    }
+  }
+
+  // Function to highlight matching text
+  function highlightText(panel, query) {
+    if (!query) return; // Don't highlight if empty
+    const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'); // escape special chars
+    panel.innerHTML = panel.innerHTML.replace(regex, `<span class="bg-yellow-200">$1</span>`);
+  }
+
+  // Main filter function
+  function filterPanels() {
+    const query = searchInput.value.toLowerCase().trim();
+
+    panels.forEach(panel => {
+      removeHighlights(panel); // reset highlights
+
+      const text = panel.textContent.toLowerCase();
+
+      if (query && text.includes(query)) {
+        panel.style.display = 'block';
+        highlightText(panel, query);
+      } else if (!query) {
+        panel.style.display = 'block'; // show all if empty
+      } else {
+        panel.style.display = 'none';
+      }
+    });
+  }
+
+  // Event listeners
+  searchInput.addEventListener('input', filterPanels);
+  document.getElementById('search-btn').addEventListener('click', filterPanels);
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      filterPanels();
+    }
+  });
+</script>
 
     <!-- Mission Section -->
     <section id="mission" class="py-20 bg-gray-50">
