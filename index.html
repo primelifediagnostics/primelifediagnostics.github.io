@@ -590,6 +590,102 @@
                
 
     </section>
+                   <section class="max-w-3xl mx-auto py-12 px-4">
+  <h2 class="text-3xl font-bold text-purple-600 text-center mb-8">
+    Frequently Asked Questions
+  </h2>
+
+  <div class="space-y-4">
+
+    <!-- FAQ Item -->
+    <div class="border border-purple-100 rounded-2xl">
+      <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-purple-700">
+        What can I expect during my appointment?
+        <span class="ml-2">+</span>
+      </button>
+      <div class="hidden px-4 pb-4 text-gray-600">
+        Your appointment will be carried out by a trained healthcare professional in a calm, clinical setting. A small blood sample is taken using sterile, single-use equipment. The process is quick, discreet, and typically completed within minutes.
+      </div>
+    </div>
+
+    <!-- FAQ Item -->
+    <div class="border border-purple-100 rounded-2xl">
+      <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-purple-700">
+        Do I need to prepare before my test?
+        <span class="ml-2">+</span>
+      </button>
+      <div class="hidden px-4 pb-4 text-gray-600">
+        Certain tests may require fasting or specific preparation. Please see the Learn More options for the test which you require.
+      </div>
+    </div>
+
+    <!-- FAQ Item -->
+    <div class="border border-purple-100 rounded-2xl">
+      <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-purple-700">
+        How long will my appointment take?
+        <span class="ml-2">+</span>
+      </button>
+      <div class="hidden px-4 pb-4 text-gray-600">
+        Appointments are efficient and typically take 10–15 minutes, including preparation and aftercare.
+      </div>
+    </div>
+
+    <!-- FAQ Item -->
+    <div class="border border-purple-100 rounded-2xl">
+      <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-purple-700">
+        When will I receive my results?
+        <span class="ml-2">+</span>
+      </button>
+      <div class="hidden px-4 pb-4 text-gray-600">
+        Most results are available within 24–72 hours. Some specialised tests may take slightly longer.
+      </div>
+    </div>
+
+    <!-- FAQ Item -->
+    <div class="border border-purple-100 rounded-2xl">
+      <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-purple-700">
+        Who performs the blood tests?
+        <span class="ml-2">+</span>
+      </button>
+      <div class="hidden px-4 pb-4 text-gray-600">
+        All samples are taken by experienced phlebotomists and registered healthcare professionals, ensuring the highest standard of care.
+      </div>
+    </div>
+
+    <!-- FAQ Item -->
+    <div class="border border-purple-100 rounded-2xl">
+      <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-purple-700">
+        Do you offer home visit appointments?
+        <span class="ml-2">+</span>
+      </button>
+      <div class="hidden px-4 pb-4 text-gray-600">
+        Yes — we provide a premium home visit service, allowing you to have your test carried out in the comfort and privacy of your own home.
+      </div>
+    </div>
+
+    <!-- FAQ Item -->
+    <div class="border border-purple-100 rounded-2xl">
+      <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-purple-700">
+        Is my information kept confidential?
+        <span class="ml-2">+</span>
+      </button>
+      <div class="hidden px-4 pb-4 text-gray-600">
+        Absolutely. All personal and medical information is handled securely and in full compliance with UK data protection regulations.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script id="faqscript01">
+  function toggleFAQ(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector("span");
+
+    content.classList.toggle("hidden");
+    icon.textContent = content.classList.contains("hidden") ? "+" : "−";
+  }
+</script>
 
     <!-- CTA Section -->
     <section id="booking" class="py-20 bg-cover bg-center text-white" style="background-image: url('https://huggingface.co/spaces/ahmadsalha/primelifediagnostics/resolve/main/images/hand-blood-test-tube-sample-600nw-2265379195.webp')">
