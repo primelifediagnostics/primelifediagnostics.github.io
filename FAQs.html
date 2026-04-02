@@ -1,0 +1,170 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Life Diagnostics - Health Made Simple</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .test-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+    <!-- Navigation -->
+  <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex items-center">
+                         <a href="index.html" class="text-2xl font-light tracking-tighter hover:opacity-80 transition-opacity duration-200">
+                        <img src="https://huggingface.co/spaces/ahmadsalha/primelifediagnostics/resolve/main/images/Gemini_Generated_Image_2nvfni2nvfni2nvf.jpg" alt="Prime Life Diagnostics Logo" class="h-10 mr-4">
+                         </a>
+                         <a href="index.html" class="text-2xl font-light tracking-tighter hover:opacity-80 transition-opacity duration-200">
+    <span class="text-[#1a237e]">Prime</span>
+    <span class="text-[#2196f3]"> Life</span>
+    <span class="text-[#757575]"> Diagnostics</span>
+  </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-purple-600 transition-colors">Home</a>
+                    <a href="index.html#tests" class="text-gray-600 hover:text-purple-600 transition-colors">Blood Test Panels</a>
+                    <a href="index.html#mission" class="text-gray-600 hover:text-purple-600 transition-colors">Our Mission</a>
+                    <a href="location.html" class="text-gray-600 hover:text-purple-600 transition-colors">Find Us</a>
+                    <a href="appointment.html" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">Book Appointment</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-600">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+<a href="panels.html" class="text-xl text-gray-600 hover:text-purple-600">Blood Test Panels</a>
+            <a href="#tests" class="text-xl text-gray-600 hover:text-purple-600">Blood Tests</a>
+            <a href="#mission" class="text-xl text-gray-600 hover:text-purple-600">Our Mission</a>
+            <a href="location.html" class="text-xl text-gray-600 hover:text-purple-600">Find Us</a>
+            <a href="appointment.html" class="text-xl bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700">Book Appointment</a>
+            <button id="close-menu" class="absolute top-4 right-4 text-gray-600">
+                <i data-feather="x"></i>
+            </button>
+        </div>
+</div>
+  <section class="max-w-3xl mx-auto py-12 px-4">
+  <h2 class="text-3xl font-bold text-purple-600 text-center mb-8">
+    Frequently Asked Questions
+  </h2>
+
+  <div class="space-y-4">
+
+    <!-- FAQ Item -->
+    <div class="border border-purple-100 rounded-2xl">
+      <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-purple-700">
+        What can I expect during my appointment?
+        <span class="ml-2">+</span>
+      </button>
+      <div class="hidden px-4 pb-4 text-gray-600">
+        Your appointment will be carried out by a trained healthcare professional in a calm, clinical setting. A small blood sample is taken using sterile, single-use equipment. The process is quick, discreet, and typically completed within minutes.
+      </div>
+    </div>
+
+    <!-- FAQ Item -->
+    <div class="border border-purple-100 rounded-2xl">
+      <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-purple-700">
+        Do I need to prepare before my test?
+        <span class="ml-2">+</span>
+      </button>
+      <div class="hidden px-4 pb-4 text-gray-600">
+        Certain tests may require fasting or specific preparation. Please see the Learn More options for the test which you require.
+      </div>
+    </div>
+
+    <!-- FAQ Item -->
+    <div class="border border-purple-100 rounded-2xl">
+      <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-purple-700">
+        How long will my appointment take?
+        <span class="ml-2">+</span>
+      </button>
+      <div class="hidden px-4 pb-4 text-gray-600">
+        Appointments are efficient and typically take 10–15 minutes, including preparation and aftercare.
+      </div>
+    </div>
+
+    <!-- FAQ Item -->
+    <div class="border border-purple-100 rounded-2xl">
+      <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-purple-700">
+        When will I receive my results?
+        <span class="ml-2">+</span>
+      </button>
+      <div class="hidden px-4 pb-4 text-gray-600">
+        Most results are available within 24–72 hours. Some specialised tests may take slightly longer.
+      </div>
+    </div>
+
+    <!-- FAQ Item -->
+    <div class="border border-purple-100 rounded-2xl">
+      <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-purple-700">
+        Who performs the blood tests?
+        <span class="ml-2">+</span>
+      </button>
+      <div class="hidden px-4 pb-4 text-gray-600">
+        All samples are taken by experienced phlebotomists and registered healthcare professionals, ensuring the highest standard of care.
+      </div>
+    </div>
+
+    <!-- FAQ Item -->
+    <div class="border border-purple-100 rounded-2xl">
+      <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-purple-700">
+        Do you offer home visit appointments?
+        <span class="ml-2">+</span>
+      </button>
+      <div class="hidden px-4 pb-4 text-gray-600">
+        Yes — we provide a premium home visit service, allowing you to have your test carried out in the comfort and privacy of your own home.
+      </div>
+    </div>
+
+    <!-- FAQ Item -->
+    <div class="border border-purple-100 rounded-2xl">
+      <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-purple-700">
+        Is my information kept confidential?
+        <span class="ml-2">+</span>
+      </button>
+      <div class="hidden px-4 pb-4 text-gray-600">
+        Absolutely. All personal and medical information is handled securely and in full compliance with UK data protection regulations.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script id="faqscript01">
+  function toggleFAQ(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector("span");
+
+    content.classList.toggle("hidden");
+    icon.textContent = content.classList.contains("hidden") ? "+" : "−";
+  }
+</script>
