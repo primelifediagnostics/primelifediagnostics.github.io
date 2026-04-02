@@ -72,12 +72,16 @@
             </button>
         </div>
 </div>
+
+<section class="max-w-3xl mx-auto pt-24 pb-12 px-4">
   <section class="max-w-3xl mx-auto py-12 px-4">
   <h2 class="text-3xl font-bold text-purple-600 text-center mb-8">
     Frequently Asked Questions
   </h2>
 
   <div class="space-y-4">
+      
+      <section>
 
     <!-- FAQ Item -->
     <div class="border border-purple-100 rounded-2xl">
@@ -168,3 +172,83 @@
     icon.textContent = content.classList.contains("hidden") ? "+" : "−";
   }
 </script>
+  <!-- CTA Section -->
+    <section id="booking" class="py-20 bg-cover bg-center text-white" style="background-image: url('https://huggingface.co/spaces/ahmadsalha/primelifediagnostics/resolve/main/images/hand-blood-test-tube-sample-600nw-2265379195.webp')">
+        <div class="max-w-4xl mx-auto px-4 sm:px-lg:px-8 text-center" data-aos="fade-up">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/primelifediagnostics/resolve/main/images/Gemini_Generated_Image_2nvfni2nvfni2nvf.jpg" alt="Prime Life Diagnostics" class="mx-auto mb-8 h-24 hovered-element">
+<h2 class="text-3xl font-bold mb-6 text-white">Begin Your Health Journey Today</h2>
+<p class="text-xl mb-8 opacity-90">Follow the Link to book your appointment and to begin your journey with Prime Life Diagnostics</p>
+            <a href="appointment.html" class="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center">
+                Book Your Appointment
+                <i data-feather="calendar" class="ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Prime Life Diagnostics</h3>
+                    <p class="text-gray-400">Your partner in health optimisation through precise blood testing.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#tests" class="text-gray-400 hover:text-white transition-colors">Blood Tests</a></li>
+                        <li><a href="panels.html" class="text-gray-400 hover:text-white transition-colors">Test Panels</a></li>
+                        <li><a href="#mission" class="text-gray-400 hover:text-white transition-colors">Our Mission</a></li>
+                        <li><a href="appointment.html" class="text-gray-400 hover:text-white transition-colors">Book Appointment</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-400">Email: info@primelifediagnostics.co.uk</p>
+                    <p class="text-gray-400">Phone: 01302 203565</p>
+                    <p class="text-gray-400">Address: 105 Scrooby Road, Bircotes, Doncaster, DN11 8JN</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Prime Life Diagnostics. All rights reserved.</p>
+                <div class="flex justify-center items-center space-x-8 mt-4">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/cqc%20logo.webp" alt="CQC Regulated" class="h-16">
+                    <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/UKAS-Accreditation-Symbol-purple-on-white-Medical.png" alt="UKAS Accredited" class="h-16">
+                </div>
+</div>
+</div>
+    
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+feather.replace();
+        // Mobile menu functionality
+const menuBtn = document.getElementById('menu-btn');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+        // Close menu when clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                if (link.textContent.includes('Blood Test Panels')) {
+                    searchInput.value = '';
+                    testCards.forEach(card => {
+                        card.style.display = 'block';
+                    });
+                }
+            });
+        });
+</script>
+</body>
+</html>
+
