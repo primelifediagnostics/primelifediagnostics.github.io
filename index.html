@@ -118,6 +118,12 @@
     <!-- Blood Tests Section -->
     <section id="tests" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- SEARCH -->
+<section class="py-12">
+<div class="max-w-xl mx-auto">
+<input id="searchInput" type="text" placeholder="Search tests..." class="w-full px-5 py-3 border rounded-xl focus:ring-2 focus:ring-purple-500">
+</div>
+</section>
             <h2 class="text-3xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Blood Tests We Offer</h2>
             <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto" data-aos="fade-up">
                 Please follow the links below to find out more about the available blood tests
@@ -194,12 +200,15 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Panel 1: Comprehensive Male Package -->
+<section class="max-w-6xl mx-auto px-4 pb-20">
+<div class="grid md:grid-cols-3 gap-6">
                 <div class="panel-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
                     <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/two-men-athletes-running-park-30059233.webp" alt="Comprehensive Male Package" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-3">
                             <h3 class="text-xl font-semibold text-purple-600">Comprehensive Male Package</h3>
 <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold font-bold">£199</span>
+</div>
 </div>
                         <ul class="text-sm text-gray-600 space-y-1 mb-4">
 <li>The comprehensive package looks at 50+ markers including male hormone screening for a broad range of diseases and abnormalities </li>
@@ -768,7 +777,21 @@
                 </div>
 </div>
 </div>
-    
+    <script>
+feather.replace();
+
+const searchInput = document.getElementById('searchInput');
+const testCards = document.querySelectorAll('.test-card');
+
+searchInput.addEventListener('keyup', function () {
+  const term = searchInput.value.toLowerCase();
+  testCards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(term) ? 'block' : 'none';
+  });
+});
+</script>
+
     <script>
         AOS.init({
             duration: 800,
@@ -802,4 +825,3 @@ const menuBtn = document.getElementById('menu-btn');
 </script>
 </body>
 </html>
-
