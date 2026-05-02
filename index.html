@@ -770,35 +770,53 @@
 </div>
     
     <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-feather.replace();
-        // Mobile menu functionality
-const menuBtn = document.getElementById('menu-btn');
-        const closeMenu = document.getElementById('close-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-        });
-        
-        closeMenu.addEventListener('click', () => {
+   document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+        duration: 800,
+        once: true
+    });
+
+    feather.replace();
+
+    const menuBtn = document.getElementById('menu-btn');
+    const closeMenu = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+
+    const searchInput = document.getElementById('search-input');
+    const testCards = document.querySelectorAll('.test-card');
+
+    menuBtn?.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+    });
+
+    closeMenu?.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
+
+            if (link.textContent.includes('Blood Test Panels') && searchInput) {
+                searchInput.value = '';
+                testCards.forEach(card => {
+                    card.style.display = 'block';
+                });
+            }
         });
-        // Close menu when clicking links
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                if (link.textContent.includes('Blood Test Panels')) {
-                    searchInput.value = '';
-                    testCards.forEach(card => {
-                        card.style.display = 'block';
-                    });
-                }
-            });
+    });
+       
+    searchInput?.addEventListener('input', () => {
+        const value = searchInput.value.toLowerCase();
+
+        testCards.forEach(card => {
+            const text = card.textContent.toLowerCase();
+            card.style.display = text.includes(value) ? 'block' : 'none';
         });
+    });
+});
 </script>
+        
 </body>
 </html>
