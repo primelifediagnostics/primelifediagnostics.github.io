@@ -146,7 +146,6 @@
 </p>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blood Test Panels - Prime Life Diagnostics</title>
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -937,29 +936,37 @@ const menuBtn = document.getElementById('menu-btn');
 const searchInput = document.getElementById('searchInput');
 
 if (searchInput) {
-    const testCards = document.querySelectorAll('.panel-card');
-
     searchInput.addEventListener('input', function () {
+
         const searchTerm = this.value.toLowerCase().trim();
 
-        testCards.forEach(card => {
+        document.querySelectorAll('.panel-card').forEach(card => {
+
             const title =
                 card.querySelector('h3')?.textContent.toLowerCase() || '';
 
             const description =
                 card.querySelector('ul')?.textContent.toLowerCase() || '';
 
-            if (
+            const matches =
                 title.includes(searchTerm) ||
-                description.includes(searchTerm)
-            ) {
-                card.style.display = '';
-            } else {
-                card.style.display = 'none';
-            }
+                description.includes(searchTerm);
+
+            card.style.display = matches ? '' : 'none';
         });
+
+        // Refresh AOS after filtering
+        if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+        }
     });
 }
+AOS.init({
+    duration: 800,
+    once: true,
+    disable: window.innerWidth < 768
+});
+</script>
 </script>
 </body>
 </html>
