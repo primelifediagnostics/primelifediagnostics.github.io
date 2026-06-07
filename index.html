@@ -33,7 +33,7 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <div class="flex items-center">
-                         <a href="test.html" class="text-2xl font-light tracking-tighter hover:opacity-80 transition-opacity duration-200">
+                         <a href="index.html" class="text-2xl font-light tracking-tighter hover:opacity-80 transition-opacity duration-200">
                         <img src="Prime Life Diagnostics1-01.png" alt="Prime Life Diagnostics Logo" class="h-20 mr-4">
                          </a>
                          <a href="index.html" class="text-2xl font-light tracking-tighter hover:opacity-80 transition-opacity duration-200">
@@ -129,13 +129,23 @@
     <!-- Blood Tests Section -->
     <section id="tests" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Blood Tests We Offer</h2>
-            <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto" data-aos="fade-up">
-                Please follow the links below to find out more about the available blood tests
-            </p>
+          <h2 class="text-3xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">
+    Blood Tests We Offer
+</h2>
+<div class="sticky top-20 z-30 max-w-2xl mx-auto mb-8 bg-white py-3">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Search blood tests, hormones, vitamins, thyroid, cholesterol..."
+        class="w-full px-5 py-4 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 text-lg"
+    >
+</div>
+
+<p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto" data-aos="fade-up">
+    Please follow the links below to find out more about the available blood tests
+</p>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blood Test Panels - Prime Life Diagnostics</title>
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -922,6 +932,41 @@ const menuBtn = document.getElementById('menu-btn');
                 }
             });
         });
+        // Blood test search functionality
+const searchInput = document.getElementById('searchInput');
+
+if (searchInput) {
+    searchInput.addEventListener('input', function () {
+
+        const searchTerm = this.value.toLowerCase().trim();
+
+        document.querySelectorAll('.panel-card').forEach(card => {
+
+            const title =
+                card.querySelector('h3')?.textContent.toLowerCase() || '';
+
+            const description =
+                card.querySelector('ul')?.textContent.toLowerCase() || '';
+
+            const matches =
+                title.includes(searchTerm) ||
+                description.includes(searchTerm);
+
+            card.style.display = matches ? '' : 'none';
+        });
+
+        // Refresh AOS after filtering
+        if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+        }
+    });
+}
+AOS.init({
+    duration: 800,
+    once: true,
+    disable: window.innerWidth < 768
+});
+</script>
 </script>
 </body>
 </html>
