@@ -24,67 +24,9 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        /* Promotional Banner */
-.promo-banner {
-    background: linear-gradient(90deg, #5b21b6, #6d28d9);
-    color: #fff;
-    text-align: center;
-    font-weight: 600;
-    font-size: 15px;
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 60;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    letter-spacing: 0.3px;
-}
-
-.promo-banner strong {
-    color: #ffffff;
-    font-weight: 700;
-}
-
-@media (max-width: 768px) {
-    .promo-banner {
-        font-size: 13px;
-        padding: 8px 10px;
-        line-height: 1.4;
-    }
-}
-
-/* Move navigation below banner */
-nav {
-    top: 42px;
-}
-
-/* Push page content down */
-.hero-section-offset {
-    padding-top: 165px;
-}
-
-@media (max-width: 768px) {
-    nav {
-        top: 52px;
-    }
-
-    .hero-section-offset {
-        padding-top: 175px;
-    }
-}
     </style>
 </head>
-<body class="font-sans antialiased text-gray-800 bg-white pt-28 md:pt-24">
-    <!-- Promotional Banner -->
-<div class="promo-banner">
-    🎉 LIMITED TIME OFFER •
-    <strong>10% OFF ALL IN-CLINIC BLOOD TESTS</strong>
-    • Use Code:
-    <span style="background:#fff;color:#5b21b6;padding:4px 10px;border-radius:6px;font-weight:700;margin-left:6px;">
-        PRIME10
-    </span>
-</div>
+<body class="font-sans antialiased text-gray-800 bg-white">
     <!-- Navigation -->
   <nav class="bg-white shadow-lg fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -92,7 +34,7 @@ nav {
                 <div class="flex items-center">
                     <div class="flex items-center">
                          <a href="index.html" class="text-2xl font-light tracking-tighter hover:opacity-80 transition-opacity duration-200">
-                       <img src="Prime Life Diagnostics1-01.png" alt="Prime Life Diagnostics Logo" class="h-20 mr-4">
+                        <img src="Prime Life Diagnostics1-01.png" alt="Prime Life Diagnostics Logo" class="h-20 mr-4">
                          </a>
                          <a href="index.html" class="text-2xl font-light tracking-tighter hover:opacity-80 transition-opacity duration-200">
     <span class="text-[#1a237e]">Prime</span>
@@ -113,11 +55,11 @@ nav {
                     <button id="menu-btn" class="text-gray-600">
                         <i data-feather="menu"></i>
                     </button>
-                    
                 </div>
             </div>
         </div>
     </nav>
+
 
     <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white md:hidden">
