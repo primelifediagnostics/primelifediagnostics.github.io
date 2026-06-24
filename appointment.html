@@ -11,22 +11,75 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <style>
-        .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
         .hero-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.test-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,.1),0 10px 10px -5px rgba(0,0,0,.04);
+}
+
+.gradient-text {
+    background: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+/* ==========================
+   PROMOTIONAL BANNER
+========================== */
+
+.promo-banner{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:linear-gradient(90deg,#5b21b6,#6d28d9);
+    color:#fff;
+    text-align:center;
+    padding:10px 15px;
+    font-size:15px;
+    font-weight:600;
+    z-index:9999;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+
+.promo-banner .code{
+    display:inline-block;
+    background:#fff;
+    color:#5b21b6;
+    padding:3px 10px;
+    border-radius:6px;
+    font-weight:700;
+    margin-left:6px;
+}
+
+@media (max-width:768px){
+
+    .promo-banner{
+        font-size:13px;
+        line-height:1.4;
+        padding:8px 10px;
+    }
+
+}
     </style>
+    
 </head>
 <body class="font-sans antialiased text-gray-800 bg-white">
+
+<div class="promo-banner">
+    <strong>LIMITED TIME OFFER</strong> •
+    GET <strong>10% OFF ALL IN-CLINIC BLOOD TESTS</strong>
+    • Use Code
+    <span class="code">PRIME10</span>
+</div>
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
+    <nav class="bg-white shadow-lg fixed w-full z-50" style="top:42px;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
+            <div class="flex justify-between h-18">
                 <div class="flex items-center">
                     <div class="flex items-center">
                          <a href="index.html" class="text-2xl font-light tracking-tighter hover:opacity-80 transition-opacity duration-200">
@@ -71,7 +124,7 @@
 </div>
 
     <!-- Header Section -->
-    <section class="pt-24 pb-12 hero-gradient text-white">
+   <section class="hero-gradient text-white pt-20 pb-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-4xl font-bold mb-6" data-aos="fade-up">Book Your Appointment</h1>
             <p class="text-xl opacity-90" data-aos="fade-up" data-aos-delay="100">
@@ -241,6 +294,27 @@
                 mobileMenu.classList.add('hidden');
             });
         });
+        
+</script>
+<script>
+window.addEventListener("load",function(){
+
+    const banner=document.querySelector(".promo-banner");
+    const nav=document.querySelector("nav");
+
+    function updateSpacing(){
+
+        const totalHeight=banner.offsetHeight+nav.offsetHeight;
+
+        document.body.style.paddingTop=totalHeight+"px";
+
+    }
+
+    updateSpacing();
+
+    window.addEventListener("resize",updateSpacing);
+
+});
 </script>
 </body>
 </html>
