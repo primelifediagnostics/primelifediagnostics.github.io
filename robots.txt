@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://primelifediagnostics.co.uk/sitemap.xml
+
+# Crawl-delay to avoid overloading server
+Crawl-delay: 1
