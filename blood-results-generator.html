@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Test Results Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .form-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .biomarker-input {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .biomarker-input .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .biomarker-input .row.full {
+            grid-template-columns: 1fr;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1em;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+
+        .btn-danger {
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+
+        .btn-danger:hover {
+            background: #ff5252;
+        }
+
+        .results-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .patient-info {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+
+        .patient-info p {
+            margin: 8px 0;
+            color: #333;
+        }
+
+        .patient-info strong {
+            color: #667eea;
+        }
+
+        .biomarker-result {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .biomarker-header {
+            padding: 15px 20px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .biomarker-header.normal {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .biomarker-header.abnormal {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+
+        .biomarker-status {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+        }
+
+        .biomarker-body {
+            padding: 20px;
+            background: #fafafa;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .biomarker-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .biomarker-label {
+            color: #666;
+            font-weight: 500;
+        }
+
+        .biomarker-value {
+            font-weight: 700;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+
+        .progress-fill.normal {
+            background: #10b981;
+        }
+
+        .progress-fill.abnormal {
+            background: #ef4444;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+        }
+
+        .empty-state svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .control-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .control-buttons button {
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .biomarker-input .row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .biomarker-body {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+        }
+
+        .remove-biomarker {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🩸 Blood Test Results Generator</h1>
+            <p>Create polished blood test result reports with color-coded biomarkers</p>
+        </div>
+
+        <!-- Input Form -->
+        <div class="form-section">
+            <h2 style="margin-bottom: 20px; color: #333;">Patient Information</h2>
+            
+            <div class="form-group">
+                <label>Patient Name</label>
+                <input type="text" id="patientName" placeholder="e.g., John Smith">
+            </div>
+
+            <div class="form-group">
+                <label>Date of Test</label>
+                <input type="date" id="testDate">
+            </div>
+
+            <div class="form-group">
+                <label>Test Type</label>
+                <select id="testType">
+                    <option value="Full Blood Count">Full Blood Count (FBC)</option>
+                    <option value="Lipid Panel">Lipid Panel</option>
+                    <option value="Liver Function">Liver Function Tests (LFTs)</option>
+                    <option value="Kidney Function">Kidney Function Tests (U&Es)</option>
+                    <option value="Thyroid Function">Thyroid Function Tests (TFTs)</option>
+                    <option value="Custom">Custom</option>
+                </select>
+            </div>
+
+            <h2 style="margin: 30px 0 20px 0; color: #333;">Add Biomarkers</h2>
+
+            <div id="biomarkersContainer"></div>
+
+            <button class="btn btn-secondary" onclick="addBiomarker()" style="width: auto; margin-bottom: 20px;">+ Add Biomarker</button>
+
+            <div class="control-buttons">
+                <button class="btn btn-primary" onclick="generateResults()">Generate Results Report</button>
+                <button class="btn btn-secondary" onclick="clearAll()">Clear All</button>
+            </div>
+        </div>
+
+        <!-- Results Display -->
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <div class="patient-info">
+                <p><strong>Patient:</strong> <span id="resultPatientName">-</span></p>
+                <p><strong>Test Date:</strong> <span id="resultTestDate">-</span></p>
+                <p><strong>Test Type:</strong> <span id="resultTestType">-</span></p>
+            </div>
+
+            <div id="biomarkersResults"></div>
+
+            <div class="control-buttons" style="margin-top: 30px;">
+                <button class="btn btn-primary" onclick="printResults()">🖨️ Print Results</button>
+                <button class="btn btn-secondary" onclick="downloadResults()">📥 Download PDF</button>
+                <button class="btn btn-secondary" onclick="resetForm()">← Back to Editor</button>
+            </div>
+        </div>
+
+        <div class="empty-state" id="emptyState">
+            <p style="font-size: 1.2em; color: #999;">📊 Add biomarkers above to generate results</p>
+        </div>
+    </div>
+
+    <script>
+        let biomarkerCount = 0;
+
+        function addBiomarker() {
+            const container = document.getElementById('biomarkersContainer');
+            const id = biomarkerCount++;
+
+            const html = `
+                <div class="biomarker-input" id="biomarker-${id}">
+                    <div class="row">
+                        <div class="form-group">
+                            <label>Biomarker Name</label>
+                            <input type="text" placeholder="e.g., Hemoglobin" class="biomarker-name">
+                        </div>
+                        <div class="form-group">
+                            <label>Result Value</label>
+                            <input type="number" step="0.1" placeholder="e.g., 12.5" class="biomarker-value">
+                        </div>
+                        <div class="form-group">
+                            <label>Unit</label>
+                            <input type="text" placeholder="e.g., g/dL" class="biomarker-unit">
+                        </div>
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select class="biomarker-status-select">
+                                <option value="normal">Normal</option>
+                                <option value="abnormal">Abnormal</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label>Reference Range Min</label>
+                            <input type="number" step="0.1" placeholder="e.g., 11.5" class="biomarker-range-min">
+                        </div>
+                        <div class="form-group">
+                            <label>Reference Range Max</label>
+                            <input type="number" step="0.1" placeholder="e.g., 15.5" class="biomarker-range-max">
+                        </div>
+                        <div class="form-group full">
+                            <label>Notes (Optional)</label>
+                            <input type="text" placeholder="e.g., Slightly elevated" class="biomarker-notes">
+                        </div>
+                    </div>
+                    <button class="btn btn-danger remove-biomarker" onclick="removeBiomarker(${id})">Remove Biomarker</button>
+                </div>
+            `;
+
+            container.insertAdjacentHTML('beforeend', html);
+        }
+
+        function removeBiomarker(id) {
+            const element = document.getElementById(`biomarker-${id}`);
+            if (element) element.remove();
+        }
+
+        function generateResults() {
+            const patientName = document.getElementById('patientName').value || 'Unknown Patient';
+            const testDate = document.getElementById('testDate').value || new Date().toISOString().split('T')[0];
+            const testType = document.getElementById('testType').value || 'Blood Test';
+
+            const biomarkers = [];
+            document.querySelectorAll('.biomarker-input').forEach((input, index) => {
+                const name = input.querySelector('.biomarker-name').value;
+                const value = parseFloat(input.querySelector('.biomarker-value').value);
+                const unit = input.querySelector('.biomarker-unit').value;
+                const status = input.querySelector('.biomarker-status-select').value;
+                const rangeMin = parseFloat(input.querySelector('.biomarker-range-min').value);
+                const rangeMax = parseFloat(input.querySelector('.biomarker-range-max').value);
+                const notes = input.querySelector('.biomarker-notes').value;
+
+                if (name && value !== '' && unit) {
+                    biomarkers.push({ name, value, unit, status, rangeMin, rangeMax, notes });
+                }
+            });
+
+            if (biomarkers.length === 0) {
+                alert('Please add at least one biomarker with values');
+                return;
+            }
+
+            // Display results
+            document.getElementById('resultPatientName').textContent = patientName;
+            document.getElementById('resultTestDate').textContent = new Date(testDate).toLocaleDateString();
+            document.getElementById('resultTestType').textContent = testType;
+
+            const resultsHTML = biomarkers.map((biomarker, index) => {
+                const percentage = ((biomarker.value - biomarker.rangeMin) / (biomarker.rangeMax - biomarker.rangeMin)) * 100;
+                const clampedPercentage = Math.max(0, Math.min(100, percentage));
+                const isNormal = biomarker.status === 'normal';
+
+                return `
+                    <div class="biomarker-result">
+                        <div class="biomarker-header ${isNormal ? 'normal' : 'abnormal'}">
+                            <span>${biomarker.name}</span>
+                            <span class="biomarker-status">${isNormal ? '✓ NORMAL' : '⚠ ABNORMAL'}</span>
+                        </div>
+                        <div class="biomarker-body">
+                            <div class="biomarker-item">
+                                <span class="biomarker-label">Result Value:</span>
+                                <span class="biomarker-value">${biomarker.value} ${biomarker.unit}</span>
+                            </div>
+                            <div class="biomarker-item">
+                                <span class="biomarker-label">Reference Range:</span>
+                                <span class="biomarker-value">${biomarker.rangeMin} - ${biomarker.rangeMax} ${biomarker.unit}</span>
+                            </div>
+                            ${biomarker.notes ? `
+                            <div class="biomarker-item">
+                                <span class="biomarker-label">Notes:</span>
+                                <span class="biomarker-value">${biomarker.notes}</span>
+                            </div>
+                            ` : ''}
+                            <div style="grid-column: 1 / -1;">
+                                <div class="progress-bar">
+                                    <div class="progress-fill ${isNormal ? 'normal' : 'abnormal'}" style="width: ${clampedPercentage}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('biomarkersResults').innerHTML = resultsHTML;
+            document.getElementById('resultsSection').style.display = 'block';
+            document.getElementById('emptyState').style.display = 'none';
+            document.getElementById('biomarkersContainer').parentElement.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function printResults() {
+            window.print();
+        }
+
+        function downloadResults() {
+            alert('PDF download feature coming soon! For now, use Print (Ctrl+P) and save as PDF.');
+        }
+
+        function resetForm() {
+            document.getElementById('resultsSection').style.display = 'none';
+            document.getElementById('emptyState').style.display = 'block';
+        }
+
+        function clearAll() {
+            if (confirm('Clear all biomarkers?')) {
+                document.getElementById('biomarkersContainer').innerHTML = '';
+                biomarkerCount = 0;
+            }
+        }
+
+        // Set today's date as default
+        document.getElementById('testDate').valueAsDate = new Date();
+
+        // Add first biomarker on load
+        addBiomarker();
+    </script>
+</body>
+</html>
