@@ -77,11 +77,11 @@
         <div class="grid md:grid-cols-2 gap-12">
 
             <!-- Panel Image -->
-            <div class="rounded-xl shadow-lg overflow-hidden" data-aos="fade-right">
+            <div class="rounded-xl shadow-lg overflow-hidden h-screen" data-aos="fade-right">
                 <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/photo-1457449205106-d0aad138e99b.jpeg" alt="Comprehensive Male Screen" class="w-full h-full object-cover">
             </div>
 
-            <!-- Panel Content -->
+              <!-- Panel Content -->
             <div data-aos="fade-left">
                 <div class="flex justify-between items-center mb-6">
                     <h1 class="text-3xl font-bold gradient-text">Comprehensive Male Package</h1>
@@ -95,19 +95,943 @@
 
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Tests Included</h2>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Full Blood Count (FBC)</li>
-                        <li>Liver Function Tests (LFTs)</li>
-                        <li>Uric Acid</li>
-                        <li>HbA1c (Diabetes Screen)</li>
-                        <li>C-Reactive Protein (CRP)</li>
-                        <li>Kidney Function</li>
-                        <li>Lipids (Cholesterol Profile)</li>
-                        <li>Thyroid Function Screen (TSH, T4, T3)</li>
-                        <li>Iron Screen</li>
-                        <li>Vitamins & Minerals (Vitamin D, Vitamin B12, Folate, Calcium)</li>
-                        <li>Testosterone</li>
-                    </ul>
+                  
+
+  <!-- FBC - MAIN DROPDOWN -->
+ <button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+    Full Blood Count (FBC)
+  </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+    <!-- EVERYTHING BELOW IS HIDDEN UNTIL FBC IS CLICKED -->
+    <div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
+
+
+      <!-- HAEMOGLOBIN -->
+     <button onclick="toggleFAQ(this)"
+  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+  <span>Haemoglobin (Hb)</span>
+
+  <span class="toggle-icon ml-2">+</span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+  Haemoglobin is the iron-containing protein found within red blood cells that carries oxygen from your lungs to every tissue in your body. Measuring haemoglobin is one of the most important ways to assess your body's ability to deliver oxygen efficiently. Low haemoglobin levels may indicate anemia caused by various conditions. 
+
+</div>
+
+<!-- Red Blood Cell Count -->
+     <button onclick="toggleFAQ(this)"
+  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+  <span>Red Blood Cell (RBC) Count</span>
+
+  <span class="toggle-icon ml-2">+</span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+ This test measures the number of red blood cells circulating in your bloodstream and helps assess your body's oxygen-carrying capacity. 
+
+</div>
+
+<!-- Haematocrit -->
+   <button onclick="toggleFAQ(this)"
+  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+  <span>Haematocrit (HCT)</span>
+
+  <span class="toggle-icon ml-2">+</span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+ Haematocrit measures the percentage of your blood that is made up of red blood cells. 
+
+</div>
+
+<!-- Mean Corpuscular Volume (MCV) -->
+   <button onclick="toggleFAQ(this)"
+  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+  <span>Mean Corpuscular Volume (MCV)</span>
+
+  <span class="toggle-icon ml-2">+</span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+MCV measures the average size of your red blood cells. It is particularly useful when investigating the cause of anaemia, as different deficiencies affect red blood cell size in different ways.
+
+</div>
+
+<!-- Mean Corpuscular Haemoglobin (MCH) -->
+   <button onclick="toggleFAQ(this)"
+  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+  <span>Mean Corpuscular Haemoglobin (MCH)</span>
+
+  <span class="toggle-icon ml-2">+</span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+MCH measures the average amount of haemoglobin contained within each red blood cell. It helps assess how effectively your red blood cells are able to carry oxygen around the body. 
+
+</div>
+
+<!-- Mean Corpuscular Haemoglobin Concentration (MCHC) -->
+   <button onclick="toggleFAQ(this)"
+  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+  <span>Mean Corpuscular Haemoglobin Concentration (MCHC)</span>
+
+  <span class="toggle-icon ml-2">+</span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+MCHC measures the average concentration of haemoglobin within your red blood cells.
+
+</div>
+
+<!-- Red Cell Distribution Width (RDW) -->
+   <button onclick="toggleFAQ(this)"
+  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+  <span>Red Cell Distribution Width (RDW)</span>
+
+  <span class="toggle-icon ml-2">+</span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+RDW measures the variation in the size of your red blood cells. Healthy red blood cells are usually similar in size, whereas greater variation may indicate that new and older blood cells differ significantly. 
+
+</div>
+
+<!-- Platelets -->
+   <button onclick="toggleFAQ(this)"
+  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+  <span>Platelets</span>
+
+  <span class="toggle-icon ml-2">+</span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Platelets are small blood cells that play a vital role in helping your blood clot after an injury, preventing excessive bleeding. Measuring your platelet count can help identify clotting disorders, inflammation, infection and conditions affecting the bone marrow.
+
+</div>
+
+<!-- Mean Platelet Volume (MPV) -->
+   <button onclick="toggleFAQ(this)"
+  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+  <span>Mean Platelet Volume (MPV)</span>
+
+  <span class="toggle-icon ml-2">+</span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+MPV measures the average size of your platelets. 
+
+</div>
+
+<!-- White Blood Cell (WBC) Count -->
+   <button onclick="toggleFAQ(this)"
+  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+  <span>White Blood Cell (WBC) Count</span>
+
+  <span class="toggle-icon ml-2">+</span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+White blood cells are a key part of your immune system and help protect your body against infections and disease. This test measures the total number of white blood cells circulating in your bloodstream. Raised levels commonly occur during infections or inflammation, while lower levels may result from certain viral infections, medications, autoimmune conditions or bone marrow disorders.
+
+</div>
+
+<!-- Neutrophils -->
+   <button onclick="toggleFAQ(this)"
+  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+  <span>Neutrophils</span>
+
+  <span class="toggle-icon ml-2">+</span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Neutrophils are the most abundant type of white blood cell and form your body's first line of defence against bacterial infections. Increased neutrophil levels are commonly seen with bacterial infections, inflammation, physical stress and corticosteroid treatment. Low levels may increase your susceptibility to infection and can occur with some viral illnesses, medications or bone marrow disorders.
+
+</div>
+
+<!-- Lymphocytes -->
+   <button onclick="toggleFAQ(this)"
+  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+  <span>Lymphocytes</span>
+
+  <span class="toggle-icon ml-2">+</span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Lymphocytes are specialised white blood cells that help your immune system recognise and fight viruses, bacteria and other harmful organisms. They also play an important role in producing antibodies and developing long-term immunity. Abnormal lymphocyte levels may occur with viral infections, autoimmune diseases, chronic infections and certain blood disorders.
+
+</div>
+
+<!-- Monocytes -->
+   <button onclick="toggleFAQ(this)"
+  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+  <span>Monocytes</span>
+
+  <span class="toggle-icon ml-2">+</span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Monocytes are white blood cells that help remove damaged cells, bacteria and other foreign material from the body. They also support tissue repair following infection or inflammation. 
+
+</div>
+
+<!-- Eosinophils -->
+   <button onclick="toggleFAQ(this)"
+  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+  <span>Eosinophils</span>
+
+  <span class="toggle-icon ml-2">+</span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Eosinophils are white blood cells involved in allergic reactions and defending the body against parasitic infections. Elevated levels are commonly associated with allergies, asthma, eczema and certain parasitic infections.
+
+</div>
+
+<!-- Basophils -->
+   <button onclick="toggleFAQ(this)"
+  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+  <span>Basophils</span>
+
+  <span class="toggle-icon ml-2">+</span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Basophils are the least common type of white blood cell and contribute to allergic and inflammatory responses by releasing substances such as histamine. Although abnormalities are uncommon, raised basophil levels may be associated with allergic conditions, chronic inflammation or certain bone marrow disorders.
+</div>
+
+</div>
+
+
+<!-- Liver Function Tests (LFTs) - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+    Liver Function Tests (LFTs)
+  </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+<!-- Liver Function Tests Content - HIDDEN -->
+<div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
+
+  <!-- Alanine Transaminase -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Alanine Transaminase (ALT)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+ALT is an enzyme found primarily within liver cells. When the liver becomes inflamed or damaged, ALT is released into the bloodstream, making it one of the most sensitive markers of liver cell injury. Raised ALT levels are commonly associated with fatty liver disease, viral hepatitis, alcohol-related liver disease and certain medications. 
+
+  </div>
+
+  <!-- Aspartate Transaminase -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Aspartate Transaminase (AST)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+    AST is an enzyme found in the liver, heart, muscles and several other tissues. While elevated AST may indicate liver inflammation or damage, it can also rise following muscle injury, strenuous exercise or certain medical conditions affecting the heart or muscles.
+  </div>
+
+  <!-- Alkaline Phosphatase -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Alkaline Phosphatase (ALP)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+    ALP is an enzyme found mainly in the liver, bile ducts and bones. Raised ALP levels may indicate conditions affecting the liver or bile ducts, such as bile flow obstruction, but can also occur during periods of increased bone growth or in certain bone disorders.
+
+  </div>
+
+ <!-- Gamma-Glutamyl Transferase (GGT) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Gamma-Glutamyl Transferase (GGT)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+GGT is an enzyme found mainly in the liver and bile ducts. It is one of the most sensitive markers of liver health and is particularly useful for identifying liver damage associated with excessive alcohol consumption. GGT levels may also be raised in people with fatty liver disease, obesity, diabetes, certain medications or disorders affecting the bile ducts.
+
+
+  </div>
+  
+  <!-- Bilirubin -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Bilirubin</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+   Bilirubin is a yellow pigment produced when old red blood cells are naturally broken down. Healthy liver cells process bilirubin before it is removed from the body in bile. Elevated bilirubin levels may cause jaundice, where the skin and eyes appear yellow, and can occur due to liver disease, bile duct obstruction, inherited conditions such as Gilbert's syndrome or increased breakdown of red blood cells. Bilirubin is also responsible for the yellow and green colour changes seen as bruises heal.
+
+  </div>
+  
+   <!-- Albumin -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Albumin</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+  Albumin is the most abundant protein produced by the liver and performs many important functions, including maintaining fluid balance within the bloodstream and transporting hormones, vitamins, fatty acids and medications throughout the body. Low albumin levels may suggest liver disease, kidney disease, inflammation, malnutrition or poor absorption of nutrients.
+
+  </div>
+  
+   <!-- Total Protein -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Total Protein</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+ Total protein measures the combined amount of albumin and globulins circulating in your blood. It provides an overview of your nutritional status and can help assess liver function, kidney function and immune health. 
+  </div>
+
+ <!-- Globulin -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Globulin</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Globulins are a group of proteins that play an essential role in your immune system by helping your body fight infection and transport important substances throughout the bloodstream. Abnormal globulin levels may occur with infections, chronic inflammation, autoimmune conditions, liver disease and certain blood disorders. 
+
+  </div>
+
+</div>
+
+<!-- KIDNEY FUNCTION - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Kidney Function
+  </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+<!-- Kidney Function Tests Content - HIDDEN -->
+<div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
+
+  <!-- Creatinine -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Creatinine</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Creatinine is a waste product produced naturally by your muscles as part of normal daily activity. Healthy kidneys remove creatinine from the blood and excrete it in urine, making it one of the most widely used markers of kidney function. Raised creatinine levels may indicate reduced kidney function, although levels can also be influenced by muscle mass, dehydration, certain medications and recent strenuous exercise. Measuring creatinine alongside eGFR provides a more complete assessment of kidney health.
+
+
+  </div>
+
+  <!-- Estimated Glomerular Filtration Rate (eGFR) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Estimated Glomerular Filtration Rate (eGFR)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+eGFR estimates how efficiently your kidneys filter waste products and excess fluid from your blood. It is calculated using your creatinine level together with factors such as your age and sex. eGFR is one of the most important indicators of kidney function and is commonly used to detect and monitor chronic kidney disease. A persistently reduced eGFR may suggest impaired kidney function and should always be interpreted alongside your clinical history and other blood test results.
+
+  </div>
+
+  <!--  Urea -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>   Urea</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+ 
+Urea is a waste product formed when your body breaks down protein. It is transported in the bloodstream and removed by the kidneys. Measuring urea helps assess kidney function, hydration status and protein metabolism. 
+
+  </div>
+
+ <!-- Sodium -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Sodium</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Sodium is an essential electrolyte that helps regulate fluid balance, blood pressure, nerve signalling and muscle function. Your kidneys and hormones work together to keep sodium levels within a narrow range. Abnormal sodium levels may occur with dehydration, kidney disease, heart failure, hormonal disorders or certain medications, and can affect normal brain and muscle function.
+
+  </div>
+  
+  <!-- Chloride -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Chloride</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+Chloride is an electrolyte that works alongside sodium and potassium to help maintain fluid balance, blood pressure and the body's acid-base balance. Abnormal chloride levels often occur alongside changes in other electrolytes and may be associated with dehydration, kidney disease, prolonged vomiting, diarrhoea or metabolic disorders.
+
+  </div>
+ 
+
+</div>
+
+<!-- Cholesterol (Lipid Profile) - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Cholesterol (Lipid Profile)
+  </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+<!-- Cholesterol (Lipid Profile) - HIDDEN -->
+<div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
+
+  <!-- Total Cholesterol -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Total Cholesterol</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+Cholesterol is a fatty substance that your body needs to build healthy cells, produce hormones and make vitamin D. Although cholesterol is essential for good health, having too much cholesterol in your blood can increase your risk of heart disease and stroke. Measuring total cholesterol provides an overall assessment of your cholesterol level and is interpreted alongside HDL, LDL and triglycerides to give a more complete picture of your cardiovascular health.
+
+  </div>
+
+  <!-- HDL Cholesterol (High-Density Lipoprotein) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>HDL Cholesterol (High-Density Lipoprotein)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+Often referred to as "good cholesterol", HDL helps remove excess cholesterol from your bloodstream and transports it back to the liver, where it can be broken down and removed from the body. Higher HDL levels are generally associated with a lower risk of heart disease, making this an important marker of cardiovascular health. Maintaining healthy HDL levels is often supported by regular exercise, maintaining a healthy weight and avoiding smoking.
+
+  </div>
+
+  <!-- LDL Cholesterol (Low-Density Lipoprotein) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span> LDL Cholesterol (Low-Density Lipoprotein)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+ LDL is commonly known as "bad cholesterol" because high levels can lead to cholesterol building up within the walls of your arteries. Over time, this can narrow the arteries and increase the risk of heart attacks, strokes and other cardiovascular diseases. Monitoring LDL cholesterol is one of the most important ways of assessing long-term cardiovascular risk and is often used to guide lifestyle changes and cholesterol-lowering treatment where appropriate.
+
+  </div>
+
+ <!-- Non-HDL Cholesterol -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Non-HDL Cholesterol</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Non-HDL cholesterol measures all of the cholesterol that may contribute to the build-up of fatty deposits within your arteries. It includes LDL cholesterol as well as several other potentially harmful cholesterol particles. Many specialists consider non-HDL cholesterol to be one of the best indicators of cardiovascular risk, particularly in people with diabetes, obesity or raised triglyceride levels.
+
+  </div>
+  
+  <!-- Triglycerides -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Triglycerides</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Triglycerides are a type of fat found in your blood that your body uses as a source of energy. After eating, excess calories that are not immediately required are converted into triglycerides and stored in fat tissue. Persistently raised triglyceride levels may be associated with obesity, diabetes, excessive alcohol consumption, diets high in sugar and refined carbohydrates, and some inherited conditions. High triglyceride levels increase the risk of cardiovascular disease and, when very high, may also increase the risk of pancreatitis.
+
+  </div>
+ 
+ <!-- Total Cholesterol : HDL Ratio -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Total Cholesterol : HDL Ratio</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+The cholesterol-to-HDL ratio compares your total cholesterol with your HDL ("good") cholesterol. Rather than looking at individual cholesterol measurements alone, this ratio provides an overall assessment of cardiovascular risk by considering both protective and harmful cholesterol. In general, a lower ratio is associated with a lower risk of heart disease, while a higher ratio may indicate an increased cardiovascular risk.
+
+  </div>
+ 
+ 
+</div>
+
+<!-- Thyroid Function - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Thyroid Function
+  </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+<!-- Thyroid Function - HIDDEN -->
+<div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
+
+  <!-- Thyroid Stimulating Hormone (TSH) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Thyroid Stimulating Hormone (TSH)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Thyroid Stimulating Hormone (TSH) is produced by the pituitary gland and controls how much thyroid hormone your thyroid gland produces. It is usually the earliest marker to become abnormal when thyroid function changes, making it one of the most sensitive tests for assessing thyroid health. Raised TSH levels commonly suggest an underactive thyroid (hypothyroidism), while low levels may indicate an overactive thyroid (hyperthyroidism). As thyroid hormones regulate metabolism, energy production and many bodily functions, thyroid disorders may contribute to symptoms including fatigue, weight changes, sensitivity to temperature, mood changes, dry skin and alterations in heart rate.
+
+  </div>
+
+  <!-- Free T4 (Thyroxine) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Free T4 (Thyroxine)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Free T4 is one of the two main hormones produced by your thyroid gland and plays a central role in regulating metabolism, body temperature, energy production and growth. Measuring Free T4 alongside TSH helps determine whether your thyroid is functioning normally and assists in diagnosing both underactive and overactive thyroid conditions. Abnormal Free T4 levels should always be interpreted alongside TSH to provide the most accurate assessment of thyroid function.
+
+  </div>
+
+  <!--  Free T3 (Triiodothyronine) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Free T3 (Triiodothyronine)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Free T3 is the biologically active thyroid hormone responsible for regulating many of your body's metabolic processes. It influences energy levels, heart function, digestion, body temperature and the rate at which your body uses energy. Measuring Free T3 can provide additional information when investigating thyroid disorders, particularly when symptoms persist despite normal TSH or Free T4 levels or when hyperthyroidism is suspected.
+  </div>
+ 
+ 
+</div>
+
+<!-- Vitamins - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Vitamins & Minerals </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+<!-- Vitamins - HIDDEN -->
+<div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
+
+  <!-- Vitamin D (25-OH Vitamin D) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Vitamin D (25-OH Vitamin D)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+Vitamin D plays a vital role in maintaining healthy bones, teeth and muscles by helping your body absorb calcium and phosphate. It also supports normal immune function and contributes to muscle strength and general wellbeing. Low vitamin D levels are common in the UK and may contribute to tiredness, muscle weakness, bone pain and an increased risk of fractures. Measuring vitamin D helps identify deficiency and monitor response to supplementation.
+
+  </div>
+
+  <!-- Folate  -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Folate </span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+Folate is required for healthy red blood cell production, DNA synthesis and normal cell growth. It works closely with vitamin B12 and is particularly important during pregnancy to support normal fetal development. Low folate levels may contribute to fatigue, anemia and poor cell regeneration. Measuring folate alongside vitamin B12 helps investigate nutritional deficiencies and the causes of macrocytic anemia.
+
+
+  </div>
+
+  <!-- Active Vitamin B12 (Holotranscobalamin) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Active Vitamin B12 (Holotranscobalamin)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+Vitamin B12 is essential for healthy red blood cell production, normal nerve function and DNA synthesis. Low vitamin B12 levels may lead to fatigue, weakness, poor concentration, memory problems, numbness or tingling in the hands and feet, and anaemia. Deficiency may develop due to poor dietary intake, reduced absorption, certain medications or autoimmune conditions such as pernicious anaemia.
+Active Vitamin B12 measures the proportion of vitamin B12 that is immediately available for your body's cells to use. It may detect vitamin B12 deficiency earlier than total vitamin B12 in some individuals and can provide additional information when investigating symptoms suggestive of deficiency despite apparently normal total B12 levels.
+
+  </div>
+ 
+ 
+</div>
+
+<!-- IRON STUDIES - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Iron Studies
+  </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+<!-- Iron Studies - HIDDEN -->
+<div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
+
+  <!-- Iron Studies -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Ferritin</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Ferritin is the body's main iron storage protein and provides the most accurate indication of your iron stores. Iron is essential for producing healthy red blood cells, transporting oxygen around the body and supporting normal energy production. Low ferritin levels are one of the earliest signs of iron deficiency and may contribute to tiredness, weakness, poor concentration, headaches, restless legs and hair loss, even before anaemia develops. Raised ferritin levels may occur with inflammation, liver disease, excessive iron storage disorders such as haemochromatosis, alcohol excess or certain chronic medical conditions. Ferritin should always be interpreted alongside other iron markers to provide a complete assessment of your iron status.
+
+  </div>
+
+  <!-- Serum Iron  -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Serum Iron</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Serum iron measures the amount of iron circulating in your bloodstream that is available to produce haemoglobin and support normal body function. Iron levels naturally fluctuate throughout the day and can be influenced by diet, illness and recent iron supplementation. For this reason, serum iron is usually interpreted together with ferritin, transferrin and transferrin saturation to provide a more accurate picture of your body's iron balance. Low levels may suggest iron deficiency, while raised levels can occur with iron overload disorders or liver disease.
+
+  </div>
+
+  <!-- Transferrin -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Transferrin</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Transferrin is a protein produced by the liver that transports iron around your body to where it is needed, particularly for the production of red blood cells. When your iron stores are low, your body often produces more transferrin to maximise iron transport. Conversely, transferrin levels may fall in chronic illness, liver disease or malnutrition. Measuring transferrin alongside ferritin and serum iron helps distinguish between different causes of iron deficiency and iron overload.
+
+  </div>
+ 
+ <!-- Total Iron Binding Capacity (TIBC) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Total Iron Binding Capacity (TIBC)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+Total Iron Binding Capacity (TIBC) measures the maximum amount of iron that transferrin can carry in the bloodstream. It provides an indirect assessment of transferrin levels and helps determine whether your body has sufficient iron stores. TIBC is often increased in iron deficiency as your body attempts to transport more iron, while lower levels may occur with chronic inflammation, liver disease or iron overload conditions.
+
+  </div>
+ 
+ 
+ <!-- Unsaturated Iron Binding Capacity (UIBC) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Unsaturated Iron Binding Capacity (UIBC)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+UIBC measures the amount of transferrin that is available to bind additional iron. It provides further information about your body's ability to transport iron and is commonly interpreted alongside serum iron and TIBC. Higher UIBC values may indicate iron deficiency, whereas lower values can be associated with iron overload.
+
+  </div>
+ 
+ <!-- Transferrin Saturation -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Transferrin Saturation</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Transferrin saturation calculates the percentage of transferrin that is carrying iron. It is one of the most useful markers for assessing how much iron is immediately available for use by your body. Low transferrin saturation commonly suggests iron deficiency, while persistently raised levels may indicate iron overload disorders such as hereditary haemochromatosis. This marker is particularly valuable when interpreted alongside ferritin.
+
+  </div>
+ </div>
+
+<!-- Testosterone - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+    Testosterone </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Testosterone is the primary male sex hormone and plays an essential role in maintaining muscle mass, strength, bone density, energy levels, mood, libido, erectile function and sperm production. Testosterone levels naturally decline with age but may also be affected by obesity, stress, chronic illness, poor sleep and certain medications. Low testosterone may contribute to fatigue, reduced sex drive, erectile dysfunction, decreased muscle mass, increased body fat, low mood and reduced exercise performance. Measuring total testosterone is the first step in assessing male hormonal health and should be interpreted alongside free testosterone and SHBG for a more complete assessment.
+
+  </div>
+  
+<!-- URIC ACID - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+    Uric Acid </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Uric acid is produced when the body breaks down substances called purines, which are found naturally in your body and in certain foods. Healthy kidneys remove excess uric acid through the urine. High uric acid levels may increase the risk of gout, kidney stones and, in some cases, chronic kidney disease. Levels can also be influenced by diet, alcohol consumption, obesity and certain medications.
+
+  </div>
+  
+
+  <!-- Diabetes- MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Diabetes Screen (HbA1c) </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+HbA1c (glycated haemoglobin) measures your average blood glucose level over approximately the previous 2 to 3 months by assessing how much glucose has attached to your red blood cells. Unlike a single glucose reading, HbA1c provides a long-term picture of blood sugar control and is regarded as the gold standard test for diagnosing and monitoring diabetes. Raised HbA1c levels may indicate pre-diabetes or diabetes and, if left untreated, are associated with an increased risk of complications including heart disease, kidney disease, nerve damage and diabetic eye disease. Monitoring HbA1c can also help assess how well diabetes treatment and lifestyle changes are working over time.
+
+
+  </div>
+  
+    <!-- CRP - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   High-Sensitivity C-Reactive Protein (hs-CRP)</span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+C-Reactive Protein (CRP) is produced by the liver in response to inflammation anywhere in the body. It is a sensitive marker that rises rapidly following infection, injury or inflammation but does not identify the specific cause. 
+This marker tests for ‘High-sensitivity CRP’ which measures very low levels of inflammation that may not be detected by a standard CRP test. It is commonly used to assess low-grade inflammation associated with cardiovascular disease. 
+
+  </div>
+
+
+                     
                 </div>
 
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
@@ -126,8 +1050,10 @@
                 </div>
             </div>
         </div>
-    </div>
-
+<div>
+    
+    <br>
+    
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -185,6 +1111,20 @@
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Toggle FAQ function
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.toggle-icon');
+
+            content.classList.toggle('hidden');
+
+            if (icon.textContent === '+') {
+                icon.textContent = '−';
+            } else {
+                icon.textContent = '+';
+            }
+        }
     </script>
 
 </body>
