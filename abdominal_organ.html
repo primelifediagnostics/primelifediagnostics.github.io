@@ -72,7 +72,7 @@
     <div class="pt-24 pb-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
 <div class="grid md:grid-cols-2 gap-12">
             <!-- Panel Image -->
-            <div class="rounded-xl shadow-lg overflow-hidden" data-aos="fade-right">
+            <div class="rounded-xl shadow-lg overflow-hidden h-screen" data-aos="fade-right">
                 <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/istockphoto-175497396-612x612.jpg" alt="Abdominal Organ Health" class="w-full h-full object-cover">
 </div>
             
@@ -92,13 +92,267 @@
                 </div>               
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Key Tests Included</h2>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Liver Function Tests
-                        <li>Kidney Profile
-                        <li> CRP (C-reactive Protein)</li>
                     
-                    </ul>
+                    
+<!-- Liver Function Tests (LFTs) - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+    Liver Function Tests (LFTs)
+  </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+<!-- Liver Function Tests Content - HIDDEN -->
+<div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
+
+  <!-- Alanine Transaminase -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Alanine Transaminase (ALT)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+ALT is an enzyme found primarily within liver cells. When the liver becomes inflamed or damaged, ALT is released into the bloodstream, making it one of the most sensitive markers of liver cell injury. Raised ALT levels are commonly associated with fatty liver disease, viral hepatitis, alcohol-related liver disease and certain medications. 
+
+  </div>
+
+  <!-- Aspartate Transaminase -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Aspartate Transaminase (AST)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+    AST is an enzyme found in the liver, heart, muscles and several other tissues. While elevated AST may indicate liver inflammation or damage, it can also rise following muscle injury, strenuous exercise or certain medical conditions affecting the heart or muscles.
+  </div>
+
+  <!-- Alkaline Phosphatase -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Alkaline Phosphatase (ALP)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+    ALP is an enzyme found mainly in the liver, bile ducts and bones. Raised ALP levels may indicate conditions affecting the liver or bile ducts, such as bile flow obstruction, but can also occur during periods of increased bone growth or in certain bone disorders.
+
+  </div>
+
+ <!-- Gamma-Glutamyl Transferase (GGT) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Gamma-Glutamyl Transferase (GGT)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+GGT is an enzyme found mainly in the liver and bile ducts. It is one of the most sensitive markers of liver health and is particularly useful for identifying liver damage associated with excessive alcohol consumption. GGT levels may also be raised in people with fatty liver disease, obesity, diabetes, certain medications or disorders affecting the bile ducts.
+
+
+  </div>
+  
+  <!-- Bilirubin -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Bilirubin</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+   Bilirubin is a yellow pigment produced when old red blood cells are naturally broken down. Healthy liver cells process bilirubin before it is removed from the body in bile. Elevated bilirubin levels may cause jaundice, where the skin and eyes appear yellow, and can occur due to liver disease, bile duct obstruction, inherited conditions such as Gilbert's syndrome or increased breakdown of red blood cells. Bilirubin is also responsible for the yellow and green colour changes seen as bruises heal.
+
+  </div>
+  
+   <!-- Albumin -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Albumin</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+  Albumin is the most abundant protein produced by the liver and performs many important functions, including maintaining fluid balance within the bloodstream and transporting hormones, vitamins, fatty acids and medications throughout the body. Low albumin levels may suggest liver disease, kidney disease, inflammation, malnutrition or poor absorption of nutrients.
+
+  </div>
+  
+   <!-- Total Protein -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Total Protein</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+ Total protein measures the combined amount of albumin and globulins circulating in your blood. It provides an overview of your nutritional status and can help assess liver function, kidney function and immune health. 
+  </div>
+
+ <!-- Globulin -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Globulin</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Globulins are a group of proteins that play an essential role in your immune system by helping your body fight infection and transport important substances throughout the bloodstream. Abnormal globulin levels may occur with infections, chronic inflammation, autoimmune conditions, liver disease and certain blood disorders. 
+
+  </div>
+
 </div>
+
+
+                    
+        <!-- KIDNEY FUNCTION - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Kidney Function
+  </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+<!-- Kidney Function Tests Content - HIDDEN -->
+<div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
+
+  <!-- Creatinine -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Creatinine</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Creatinine is a waste product produced naturally by your muscles as part of normal daily activity. Healthy kidneys remove creatinine from the blood and excrete it in urine, making it one of the most widely used markers of kidney function. Raised creatinine levels may indicate reduced kidney function, although levels can also be influenced by muscle mass, dehydration, certain medications and recent strenuous exercise. Measuring creatinine alongside eGFR provides a more complete assessment of kidney health.
+
+
+  </div>
+
+  <!-- Estimated Glomerular Filtration Rate (eGFR) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Estimated Glomerular Filtration Rate (eGFR)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+eGFR estimates how efficiently your kidneys filter waste products and excess fluid from your blood. It is calculated using your creatinine level together with factors such as your age and sex. eGFR is one of the most important indicators of kidney function and is commonly used to detect and monitor chronic kidney disease. A persistently reduced eGFR may suggest impaired kidney function and should always be interpreted alongside your clinical history and other blood test results.
+
+  </div>
+
+  <!--  Urea -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>   Urea</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+ 
+Urea is a waste product formed when your body breaks down protein. It is transported in the bloodstream and removed by the kidneys. Measuring urea helps assess kidney function, hydration status and protein metabolism. 
+
+  </div>
+
+ <!-- Sodium -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Sodium</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Sodium is an essential electrolyte that helps regulate fluid balance, blood pressure, nerve signalling and muscle function. Your kidneys and hormones work together to keep sodium levels within a narrow range. Abnormal sodium levels may occur with dehydration, kidney disease, heart failure, hormonal disorders or certain medications, and can affect normal brain and muscle function.
+
+  </div>
+  
+  <!-- Chloride -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Chloride</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+Chloride is an electrolyte that works alongside sodium and potassium to help maintain fluid balance, blood pressure and the body's acid-base balance. Abnormal chloride levels often occur alongside changes in other electrolytes and may be associated with dehydration, kidney disease, prolonged vomiting, diarrhoea or metabolic disorders.
+
+  </div>
+                
+            </div>
+            
+                 <!-- CRP - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   C-Reactive Protein (CRP)</span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+C-Reactive Protein (CRP) is produced by the liver in response to inflammation anywhere in the body. It is a sensitive marker that rises rapidly following infection, injury or inflammation but does not identify the specific cause. 
+  </div>
+  </div>
+  </div>
 
                 
 <div class="text-center">
@@ -141,34 +395,43 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-        
+<script>
+        AOS.init({ duration: 800, once: true });
         feather.replace();
-        
+
         // Mobile menu functionality
         const menuBtn = document.getElementById('menu-btn');
         const closeMenu = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
         });
-        
+
         closeMenu.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
         });
-        
+
         // Close menu when clicking links
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Toggle FAQ function
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.toggle-icon');
+
+            content.classList.toggle('hidden');
+
+            if (icon.textContent === '+') {
+                icon.textContent = '−';
+            } else {
+                icon.textContent = '+';
+            }
+        }
     </script>
 </body>
 </html>
