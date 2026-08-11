@@ -68,7 +68,7 @@
     </div>
     <div class="pt-24 pb-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
         <div class="grid md:grid-cols-2 gap-12">
-            <div class="rounded-xl shadow-lg overflow-hidden" data-aos="fade-right">
+            <div class="rounded-xl shadow-lg overflow-hidden h-screen" data-aos="fade-right">
                 <img src="95512-iron-deficiency-857x572.avif" alt="Iron Screen" class="w-full h-full object-cover">
             </div>
             
@@ -83,13 +83,100 @@
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Tests Included</h2>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Ferritin</li>
-                        <li>Iron</li>
-                        <li>Total Iron Binding Capacity</li>
-                        <li>Transferrin Saturation</li>
-                        <li>Unsaturated Iron Binding Capacity</li>
-                    </ul>
+
+  <!-- Iron Studies -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Ferritin</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Ferritin is the body's main iron storage protein and provides the most accurate indication of your iron stores. Iron is essential for producing healthy red blood cells, transporting oxygen around the body and supporting normal energy production. Low ferritin levels are one of the earliest signs of iron deficiency and may contribute to tiredness, weakness, poor concentration, headaches, restless legs and hair loss, even before anaemia develops. Raised ferritin levels may occur with inflammation, liver disease, excessive iron storage disorders such as haemochromatosis, alcohol excess or certain chronic medical conditions. Ferritin should always be interpreted alongside other iron markers to provide a complete assessment of your iron status.
+
+  </div>
+
+  <!-- Serum Iron  -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Serum Iron</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Serum iron measures the amount of iron circulating in your bloodstream that is available to produce haemoglobin and support normal body function. Iron levels naturally fluctuate throughout the day and can be influenced by diet, illness and recent iron supplementation. For this reason, serum iron is usually interpreted together with ferritin, transferrin and transferrin saturation to provide a more accurate picture of your body's iron balance. Low levels may suggest iron deficiency, while raised levels can occur with iron overload disorders or liver disease.
+
+  </div>
+
+  <!-- Transferrin -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Transferrin</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Transferrin is a protein produced by the liver that transports iron around your body to where it is needed, particularly for the production of red blood cells. When your iron stores are low, your body often produces more transferrin to maximise iron transport. Conversely, transferrin levels may fall in chronic illness, liver disease or malnutrition. Measuring transferrin alongside ferritin and serum iron helps distinguish between different causes of iron deficiency and iron overload.
+
+  </div>
+ 
+ <!-- Total Iron Binding Capacity (TIBC) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Total Iron Binding Capacity (TIBC)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+Total Iron Binding Capacity (TIBC) measures the maximum amount of iron that transferrin can carry in the bloodstream. It provides an indirect assessment of transferrin levels and helps determine whether your body has sufficient iron stores. TIBC is often increased in iron deficiency as your body attempts to transport more iron, while lower levels may occur with chronic inflammation, liver disease or iron overload conditions.
+
+  </div>
+ 
+ 
+ <!-- Unsaturated Iron Binding Capacity (UIBC) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Unsaturated Iron Binding Capacity (UIBC)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+UIBC measures the amount of transferrin that is available to bind additional iron. It provides further information about your body's ability to transport iron and is commonly interpreted alongside serum iron and TIBC. Higher UIBC values may indicate iron deficiency, whereas lower values can be associated with iron overload.
+
+  </div>
+ 
+ <!-- Transferrin Saturation -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Transferrin Saturation</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Transferrin saturation calculates the percentage of transferrin that is carrying iron. It is one of the most useful markers for assessing how much iron is immediately available for use by your body. Low transferrin saturation commonly suggests iron deficiency, while persistently raised levels may indicate iron overload disorders such as hereditary haemochromatosis. This marker is particularly valuable when interpreted alongside ferritin.
+
+  </div>
+
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Important Pre-Test Information</h2>
@@ -106,7 +193,7 @@
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -138,33 +225,44 @@
         </div>
     </footer>
 
+    
     <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-        
+        AOS.init({ duration: 800, once: true });
         feather.replace();
-        
+
         // Mobile menu functionality
         const menuBtn = document.getElementById('menu-btn');
         const closeMenu = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
         });
-        
+
         closeMenu.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
         });
-        
+
         // Close menu when clicking links
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Toggle FAQ function
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.toggle-icon');
+
+            content.classList.toggle('hidden');
+
+            if (icon.textContent === '+') {
+                icon.textContent = '−';
+            } else {
+                icon.textContent = '+';
+            }
+        }
     </script>
 </body>
 </html>
