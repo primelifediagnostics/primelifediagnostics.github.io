@@ -112,9 +112,27 @@
                 
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">What's Included</h2>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Vitamin B12 (Active B12)</li>
-                    </ul>
+
+ <!-- Vitamin B12- MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Vitamin B12 (Active B12)</span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Vitamin B12 is essential for healthy red blood cell production, normal nerve function and DNA synthesis. Low vitamin B12 levels may lead to fatigue, weakness, poor concentration, memory problems, numbness or tingling in the hands and feet, and anaemia. Deficiency may develop due to poor dietary intake, reduced absorption, certain medications or autoimmune conditions such as pernicious anaemia.
+Active Vitamin B12 measures the proportion of vitamin B12 that is immediately available for your body's cells to use. It may detect vitamin B12 deficiency earlier than total vitamin B12 in some individuals and can provide additional information when investigating symptoms suggestive of deficiency despite apparently normal total B12 levels.
+
+
+</div>
                 </div>
 
                <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
@@ -165,33 +183,43 @@
         </div>
     </footer>
 
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-        
+   <script>
+        AOS.init({ duration: 800, once: true });
         feather.replace();
-        
+
         // Mobile menu functionality
         const menuBtn = document.getElementById('menu-btn');
         const closeMenu = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
         });
-        
+
         closeMenu.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
         });
-        
+
         // Close menu when clicking links
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Toggle FAQ function
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.toggle-icon');
+
+            content.classList.toggle('hidden');
+
+            if (icon.textContent === '+') {
+                icon.textContent = '−';
+            } else {
+                icon.textContent = '+';
+            }
+        }
     </script>
 </body>
 </html>
