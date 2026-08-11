@@ -68,7 +68,7 @@
     </div>
     <div class="pt-24 pb-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
         <div class="grid md:grid-cols-2 gap-12">
-            <div class="rounded-xl shadow-lg overflow-hidden" data-aos="fade-right">
+            <div class="rounded-xl shadow-lg overflow-hidden h-screen" data-aos="fade-right">
                 <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/AdobeStock_571464594-1536x788.jpeg" alt="Diabetes Screen" class="w-full h-full object-cover">
 </div>
             
@@ -83,9 +83,28 @@
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Tests Included</h2>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>HbA1c (Glycated Haemoglobin)</li>
-                    </ul>
+                    
+                    
+                     <!-- Diabetes- MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Diabetes Screen (HbA1c) </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+HbA1c (glycated haemoglobin) measures your average blood glucose level over approximately the previous 2 to 3 months by assessing how much glucose has attached to your red blood cells. Unlike a single glucose reading, HbA1c provides a long-term picture of blood sugar control and is regarded as the gold standard test for diagnosing and monitoring diabetes. Raised HbA1c levels may indicate pre-diabetes or diabetes and, if left untreated, are associated with an increased risk of complications including heart disease, kidney disease, nerve damage and diabetic eye disease. Monitoring HbA1c can also help assess how well diabetes treatment and lifestyle changes are working over time.
+
+
+  </div>
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Important Pre-Test Information</h2>
@@ -136,32 +155,42 @@
     </footer>
 
     <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-        
+        AOS.init({ duration: 800, once: true });
         feather.replace();
-        
+
         // Mobile menu functionality
         const menuBtn = document.getElementById('menu-btn');
         const closeMenu = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
         });
-        
+
         closeMenu.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
         });
-        
+
         // Close menu when clicking links
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Toggle FAQ function
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.toggle-icon');
+
+            content.classList.toggle('hidden');
+
+            if (icon.textContent === '+') {
+                icon.textContent = '−';
+            } else {
+                icon.textContent = '+';
+            }
+        }
     </script>
 </body>
 </html>
