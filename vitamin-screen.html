@@ -68,7 +68,7 @@
     </div>
     <div class="pt-24 pb-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
         <div class="grid md:grid-cols-2 gap-12">
-            <div class="rounded-xl shadow-lg overflow-hidden" data-aos="fade-right">
+            <div class="rounded-xl shadow-lg overflow-hidden h-screen" data-aos="fade-right">
                 <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/istockphoto-1270726834-612x612.jpg" alt="Vitamin Screen" class="w-full h-full object-cover">
             </div>
             
@@ -83,13 +83,65 @@
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Tests Included</h2>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Vitamin D</li>
-                        <li>Vitamin B12</li>
-                        <li>Folate</li>
-                      
-                        </li>
-                    </ul>
+                   <!-- Vitamin D- MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Vitamin D</span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Vitamin D plays a vital role in maintaining healthy bones, teeth and muscles by helping your body absorb calcium and phosphate. It also supports normal immune function and contributes to muscle strength and general wellbeing. Low vitamin D levels are common in the UK and may contribute to tiredness, muscle weakness, bone pain and an increased risk of fractures. Measuring vitamin D helps identify deficiency and monitor response to supplementation.
+
+  </div>
+
+
+<!-- Vitamin B12- MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Vitamin B12</span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Vitamin B12 is essential for healthy red blood cell production, normal nerve function and DNA synthesis. Low vitamin B12 levels may lead to fatigue, weakness, poor concentration, memory problems, numbness or tingling in the hands and feet, and anaemia. Deficiency may develop due to poor dietary intake, reduced absorption, certain medications or autoimmune conditions such as pernicious anaemia.
+
+</div>
+
+  <!-- Folate - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Folate</span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+Folate is required for healthy red blood cell production, DNA synthesis and normal cell growth. It works closely with vitamin B12 and is particularly important during pregnancy to support normal fetal development. Low folate levels may contribute to fatigue, anemia and poor cell regeneration. Measuring folate alongside vitamin B12 helps investigate nutritional deficiencies and the causes of macrocytic anemia.
+
+
+  </div>
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Important Pre-Test Information</h2>
@@ -139,33 +191,44 @@
         </div>
     </footer>
 
+   
     <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-        
+        AOS.init({ duration: 800, once: true });
         feather.replace();
-        
+
         // Mobile menu functionality
         const menuBtn = document.getElementById('menu-btn');
         const closeMenu = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
         });
-        
+
         closeMenu.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
         });
-        
+
         // Close menu when clicking links
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Toggle FAQ function
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.toggle-icon');
+
+            content.classList.toggle('hidden');
+
+            if (icon.textContent === '+') {
+                icon.textContent = '−';
+            } else {
+                icon.textContent = '+';
+            }
+        }
     </script>
 </body>
 </html>
