@@ -68,7 +68,7 @@
     </div>
     <div class="pt-24 pb-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
         <div class="grid md:grid-cols-2 gap-12">
-            <div class="rounded-xl shadow-lg overflow-hidden" data-aos="fade-right">
+            <div class="rounded-xl shadow-lg overflow-hidden h-screen" data-aos="fade-right">
                 <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/Screenshot%202025-10-11%20at%2019.11.07.png" alt="Celiac Screen" class="w-full h-full object-cover">
             </div>
             
@@ -86,16 +86,58 @@
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Tests Included</h2>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Tissue Transglutaminase (tTG) IgA Antibody</li>
-                        <li>Total IgA (Immunoglobulin A) will automatically be added if tTG-IgA is low</li>
-                    </ul>
+                    
+                    <!-- Coeliac- MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+ Tissue Transglutaminase (tTG) IgA Antibody</span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+Tissue transglutaminase (tTG) is an enzyme found throughout the body, including in the lining of the small intestine. In people with coeliac disease, eating gluten (a protein found in wheat, barley, and rye) triggers an abnormal immune response. The immune system produces antibodies against tTG — specifically the IgA class of antibody — as part of this reaction, which in turn causes inflammation and damage to the small intestine's lining.
+
+  </div>
+  
+    <!-- Coeliac- MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+ Total IgA (Immunoglobulin A) will automatically be added if tTG-IgA is low</span>
+
+   <span class="flex items-center gap-2 text-sm text-blue-700">
+    
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+ <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+If someone with selective IgA deficiency has coeliac disease, their tTG-IgA result will come back low or negative — not because they don't have coeliac disease, but because they simply can't generate enough IgA antibodies to register a positive result. This creates a false-negative, potentially missing a genuine diagnosis.
+
+To guard against this, a Total IgA level is automatically checked whenever tTG-IgA is low
+
+  </div>
+ 
+                  
                 </div>
             
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Important Pre-Test Information</h2>
                     <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                        Gluten Consumption: It is essential to be consuming gluten daily (e.g., at least one meal containing wheat, barley, or rye) for at least 6 weeks prior to the blood test. Testing while on a gluten-free diet will lead to a falsely negative or inconclusive result.
+                        Gluten Consumption: It is essential to be consuming gluten daily (e.g. at least one meal containing wheat, barley, or rye) for at least 6 weeks prior to the blood test. Testing while on a gluten-free diet will lead to a falsely negative or inconclusive result.
+                        <br>
+                        This test screens for coeliac disease but a definitive diagnosis requires clinical correlation (and often biopsy), and that results should be discussed with a GP or gastroenterologist.
                     </ul>
                 </div>
                 
@@ -140,32 +182,42 @@
     </footer>
 
     <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-        
+        AOS.init({ duration: 800, once: true });
         feather.replace();
-        
+
         // Mobile menu functionality
         const menuBtn = document.getElementById('menu-btn');
         const closeMenu = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
         });
-        
+
         closeMenu.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
         });
-        
+
         // Close menu when clicking links
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Toggle FAQ function
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.toggle-icon');
+
+            content.classList.toggle('hidden');
+
+            if (icon.textContent === '+') {
+                icon.textContent = '−';
+            } else {
+                icon.textContent = '+';
+            }
+        }
     </script>
 </body>
 </html>
