@@ -68,7 +68,7 @@
     <div class="pt-24 pb-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[600px]">
         <div class="grid md:grid-cols-2 gap-12 md:h-full">
             
-            <div class="rounded-xl shadow-lg overflow-hidden md:h-full" data-aos="fade-right">
+            <div class="rounded-xl shadow-lg overflow-hidden h-screen" data-aos="fade-right">
                 <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/ChatGPT%20Image%20Oct%2011%2C%202025%2C%2005_11_47%20PM.png" alt="Heart Health Screen" class="w-full h-full object-cover">
             </div>
             
@@ -88,12 +88,258 @@
 
                 <div class="bg-white rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Key Tests Included</h2>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Lipid Profile (Total Cholesterol, HDL, Triglycerides)</li>
-                        <li>Diabetes Screen (HbA1c)</li>
-                        <li>Renal Function</li>
-                        <li>CRP</li>
-                    </ul>
+                    <!-- Cholesterol (Lipid Profile) - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Cholesterol (Lipid Profile)
+  </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+<!-- Cholesterol (Lipid Profile) - HIDDEN -->
+<div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
+
+  <!-- Total Cholesterol -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Total Cholesterol</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+Cholesterol is a fatty substance that your body needs to build healthy cells, produce hormones and make vitamin D. Although cholesterol is essential for good health, having too much cholesterol in your blood can increase your risk of heart disease and stroke. Measuring total cholesterol provides an overall assessment of your cholesterol level and is interpreted alongside HDL, LDL and triglycerides to give a more complete picture of your cardiovascular health.
+
+  </div>
+
+  <!-- HDL Cholesterol (High-Density Lipoprotein) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>HDL Cholesterol (High-Density Lipoprotein)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+Often referred to as "good cholesterol", HDL helps remove excess cholesterol from your bloodstream and transports it back to the liver, where it can be broken down and removed from the body. Higher HDL levels are generally associated with a lower risk of heart disease, making this an important marker of cardiovascular health. Maintaining healthy HDL levels is often supported by regular exercise, maintaining a healthy weight and avoiding smoking.
+
+  </div>
+
+  <!-- LDL Cholesterol (Low-Density Lipoprotein) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span> LDL Cholesterol (Low-Density Lipoprotein)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+ LDL is commonly known as "bad cholesterol" because high levels can lead to cholesterol building up within the walls of your arteries. Over time, this can narrow the arteries and increase the risk of heart attacks, strokes and other cardiovascular diseases. Monitoring LDL cholesterol is one of the most important ways of assessing long-term cardiovascular risk and is often used to guide lifestyle changes and cholesterol-lowering treatment where appropriate.
+
+  </div>
+
+ <!-- Non-HDL Cholesterol -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Non-HDL Cholesterol</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Non-HDL cholesterol measures all of the cholesterol that may contribute to the build-up of fatty deposits within your arteries. It includes LDL cholesterol as well as several other potentially harmful cholesterol particles. Many specialists consider non-HDL cholesterol to be one of the best indicators of cardiovascular risk, particularly in people with diabetes, obesity or raised triglyceride levels.
+
+  </div>
+  
+  <!-- Triglycerides -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Triglycerides</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Triglycerides are a type of fat found in your blood that your body uses as a source of energy. After eating, excess calories that are not immediately required are converted into triglycerides and stored in fat tissue. Persistently raised triglyceride levels may be associated with obesity, diabetes, excessive alcohol consumption, diets high in sugar and refined carbohydrates, and some inherited conditions. High triglyceride levels increase the risk of cardiovascular disease and, when very high, may also increase the risk of pancreatitis.
+
+  </div>
+ 
+ <!-- Total Cholesterol : HDL Ratio -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Total Cholesterol : HDL Ratio</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+The cholesterol-to-HDL ratio compares your total cholesterol with your HDL ("good") cholesterol. Rather than looking at individual cholesterol measurements alone, this ratio provides an overall assessment of cardiovascular risk by considering both protective and harmful cholesterol. In general, a lower ratio is associated with a lower risk of heart disease, while a higher ratio may indicate an increased cardiovascular risk.
+
+  </div>
+ 
+ 
+</div>
+<!-- KIDNEY FUNCTION - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Kidney Function
+  </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+<!-- Kidney Function Tests Content - HIDDEN -->
+<div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
+
+  <!-- Creatinine -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Creatinine</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Creatinine is a waste product produced naturally by your muscles as part of normal daily activity. Healthy kidneys remove creatinine from the blood and excrete it in urine, making it one of the most widely used markers of kidney function. Raised creatinine levels may indicate reduced kidney function, although levels can also be influenced by muscle mass, dehydration, certain medications and recent strenuous exercise. Measuring creatinine alongside eGFR provides a more complete assessment of kidney health.
+
+
+  </div>
+
+  <!-- Estimated Glomerular Filtration Rate (eGFR) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Estimated Glomerular Filtration Rate (eGFR)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+eGFR estimates how efficiently your kidneys filter waste products and excess fluid from your blood. It is calculated using your creatinine level together with factors such as your age and sex. eGFR is one of the most important indicators of kidney function and is commonly used to detect and monitor chronic kidney disease. A persistently reduced eGFR may suggest impaired kidney function and should always be interpreted alongside your clinical history and other blood test results.
+
+  </div>
+
+  <!--  Urea -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>   Urea</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+ 
+Urea is a waste product formed when your body breaks down protein. It is transported in the bloodstream and removed by the kidneys. Measuring urea helps assess kidney function, hydration status and protein metabolism. 
+
+  </div>
+
+ <!-- Sodium -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Sodium</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Sodium is an essential electrolyte that helps regulate fluid balance, blood pressure, nerve signalling and muscle function. Your kidneys and hormones work together to keep sodium levels within a narrow range. Abnormal sodium levels may occur with dehydration, kidney disease, heart failure, hormonal disorders or certain medications, and can affect normal brain and muscle function.
+
+  </div>
+  
+  <!-- Chloride -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Chloride</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+Chloride is an electrolyte that works alongside sodium and potassium to help maintain fluid balance, blood pressure and the body's acid-base balance. Abnormal chloride levels often occur alongside changes in other electrolytes and may be associated with dehydration, kidney disease, prolonged vomiting, diarrhoea or metabolic disorders.
+
+  </div>
+ 
+</div>
+ <!-- Diabetes- MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Diabetes Screen (HbA1c) </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+HbA1c (glycated haemoglobin) measures your average blood glucose level over approximately the previous 2 to 3 months by assessing how much glucose has attached to your red blood cells. Unlike a single glucose reading, HbA1c provides a long-term picture of blood sugar control and is regarded as the gold standard test for diagnosing and monitoring diabetes. Raised HbA1c levels may indicate pre-diabetes or diabetes and, if left untreated, are associated with an increased risk of complications including heart disease, kidney disease, nerve damage and diabetic eye disease. Monitoring HbA1c can also help assess how well diabetes treatment and lifestyle changes are working over time.
+
+
+  </div>
+  
+    <!-- CRP - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   High-Sensitivity C-Reactive Protein (hs-CRP)</span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+C-Reactive Protein (CRP) is produced by the liver in response to inflammation anywhere in the body. It is a sensitive marker that rises rapidly following infection, injury or inflammation but does not identify the specific cause. 
+This marker tests for ‘High-sensitivity CRP’ which measures very low levels of inflammation that may not be detected by a standard CRP test. It is commonly used to assess low-grade inflammation associated with cardiovascular disease. 
+
+  </div>
+
+
                 </div>
                 
                 <div class="bg-white rounded-xl shadow-md p-6 mb-8">
@@ -145,33 +391,43 @@
         </div>
     </footer>
 
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-        
+   <script>
+        AOS.init({ duration: 800, once: true });
         feather.replace();
-        
+
         // Mobile menu functionality
         const menuBtn = document.getElementById('menu-btn');
         const closeMenu = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
         });
-        
+
         closeMenu.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
         });
-        
+
         // Close menu when clicking links
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Toggle FAQ function
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.toggle-icon');
+
+            content.classList.toggle('hidden');
+
+            if (icon.textContent === '+') {
+                icon.textContent = '−';
+            } else {
+                icon.textContent = '+';
+            }
+        }
     </script>
 </body>
 </html>
