@@ -67,7 +67,7 @@
     </div>
     <div class="pt-24 pb-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
         <div class="grid md:grid-cols-2 gap-12">
-            <div class="rounded-xl shadow-lg overflow-hidden" data-aos="fade-right">
+            <div class="rounded-xl shadow-lg overflow-hidden h-screen" data-aos="fade-right">
                 <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/Screenshot%202025-10-17%20at%2022.43.27.png" alt="Thyroid Function Screen" class="w-full h-full object-cover">
             </div>
             
@@ -84,10 +84,38 @@
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Tests Included</h2>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Thyroid Stimulating Hormone (TSH)</li>
-                        <li>Free T4 </li>
-                    </ul>
+    
+  <!-- Thyroid Stimulating Hormone (TSH) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Thyroid Stimulating Hormone (TSH)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Thyroid Stimulating Hormone (TSH) is produced by the pituitary gland and controls how much thyroid hormone your thyroid gland produces. It is usually the earliest marker to become abnormal when thyroid function changes, making it one of the most sensitive tests for assessing thyroid health. Raised TSH levels commonly suggest an underactive thyroid (hypothyroidism), while low levels may indicate an overactive thyroid (hyperthyroidism). As thyroid hormones regulate metabolism, energy production and many bodily functions, thyroid disorders may contribute to symptoms including fatigue, weight changes, sensitivity to temperature, mood changes, dry skin and alterations in heart rate.
+
+  </div>
+
+  <!-- Free T4 (Thyroxine) -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Free T4 (Thyroxine)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Free T4 is one of the two main hormones produced by your thyroid gland and plays a central role in regulating metabolism, body temperature, energy production and growth. Measuring Free T4 alongside TSH helps determine whether your thyroid is functioning normally and assists in diagnosing both underactive and overactive thyroid conditions. Abnormal Free T4 levels should always be interpreted alongside TSH to provide the most accurate assessment of thyroid function.
+
+  </div>
+
+
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Important Pre-Test Information</h2>
@@ -138,33 +166,44 @@
         </div>
     </footer>
 
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-        
+   
+     <script>
+        AOS.init({ duration: 800, once: true });
         feather.replace();
-        
+
         // Mobile menu functionality
         const menuBtn = document.getElementById('menu-btn');
         const closeMenu = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
         });
-        
+
         closeMenu.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
         });
-        
+
         // Close menu when clicking links
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Toggle FAQ function
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.toggle-icon');
+
+            content.classList.toggle('hidden');
+
+            if (icon.textContent === '+') {
+                icon.textContent = '−';
+            } else {
+                icon.textContent = '+';
+            }
+        }
     </script>
 </body>
 </html>
