@@ -68,7 +68,7 @@
     </div>
     <div class="pt-24 pb-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
         <div class="grid md:grid-cols-2 gap-12">
-            <div class="rounded-xl shadow-lg overflow-hidden" data-aos="fade-right">
+            <div class="rounded-xl shadow-lg overflow-hidden h-screen" data-aos="fade-right">
                 <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/Screenshot%202025-10-11%20at%2019.08.11.png" alt="Prostate Cancer Marker" class="w-full h-full object-cover">
             </div>
             
@@ -83,10 +83,26 @@
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Tests Included</h2>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Prostate-Specific Antigen (PSA) - Total</li>
-                    </ul>
-                </div>
+                    
+ <!-- PSA -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Prostate Specific Antigen (PSA)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+Prostate Specific Antigen (PSA) is a protein produced by the prostate gland. Measuring PSA helps assess prostate health and may be used alongside clinical assessment when investigating symptoms such as urinary problems or monitoring prostate conditions. PSA levels can be raised by several non-cancerous conditions including an enlarged prostate, prostatitis, urinary tract infections, recent ejaculation or cycling, as well as prostate cancer. An abnormal PSA result does not diagnose prostate cancer but indicates that further assessment may be appropriate.
+
+  </div>
+ 
+ 
+</div>
+                
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Important Pre-Test Information</h2>
                     <ul class="list-disc pl-5 text-gray-700 space-y-2">
@@ -138,33 +154,44 @@
         </div>
     </footer>
 
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-        
+   
+     <script>
+        AOS.init({ duration: 800, once: true });
         feather.replace();
-        
+
         // Mobile menu functionality
         const menuBtn = document.getElementById('menu-btn');
         const closeMenu = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
         });
-        
+
         closeMenu.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
         });
-        
+
         // Close menu when clicking links
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Toggle FAQ function
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.toggle-icon');
+
+            content.classList.toggle('hidden');
+
+            if (icon.textContent === '+') {
+                icon.textContent = '−';
+            } else {
+                icon.textContent = '+';
+            }
+        }
     </script>
 </body>
 </html>
