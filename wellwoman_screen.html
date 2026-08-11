@@ -72,7 +72,7 @@
     <div class="pt-24 pb-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
         <div class="grid md:grid-cols-2 gap-12">
             <!-- Panel Image -->
-            <div class="rounded-xl shadow-lg overflow-hidden" data-aos="fade-right">
+            <div class="rounded-xl shadow-lg overflow-hidden h-screen" data-aos="fade-right">
                 <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/155514510_3027777007504511_2600608296980395390_n.jpg" 
                 alt="Wellwoman Screen" class="w-full h-full object-cover">
             </div>
@@ -96,15 +96,133 @@
                 </div>
 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Key Tests Included</h2>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>FSH (Follicle Stimulating Hormone)</li>
-                        <li>LH (Luteinizing Hormone)</li>
-                        <li>Oestradiol</li>
-                        <li>Testosterone</li>
-                        <li>Free Androgen Index (FAI)</li>
-                        <li>Sex hormone-binding globulin (SHBG) </li>
-                    </ul>
+
+  <!-- Follicle Stimulating Hormone (FSH) - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+    Follicle Stimulating Hormone (FSH) </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+FSH stimulates the growth and development of ovarian follicles that contain eggs. Measuring FSH helps assess ovarian reserve, fertility and menopausal status. Raised FSH levels are commonly seen as women approach the menopause or when ovarian function declines.
+
+  </div>   
+  
+   <!-- Luteinising Hormone (LH) - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+    Luteinising Hormone (LH) </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+LH is responsible for triggering ovulation during the menstrual cycle and plays a central role in female fertility. Measuring LH can help investigate irregular periods, fertility concerns, polycystic ovary syndrome (PCOS) and menopausal status. LH is usually interpreted alongside FSH and oestradiol.
+
+  </div>
+  
+
+<!-- Sex Hormone Binding Globulin (SHBG) - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+    Sex Hormone Binding Globulin (SHBG) </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+
+SHBG regulates the amount of testosterone and oestrogen available to the body's tissues. Changes in SHBG levels can significantly influence hormone balance and may occur with obesity, thyroid disease, liver disease, insulin resistance or certain medications. Measuring SHBG helps improve interpretation of testosterone results.
+
+  </div>
+
+  
+   <!-- Oestradiol (Estradiol) - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Oestradiol (Estradiol) </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Oestradiol is the main form of oestrogen and plays an essential role in regulating the menstrual cycle, fertility, bone strength and reproductive health. Levels naturally fluctuate throughout the menstrual cycle and decline after the menopause. Measuring oestradiol can help assess ovarian function, fertility, menopausal status and certain hormonal disorders. Results should always be interpreted in relation to the stage of the menstrual cycle.
+
+  </div>
+  
+  
+   <!-- Free Androgen Index (FAI) - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Free Androgen Index (FAI) </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+The Free Androgen Index is a calculated value that estimates how much testosterone is biologically available by comparing total testosterone with SHBG. It provides additional information about androgen status and may help explain symptoms when total testosterone alone does not reflect how much hormone is available to the body's tissues.
+
+  </div>
+ 
+ <!-- Testosterone - MAIN DROPDOWN -->
+<button onclick="toggleFAQ(this)"
+  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+
+  <span class="font-semibold text-blue-700">
+   Testosterone </span>
+
+  <span class="flex items-center gap-2 text-sm text-blue-700">
+    <span>Learn More</span>
+    <span class="toggle-icon text-lg">+</span>
+  </span>
+
+</button>
+
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Although women produce much lower levels of testosterone than men, it remains important for maintaining muscle strength, bone health, energy levels and libido. Abnormal testosterone levels may be associated with conditions such as polycystic ovary syndrome (PCOS), adrenal disorders or reduced ovarian function.
+  </div>
+
                 </div>
+               
+         
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Pre-Test Instructions</h2>
                     <ul class="list-disc pl-5 text-gray-700 space-y-2">
@@ -156,33 +274,44 @@
         </div>
     </footer>
 
+   
     <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-        
+        AOS.init({ duration: 800, once: true });
         feather.replace();
-        
+
         // Mobile menu functionality
         const menuBtn = document.getElementById('menu-btn');
         const closeMenu = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
         });
-        
+
         closeMenu.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
         });
-        
+
         // Close menu when clicking links
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Toggle FAQ function
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.toggle-icon');
+
+            content.classList.toggle('hidden');
+
+            if (icon.textContent === '+') {
+                icon.textContent = '−';
+            } else {
+                icon.textContent = '+';
+            }
+        }
     </script>
 </body>
 </html>
