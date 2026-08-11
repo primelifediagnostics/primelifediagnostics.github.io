@@ -68,7 +68,7 @@
     </div>
     <div class="pt-24 pb-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
         <div class="grid md:grid-cols-2 gap-12">
-            <div class="rounded-xl shadow-lg overflow-hidden" data-aos="fade-right">
+            <div class="rounded-xl shadow-lg overflow-hidden h-screen" data-aos="fade-right">
                 <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/Screenshot%202025-10-11%20at%2019.14.01.png" alt="Ovarian Cancer Marker" class="w-full h-full object-cover">
             </div>
             
@@ -83,9 +83,23 @@
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Tests Included</h2>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>Cancer Antigen 125 (CA-125)</li>
-                    </ul>
+                    
+                    <!-- CA125 -->
+  <button onclick="toggleFAQ(this)"
+    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+
+    <span>Ovarian Cancer Marker (CA-125)</span>
+
+    <span class="toggle-icon ml-2">+</span>
+
+  </button>
+
+  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+CA125 is a protein that may be measured when assessing ovarian health. Raised CA125 levels can occur in ovarian cancer but are also commonly seen in many non-cancerous conditions including endometriosis, ovarian cysts, fibroids, pelvic inflammatory disease, menstruation and pregnancy. For this reason, CA125 is not used as a screening test for ovarian cancer in people without symptoms but may form part of a wider clinical assessment.
+
+
+  </div>
+
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
                     <h2 class="text-xl font-semibold mb-4 text-blue-600">Important Pre-Test Information</h2>
@@ -138,33 +152,44 @@ This test may be appropriate for women with persistent symptoms such as ongoing 
         </div>
     </footer>
 
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-        
+  
+     <script>
+        AOS.init({ duration: 800, once: true });
         feather.replace();
-        
+
         // Mobile menu functionality
         const menuBtn = document.getElementById('menu-btn');
         const closeMenu = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
         });
-        
+
         closeMenu.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
         });
-        
+
         // Close menu when clicking links
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Toggle FAQ function
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.toggle-icon');
+
+            content.classList.toggle('hidden');
+
+            if (icon.textContent === '+') {
+                icon.textContent = '−';
+            } else {
+                icon.textContent = '+';
+            }
+        }
     </script>
-</body>
+    </body>
 </html>
