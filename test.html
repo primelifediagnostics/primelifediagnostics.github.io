@@ -1,244 +1,523 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
-<meta name="description" content="Prime Life Diagnostics - Private blood testing in Doncaster & South Yorkshire. CQC regulated, DOCTOR LED results, nationwide home blood collection service. Book blood tests online.">
-<meta name="keywords" content="blood tests, private blood testing, Doncaster, blood test panels, home blood collection, thyroid, diabetes, hormone, testosterone, gym, enhanced bloods, Private Blood Tests Doncaster, blood Tests Doncaster, Blood Testing Clinic Doncaster, Private Blood Testing South Yorkshire, Blood Tests Bawtry, Blood Tests Retford, Blood Tests Worksop, Blood Tests Rotherham, Blood Tests Sheffield, Blood Tests Barnsley, Blood Tests Scunthorpe, Blood Tests Gainsborough, Blood Tests Yorkshire, CQC registered, CQC, health, healthy, phlebotomy, medichecks, goodboy, randox">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Prime Life Diagnostics - Blood Tests Made Simple">
-<meta property="og:description" content="CQC regulated private blood testing with nationwide home visits. Doctor-led results, fast turnaround times.">
-<meta property="og:image" content="https://primelifediagnostics.co.uk/og-image.jpg">
-<meta property="og:url" content="https://primelifediagnostics.co.uk">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prime Life Diagnostics - Health Made Simple</title>
+
+    <title>Prime Life Diagnostics | Private Blood Tests & Health Checks</title>
+
+    <meta name="description"
+        content="Private blood testing and health checks from Prime Life Diagnostics. Doctor-reviewed results, in-clinic appointments and nationwide home blood collection.">
+
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Prime Life Diagnostics | Private Blood Tests">
+    <meta property="og:description"
+        content="Private blood testing, health checks and nationwide home blood collection. Doctor-reviewed results.">
+    <meta property="og:image" content="https://primelifediagnostics.co.uk/og-image.jpg">
+    <meta property="og:url" content="https://primelifediagnostics.co.uk">
+
+    <link rel="canonical" href="https://primelifediagnostics.co.uk/">
+
     <link rel="icon" type="image/png" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Feather Icons -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Google Analytics / Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JRCSHS3V6T"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-JRCSHS3V6T');
+        gtag('config', 'AW-18295000895');
+    </script>
+
+
+    <!-- Medical Business Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "name": "Prime Life Diagnostics",
+        "image": "https://primelifediagnostics.co.uk/Prime Life Diagnostics1-01.png",
+        "description": "Private blood testing and laboratory services.",
+        "url": "https://primelifediagnostics.co.uk",
+        "telephone": "01302 203565",
+        "email": "info@primelifediagnostics.co.uk",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "105 Scrooby Road, Bircotes",
+            "addressLocality": "Doncaster",
+            "postalCode": "DN11 8JN",
+            "addressCountry": "GB"
+        },
+        "priceRange": "£49-£199",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "17:00"
+        }
+    }
+    </script>
+
+
     <style>
 
-        .hero-gradient {
-    background: linear-gradient(135deg, #87CEEB 0%, #4A90E2 100%);
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.test-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0,0,0,.1),0 10px 10px -5px rgba(0,0,0,.04);
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+            background: #ffffff;
+        }
 
-.gradient-text {
-    background: linear-gradient(135deg,#87CEEB 0%, #4A90E2 100%);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    background-clip:text;
-}
+        /* ------------------------------
+           PROMO BAR
+        ------------------------------ */
 
-/* ==========================
-   PROMOTIONAL BANNER
-========================== */
+        .promo-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            background: #102a43;
+            color: white;
+            text-align: center;
+            padding: 9px 15px;
+            font-size: 13px;
+            letter-spacing: .2px;
+        }
 
-.promo-banner{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    background:linear-gradient(90deg,#4A90E2,#357ABD);
-    color:#fff;
-    text-align:center;
-    padding:10px 15px;
-    font-size:15px;
-    font-weight:600;
-    z-index:9999;
-    box-shadow:0 2px 8px rgba(0,0,0,.15);
-}
+        .promo-code {
+            background: white;
+            color: #102a43;
+            padding: 3px 9px;
+            border-radius: 4px;
+            font-weight: 700;
+            margin-left: 5px;
+        }
 
-.promo-banner .code{
-    display:inline-block;
-    background:#fff;
-    color:#000000;
-    padding:3px 10px;
-    border-radius:6px;
-    font-weight:700;
-    margin-left:6px;
-}
 
-@media (max-width:768px){
+        /* ------------------------------
+           NAVIGATION
+        ------------------------------ */
 
-    .promo-banner{
-        font-size:13px;
-        line-height:1.4;
-        padding:8px 10px;
-    }
+        .main-nav {
+            position: fixed;
+            top: 38px;
+            left: 0;
+            width: 100%;
+            z-index: 9998;
+            background: rgba(255,255,255,.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #edf1f5;
+        }
 
-}
+
+        /* ------------------------------
+           HERO
+        ------------------------------ */
+
+        .hero {
+            min-height: 720px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                90deg,
+                rgba(7,24,40,.88) 0%,
+                rgba(7,24,40,.65) 48%,
+                rgba(7,24,40,.20) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* ------------------------------
+           BUTTONS
+        ------------------------------ */
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #1769aa;
+            color: white;
+            padding: 15px 27px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all .25s ease;
+        }
+
+        .btn-primary:hover {
+            background: #12568d;
+            transform: translateY(-1px);
+        }
+
+        .btn-white {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            color: #12304a;
+            padding: 15px 27px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all .25s ease;
+        }
+
+        .btn-white:hover {
+            background: #f2f5f8;
+            transform: translateY(-1px);
+        }
+
+
+        /* ------------------------------
+           SECTION
+        ------------------------------ */
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-light {
+            background: #f7f9fb;
+        }
+
+        .section-title {
+            font-size: 38px;
+            line-height: 1.15;
+            font-weight: 600;
+            color: #102a43;
+        }
+
+        .section-subtitle {
+            color: #64748b;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+
+        /* ------------------------------
+           TEST CARDS
+        ------------------------------ */
+
+        .health-card {
+            background: white;
+            border: 1px solid #e7edf2;
+            padding: 30px;
+            border-radius: 8px;
+            transition: all .25s ease;
+            height: 100%;
+        }
+
+        .health-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 40px rgba(16,42,67,.10);
+            border-color: #d5e1ea;
+        }
+
+        .health-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #eaf3f9;
+            color: #1769aa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+
+        /* ------------------------------
+           STEPS
+        ------------------------------ */
+
+        .step-number {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #102a43;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+
+        /* ------------------------------
+           TRUST
+        ------------------------------ */
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #425466;
+            font-size: 15px;
+        }
+
+        .trust-item i {
+            color: #1769aa;
+        }
+
+
+        /* ------------------------------
+           FAQ
+        ------------------------------ */
+
+        .faq-item {
+            border-bottom: 1px solid #e5eaf0;
+        }
+
+        .faq-button {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 0;
+            text-align: left;
+            font-weight: 600;
+            color: #102a43;
+        }
+
+
+        /* ------------------------------
+           MOBILE
+        ------------------------------ */
+
+        @media (max-width: 768px) {
+
+            .promo-banner {
+                font-size: 12px;
+                padding: 8px 8px;
+            }
+
+            .main-nav {
+                top: 35px;
+            }
+
+            .hero {
+                min-height: 680px;
+            }
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .section-title {
+                font-size: 31px;
+            }
+
+        }
+
     </style>
 
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  "name": "Prime Life Diagnostics",
-  "image": "Prime Life Diagnostics1-01.png",
-  "description": "CQC regulated private blood testing and laboratory services",
-  "url": "https://primelifediagnostics.co.uk",
-  "telephone": "01302 203565",
-  "email": "info@primelifediagnostics.co.uk",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "105 Scrooby Road, Bircotes",
-    "addressLocality": "Doncaster",
-    "postalCode": "DN11 8JN",
-    "addressCountry": "GB"
-  },
-  "priceRange": "£49-£199",
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    "opens": "09:00",
-    "closes": "17:00"
-  },
-  "sameAs": [
-    "https://www.facebook.com/profile.php?id=61581186570303",
-    "https://www.instagram.com/prime.life.diagnostics/",
-    "https://www.tiktok.com/@prime.life.diagnostics"
-  ]
-}
-</script>
-<link rel="canonical" href="https://primelifediagnostics.co.uk/">
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JRCSHS3V6T"></script>
-
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-
-  gtag('js', new Date());
-
-  // Google Analytics
-  gtag('config', 'G-JRCSHS3V6T');
-
-  // Google Ads
-  gtag('config', 'AW-18295000895');
-</script>
 </head>
-<body class="font-sans antialiased text-gray-800 bg-white">
+
+
+<body>
+
+
+<!-- ============================================================
+     PROMOTIONAL BAR
+============================================================ -->
 
 <div class="promo-banner">
-    <strong>LIMITED TIME OFFER</strong> •
-    GET <strong>10% OFF ALL IN-CLINIC BLOOD TESTS</strong>
-    • Use Code
-    <span class="code">PRIME10</span>
-</div>
-    <!-- Navigation -->
-  <nav class="bg-white shadow-lg fixed w-full z-50" style="top:42px;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
-                <div class="flex items-center">
-                    <div class="flex items-center">
-                         <a href="index.html" class="text-2xl font-light tracking-tighter hover:opacity-80 transition-opacity duration-200">
-                        <img src="Prime Life Diagnostics1-01.png" alt="Prime Life Diagnostics Blood Test Sample - Healthcare Professional Collection" loading="lazy" class="h-20 mr-4">
-                         </a>
-                         <a href="index.html" class="text-2xl font-light tracking-tighter hover:opacity-80 transition-opacity duration-200">
-    <span class="text-[#1a237e]">Prime</span>
-    <span class="text-[#2196f3]"> Life</span>
-    <span class="text-[#757575]"> Diagnostics</span>
-  </a>
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
-                    <a href="bloodtestspanels.html" class="text-gray-600 hover:text-blue-600 transition-colors">Blood Tests</a>
-                    <a href="ourmission.html" class="text-gray-600 hover:text--blue-600 transition-colors">Our Mission</a>
-                    <a href="location.html" class="text-gray-600 hover:text-blue-600 transition-colors">Find Us</a>
-                    <a href="chooseus.html" class="text-gray-600 hover:text-blue-600 transition-colors">Why Us</a>
-                    <a href="FAQs.html" class="text-gray-600 hover:text-blue-600 transition-colors">FAQs</a>
-                    <a href="appointment.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Book Appointment</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-600">
-                        <i data-feather="menu"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-   <!-- Mobile Menu -->
-   
-   <!-- Mobile Menu Button -->
-<div class="md:hidden fixed bottom-6 right-6 z-50">
+    <strong>10% OFF IN-CLINIC BLOOD TESTS</strong>
+
+    <span class="hidden sm:inline"> · Use code</span>
+
+    <span class="promo-code">PRIME10</span>
+
+</div>
+
+
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+
+<nav class="main-nav">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div class="flex items-center justify-between h-20">
+
+            <!-- Logo -->
+
+            <a href="index.html" class="flex items-center">
+
+                <img
+                    src="Prime Life Diagnostics1-01.png"
+                    alt="Prime Life Diagnostics"
+                    class="h-14 md:h-16 w-auto"
+                >
+
+            </a>
+
+
+            <!-- Desktop navigation -->
+
+            <div class="hidden lg:flex items-center gap-7">
+
+                <a href="bloodtestspanels.html"
+                   class="text-sm text-gray-600 hover:text-blue-700">
+                    Blood Tests
+                </a>
+
+                <a href="panels.html"
+                   class="text-sm text-gray-600 hover:text-blue-700">
+                    Health Checks
+                </a>
+
+                <a href="#how-it-works"
+                   class="text-sm text-gray-600 hover:text-blue-700">
+                    How It Works
+                </a>
+
+                <a href="chooseus.html"
+                   class="text-sm text-gray-600 hover:text-blue-700">
+                    Why Us
+                </a>
+
+                <a href="ourmission.html"
+                   class="text-sm text-gray-600 hover:text-blue-700">
+                    About
+                </a>
+
+                <a href="FAQs.html"
+                   class="text-sm text-gray-600 hover:text-blue-700">
+                    FAQs
+                </a>
+
+                <a href="appointment.html"
+                   class="btn-primary text-sm px-5 py-3">
+                    Book Now
+                </a>
+
+            </div>
+
+
+            <!-- Mobile button -->
+
+            <button
+                id="menu-btn"
+                class="lg:hidden text-gray-700"
+                aria-label="Open menu">
+
+                <i data-feather="menu"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ============================================================
+     MOBILE MENU
+============================================================ -->
+
+<div
+    id="mobile-menu"
+    class="hidden fixed inset-0 z-[10000] bg-white">
 
     <button
-        id="mobile-menu-toggle"
-        type="button"
-        aria-label="Open mobile menu"
-        aria-expanded="false"
-        class="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-all">
+        id="close-menu"
+        class="absolute top-6 right-6 text-gray-700"
+        aria-label="Close menu">
 
-        <i data-feather="menu" class="w-6 h-6"></i>
+        <i data-feather="x"></i>
 
     </button>
 
-</div>
+    <div class="flex flex-col items-center justify-center h-full gap-8">
 
-
-<!-- Mobile Menu -->
-<div
-    id="mobile-menu"
-    class="fixed left-0 top-0 h-full w-72 bg-white shadow-xl z-40 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
-    style="padding-top: 100px;">
-
-    <div class="flex flex-col space-y-4 p-6">
-
-        <a
-            href="index.html"
-            class="text-lg text-gray-600 hover:text-blue-600 font-semibold transition-colors">
-            Home
-        </a>
-
-        <a
-            href="bloodtestspanels.html"
-            class="text-lg text-gray-600 hover:text-blue-600 font-semibold transition-colors">
+        <a href="bloodtestspanels.html"
+           class="text-xl text-gray-700">
             Blood Tests
         </a>
 
-        <a
-            href="ourmission.html"
-            class="text-lg text-gray-600 hover:text-blue-600 font-semibold transition-colors">
-            Our Mission
+        <a href="panels.html"
+           class="text-xl text-gray-700">
+            Health Checks
         </a>
 
-        <a
-            href="location.html"
-            class="text-lg text-gray-600 hover:text-blue-600 font-semibold transition-colors">
-            Find Us
+        <a href="#how-it-works"
+           class="text-xl text-gray-700">
+            How It Works
         </a>
 
-        <a
-            href="chooseus.html"
-            class="text-lg text-gray-600 hover:text-blue-600 font-semibold transition-colors">
+        <a href="chooseus.html"
+           class="text-xl text-gray-700">
             Why Us
         </a>
 
-        <a
-            href="FAQs.html"
-            class="text-lg text-gray-600 hover:text-blue-600 font-semibold transition-colors">
+        <a href="ourmission.html"
+           class="text-xl text-gray-700">
+            About
+        </a>
+
+        <a href="FAQs.html"
+           class="text-xl text-gray-700">
             FAQs
         </a>
 
-        <hr class="my-4">
-
-        <a
-            href="appointment.html"
-            class="text-lg bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 font-semibold text-center transition-colors">
+        <a href="appointment.html"
+           class="btn-primary">
             Book Appointment
         </a>
 
@@ -247,574 +526,1639 @@
 </div>
 
 
-<!-- Dark Overlay -->
-<div
-    id="mobile-menu-overlay"
-    class="hidden fixed inset-0 bg-black/50 z-30 md:hidden">
-</div>
-<!-- Mobile Menu Toggle Button -->
-<div class="md:hidden fixed bottom-6 right-6 z-50">
-    <button id="mobile-menu-toggle" class="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-all">
-        <i data-feather="menu" class="w-6 h-6"></i>
-    </button>
-</div>
 
-<!-- Mobile Menu Sidebar -->
-<div id="mobile-menu" class="hidden fixed left-0 top-0 h-full w-64 bg-white shadow-xl z-40 transform -translate-x-full transition-transform duration-300 md:hidden" style="padding-top: 100px;">
-    <div class="flex flex-col space-y-4 p-6">
-        <a href="bloodtestspanels.html" class="text-lg text-gray-600 hover:text-blue-600 font-semibold">Blood Tests</a>
-        <a href="ourmission.html" class="text-lg text-gray-600 hover:text-blue-600 font-semibold">Our Mission</a>
-        <a href="location.html" class="text-lg text-gray-600 hover:text-blue-600 font-semibold">Find Us</a>
-        <a href="chooseus.html" class="text-lg text-gray-600 hover:text-blue-600 font-semibold">Why Us</a>
-        <a href="FAQs.html" class="text-lg text-gray-600 hover:text-blue-600 font-semibold">FAQs</a>
-        <hr class="my-4">
-        <a href="appointment.html" class="text-lg bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 font-semibold text-center">Book Appointment</a>
-    </div>
-</div>
+<!-- ============================================================
+     HERO
+============================================================ -->
 
-<!-- Mobile Menu Overlay -->
-<div id="mobile-menu-overlay" class="hidden fixed inset-0 bg-black opacity-50 z-30 md:hidden"></div>
-    <!-- Hero Section -->
-   <section class="hero-gradient text-white pt-32 pb-20 relative overflow-hidden">
-    <div class="absolute inset-0 w-full h-full">
-        <video autoplay muted loop playsinline class="w-full h-full object-cover">
-            <source src="https://primelifediagnostics.co.uk/Website.video.prime.life.diagnostics.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+<section class="hero">
 
-    <!-- Dark overlay (optional - makes text more readable) -->
-    <div class="absolute inset-0 bg-black opacity-25"></div>
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="hero-video">
 
-    <!-- Text content on top -->
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        <div data-aos="fade-up">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Your Blood Tests. Simplified.</h1>
-            <p class="text-xl mb-8 opacity-90">Health. Made. Simple</p>
-            <p class="text-lg mb-8 max-w-2xl">Blood tests offer a quick and easy window into your health. They're fundamental for early detection, condition monitoring, and achieving peak well-being.</p>
-            <a href="booking.html" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center">
-                Book Your FREE Health Consultation
-                <i data-feather="arrow-right" class="ml-2"></i>
-            </a>
-        </div>
-    </div>
-</section>
-    <!-- Free Health Check -->
-    <section class="bg-blue-50 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-             <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-8 gradient-text">
-                    Virtual FREE Health Consultation
-                </h2>
+        <source
+            src="https://primelifediagnostics.co.uk/Website.video.prime.life.diagnostics.mp4"
+            type="video/mp4">
 
-                <p class="text-lg text-gray-600 mb-8">
-                    Book your FREE health assessment carried out by our healthcare professionals, to discuss which blood tests are most suitable for you
+    </video>
+
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content w-full">
+
+        <div class="max-w-7xl mx-auto px-5">
+
+            <div
+                class="max-w-2xl text-white"
+                data-aos="fade-up">
+
+                <p class="uppercase tracking-[3px] text-sm font-semibold mb-5 opacity-90">
+                    Private Blood Testing
                 </p>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-                    
-                    <div class="bg-blue-100 rounded-xl p-6">
-                        <i data-feather="users" class="w-10 h-10 text-blue-600 mx-auto mb-3"></i>
-                        <h3 class="font-semibold text-lg">Healthcare Consultation</h3>
-                        <p class="text-gray-600 text-sm">FREE</p>
-                    </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-7">
 
-                    <div class="bg-blue-100 rounded-xl p-6">
-                        <i data-feather="heart" class="w-10 h-10 text-blue-600 mx-auto mb-3"></i>
-                        <h3 class="font-semibold text-lg">Blood Pressure</h3>
-                        <p class="text-gray-600 text-sm">FREE*</p>
-                    </div>
+                    Your health.
+                    <br>
 
-                    <div class="bg-blue-100 rounded-xl p-6">
-                        <i data-feather="activity" class="w-10 h-10 text-blue-600 mx-auto mb-3"></i>
-                        <h3 class="font-semibold text-lg">BMI Check</h3>
-                        <p class="text-gray-600 text-sm">FREE*</p>
-                    </div>
+                    Your results.
+                    <br>
 
-                    <div class="bg-blue-100 rounded-xl p-6">
-                        <i data-feather="bar-chart-2" class="w-10 h-10 text-blue-600 mx-auto mb-3"></i>
-                        <h3 class="font-semibold text-lg">Body Fat %</h3>
-                        <p class="text-gray-600 text-sm">FREE*</p>
-                    </div>
+                    <span class="text-blue-200">
+                        Your next step.
+                    </span>
+
+                </h1>
+
+                <p class="text-xl md:text-2xl leading-relaxed text-white/90 mb-8 max-w-xl">
+
+                    Private blood testing and health checks,
+                    with results reviewed by doctors.
+
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+
+                    <a href="appointment.html"
+                       class="btn-white">
+
+                        Book a Blood Test
+
+                        <i data-feather="arrow-right"
+                           class="ml-3 w-5">
+                        </i>
+
+                    </a>
+
+                    <a href="bloodtestspanels.html"
+                       class="border border-white/70 text-white px-7 py-4 rounded-md font-semibold hover:bg-white/10 transition">
+
+                        Explore Health Checks
+
+                    </a>
+
                 </div>
 
-                <a href="appointment.html"
-                   class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition duration-300">
-                    Book Your Appointment
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     TRUST STRIP
+============================================================ -->
+
+<section class="border-b border-gray-100 bg-white">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 py-7">
+
+            <div class="trust-item">
+
+                <i data-feather="check-circle"></i>
+
+                <span>
+                    Doctor reviewed
+                </span>
+
+            </div>
+
+            <div class="trust-item">
+
+                <i data-feather="user-check"></i>
+
+                <span>
+                    No GP referral
+                </span>
+
+            </div>
+
+            <div class="trust-item">
+
+                <i data-feather="home"></i>
+
+                <span>
+                    Home collection
+                </span>
+
+            </div>
+
+            <div class="trust-item">
+
+                <i data-feather="shield"></i>
+
+                <span>
+                    CQC regulated
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FIND THE RIGHT TEST
+============================================================ -->
+
+<section class="section section-light">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div
+            class="max-w-2xl mb-14"
+            data-aos="fade-up">
+
+            <p class="text-blue-700 font-semibold uppercase tracking-wider text-sm mb-3">
+                Find the right test
+            </p>
+
+            <h2 class="section-title mb-5">
+                Take a closer look at your health
+            </h2>
+
+            <p class="section-subtitle">
+
+                From everyday health checks to targeted testing,
+                choose the blood test that's right for you.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+
+            <!-- Men's Health -->
+
+            <a href="bloodtestspanels.html"
+               class="health-card"
+               data-aos="fade-up">
+
+                <div class="health-icon">
+                    <i data-feather="activity"></i>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                    Men's Health
+                </h3>
+
+                <p class="text-gray-600 leading-relaxed mb-5">
+                    Explore testosterone, hormones, cholesterol,
+                    vitamins and other key health markers.
+                </p>
+
+                <span class="text-blue-700 font-semibold">
+                    Explore tests →
+                </span>
+
+            </a>
+
+
+            <!-- Women's Health -->
+
+            <a href="bloodtestspanels.html"
+               class="health-card"
+               data-aos="fade-up">
+
+                <div class="health-icon">
+                    <i data-feather="heart"></i>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                    Women's Health
+                </h3>
+
+                <p class="text-gray-600 leading-relaxed mb-5">
+                    Hormones, thyroid, vitamins, iron and other
+                    markers relevant to women's health.
+                </p>
+
+                <span class="text-blue-700 font-semibold">
+                    Explore tests →
+                </span>
+
+            </a>
+
+
+            <!-- Weight -->
+
+            <a href="bloodtestspanels.html"
+               class="health-card"
+               data-aos="fade-up">
+
+                <div class="health-icon">
+                    <i data-feather="trending-down"></i>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                    Weight & Metabolic Health
+                </h3>
+
+                <p class="text-gray-600 leading-relaxed mb-5">
+                    Understand key biomarkers associated with
+                    metabolic health and weight management.
+                </p>
+
+                <span class="text-blue-700 font-semibold">
+                    Explore tests →
+                </span>
+
+            </a>
+
+
+            <!-- Fatigue -->
+
+            <a href="bloodtestspanels.html"
+               class="health-card"
+               data-aos="fade-up">
+
+                <div class="health-icon">
+                    <i data-feather="battery"></i>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                    Fatigue
+                </h3>
+
+                <p class="text-gray-600 leading-relaxed mb-5">
+                    Check important markers including thyroid,
+                    iron, vitamin B12 and vitamin D.
+                </p>
+
+                <span class="text-blue-700 font-semibold">
+                    Explore tests →
+                </span>
+
+            </a>
+
+
+            <!-- Vitamins -->
+
+            <a href="bloodtestspanels.html"
+               class="health-card"
+               data-aos="fade-up">
+
+                <div class="health-icon">
+                    <i data-feather="sun"></i>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                    Vitamins & Minerals
+                </h3>
+
+                <p class="text-gray-600 leading-relaxed mb-5">
+                    Assess selected vitamins and mineral-related
+                    biomarkers through private testing.
+                </p>
+
+                <span class="text-blue-700 font-semibold">
+                    Explore tests →
+                </span>
+
+            </a>
+
+
+            <!-- Hormones -->
+
+            <a href="bloodtestspanels.html"
+               class="health-card"
+               data-aos="fade-up">
+
+                <div class="health-icon">
+                    <i data-feather="zap"></i>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                    Hormones
+                </h3>
+
+                <p class="text-gray-600 leading-relaxed mb-5">
+                    Explore targeted hormone testing including
+                    testosterone and other reproductive hormones.
+                </p>
+
+                <span class="text-blue-700 font-semibold">
+                    Explore tests →
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     HOW IT WORKS
+============================================================ -->
+
+<section
+    id="how-it-works"
+    class="section bg-white">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div
+            class="text-center max-w-2xl mx-auto mb-16"
+            data-aos="fade-up">
+
+            <p class="text-blue-700 font-semibold uppercase tracking-wider text-sm mb-3">
+                How it works
+            </p>
+
+            <h2 class="section-title mb-5">
+                Healthcare made simple
+            </h2>
+
+            <p class="section-subtitle">
+                From choosing your test to understanding your results,
+                we've designed the process to be straightforward.
+            </p>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-3 gap-12">
+
+
+            <div data-aos="fade-up">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3 class="text-xl font-semibold mb-3">
+                    Choose your test
+                </h3>
+
+                <p class="text-gray-600 leading-relaxed">
+                    Browse our individual blood tests and health
+                    check packages to find what's right for you.
+                </p>
+
+            </div>
+
+
+            <div data-aos="fade-up">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3 class="text-xl font-semibold mb-3">
+                    Get tested
+                </h3>
+
+                <p class="text-gray-600 leading-relaxed">
+                    Visit our clinic or arrange a nationwide
+                    home blood collection appointment.
+                </p>
+
+            </div>
+
+
+            <div data-aos="fade-up">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3 class="text-xl font-semibold mb-3">
+                    Understand your results
+                </h3>
+
+                <p class="text-gray-600 leading-relaxed">
+                    Your results are reviewed by doctors, helping
+                    you understand what your blood tests show.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     POPULAR HEALTH CHECKS
+============================================================ -->
+
+<section class="section section-light">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+
+            <div>
+
+                <p class="text-blue-700 font-semibold uppercase tracking-wider text-sm mb-3">
+                    Popular health checks
+                </p>
+
+                <h2 class="section-title">
+                    Start with a comprehensive check
+                </h2>
+
+            </div>
+
+            <a href="panels.html"
+               class="text-blue-700 font-semibold">
+                View all health checks →
+            </a>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+
+            <!-- Male -->
+
+            <div class="bg-white p-7 border border-gray-200 rounded-lg">
+
+                <p class="text-sm text-gray-500 mb-3">
+                    Men's Health
+                </p>
+
+                <h3 class="text-xl font-semibold mb-4">
+                    Comprehensive Male
+                </h3>
+
+                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                    A broad health assessment including
+                    key male health and hormone markers.
+                </p>
+
+                <div class="flex items-center justify-between">
+
+                    <span class="text-2xl font-semibold text-gray-900">
+                        £199
+                    </span>
+
+                    <a href="appointment.html"
+                       class="text-blue-700 font-semibold text-sm">
+                        Book →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Female -->
+
+            <div class="bg-white p-7 border border-gray-200 rounded-lg">
+
+                <p class="text-sm text-gray-500 mb-3">
+                    Women's Health
+                </p>
+
+                <h3 class="text-xl font-semibold mb-4">
+                    Comprehensive Female
+                </h3>
+
+                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                    A broad health assessment including
+                    key female health and hormone markers.
+                </p>
+
+                <div class="flex items-center justify-between">
+
+                    <span class="text-2xl font-semibold text-gray-900">
+                        £199
+                    </span>
+
+                    <a href="appointment.html"
+                       class="text-blue-700 font-semibold text-sm">
+                        Book →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Weight -->
+
+            <div class="bg-white p-7 border border-gray-200 rounded-lg">
+
+                <p class="text-sm text-gray-500 mb-3">
+                    Metabolic Health
+                </p>
+
+                <h3 class="text-xl font-semibold mb-4">
+                    Weight Loss
+                </h3>
+
+                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                    Key markers relevant to weight,
+                    metabolic and general health.
+                </p>
+
+                <div class="flex items-center justify-between">
+
+                    <span class="text-2xl font-semibold text-gray-900">
+                        £109
+                    </span>
+
+                    <a href="appointment.html"
+                       class="text-blue-700 font-semibold text-sm">
+                        Book →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Fatigue -->
+
+            <div class="bg-white p-7 border border-gray-200 rounded-lg">
+
+                <p class="text-sm text-gray-500 mb-3">
+                    Wellbeing
+                </p>
+
+                <h3 class="text-xl font-semibold mb-4">
+                    Fatigue Screen
+                </h3>
+
+                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                    Assess several important biomarkers
+                    that can contribute to fatigue.
+                </p>
+
+                <div class="flex items-center justify-between">
+
+                    <span class="text-2xl font-semibold text-gray-900">
+                        £139
+                    </span>
+
+                    <a href="appointment.html"
+                       class="text-blue-700 font-semibold text-sm">
+                        Book →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     HOME BLOOD COLLECTION
+============================================================ -->
+
+<section class="section bg-white">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+
+            <div data-aos="fade-right">
+
+                <p class="text-blue-700 font-semibold uppercase tracking-wider text-sm mb-3">
+                    Testing without the travel
+                </p>
+
+                <h2 class="section-title mb-6">
+                    We can come to you
+                </h2>
+
+                <p class="section-subtitle mb-7">
+
+                    Prefer to have your blood sample taken at home?
+
+                    Our nationwide home blood collection service
+                    allows a qualified healthcare professional to
+                    visit you at a time that suits you.
+
+                </p>
+
+
+                <div class="space-y-4 mb-8">
+
+                    <div class="flex gap-3">
+
+                        <i data-feather="check"
+                           class="text-blue-700 mt-1">
+                        </i>
+
+                        <span class="text-gray-700">
+                            Nationwide home blood collection
+                        </span>
+
+                    </div>
+
+                    <div class="flex gap-3">
+
+                        <i data-feather="check"
+                           class="text-blue-700 mt-1">
+                        </i>
+
+                        <span class="text-gray-700">
+                            Convenient appointment times
+                        </span>
+
+                    </div>
+
+                    <div class="flex gap-3">
+
+                        <i data-feather="check"
+                           class="text-blue-700 mt-1">
+                        </i>
+
+                        <span class="text-gray-700">
+                            Private and convenient
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p class="text-gray-500 text-sm mb-5">
+                    Home visit fee: <strong>+£59</strong>
+                </p>
+
+
+                <a href="homevisit.html"
+                   class="btn-primary">
+
+                    Book Home Blood Collection
+
+                    <i data-feather="arrow-right"
+                       class="ml-3">
+                    </i>
+
                 </a>
 
             </div>
+
+
+            <div
+                class="rounded-lg overflow-hidden"
+                data-aos="fade-left">
+
+                <img
+                    src="blood-taking.jpg"
+                    alt="Private blood testing"
+                    class="w-full h-[480px] object-cover">
+
+            </div>
+
         </div>
-    </section>
 
-    <!-- Home Blood Collection Service -->
-    <section class="bg-blue-50 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    </div>
 
-            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center" data-aos="fade-up">
+</section>
 
-                <h2 class="text-3xl font-bold mb-8 gradient-text">
-                    Home Blood Collection Service NATIONWIDE
-                </h2>
 
-                <p class="text-lg text-gray-600 mb-8">
-                    Have your blood sample taken in the comfort of your own home.
-                    <br><br>
-                    <strong>Skip the clinic visit</strong> – our qualified healthcare professional will come to you at a <strong>time that suits your schedule</strong>, providing a safe, convenient, and stress-free experience.
+
+<!-- ============================================================
+     WHY PRIME LIFE
+============================================================ -->
+
+<section class="section section-light">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div
+            class="text-center max-w-2xl mx-auto mb-14">
+
+            <p class="text-blue-700 font-semibold uppercase tracking-wider text-sm mb-3">
+                Why Prime Life Diagnostics
+            </p>
+
+            <h2 class="section-title mb-5">
+                A simpler way to take control of your health
+            </h2>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+
+            <div class="text-center">
+
+                <div class="health-icon mx-auto">
+
+                    <i data-feather="user-check"></i>
+
+                </div>
+
+                <h3 class="font-semibold text-lg mb-3">
+                    Doctor reviewed
+                </h3>
+
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Results are reviewed by doctors to help provide
+                    clinical context.
                 </p>
 
-                <div class="bg-blue-100 rounded-xl p-6 max-w-2xl mx-auto mb-8">
-                    <i data-feather="home" class="w-10 h-10 text-blue-600 mx-auto mb-3"></i>
+            </div>
 
-                    <h3 class="font-semibold text-xl mb-2">
-                        Home Blood Collection
+
+            <div class="text-center">
+
+                <div class="health-icon mx-auto">
+
+                    <i data-feather="clock"></i>
+
+                </div>
+
+                <h3 class="font-semibold text-lg mb-3">
+                    Convenient
+                </h3>
+
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Book a private appointment at a time that works
+                    for you.
+                </p>
+
+            </div>
+
+
+            <div class="text-center">
+
+                <div class="health-icon mx-auto">
+
+                    <i data-feather="home"></i>
+
+                </div>
+
+                <h3 class="font-semibold text-lg mb-3">
+                    Home testing
+                </h3>
+
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Choose nationwide home blood collection if
+                    visiting a clinic isn't convenient.
+                </p>
+
+            </div>
+
+
+            <div class="text-center">
+
+                <div class="health-icon mx-auto">
+
+                    <i data-feather="shield"></i>
+
+                </div>
+
+                <h3 class="font-semibold text-lg mb-3">
+                    Patient focused
+                </h3>
+
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    A straightforward private testing experience
+                    from appointment to results.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     DOCTORS
+============================================================ -->
+
+<section class="section bg-white">
+
+    <div class="max-w-6xl mx-auto px-5">
+
+        <div class="grid md:grid-cols-2 gap-14 items-center">
+
+
+            <div>
+
+                <p class="text-blue-700 font-semibold uppercase tracking-wider text-sm mb-3">
+                    Meet the team
+                </p>
+
+                <h2 class="section-title mb-6">
+                    Healthcare with clinical oversight
+                </h2>
+
+                <p class="section-subtitle mb-7">
+
+                    Prime Life Diagnostics was created to make private
+                    blood testing more accessible, convenient and easier
+                    to understand.
+
+                </p>
+
+                <a href="ourmission.html"
+                   class="text-blue-700 font-semibold">
+
+                    Meet the team →
+
+                </a>
+
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-5">
+
+
+                <div class="bg-gray-50 p-5 rounded-lg">
+
+                    <div class="w-full aspect-square bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+
+                        <i data-feather="user"
+                           class="w-12 h-12 text-gray-400">
+                        </i>
+
+                    </div>
+
+                    <h3 class="font-semibold">
+                        Dr Omar Ali
                     </h3>
 
-                    <p class="text-gray-600">
-                        Available Nationwide
+                    <p class="text-sm text-gray-500 mt-1">
+                        Doctor
                     </p>
 
-                    <p class="text-blue-700 font-bold text-lg mt-2">
-                        + £59 Home Visit Fee
-                    </p>
                 </div>
 
-                <a href="https://primelifediagnostics.co.uk/homevisit.html"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition duration-300">
-                    Book Home Blood Collection
+
+                <div class="bg-gray-50 p-5 rounded-lg">
+
+                    <div class="w-full aspect-square bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+
+                        <i data-feather="user"
+                           class="w-12 h-12 text-gray-400">
+                        </i>
+
+                    </div>
+
+                    <h3 class="font-semibold">
+                        Dr Zohaib Asghar
+                    </h3>
+
+                    <p class="text-sm text-gray-500 mt-1">
+                        Doctor
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     GOOGLE REVIEWS
+============================================================ -->
+
+<section class="section section-light">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div class="text-center mb-12">
+
+            <p class="text-blue-700 font-semibold uppercase tracking-wider text-sm mb-3">
+                Patient experiences
+            </p>
+
+            <h2 class="section-title">
+                What our patients say
+            </h2>
+
+        </div>
+
+
+        <div class="sk-ww-google-reviews"
+             data-embed-id="25703335">
+        </div>
+
+        <script
+            src="https://widgets.sociablekit.com/google-reviews/widget.js"
+            defer>
+        </script>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     BIOMARKERS
+============================================================ -->
+
+<section class="section bg-white">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+
+            <div>
+
+                <p class="text-blue-700 font-semibold uppercase tracking-wider text-sm mb-3">
+                    Health education
+                </p>
+
+                <h2 class="section-title mb-6">
+                    Understand your blood results
+                </h2>
+
+                <p class="section-subtitle mb-8">
+
+                    Blood tests can provide valuable information about
+                    your health. Learn what individual biomarkers measure
+                    and why they may be tested.
+
+                </p>
+
+                <a href="biomarkers.html"
+                   class="btn-primary">
+
+                    Explore Biomarkers
+
+                    <i data-feather="arrow-right"
+                       class="ml-3">
+                    </i>
+
                 </a>
 
             </div>
 
-        </div>
-    </section>
-  
-    <div class="sk-ww-google-reviews" data-embed-id="25703335"></div><script src="https://widgets.sociablekit.com/google-reviews/widget.js" defer></script>
 
-    <!-- Frequently Asked Questions -->
-    <section class="max-w-3xl mx-auto py-12 px-4">
-        <h2 class="text-3xl font-bold text-blue-600 text-center mb-8">
-            Frequently Asked Questions
+            <div class="grid grid-cols-2 gap-4">
+
+
+                <div class="p-6 bg-gray-50 rounded-lg">
+
+                    <h3 class="font-semibold text-gray-900 mb-2">
+                        Haemoglobin
+                    </h3>
+
+                    <p class="text-sm text-gray-600">
+                        Learn about this important marker in your
+                        full blood count.
+                    </p>
+
+                </div>
+
+
+                <div class="p-6 bg-gray-50 rounded-lg">
+
+                    <h3 class="font-semibold text-gray-900 mb-2">
+                        Ferritin
+                    </h3>
+
+                    <p class="text-sm text-gray-600">
+                        Understand this marker of stored iron.
+                    </p>
+
+                </div>
+
+
+                <div class="p-6 bg-gray-50 rounded-lg">
+
+                    <h3 class="font-semibold text-gray-900 mb-2">
+                        TSH
+                    </h3>
+
+                    <p class="text-sm text-gray-600">
+                        Learn about thyroid stimulating hormone.
+                    </p>
+
+                </div>
+
+
+                <div class="p-6 bg-gray-50 rounded-lg">
+
+                    <h3 class="font-semibold text-gray-900 mb-2">
+                        HbA1c
+                    </h3>
+
+                    <p class="text-sm text-gray-600">
+                        Understand a marker used to assess average
+                        blood glucose.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FAQ
+============================================================ -->
+
+<section class="section section-light">
+
+    <div class="max-w-4xl mx-auto px-5">
+
+        <div class="text-center mb-12">
+
+            <p class="text-blue-700 font-semibold uppercase tracking-wider text-sm mb-3">
+                Frequently asked questions
+            </p>
+
+            <h2 class="section-title">
+                Before your appointment
+            </h2>
+
+        </div>
+
+
+        <div>
+
+
+            <div class="faq-item">
+
+                <button onclick="toggleFAQ(this)"
+                        class="faq-button">
+
+                    <span>
+                        What can I expect during my appointment?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="hidden pb-6 text-gray-600 leading-relaxed">
+
+                    Your appointment will be carried out by a trained
+                    healthcare professional in a calm clinical setting.
+                    A small blood sample is taken using sterile,
+                    single-use equipment. The process is quick and
+                    typically completed within minutes.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button onclick="toggleFAQ(this)"
+                        class="faq-button">
+
+                    <span>
+                        Do I need to prepare before my test?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="hidden pb-6 text-gray-600 leading-relaxed">
+
+                    Certain tests may require fasting or specific
+                    preparation. Please check the information provided
+                    for the test you are booking.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button onclick="toggleFAQ(this)"
+                        class="faq-button">
+
+                    <span>
+                        How long will my appointment take?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="hidden pb-6 text-gray-600 leading-relaxed">
+
+                    Appointments are efficient and typically take
+                    around 10–15 minutes, including preparation
+                    and aftercare.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button onclick="toggleFAQ(this)"
+                        class="faq-button">
+
+                    <span>
+                        When will I receive my results?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="hidden pb-6 text-gray-600 leading-relaxed">
+
+                    Most results are available within 24–72 hours.
+                    Some specialised tests may take longer.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button onclick="toggleFAQ(this)"
+                        class="faq-button">
+
+                    <span>
+                        Do you offer home appointments?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="hidden pb-6 text-gray-600 leading-relaxed">
+
+                    Yes. We provide nationwide home blood collection,
+                    allowing you to have your sample taken in the
+                    comfort and privacy of your own home.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button onclick="toggleFAQ(this)"
+                        class="faq-button">
+
+                    <span>
+                        Is my information kept confidential?
+                    </span>
+
+                    <span class="faq-icon">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="hidden pb-6 text-gray-600 leading-relaxed">
+
+                    Personal and medical information is handled securely
+                    and in accordance with applicable UK data protection
+                    requirements.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FINAL CTA
+============================================================ -->
+
+<section class="relative py-24 overflow-hidden">
+
+    <img
+        src="blood-taking.jpg"
+        alt=""
+        class="absolute inset-0 w-full h-full object-cover">
+
+    <div class="absolute inset-0 bg-[#102a43]/85"></div>
+
+
+    <div class="relative max-w-4xl mx-auto px-5 text-center text-white">
+
+        <h2
+            class="text-4xl md:text-5xl font-semibold mb-6"
+            data-aos="fade-up">
+
+            Ready to take a closer look at your health?
+
         </h2>
 
-        <div class="space-y-4">
+        <p
+            class="text-xl text-white/85 mb-9"
+            data-aos="fade-up">
 
-            <!-- FAQ Item -->
-            <div class="border border-blue-100 rounded-2xl">
-                <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700">
-                    What can I expect during my appointment?
-                    <span class="ml-2">+</span>
-                </button>
-                <div class="hidden px-4 pb-4 text-gray-600">
-                    Your appointment will be carried out by a trained healthcare professional in a calm, clinical setting. A small blood sample is taken using sterile, single-use equipment. The process is quick, discreet, and typically completed within minutes.
-                </div>
+            Book your private blood test with Prime Life Diagnostics.
+
+        </p>
+
+        <a
+            href="appointment.html"
+            class="btn-white"
+            data-aos="fade-up">
+
+            Book Your Appointment
+
+            <i data-feather="calendar"
+               class="ml-3">
+            </i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer class="bg-[#0b1c2b] text-white">
+
+    <div class="max-w-7xl mx-auto px-5 py-16">
+
+        <div class="grid md:grid-cols-3 gap-12">
+
+
+            <!-- Brand -->
+
+            <div>
+
+                <img
+                    src="Prime Life Diagnostics1-01.png"
+                    alt="Prime Life Diagnostics"
+                    class="h-16 w-auto mb-6 brightness-0 invert">
+
+                <p class="text-gray-400 leading-relaxed max-w-sm">
+
+                    Private blood testing and health checks designed
+                    to make understanding your health simpler.
+
+                </p>
+
             </div>
 
-            <!-- FAQ Item -->
-            <div class="border border-blue-100 rounded-2xl">
-                <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700">
-                    Do I need to prepare before my test?
-                    <span class="ml-2">+</span>
-                </button>
-                <div class="hidden px-4 pb-4 text-gray-600">
-                    Certain tests may require fasting or specific preparation. Please see the Learn More options for the test which you require.
+
+            <!-- Links -->
+
+            <div>
+
+                <h3 class="font-semibold text-lg mb-5">
+                    Quick Links
+                </h3>
+
+                <div class="space-y-3">
+
+                    <a href="bloodtestspanels.html"
+                       class="block text-gray-400 hover:text-white">
+                        Blood Tests
+                    </a>
+
+                    <a href="panels.html"
+                       class="block text-gray-400 hover:text-white">
+                        Health Checks
+                    </a>
+
+                    <a href="chooseus.html"
+                       class="block text-gray-400 hover:text-white">
+                        Why Us
+                    </a>
+
+                    <a href="ourmission.html"
+                       class="block text-gray-400 hover:text-white">
+                        Our Mission
+                    </a>
+
+                    <a href="FAQs.html"
+                       class="block text-gray-400 hover:text-white">
+                        FAQs
+                    </a>
+
+                    <a href="appointment.html"
+                       class="block text-gray-400 hover:text-white">
+                        Book Appointment
+                    </a>
+
                 </div>
+
             </div>
 
-            <!-- FAQ Item -->
-            <div class="border border-blue-100 rounded-2xl">
-                <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700">
-                    How long will my appointment take?
-                    <span class="ml-2">+</span>
-                </button>
-                <div class="hidden px-4 pb-4 text-gray-600">
-                    Appointments are efficient and typically take 10–15 minutes, including preparation and aftercare.
-                </div>
-            </div>
 
-            <!-- FAQ Item -->
-            <div class="border border-blue-100 rounded-2xl">
-                <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700">
-                    When will I receive my results?
-                    <span class="ml-2">+</span>
-                </button>
-                <div class="hidden px-4 pb-4 text-gray-600">
-                    Most results are available within 24–72 hours. Some specialised tests may take slightly longer.
-                </div>
-            </div>
+            <!-- Contact -->
 
-            <!-- FAQ Item -->
-            <div class="border border-blue-100 rounded-2xl">
-                <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700">
-                    Who performs the blood tests?
-                    <span class="ml-2">+</span>
-                </button>
-                <div class="hidden px-4 pb-4 text-gray-600">
-                    All samples are taken by experienced phlebotomists and registered healthcare professionals, ensuring the highest standard of care.
-                </div>
-            </div>
+            <div>
 
-            <!-- FAQ Item -->
-            <div class="border border-blue-100 rounded-2xl">
-                <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700">
-                    Do you offer home visit appointments?
-                    <span class="ml-2">+</span>
-                </button>
-                <div class="hidden px-4 pb-4 text-gray-600">
-                    Yes — we provide a premium home visit service, allowing you to have your test carried out in the comfort and privacy of your own home.
-                </div>
-            </div>
+                <h3 class="font-semibold text-lg mb-5">
+                    Contact
+                </h3>
 
-            <!-- FAQ Item -->
-            <div class="border border-blue-100 rounded-2xl">
-                <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700">
-                    Is my information kept confidential?
-                    <span class="ml-2">+</span>
-                </button>
-                <div class="hidden px-4 pb-4 text-gray-600">
-                    Absolutely. All personal and medical information is handled securely and in full compliance with UK data protection regulations.
+                <div class="space-y-3 text-gray-400">
+
+                    <p>
+                        info@primelifediagnostics.co.uk
+                    </p>
+
+                    <p>
+                        01302 203565
+                    </p>
+
+                    <p>
+                        105 Scrooby Road,<br>
+                        Bircotes, Doncaster,<br>
+                        DN11 8JN
+                    </p>
+
                 </div>
+
             </div>
 
         </div>
-    </section>
 
-    <script id="faqscript01">
-        function toggleFAQ(button) {
-            const content = button.nextElementSibling;
-            const icon = button.querySelector("span");
+ <!-- =====================================================
+             SOCIAL MEDIA
+        ====================================================== -->
 
-            content.classList.toggle("hidden");
-            icon.textContent = content.classList.contains("hidden") ? "+" : "−";
-        }
-    </script>
+        <div
+            class="border-t border-white/10 mt-14 pt-8">
 
-    <!-- CTA Section -->
-    <section id="booking" class="py-20 bg-cover bg-center text-white" style="background-image: url('https://primelifediagnostics.co.uk/blood-taking.jpg')">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
-            <img src="Prime Life Diagnostics1-01.png" alt="Prime Life Diagnostics" class="mx-auto mb-8 h-64 hovered-element">
-            <a href="appointment.html" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center">
-                Book Your Appointment
-                <i data-feather="calendar" class="ml-2"></i>
-            </a>
-        </div>
-    </section>
+            <div
+                class="flex justify-center gap-5 mb-8">
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Prime Life Diagnostics</h3>
-                    <p class="text-gray-400">Your partner in health optimisation through precise blood testing.</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="bloodtestspanels.html" class="text-gray-400 hover:text-white transition-colors">Blood Tests</a></li>
-                        <li><a href="panels.html" class="text-gray-400 hover:text-white transition-colors">Test Panels</a></li>
-                        <li><a href="ourmission.html" class="text-gray-400 hover:text-white transition-colors">Our Mission</a></li>
-                        <li><a href="appointment.html" class="text-gray-400 hover:text-white transition-colors">Book Appointment</a></li>
-                        <li><a href="FAQs.html" class="text-gray-400 hover:text-white transition-colors">Frequently Asked Questions</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
-                    <p class="text-gray-400">Email: info@primelifediagnostics.co.uk</p>
-                    <p class="text-gray-400">Phone: 01302 203565</p>
-                    <p class="text-gray-400">Address: 105 Scrooby Road, Bircotes, Doncaster, DN11 8JN</p>
-                </div>
+
+                <!-- TikTok -->
+
+                <a
+                    href="https://www.tiktok.com/@prime.life.diagnostics"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="TikTok"
+                    class="text-gray-400 hover:text-white transition">
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="w-6 h-6">
+
+                        <path
+                            d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.68h-3.4v13.76a2.9 2.9 0 1 1-2.9-2.9c.2 0 .39.02.58.06V9.5a6.34 6.34 0 1 0 5.72 6.27V8.69a8.16 8.16 0 0 0 4.77 1.53V6.69z">
+                        </path>
+
+                    </svg>
+
+                </a>
+
+
+                <!-- Instagram -->
+
+                <a
+                    href="https://www.instagram.com/prime.life.diagnostics/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    class="text-gray-400 hover:text-white transition">
+
+                    <i
+                        data-feather="instagram"
+                        class="w-6 h-6">
+                    </i>
+
+                </a>
+
+
+                <!-- Facebook -->
+
+                <a
+                    href="https://www.facebook.com/profile.php?id=61581186570303&sk=about"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    class="text-gray-400 hover:text-white transition">
+
+                    <i
+                        data-feather="facebook"
+                        class="w-6 h-6">
+                    </i>
+
+                </a>
+
             </div>
 
-            <br>
 
-            <!-- Social Media Logos -->
-            <div class="flex flex-col items-center">
-                <div class="flex justify-center items-center space-x-6 mb-6">
 
-                    <!-- TikTok -->
-                    <a href="https://www.tiktok.com/@prime.life.diagnostics"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="group">
+            <!-- Copyright -->
 
-                        <div class="w-14 h-14 rounded-full border border-cyan-400/30 bg-gray-900 flex items-center justify-center shadow-lg hover:scale-110 hover:border-cyan-400 transition duration-300">
+            <div
+                class="border-t border-white/10 pt-7 text-center">
 
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 viewBox="0 0 24 24"
-                                 fill="white"
-                                 class="w-7 h-7 group-hover:text-cyan-400">
+                <p
+                    class="text-sm text-gray-500">
 
-                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.68h-3.4v13.76a2.9 2.9 0 1 1-2.9-2.9c.2 0 .39.02.58.06V9.5a6.34 6.34 0 1 0 5.72 6.27V8.69a8.16 8.16 0 0 0 4.77 1.53V6.69z"/>
-                            </svg>
+                    © 2026 Prime Life Diagnostics.
+                    All rights reserved.
 
-                        </div>
-                    </a>
+                </p>
 
-                    <!-- Instagram -->
-                    <a href="https://www.instagram.com/prime.life.diagnostics/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="group">
 
-                        <div class="w-14 h-14 rounded-full border border-pink-400/30 bg-gray-900 flex items-center justify-center shadow-lg hover:scale-110 hover:border-pink-400 transition duration-300">
+                <!-- Accreditation -->
 
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 viewBox="0 0 24 24"
-                                 fill="white"
-                                 class="w-7 h-7">
+                <div
+                    class="flex justify-center items-center gap-7 mt-7">
 
-                                <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4zm8.75 1a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 16.5 5zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
-                            </svg>
 
-                        </div>
-                    </a>
+                    <a
+                        href="https://www.cqc.org.uk/provider/1-24970013163"
+                        target="_blank"
+                        rel="noopener noreferrer">
 
-                    <!-- Facebook -->
-                    <a href="https://www.facebook.com/profile.php?id=61581186570303&sk=about"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="group">
-
-                        <div class="w-14 h-14 rounded-full border border-blue-400/30 bg-gray-900 flex items-center justify-center shadow-lg hover:scale-110 hover:border-blue-400 transition duration-300">
-
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 viewBox="0 0 24 24"
-                                 fill="white"
-                                 class="w-7 h-7">
-
-                                <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.5 1.6-1.5H17V4.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.2V11H8v3h2.6v8h2.9z"/>
-                            </svg>
-
-                        </div>
-                    </a>
-
-                </div>
-
-                <h2>*With in-clinic appointments</h2>
-                
-                <!-- Footer Section Underneath -->
-                <div class="border-t border-gray-800 mt-4 pt-8 text-center text-gray-400 w-full">
-
-                    <p>&copy; 2026 Prime Life Diagnostics. All rights reserved.</p>
-
-                    <div class="flex justify-center items-center space-x-8 mt-4">
-
-                        <!-- CQC -->
-                        <a href="https://www.cqc.org.uk/provider/1-24970013163"
-                           target="_blank"
-                           rel="noopener noreferrer">
-
-                            <img
-                                src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/cqc%20logo.webp"
-                                alt="CQC Regulated"
-                                class="h-16">
-                        </a>
-
-                        <!-- UKAS -->
                         <img
-                            src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/UKAS-Accreditation-Symbol-purple-on-white-Medical.png"
-                            alt="UKAS Accredited"
-                            class="h-16">
+                            src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/cqc%20logo.webp"
+                            alt="CQC Regulated"
+                            class="h-14">
 
-                    </div>
+                    </a>
+
+
+                    <img
+                        src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/UKAS-Accreditation-Symbol-purple-on-white-Medical.png"
+                        alt="UKAS Accredited"
+                        class="h-14">
 
                 </div>
+
             </div>
 
         </div>
-    </footer>
 
-   <!-- Promotional banner spacing -->
+    </div>
+
+</footer>
+
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+
 <script>
-    window.addEventListener("load", function(){
 
-        const banner = document.querySelector(".promo-banner");
-        const nav = document.querySelector("nav");
-
-        function updateSpacing(){
-            const totalHeight = banner.offsetHeight + nav.offsetHeight;
-            document.body.style.paddingTop = totalHeight + "px";
-        }
-
-        updateSpacing();
-        window.addEventListener("resize", updateSpacing);
-
-    });
-</script>
-
-
-<!-- AOS, Feather Icons & Mobile Menu -->
-<script>
+    /* AOS */
 
     AOS.init({
-        duration: 800,
+        duration: 700,
         once: true,
-        disable: window.innerWidth < 768
+        offset: 80
     });
+
+
+    /* Feather icons */
 
     feather.replace();
 
 
-    const menuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    /* Mobile menu */
 
-
-    menuToggle.addEventListener('click', () => {
-
-        mobileMenu.classList.toggle('-translate-x-full');
-        mobileMenuOverlay.classList.toggle('hidden');
-
-        const icon = menuToggle.querySelector('i');
-
-        if (mobileMenu.classList.contains('-translate-x-full')) {
-            icon.setAttribute('data-feather', 'menu');
-        } else {
-            icon.setAttribute('data-feather', 'x');
-        }
-
-        feather.replace();
-
-    });
-
-
-    mobileMenuOverlay.addEventListener('click', () => {
-
-        mobileMenu.classList.add('-translate-x-full');
-        mobileMenuOverlay.classList.add('hidden');
-
-        const icon = menuToggle.querySelector('i');
-
-        icon.setAttribute('data-feather', 'menu');
-
-        feather.replace();
-
-    });
-
-
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-
-        link.addEventListener('click', () => {
-
-            mobileMenu.classList.add('-translate-x-full');
-            mobileMenuOverlay.classList.add('hidden');
-
-            const icon = menuToggle.querySelector('i');
-
-            icon.setAttribute('data-feather', 'menu');
-
-            feather.replace();
-
-        });
-
-    });
-
-</script>
-
-  
-<script>
-
-    // ==========================
-    // MOBILE MENU
-    // ==========================
-
-    const menuToggle = document.getElementById("mobile-menu-toggle");
+    const menuBtn = document.getElementById("menu-btn");
+    const closeMenu = document.getElementById("close-menu");
     const mobileMenu = document.getElementById("mobile-menu");
-    const mobileMenuOverlay = document.getElementById("mobile-menu-overlay");
 
 
-    // Open / close menu
-    menuToggle.addEventListener("click", function () {
+    menuBtn.addEventListener("click", function () {
 
-        const isOpen =
-            !mobileMenu.classList.contains("-translate-x-full");
-
-
-        if (isOpen) {
-
-            // CLOSE MENU
-
-            mobileMenu.classList.add("-translate-x-full");
-            mobileMenuOverlay.classList.add("hidden");
-
-            menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.setAttribute("aria-label", "Open mobile menu");
-
-            const icon = menuToggle.querySelector("i");
-
-            icon.setAttribute("data-feather", "menu");
-
-            feather.replace();
-
-        } else {
-
-            // OPEN MENU
-
-            mobileMenu.classList.remove("-translate-x-full");
-            mobileMenuOverlay.classList.remove("hidden");
-
-            menuToggle.setAttribute("aria-expanded", "true");
-            menuToggle.setAttribute("aria-label", "Close mobile menu");
-
-            const icon = menuToggle.querySelector("i");
-
-            icon.setAttribute("data-feather", "x");
-
-            feather.replace();
-
-        }
+        mobileMenu.classList.remove("hidden");
 
     });
 
 
-    // ==========================
-    // CLOSE WHEN CLICKING OVERLAY
-    // ==========================
+    closeMenu.addEventListener("click", function () {
 
-    mobileMenuOverlay.addEventListener("click", function () {
-
-        mobileMenu.classList.add("-translate-x-full");
-        mobileMenuOverlay.classList.add("hidden");
-
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open mobile menu");
-
-        const icon = menuToggle.querySelector("i");
-
-        icon.setAttribute("data-feather", "menu");
-
-        feather.replace();
+        mobileMenu.classList.add("hidden");
 
     });
 
 
-    // ==========================
-    // CLOSE AFTER CLICKING A LINK
-    // ==========================
+    document.querySelectorAll("#mobile-menu a").forEach(function (link) {
 
-    document.querySelectorAll("#mobile-menu a").forEach(function(link) {
+        link.addEventListener("click", function () {
 
-        link.addEventListener("click", function() {
-
-            mobileMenu.classList.add("-translate-x-full");
-            mobileMenuOverlay.classList.add("hidden");
-
-            menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.setAttribute("aria-label", "Open mobile menu");
-
-            const icon = menuToggle.querySelector("i");
-
-            icon.setAttribute("data-feather", "menu");
-
-            feather.replace();
+            mobileMenu.classList.add("hidden");
 
         });
 
     });
 
+
+    /* FAQ */
+
+    function toggleFAQ(button) {
+
+        const content = button.nextElementSibling;
+        const icon = button.querySelector(".faq-icon");
+
+        content.classList.toggle("hidden");
+
+        if (content.classList.contains("hidden")) {
+
+            icon.textContent = "+";
+
+        } else {
+
+            icon.textContent = "−";
+
+        }
+
+    }
+
+
+    /* Dynamic body spacing */
+
+    function updateSpacing() {
+
+        const banner = document.querySelector(".promo-banner");
+        const nav = document.querySelector(".main-nav");
+
+        if (banner && nav) {
+
+            document.body.style.paddingTop =
+                (banner.offsetHeight + nav.offsetHeight) + "px";
+
+        }
+
+    }
+
+
+    window.addEventListener("load", updateSpacing);
+
+    window.addEventListener("resize", updateSpacing);
+
 </script>
+
+
 </body>
 </html>
