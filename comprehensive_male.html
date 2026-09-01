@@ -1,1147 +1,4538 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprehensive Male Screen - Prime Life Diagnostics</title>
-     <link rel="icon" type="image/png" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <title>Comprehensive Male Blood Test | Prime Life Diagnostics</title>
+
+    <meta
+        name="description"
+        content="Comprehensive Male Blood Test from Prime Life Diagnostics. 50+ biomarkers including testosterone, thyroid, cholesterol, vitamins, iron, liver and kidney health.">
+
+    <meta name="robots" content="index, follow">
+
+    <link
+        rel="canonical"
+        href="https://primelifediagnostics.co.uk/comprehensive_male.html">
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="/favicon-32x32.png">
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="96x96"
+        href="/favicon-96x96.png">
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon-16x16.png">
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="/favicon.ico">
+
+
+    <!-- =========================================================
+         TAILWIND
+    ========================================================== -->
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        .gradient-text {
-            background: linear-gradient(135deg, #87CEEB 0%, #4A90E2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+
+
+    <!-- =========================================================
+         AOS
+    ========================================================== -->
+
+    <link
+        href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+        rel="stylesheet">
+
+    <script
+        src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+
+
+    <!-- =========================================================
+         FEATHER ICONS
+    ========================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js">
+    </script>
+
+
+    <!-- =========================================================
+         GOOGLE ANALYTICS / ADS
+    ========================================================== -->
+
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-JRCSHS3V6T">
+    </script>
+
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
         }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-JRCSHS3V6T');
+
+        gtag('config', 'AW-18295000895');
+
+    </script>
+
+
+    <!-- =========================================================
+         PAGE STYLES
+    ========================================================== -->
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: #172033;
+
+            background: #ffffff;
+        }
+
+
+        /* =====================================================
+           PROMOTION BAR
+        ===================================================== */
+
+        .promo-banner {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            z-index: 9999;
+
+            background: #102a43;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 9px 15px;
+
+            font-size: 13px;
+
+            letter-spacing: .2px;
+        }
+
+
+        .promo-code {
+
+            display: inline-block;
+
+            background: #ffffff;
+
+            color: #102a43;
+
+            padding: 3px 9px;
+
+            border-radius: 4px;
+
+            font-weight: 700;
+
+            margin-left: 5px;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .main-nav {
+
+            position: fixed;
+
+            top: 38px;
+
+            left: 0;
+
+            width: 100%;
+
+            z-index: 9998;
+
+            background:
+                rgba(255,255,255,.97);
+
+            backdrop-filter:
+                blur(12px);
+
+            border-bottom:
+                1px solid #edf1f5;
+        }
+
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
+
+        .btn-primary {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #1769aa;
+
+            color: white;
+
+            padding: 14px 24px;
+
+            border-radius: 5px;
+
+            font-weight: 600;
+
+            transition:
+                background .2s ease,
+                transform .2s ease;
+        }
+
+
+        .btn-primary:hover {
+
+            background: #12568d;
+
+            transform: translateY(-1px);
+        }
+
+
+        .btn-secondary {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: white;
+
+            border: 1px solid #d7e1e9;
+
+            color: #102a43;
+
+            padding: 14px 24px;
+
+            border-radius: 5px;
+
+            font-weight: 600;
+
+            transition: all .2s ease;
+        }
+
+
+        .btn-secondary:hover {
+
+            background: #f7f9fb;
+
+            border-color: #bdcedb;
+        }
+
+
+        /* =====================================================
+           BREADCRUMBS
+        ===================================================== */
+
+        .breadcrumbs a {
+
+            color: #718096;
+
+            transition: color .2s ease;
+        }
+
+
+        .breadcrumbs a:hover {
+
+            color: #1769aa;
+        }
+
+
+        /* =====================================================
+           PRODUCT HERO
+        ===================================================== */
+
+        .product-hero {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f4f8fb 0%,
+                    #ffffff 70%
+                );
+
+            border-bottom:
+                1px solid #e6edf2;
+        }
+
+
+        .product-image {
+
+            min-height: 500px;
+
+            width: 100%;
+
+            object-fit: cover;
+        }
+
+
+        .eyebrow {
+
+            color: #1769aa;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.6px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =====================================================
+           TRUST STRIP
+        ===================================================== */
+
+        .trust-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            color: #4f6273;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           MAIN CONTENT
+        ===================================================== */
+
+        .section-title {
+
+            font-size: 34px;
+
+            line-height: 1.2;
+
+            font-weight: 600;
+
+            color: #102a43;
+        }
+
+
+        .content-copy {
+
+            color: #617285;
+
+            line-height: 1.8;
+
+            font-size: 16px;
+        }
+
+
+        /* =====================================================
+           STICKY BOOKING CARD
+        ===================================================== */
+
+        .booking-card {
+
+            position: sticky;
+
+            top: 145px;
+
+            background: white;
+
+            border:
+                1px solid #e0e8ee;
+
+            border-radius: 8px;
+
+            padding: 28px;
+
+            box-shadow:
+                0 12px 35px
+                rgba(16,42,67,.07);
+        }
+
+
+        /* =====================================================
+           FEATURE ITEMS
+        ===================================================== */
+
+        .feature {
+
+            display: flex;
+
+            gap: 15px;
+
+            align-items: flex-start;
+        }
+
+
+        .feature-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            background: #edf5fa;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #1769aa;
+        }
+
+
+        /* =====================================================
+           BIOMARKER ACCORDIONS
+        ===================================================== */
+
+        .biomarker-group {
+
+            border:
+                1px solid #e2e9ef;
+
+            border-radius: 7px;
+
+            background: white;
+
+            overflow: hidden;
+        }
+
+
+        .biomarker-button {
+
+            width: 100%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            text-align: left;
+
+            padding: 21px 23px;
+
+            color: #102a43;
+
+            font-weight: 600;
+
+            transition:
+                background .2s ease;
+        }
+
+
+        .biomarker-button:hover {
+
+            background: #f8fafc;
+        }
+
+
+        .biomarker-content {
+
+            padding:
+                0 23px
+                22px;
+
+            border-top:
+                1px solid #edf1f5;
+        }
+
+
+        .marker-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding:
+                10px 0;
+
+            color: #5c6f80;
+
+            font-size: 15px;
+        }
+
+
+        .marker-dot {
+
+            width: 6px;
+
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: #1769aa;
+
+            flex-shrink: 0;
+        }
+
+
+        /* =====================================================
+           PROCESS
+        ===================================================== */
+
+        .step-number {
+
+            width: 50px;
+
+            height: 50px;
+
+            border-radius: 50%;
+
+            background: #102a43;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: 700;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* =====================================================
+           FAQ
+        ===================================================== */
+
+        .faq-item {
+
+            border-bottom:
+                1px solid #e1e8ed;
+        }
+
+
+        .faq-button {
+
+            width: 100%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 25px;
+
+            align-items: center;
+
+            text-align: left;
+
+            padding: 22px 0;
+
+            color: #102a43;
+
+            font-weight: 600;
+        }
+
+
+        .faq-answer {
+
+            color: #617285;
+
+            line-height: 1.7;
+
+            padding-bottom: 23px;
+        }
+
+
+        /* =====================================================
+           FINAL CTA
+        ===================================================== */
+
+        .final-cta {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #102a43,
+                    #174d73
+                );
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .final-cta::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+
+            height: 500px;
+
+            border-radius: 50%;
+
+            right: -180px;
+
+            top: -200px;
+
+            background:
+                rgba(255,255,255,.035);
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 768px) {
+
+            .promo-banner {
+
+                font-size: 12px;
+
+                padding: 8px;
+            }
+
+
+            .main-nav {
+
+                top: 35px;
+            }
+
+
+            .product-image {
+
+                min-height: 330px;
+
+                height: 330px;
+            }
+
+
+            .section-title {
+
+                font-size: 29px;
+            }
+
+
+            .booking-card {
+
+                position: static;
+            }
+
+        }
+
     </style>
+
 </head>
-<body class="font-sans antialiased text-gray-800 bg-white">
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <div class="flex items-center">
-                        <a href="index.html" class="text-2xl font-light tracking-tighter hover:opacity-80 transition-opacity duration-200">
-                            <img src="Prime Life Diagnostics1-01.png" alt="Prime Life Diagnostics Logo" class="h-20 mr-4">
-                        </a>
-                        <a href="index.html" class="text-2xl font-light tracking-tighter hover:opacity-80 transition-opacity duration-200">
-                            <span class="text-[#1a237e]">Prime</span>
-                            <span class="text-[#2196f3]"> Life</span>
-                            <span class="text-[#757575]"> Diagnostics</span>
-                        </a>
-                    </div>
-                </div>
 
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
-                    <a href="bloodtestspanels.html" class="text-gray-600 hover:text-blue-600 transition-colors">Blood Test Panels</a>
-                    <a href="ourmission.html" class="text-gray-600 hover:text-blue-600 transition-colors">Our Mission</a>
-                    <a href="location.html" class="text-gray-600 hover:text-blue-600 transition-colors">Find Us</a>
-                    <a href="appointment.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Book Appointment</a>
-                </div>
 
-                <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-600">
-                        <i data-feather="menu"></i>
-                    </button>
-                </div>
+<body>
+
+
+<!-- ============================================================
+     PROMOTION BAR
+============================================================ -->
+
+<div class="promo-banner">
+
+    <strong>
+        10% OFF IN-CLINIC BLOOD TESTS
+    </strong>
+
+    <span class="hidden sm:inline">
+        · Use code
+    </span>
+
+    <span class="promo-code">
+        PRIME10
+    </span>
+
+</div>
+
+
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+
+<nav class="main-nav">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div
+            class="flex items-center justify-between h-20">
+
+
+            <!-- Logo -->
+
+            <a
+                href="index.html"
+                class="flex items-center">
+
+                <img
+                    src="Prime Life Diagnostics1-01.png"
+                    alt="Prime Life Diagnostics"
+                    class="h-14 md:h-16 w-auto">
+                    
+                     <span class="text-[#1a237e]">Prime</span>
+    <span class="text-[#2196f3]"> Life</span>
+    <span class="text-[#757575]"> Diagnostics</span>
+
+
+            </a>
+
+
+            <!-- Desktop Navigation -->
+
+            <div
+                class="hidden lg:flex items-center gap-7">
+
+                <a
+                    href="index.html"
+                    class="text-sm text-gray-600 hover:text-blue-700">
+
+                    Home
+
+                </a>
+
+
+                <a
+                    href="bloodtestspanels.html"
+                    class="text-sm text-blue-700 font-semibold">
+
+                    Blood Tests
+
+                </a>
+
+
+                <a
+                    href="panels.html"
+                    class="text-sm text-gray-600 hover:text-blue-700">
+
+                    Health Checks
+
+                </a>
+
+
+                <a
+                    href="chooseus.html"
+                    class="text-sm text-gray-600 hover:text-blue-700">
+
+                    Why Us
+
+                </a>
+
+
+                <a
+                    href="ourmission.html"
+                    class="text-sm text-gray-600 hover:text-blue-700">
+
+                    About
+
+                </a>
+
+
+                <a
+                    href="FAQs.html"
+                    class="text-sm text-gray-600 hover:text-blue-700">
+
+                    FAQs
+
+                </a>
+
+
+                <a
+                    href="appointment.html"
+                    class="btn-primary text-sm">
+
+                    Book Now
+
+                </a>
+
             </div>
-        </div>
-    </nav>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white md:hidden">
-        <div class="flex flex-col items-center justify-center h-full space-y-8">
-            <a href="index.html" class="text-xl text-gray-600 hover:text-blue-600">Home</a>
-            <a href="bloodtestspanels.html" class="text-xl text-gray-600 hover:text-blue-600">Blood Test Panels</a>
-            <a href="ourmission.html" class="text-xl text-gray-600 hover:text-blue-600">Our Mission</a>
-            <a href="location.html" class="text-xl text-gray-600 hover:text-blue-600">Find Us</a>
-            <a href="appointment.html" class="text-xl bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">Book Appointment</a>
-            <button id="close-menu" class="absolute top-4 right-4 text-gray-600">
-                <i data-feather="x"></i>
+
+            <!-- Mobile Button -->
+
+            <button
+                id="menu-btn"
+                class="lg:hidden text-gray-700"
+                aria-label="Open menu">
+
+                <i data-feather="menu"></i>
+
             </button>
+
         </div>
+
     </div>
 
-    <!-- Main Content -->
-    <div class="pt-24 pb-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="grid md:grid-cols-2 gap-12">
+</nav>
 
-            <!-- Panel Image -->
-            <div class="rounded-xl shadow-lg overflow-hidden h-screen" data-aos="fade-right">
-                <img src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/photo-1457449205106-d0aad138e99b.jpeg" alt="Comprehensive Male Screen" class="w-full h-full object-cover">
+
+
+<!-- ============================================================
+     MOBILE MENU
+============================================================ -->
+
+<div
+    id="mobile-menu"
+    class="hidden fixed inset-0 z-[10000] bg-white">
+
+    <button
+        id="close-menu"
+        class="absolute top-6 right-6 text-gray-700"
+        aria-label="Close menu">
+
+        <i data-feather="x"></i>
+
+    </button>
+
+
+    <div
+        class="flex flex-col items-center justify-center h-full gap-8">
+
+        <a
+            href="index.html"
+            class="text-xl text-gray-700">
+
+            Home
+
+        </a>
+
+
+        <a
+            href="bloodtestspanels.html"
+            class="text-xl text-blue-700 font-semibold">
+
+            Blood Tests
+
+        </a>
+
+
+        <a
+            href="panels.html"
+            class="text-xl text-gray-700">
+
+            Health Checks
+
+        </a>
+
+
+        <a
+            href="chooseus.html"
+            class="text-xl text-gray-700">
+
+            Why Us
+
+        </a>
+
+
+        <a
+            href="ourmission.html"
+            class="text-xl text-gray-700">
+
+            About
+
+        </a>
+
+
+        <a
+            href="FAQs.html"
+            class="text-xl text-gray-700">
+
+            FAQs
+
+        </a>
+
+
+        <a
+            href="appointment.html"
+            class="btn-primary">
+
+            Book Appointment
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- ============================================================
+     PRODUCT HERO
+============================================================ -->
+
+<section
+    class="product-hero pt-32 md:pt-36 pb-16">
+
+
+    <div class="max-w-7xl mx-auto px-5">
+
+
+        <!-- Breadcrumbs -->
+
+        <div
+            class="breadcrumbs flex flex-wrap items-center gap-2 text-sm mb-8">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <span class="text-gray-400">
+                /
+            </span>
+
+            <a href="bloodtestspanels.html">
+                Blood Tests
+            </a>
+
+            <span class="text-gray-400">
+                /
+            </span>
+
+            <span class="text-gray-700">
+                Comprehensive Male Package
+            </span>
+
+        </div>
+
+
+
+        <div
+            class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+
+            <!-- Image -->
+
+            <div
+                class="rounded-lg overflow-hidden"
+                data-aos="fade-right">
+
+                <img
+                    src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/two-men-athletes-running-park-30059233.webp"
+                    alt="Comprehensive Male Health Blood Test"
+                    class="product-image">
+
             </div>
 
-              <!-- Panel Content -->
-            <div data-aos="fade-left">
-                <div class="flex justify-between items-center mb-6">
-                    <h1 class="text-3xl font-bold gradient-text">Comprehensive Male Package</h1>
-                    <div class="bg-blue-600 text-white px-4 py-2 rounded-full font-semibold font-bold">£199</div>
+
+
+            <!-- Product Information -->
+
+            <div
+                data-aos="fade-left">
+
+
+                <p class="eyebrow mb-4">
+
+                    Men's Health
+
+                </p>
+
+
+                <h1
+                    class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-[#102a43] mb-6">
+
+                    Comprehensive
+                    Male Package
+
+                </h1>
+
+
+                <p
+                    class="text-lg md:text-xl text-gray-600 leading-relaxed mb-7">
+
+                    A comprehensive health assessment covering
+                    50+ biomarkers, including male hormone
+                    screening and key markers relating to your
+                    general health and wellbeing.
+
+                </p>
+
+
+
+                <!-- Price -->
+
+                <div
+                    class="flex items-end gap-3 mb-8">
+
+                    <span
+                        class="text-4xl font-semibold text-[#102a43]">
+
+                        £199
+
+                    </span>
+
+                    <span
+                        class="text-gray-500 mb-1">
+
+                        per test
+
+                    </span>
+
                 </div>
 
-                <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-4">
-                    <h2 class="text-xl font-semibold mb-4 text-blue-600">What the Panel Is</h2>
-                    <p class="text-gray-700">A complete health profile designed for men to assess general well-being, monitor vital organ function, check for common deficiencies, and screen for male-specific health issues.</p>
+
+
+                <!-- CTA -->
+
+                <div
+                    class="flex flex-col sm:flex-row gap-3 mb-8">
+
+                    <a
+                        href="appointment.html"
+                        class="btn-primary">
+
+                        Book This Test
+
+                        <i
+                            data-feather="arrow-right"
+                            class="ml-3 w-5 h-5">
+                        </i>
+
+                    </a>
+
+
+                    <a
+                        href="#biomarkers"
+                        class="btn-secondary">
+
+                        View Biomarkers
+
+                    </a>
+
                 </div>
 
-                <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
-                    <h2 class="text-xl font-semibold mb-4 text-blue-600">Tests Included</h2>
-                  
 
-  <!-- FBC - MAIN DROPDOWN -->
- <button onclick="toggleFAQ(this)"
-  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
 
-  <span class="font-semibold text-blue-700">
-    Full Blood Count (FBC)
-  </span>
+                <!-- Mini trust -->
 
-  <span class="flex items-center gap-2 text-sm text-blue-700">
-    <span>Learn More</span>
-    <span class="toggle-icon text-lg">+</span>
-  </span>
+                <div
+                    class="grid sm:grid-cols-2 gap-4 pt-6 border-t border-gray-200">
+
+
+                    <div class="trust-item">
+
+                        <i
+                            data-feather="check-circle"
+                            class="w-5 h-5 text-blue-700">
+                        </i>
+
+                        50+ biomarkers
+
+                    </div>
+
+
+                    <div class="trust-item">
+
+                        <i
+                            data-feather="user-check"
+                            class="w-5 h-5 text-blue-700">
+                        </i>
+
+                        Doctor reviewed
+
+                    </div>
+
+
+                    <div class="trust-item">
+
+                        <i
+                            data-feather="home"
+                            class="w-5 h-5 text-blue-700">
+                        </i>
+
+                        Home collection available
+
+                    </div>
+
+
+                    <div class="trust-item">
+
+                        <i
+                            data-feather="shield"
+                            class="w-5 h-5 text-blue-700">
+                        </i>
+
+                        No GP referral required
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     MAIN TEST INFORMATION
+============================================================ -->
+
+<section class="py-20 md:py-24 bg-white">
+
+    <div
+        class="max-w-7xl mx-auto px-5">
+
+        <div
+            class="grid lg:grid-cols-[1fr_360px] gap-14 lg:gap-20 items-start">
+
+
+            <!-- =================================================
+                 LEFT CONTENT
+            ================================================== -->
+
+            <main>
+
+
+                <!-- =============================================
+                     ABOUT
+                ============================================== -->
+
+                <section
+                    class="mb-16"
+                    data-aos="fade-up">
+
+
+                    <p class="eyebrow mb-3">
+
+                        About this test
+
+                    </p>
+
+
+                    <h2
+                        class="section-title mb-6">
+
+                        A broad overview of your health
+
+                    </h2>
+
+
+                    <div
+                        class="content-copy space-y-5">
+
+                        <p>
+
+                            The Comprehensive Male Package provides
+                            a broad assessment of your health using
+                            more than 50 individual biomarkers.
+
+                        </p>
+
+                        <p>
+
+                            It combines general health testing with
+                            male hormone screening, giving you insight
+                            into several important areas of your health
+                            from one blood test.
+
+                        </p>
+
+                        <p>
+
+                            The package includes markers relating to
+                            testosterone, blood health, liver and kidney
+                            function, blood sugar, cholesterol, thyroid
+                            function, inflammation, iron and key vitamins.
+
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     WHAT IT LOOKS AT
+                ============================================== -->
+
+                <section
+                    class="mb-16">
+
+
+                    <p class="eyebrow mb-3">
+
+                        Comprehensive testing
+
+                    </p>
+
+
+                    <h2
+                        class="section-title mb-8">
+
+                        What does this test look at?
+
+                    </h2>
+
+
+
+                    <div
+                        class="grid sm:grid-cols-2 gap-8">
+
+
+                        <!-- Hormones -->
+
+                        <div class="feature">
+
+                            <div class="feature-icon">
+
+                                <i
+                                    data-feather="activity"
+                                    class="w-5 h-5">
+                                </i>
+
+                            </div>
+
+                            <div>
+
+                                <h3
+                                    class="font-semibold text-lg text-[#102a43] mb-2">
+
+                                    Male hormones
+
+                                </h3>
+
+                                <p
+                                    class="text-gray-600 leading-relaxed text-sm">
+
+                                    Includes testosterone testing as
+                                    part of your overall male health
+                                    assessment.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Blood health -->
+
+                        <div class="feature">
+
+                            <div class="feature-icon">
+
+                                <i
+                                    data-feather="droplet"
+                                    class="w-5 h-5">
+                                </i>
+
+                            </div>
+
+                            <div>
+
+                                <h3
+                                    class="font-semibold text-lg text-[#102a43] mb-2">
+
+                                    Blood health
+
+                                </h3>
+
+                                <p
+                                    class="text-gray-600 leading-relaxed text-sm">
+
+                                    A Full Blood Count assesses important
+                                    components of your blood.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Heart -->
+
+                        <div class="feature">
+
+                            <div class="feature-icon">
+
+                                <i
+                                    data-feather="heart"
+                                    class="w-5 h-5">
+                                </i>
+
+                            </div>
+
+                            <div>
+
+                                <h3
+                                    class="font-semibold text-lg text-[#102a43] mb-2">
+
+                                    Heart & metabolic health
+
+                                </h3>
+
+                                <p
+                                    class="text-gray-600 leading-relaxed text-sm">
+
+                                    Includes lipid testing and HbA1c
+                                    to assess important metabolic
+                                    health markers.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Organ -->
+
+                        <div class="feature">
+
+                            <div class="feature-icon">
+
+                                <i
+                                    data-feather="shield"
+                                    class="w-5 h-5">
+                                </i>
+
+                            </div>
+
+                            <div>
+
+                                <h3
+                                    class="font-semibold text-lg text-[#102a43] mb-2">
+
+                                    Organ function
+
+                                </h3>
+
+                                <p
+                                    class="text-gray-600 leading-relaxed text-sm">
+
+                                    Includes liver and kidney function
+                                    markers as part of the overall
+                                    health assessment.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Thyroid -->
+
+                        <div class="feature">
+
+                            <div class="feature-icon">
+
+                                <i
+                                    data-feather="zap"
+                                    class="w-5 h-5">
+                                </i>
+
+                            </div>
+
+                            <div>
+
+                                <h3
+                                    class="font-semibold text-lg text-[#102a43] mb-2">
+
+                                    Thyroid function
+
+                                </h3>
+
+                                <p
+                                    class="text-gray-600 leading-relaxed text-sm">
+
+                                    Thyroid markers are included to
+                                    assess thyroid function.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Nutrition -->
+
+                        <div class="feature">
+
+                            <div class="feature-icon">
+
+                                <i
+                                    data-feather="sun"
+                                    class="w-5 h-5">
+                                </i>
+
+                            </div>
+
+                            <div>
+
+                                <h3
+                                    class="font-semibold text-lg text-[#102a43] mb-2">
+
+                                    Vitamins & nutrition
+
+                                </h3>
+
+                                <p
+                                    class="text-gray-600 leading-relaxed text-sm">
+
+                                    Includes iron markers, Vitamin D,
+                                    Vitamin B12 and folate.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+<!-- =============================================
+     BIOMARKERS
+============================================== -->
+
+<section
+    id="biomarkers"
+    class="mb-16">
+
+    <p class="eyebrow mb-3">
+        What's included
+    </p>
+
+    <h2
+        class="section-title mb-4">
+
+        Your biomarkers
+
+    </h2>
+
+    <p
+        class="content-copy mb-8">
+
+        This package contains more than 50 individual
+        biomarkers across multiple areas of health.
+        Explore the main groups below.
+
+    </p>
+
+
+    <div class="space-y-3">
+
+
+        <!-- =============================================
+             MALE HORMONES
+        ============================================== -->
+
+        <div class="biomarker-group">
+
+            <button
+                class="biomarker-button"
+                onclick="toggleBiomarkers(this)">
+
+                <div>
+
+                    <span class="block">
+                        Male Hormones
+                    </span>
+
+                    <span
+                        class="block text-sm text-gray-500 font-normal mt-1">
+
+                        Testosterone assessment
+
+                    </span>
+
+                </div>
+
+                <span class="biomarker-icon">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="biomarker-content hidden">
+ <!-- Biomarker 1: Testosteron -->
+       <div class="flex flex-wrap items-center justify-between">
+           
+
+                <div class="marker-item">
+                    
+                   Testosterone
+                </div>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+      class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+
+    Learn More
+    <span class="learn-more-icon">+</span>
 
 </button>
-    <!-- EVERYTHING BELOW IS HIDDEN UNTIL FBC IS CLICKED -->
-    <div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
 
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-      <!-- HAEMOGLOBIN -->
-     <button onclick="toggleFAQ(this)"
-  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
-
-  <span>Haemoglobin (Hb)</span>
-
-  <span class="toggle-icon ml-2">+</span>
-
-</button>
-
-<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-
-  Haemoglobin is the iron-containing protein found within red blood cells that carries oxygen from your lungs to every tissue in your body. Measuring haemoglobin is one of the most important ways to assess your body's ability to deliver oxygen efficiently. Low haemoglobin levels may indicate anaemia caused by various conditions. 
-
+    Testosterone is the primary male sex hormone and plays an essential role in maintaining muscle mass, strength, bone density, energy levels, mood, libido, erectile function and sperm production. Testosterone levels naturally decline with age but may also be affected by obesity, stress, chronic illness, poor sleep and certain medications. Low testosterone may contribute to fatigue, reduced sex drive, erectile dysfunction, decreased muscle mass, increased body fat, low mood and reduced exercise performance. Measuring total testosterone is the first step in assessing male hormonal health and should be interpreted alongside free testosterone and SHBG for a more complete assessment.
 </div>
-
-<!-- Red Blood Cell Count -->
-     <button onclick="toggleFAQ(this)"
-  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
-
-  <span>Red Blood Cell (RBC) Count</span>
-
-  <span class="toggle-icon ml-2">+</span>
-
-</button>
-
-<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-
- This test measures the number of red blood cells circulating in your bloodstream and helps assess your body's oxygen-carrying capacity. 
-
+                
+   </div>            
+               
 </div>
+</div></div>
 
-<!-- Haematocrit -->
-   <button onclick="toggleFAQ(this)"
-  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+<!-- =============================================
+     FULL BLOOD COUNT
+============================================== -->
+ 
 
-  <span>Haematocrit (HCT)</span>
+ 
+   <div class="biomarker-group">
 
-  <span class="toggle-icon ml-2">+</span>
+            <button
+                class="biomarker-button"
+                onclick="toggleBiomarkers(this)">
+
+                <div>
+
+                    <span class="block">
+                        Full Blood Count (FBC)
+                    </span>
+
+                    <span
+                        class="block text-sm text-gray-500 font-normal mt-1">
+
+                       General blood health
+
+                    </span>
+
+                </div>
+
+                <span class="biomarker-icon">
+                    +
+                </span>
+
+            </button>
+
+  <div class="biomarker-content hidden">
+
+    <!-- Biomarker 1: Haemoglobin -->
+       <div class="flex flex-wrap items-center justify-between">
+           
+
+                <div class="marker-item">
+                    
+                    Haemoglobin
+                </div>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+      class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+
+    Learn More
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
- Haematocrit measures the percentage of your blood that is made up of red blood cells. 
-
+    Haemoglobin is the iron-containing protein found within red blood cells that carries oxygen from your lungs to every tissue in your body. Measuring haemoglobin is one of the most important ways to assess your body's ability to deliver oxygen efficiently. Low haemoglobin levels may indicate anaemia caused by various conditions. 
 </div>
+                
+   </div>            
 
-<!-- Mean Corpuscular Volume (MCV) -->
-   <button onclick="toggleFAQ(this)"
-  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+ <!-- Biomarker 2: Red Blood Cell Count (RBC) -->
+       <div class="flex flex-wrap items-center justify-between">
+       
 
-  <span>Mean Corpuscular Volume (MCV)</span>
+                <div class="marker-item">
+                    
+                 Red Blood Cell (RBC) Count
+                </div>
+     
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
 
-  <span class="toggle-icon ml-2">+</span>
+    Learn More
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
+    This test measures the number of red blood cells circulating in your bloodstream and helps assess your body's oxygen-carrying capacity.
+</div>
+                  </div>  
+
+            <!-- Biomarker 3: Haematocrit (HCT) -->
+        <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+                    
+                Haematocrit (HCT)
+                </div>
+       
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+      class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+
+    Learn More
+    <span class="learn-more-icon">+</span>
+
+</button>
+
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
+   Haematocrit measures the percentage of your blood that is made up of red blood cells.
+</div>
+                
+           </div>     
+
+ <!-- Biomarker 4: Mean Corpuscular Volume (MCV) -->
+        <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+                    
+               Mean Corpuscular Volume (MCV)
+                </div>
+     
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+
+    Learn More
+    <span class="learn-more-icon">+</span>
+
+</button>
+
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
 MCV measures the average size of your red blood cells. It is particularly useful when investigating the cause of anaemia, as different deficiencies affect red blood cell size in different ways.
-
+  
 </div>
+                
+               
+  </div>  
 
-<!-- Mean Corpuscular Haemoglobin (MCH) -->
-   <button onclick="toggleFAQ(this)"
-  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+<!-- Biomarker 5: Mean Corpuscular Hemoglobin (MCH) -->
+       <div class="flex flex-wrap items-center justify-between">
+       
 
-  <span>Mean Corpuscular Haemoglobin (MCH)</span>
+                <div class="marker-item">
+                    
+               Mean Corpuscular Hemoglobin (MCH)
+                </div>
+    
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
 
-  <span class="toggle-icon ml-2">+</span>
+    Learn More
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-MCH measures the average amount of haemoglobin contained within each red blood cell. It helps assess how effectively your red blood cells are able to carry oxygen around the body. 
-
+MCH measures the average amount of haemoglobin contained within each red blood cell. It helps assess how effectively your red blood cells are able to carry oxygen around the body.
+  
 </div>
+                
+      </div>              
 
-<!-- Mean Corpuscular Haemoglobin Concentration (MCHC) -->
-   <button onclick="toggleFAQ(this)"
-  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+<!-- Biomarker 6: Mean Corpuscular Hemoglobin Concentration (MCHC) -->
+        <div class="flex flex-wrap items-center justify-between">
+       
 
-  <span>Mean Corpuscular Haemoglobin Concentration (MCHC)</span>
+                <div class="marker-item">
+                    
+               Mean Corpuscular Hemoglobin Concentration (MCHC)
+                </div>
+        
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+      class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
 
-  <span class="toggle-icon ml-2">+</span>
+    Learn More
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
 MCHC measures the average concentration of haemoglobin within your red blood cells.
-
+  
 </div>
+                
+      </div>          
 
-<!-- Red Cell Distribution Width (RDW) -->
-   <button onclick="toggleFAQ(this)"
-  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+<!-- Biomarker 7: Red Cell Distribution Width (RDW) -->
+        <div class="flex flex-wrap items-center justify-between">
+            
 
-  <span>Red Cell Distribution Width (RDW)</span>
+                <div class="marker-item">
+                    
+             Red Cell Distribution Width (RDW)
+                </div>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
 
-  <span class="toggle-icon ml-2">+</span>
+    Learn More
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-RDW measures the variation in the size of your red blood cells. Healthy red blood cells are usually similar in size, whereas greater variation may indicate that new and older blood cells differ significantly. 
-
+RDW measures the variation in the size of your red blood cells. Healthy red blood cells are usually similar in size, whereas greater variation may indicate that new and older blood cells differ significantly.
+  
 </div>
+                
+      </div>           
 
-<!-- Platelets -->
-   <button onclick="toggleFAQ(this)"
-  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+<!-- Biomarker 8: Platelets -->
+        <div class="flex flex-wrap items-center justify-between">
+       
 
-  <span>Platelets</span>
+                <div class="marker-item">
+                    
+             Platelets
+                </div>
+       
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
 
-  <span class="toggle-icon ml-2">+</span>
+    Learn More
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
 Platelets are small blood cells that play a vital role in helping your blood clot after an injury, preventing excessive bleeding. Measuring your platelet count can help identify clotting disorders, inflammation, infection and conditions affecting the bone marrow.
-
+  
 </div>
+                
+             
+  </div>  
 
-<!-- Mean Platelet Volume (MPV) -->
-   <button onclick="toggleFAQ(this)"
-  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+<!-- Biomarker 9: Mean Platelet Volume (MPV) -->
+       <div class="flex flex-wrap items-center justify-between">
+       
 
-  <span>Mean Platelet Volume (MPV)</span>
+                <div class="marker-item">
+                    
+             Mean Platelet Volume (MPV)
+                </div>
+      
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
 
-  <span class="toggle-icon ml-2">+</span>
+    Learn More
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-MPV measures the average size of your platelets. 
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
+MPV measures the average size of your platelets.
+  
 </div>
+                
+    </div>             
 
-<!-- White Blood Cell (WBC) Count -->
-   <button onclick="toggleFAQ(this)"
-  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
 
-  <span>White Blood Cell (WBC) Count</span>
+<!-- Biomarker 10: White Blood Cells (WBC) -->
+       <div class="flex flex-wrap items-center justify-between">
+       
 
-  <span class="toggle-icon ml-2">+</span>
+                <div class="marker-item">
+                    
+             White Blood Cell (WBC) Count
+                </div>
+       
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+           
+    Learn More
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
 White blood cells are a key part of your immune system and help protect your body against infections and disease. This test measures the total number of white blood cells circulating in your bloodstream. Raised levels commonly occur during infections or inflammation, while lower levels may result from certain viral infections, medications, autoimmune conditions or bone marrow disorders.
-
+  
 </div>
+                
+         </div>  
+         
+<!-- Biomarker 11.1: Neutorphils -->
+        <div class="flex flex-wrap items-center justify-between">
+       
 
-<!-- Neutrophils -->
-   <button onclick="toggleFAQ(this)"
-  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+                <div class="marker-item">
+                    
+             Neutrophils
+                </div>
+      
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
 
-  <span>Neutrophils</span>
-
-  <span class="toggle-icon ml-2">+</span>
+    Learn More
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
 Neutrophils are the most abundant type of white blood cell and form your body's first line of defence against bacterial infections. Increased neutrophil levels are commonly seen with bacterial infections, inflammation, physical stress and corticosteroid treatment. Low levels may increase your susceptibility to infection and can occur with some viral illnesses, medications or bone marrow disorders.
-
+  
 </div>
+       </div>        
 
-<!-- Lymphocytes -->
-   <button onclick="toggleFAQ(this)"
-  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+<!-- Biomarker 11: Lymphocytes -->
+     <div class="flex flex-wrap items-center justify-between">
+          
 
-  <span>Lymphocytes</span>
+                <div class="marker-item">
+                    
+             Lymphocytes
+                </div>
+      
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
 
-  <span class="toggle-icon ml-2">+</span>
+    Learn More
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
 Lymphocytes are specialised white blood cells that help your immune system recognise and fight viruses, bacteria and other harmful organisms. They also play an important role in producing antibodies and developing long-term immunity. Abnormal lymphocyte levels may occur with viral infections, autoimmune diseases, chronic infections and certain blood disorders.
 
 </div>
+                
+    </div>             
 
-<!-- Monocytes -->
-   <button onclick="toggleFAQ(this)"
-  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+<!-- Biomarker 11: Monocytes -->
+        <div class="flex flex-wrap items-center justify-between">
+       
 
-  <span>Monocytes</span>
+                <div class="marker-item">
+                    
+           Monocytes
+                </div>
+  
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+      class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
 
-  <span class="toggle-icon ml-2">+</span>
+    Learn More
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-Monocytes are white blood cells that help remove damaged cells, bacteria and other foreign material from the body. They also support tissue repair following infection or inflammation. 
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
+Monocytes are white blood cells that help remove damaged cells, bacteria and other foreign material from the body. They also support tissue repair following infection or inflammation.
 </div>
+    </div>             
 
-<!-- Eosinophils -->
-   <button onclick="toggleFAQ(this)"
-  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+<!-- Biomarker 12: Eosinophils  -->
+        <div class="flex flex-wrap items-center justify-between">
+       
 
-  <span>Eosinophils</span>
+                <div class="marker-item">
+                    
+           Eosinophils 
+                </div>
+       
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
 
-  <span class="toggle-icon ml-2">+</span>
+    Learn More
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
 Eosinophils are white blood cells involved in allergic reactions and defending the body against parasitic infections. Elevated levels are commonly associated with allergies, asthma, eczema and certain parasitic infections.
-
 </div>
+                
+   </div>  
 
-<!-- Basophils -->
-   <button onclick="toggleFAQ(this)"
-  class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
 
-  <span>Basophils</span>
 
-  <span class="toggle-icon ml-2">+</span>
+<!-- Biomarker 13: Basophils  -->
+       <div class="flex flex-wrap items-center justify-between">
+
+       
+
+                <div class="marker-item">
+                    
+           Basophils
+                </div>
+      
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
 Basophils are the least common type of white blood cell and contribute to allergic and inflammatory responses by releasing substances such as histamine. Although abnormalities are uncommon, raised basophil levels may be associated with allergic conditions, chronic inflammation or certain bone marrow disorders.
 </div>
-
+               
 </div>
+  </div></div>
+        <!-- =============================================
+             LIVER FUNCTION
+        ============================================== -->
 
+            
+            <div class="biomarker-group">
 
-<!-- Liver Function Tests (LFTs) - MAIN DROPDOWN -->
-<button onclick="toggleFAQ(this)"
-  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+            <button
+                class="biomarker-button"
+                onclick="toggleBiomarkers(this)">
 
-  <span class="font-semibold text-blue-700">
-    Liver Function Tests (LFTs)
-  </span>
+                <div>
 
-  <span class="flex items-center gap-2 text-sm text-blue-700">
-    <span>Learn More</span>
-    <span class="toggle-icon text-lg">+</span>
-  </span>
+                    <span class="block">
+                         Liver Function
+                    </span>
+
+                    <span
+                        class="block text-sm text-gray-500 font-normal mt-1">
+
+                        Liver health assessment
+
+                    </span>
+
+                </div>
+
+                <span class="biomarker-icon">
+                   +
+                </span>
+
+            </button>
+            <div class="biomarker-content hidden">
+
+<!-- Biomarker 1:  Alanine Transaminase (ALT)  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+                    
+           Alanine Transaminase (ALT)
+                </div>
+
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<!-- Liver Function Tests Content - HIDDEN -->
-<div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  <!-- Alanine Transaminase -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+ALT is an enzyme found primarily within liver cells. When the liver becomes inflamed or damaged, ALT is released into the bloodstream, making it one of the most sensitive markers of liver cell injury. Raised ALT levels are commonly associated with fatty liver disease, viral hepatitis, alcohol-related liver disease and certain medications.
+</div>
+     </div>    
 
-    <span>Alanine Transaminase (ALT)</span>
+<!-- Biomarker 2:   Alkaline Phosphatase (ALP)  -->
+      <div class="flex flex-wrap items-center justify-between">
 
-    <span class="toggle-icon ml-2">+</span>
+                <div class="marker-item">
+                    
+               Alkaline Phosphatase (ALP)
+                </div>
 
-  </button>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+    <span class="learn-more-icon">+</span>
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-ALT is an enzyme found primarily within liver cells. When the liver becomes inflamed or damaged, ALT is released into the bloodstream, making it one of the most sensitive markers of liver cell injury. Raised ALT levels are commonly associated with fatty liver disease, viral hepatitis, alcohol-related liver disease and certain medications. 
+</button>
 
-  </div>
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  <!-- Aspartate Transaminase -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+ALP is an enzyme found mainly in the liver, bile ducts and bones. Raised ALP levels may indicate conditions affecting the liver or bile ducts, such as bile flow obstruction, but can also occur during periods of increased bone growth or in certain bone disorders.
+</div>
+      </div>
+            
+               
+          
+<!-- Biomarker 3:   Aspartate Aminotransferase (AST)  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
 
-    <span>Aspartate Transaminase (AST)</span>
+                <div class="marker-item">
+                    
+              Aspartate Aminotransferase (AST)
+                </div>
 
-    <span class="toggle-icon ml-2">+</span>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+       <span class="learn-more-icon">+</span>
 
-  </button>
+</button>
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-    AST is an enzyme found in the liver, heart, muscles and several other tissues. While elevated AST may indicate liver inflammation or damage, it can also rise following muscle injury, strenuous exercise or certain medical conditions affecting the heart or muscles.
-  </div>
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  <!-- Alkaline Phosphatase -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+AST is an enzyme found in the liver, heart, muscles and several other tissues. While elevated AST may indicate liver inflammation or damage, it can also rise following muscle injury, strenuous exercise or certain medical conditions affecting the heart or muscles.
+</div>
+          
+</div>
+         
+<!-- Biomarker 4:  Gamma-glutamyl Transferase (GGT)  -->
+     <div class="flex flex-wrap items-center justify-between">
+       
 
-    <span>Alkaline Phosphatase (ALP)</span>
+                <div class="marker-item">
+                    
+              Gamma-glutamyl Transferase (GGT)
+                </div>
 
-    <span class="toggle-icon ml-2">+</span>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+    
+    <span class="learn-more-icon">+</span>
 
-  </button>
+</button>
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-    ALP is an enzyme found mainly in the liver, bile ducts and bones. Raised ALP levels may indicate conditions affecting the liver or bile ducts, such as bile flow obstruction, but can also occur during periods of increased bone growth or in certain bone disorders.
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  </div>
-
- <!-- Gamma-Glutamyl Transferase (GGT) -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
-
-    <span>Gamma-Glutamyl Transferase (GGT)</span>
-
-    <span class="toggle-icon ml-2">+</span>
-
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
 GGT is an enzyme found mainly in the liver and bile ducts. It is one of the most sensitive markers of liver health and is particularly useful for identifying liver damage associated with excessive alcohol consumption. GGT levels may also be raised in people with fatty liver disease, obesity, diabetes, certain medications or disorders affecting the bile ducts.
-
-
-  </div>
-  
-  <!-- Bilirubin -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
-
-    <span>Bilirubin</span>
-
-    <span class="toggle-icon ml-2">+</span>
-
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-   Bilirubin is a yellow pigment produced when old red blood cells are naturally broken down. Healthy liver cells process bilirubin before it is removed from the body in bile. Elevated bilirubin levels may cause jaundice, where the skin and eyes appear yellow, and can occur due to liver disease, bile duct obstruction, inherited conditions such as Gilbert's syndrome or increased breakdown of red blood cells. Bilirubin is also responsible for the yellow and green colour changes seen as bruises heal.
-
-  </div>
-  
-   <!-- Albumin -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
-
-    <span>Albumin</span>
-
-    <span class="toggle-icon ml-2">+</span>
-
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-  Albumin is the most abundant protein produced by the liver and performs many important functions, including maintaining fluid balance within the bloodstream and transporting hormones, vitamins, fatty acids and medications throughout the body. Low albumin levels may suggest liver disease, kidney disease, inflammation, malnutrition or poor absorption of nutrients.
-
-  </div>
-  
-   <!-- Total Protein -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
-
-    <span>Total Protein</span>
-
-    <span class="toggle-icon ml-2">+</span>
-
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
- Total protein measures the combined amount of albumin and globulins circulating in your blood. It provides an overview of your nutritional status and can help assess liver function, kidney function and immune health. 
-  </div>
-
- <!-- Globulin -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
-
-    <span>Globulin</span>
-
-    <span class="toggle-icon ml-2">+</span>
-
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-Globulins are a group of proteins that play an essential role in your immune system by helping your body fight infection and transport important substances throughout the bloodstream. Abnormal globulin levels may occur with infections, chronic inflammation, autoimmune conditions, liver disease and certain blood disorders. 
-
-  </div>
-
 </div>
+                
+     </div>  
+     
+         
+<!-- Biomarker 5:  Bilirubin  -->
+     <div class="flex flex-wrap items-center justify-between">
+       
 
-<!-- KIDNEY FUNCTION - MAIN DROPDOWN -->
-<button onclick="toggleFAQ(this)"
-  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+                <div class="marker-item">
+                    Bilirubin
+                    
+                </div>
 
-  <span class="font-semibold text-blue-700">
-   Kidney Function
-  </span>
-
-  <span class="flex items-center gap-2 text-sm text-blue-700">
-    <span>Learn More</span>
-    <span class="toggle-icon text-lg">+</span>
-  </span>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+    
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<!-- Kidney Function Tests Content - HIDDEN -->
-<div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  <!-- Creatinine -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+Bilirubin is a yellow pigment produced when old red blood cells are naturally broken down. Healthy liver cells process bilirubin before it is removed from the body in bile. Elevated bilirubin levels may cause jaundice, where the skin and eyes appear yellow, and can occur due to liver disease, bile duct obstruction, inherited conditions such as Gilbert's syndrome or increased breakdown of red blood cells. Bilirubin is also responsible for the yellow and green colour changes seen as bruises heal.
+</div>
+                
+       </div>         
 
-    <span>Creatinine</span>
+         
+<!-- Biomarker 6:  Albumin  -->
+     <div class="flex flex-wrap items-center justify-between">
+       
 
-    <span class="toggle-icon ml-2">+</span>
+                <div class="marker-item">
+                   Albumin
+                    
+                </div>
 
-  </button>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+    <span class="learn-more-icon">+</span>
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-Creatinine is a waste product produced naturally by your muscles as part of normal daily activity. Healthy kidneys remove creatinine from the blood and excrete it in urine, making it one of the most widely used markers of kidney function. Raised creatinine levels may indicate reduced kidney function, although levels can also be influenced by muscle mass, dehydration, certain medications and recent strenuous exercise. Measuring creatinine alongside eGFR provides a more complete assessment of kidney health.
+</button>
 
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  </div>
+Albumin is the most abundant protein produced by the liver and performs many important functions, including maintaining fluid balance within the bloodstream and transporting hormones, vitamins, fatty acids and medications throughout the body. Low albumin levels may suggest liver disease, kidney disease, inflammation, malnutrition or poor absorption of nutrients.
+</div>
+             
+</div>
 
-  <!-- Estimated Glomerular Filtration Rate (eGFR) -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+<!-- Biomarker 7:  Total protein  -->
+     <div class="flex flex-wrap items-center justify-between">
+       
 
-    <span>Estimated Glomerular Filtration Rate (eGFR)</span>
+                <div class="marker-item">
+               Total protein
+                    
+                </div>
 
-    <span class="toggle-icon ml-2">+</span>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+    
+    <span class="learn-more-icon">+</span>
 
-  </button>
+</button>
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-eGFR estimates how efficiently your kidneys filter waste products and excess fluid from your blood. It is calculated using your creatinine level together with factors such as your age and sex. eGFR is one of the most important indicators of kidney function and is commonly used to detect and monitor chronic kidney disease. A persistently reduced eGFR may suggest impaired kidney function and should always be interpreted alongside your clinical history and other blood test results.
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  </div>
+Total protein measures the combined amount of albumin and globulins circulating in your blood. It provides an overview of your nutritional status and can help assess liver function, kidney function and immune health.
+</div>
+        </div>
+            
+<!-- Biomarker 8: Globulin -->
+      <div class="flex flex-wrap items-center justify-between">
+       
 
-  <!--  Urea -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+                <div class="marker-item">
+             Globulin
+                    
+                </div>
 
-    <span>   Urea</span>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
-    <span class="toggle-icon ml-2">+</span>
+</button>
 
-  </button>
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+Globulins are a group of proteins that play an essential role in your immune system by helping your body fight infection and transport important substances throughout the bloodstream. Abnormal globulin levels may occur with infections, chronic inflammation, autoimmune conditions, liver disease and certain blood disorders.
+</div>
+                
+</div>  
+</div>
+</div>
+
  
-Urea is a waste product formed when your body breaks down protein. It is transported in the bloodstream and removed by the kidneys. Measuring urea helps assess kidney function, hydration status and protein metabolism. 
+        <!-- =============================================
+             KIDNEY FUNCTION
+        ============================================== -->
 
-  </div>
+         
+            <div class="biomarker-group">
 
- <!-- Sodium -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+            <button
+                class="biomarker-button"
+                onclick="toggleBiomarkers(this)">
 
-    <span>Sodium</span>
+                <div>
 
-    <span class="toggle-icon ml-2">+</span>
+                    <span class="block">
+                          Kidney Function
+                    </span>
 
-  </button>
+                    <span
+                        class="block text-sm text-gray-500 font-normal mt-1">
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+                         Kidney health and electrolyte assessment
+
+                    </span>
+
+                </div>
+
+                <span class="biomarker-icon">
+                   +
+                </span>
+
+            </button>
+            <div class="biomarker-content hidden">
+
+<!-- Biomarker 1:   Creatinine  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+                    
+            Creatinine
+                </div>
+
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
+
+</button>
+
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
+Creatinine is a waste product produced naturally by your muscles as part of normal daily activity. Healthy kidneys remove creatinine from the blood and excrete it in urine, making it one of the most widely used markers of kidney function. Raised creatinine levels may indicate reduced kidney function, although levels can also be influenced by muscle mass, dehydration, certain medications and recent strenuous exercise. Measuring creatinine alongside eGFR provides a more complete assessment of kidney health.
+</div>
+     </div>    
+ 
+ <!-- Biomarker 2:    Estimated Glomerular Filtration Rate (eGFR)  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+                    
+             Estimated Glomerular Filtration Rate (eGFR)
+                </div>
+
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
+
+</button>
+
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
+eGFR estimates how efficiently your kidneys filter waste products and excess fluid from your blood. It is calculated using your creatinine level together with factors such as your age and sex. eGFR is one of the most important indicators of kidney function and is commonly used to detect and monitor chronic kidney disease. A persistently reduced eGFR may suggest impaired kidney function and should always be interpreted alongside your clinical history and other blood test results.
+</div>
+     </div>    
+ 
+  <!-- Biomarker 3:     Urea  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+                    
+              Urea
+                </div>
+
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
+
+</button>
+
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
+Urea is a waste product formed when your body breaks down protein. It is transported in the bloodstream and removed by the kidneys. Measuring urea helps assess kidney function, hydration status and protein metabolism.
+</div>
+     </div>   
+ 
+   <!-- Biomarker 4:     Sodium  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+                    
+              Sodium
+                </div>
+
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
+
+</button>
+
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
 Sodium is an essential electrolyte that helps regulate fluid balance, blood pressure, nerve signalling and muscle function. Your kidneys and hormones work together to keep sodium levels within a narrow range. Abnormal sodium levels may occur with dehydration, kidney disease, heart failure, hormonal disorders or certain medications, and can affect normal brain and muscle function.
+</div>
+     </div>   
+ 
+ 
+ 
+   <!-- Biomarker 5:    Chloride  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
 
-  </div>
-  
-  <!-- Chloride -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+                <div class="marker-item">
+                    
+              Chloride
+                </div>
 
-    <span>Chloride</span>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
-    <span class="toggle-icon ml-2">+</span>
+</button>
 
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
 Chloride is an electrolyte that works alongside sodium and potassium to help maintain fluid balance, blood pressure and the body's acid-base balance. Abnormal chloride levels often occur alongside changes in other electrolytes and may be associated with dehydration, kidney disease, prolonged vomiting, diarrhoea or metabolic disorders.
-
-  </div>
- 
-
 </div>
+     </div>   
+ 
+ </div>
+</div>
+                
 
-<!-- Cholesterol (Lipid Profile) - MAIN DROPDOWN -->
-<button onclick="toggleFAQ(this)"
-  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+        <!-- =============================================
+             CHOLESTEROL
+        ============================================== -->
 
-  <span class="font-semibold text-blue-700">
-   Cholesterol (Lipid Profile)
-  </span>
+      <div class="biomarker-group">
 
-  <span class="flex items-center gap-2 text-sm text-blue-700">
-    <span>Learn More</span>
-    <span class="toggle-icon text-lg">+</span>
-  </span>
+            <button
+                class="biomarker-button"
+                onclick="toggleBiomarkers(this)">
+
+                <div>
+
+                    <span class="block">
+                           Cholesterol & Heart Health
+                    </span>
+
+                    <span
+                        class="block text-sm text-gray-500 font-normal mt-1">
+
+                           Blood lipid assessment
+
+                    </span>
+
+                </div>
+
+                <span class="biomarker-icon">
+                   +
+                </span>
+
+            </button>
+            <div class="biomarker-content hidden">
+
+<!-- Biomarker 1:   Total Cholesterol  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+                    
+            Total Cholesterol
+                </div>
+
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<!-- Cholesterol (Lipid Profile) - HIDDEN -->
-<div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
-
-  <!-- Total Cholesterol -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
-
-    <span>Total Cholesterol</span>
-
-    <span class="toggle-icon ml-2">+</span>
-
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
 Cholesterol is a fatty substance that your body needs to build healthy cells, produce hormones and make vitamin D. Although cholesterol is essential for good health, having too much cholesterol in your blood can increase your risk of heart disease and stroke. Measuring total cholesterol provides an overall assessment of your cholesterol level and is interpreted alongside HDL, LDL and triglycerides to give a more complete picture of your cardiovascular health.
+</div>
+     </div>    
+     
+     <!-- Biomarker 2:   HDL Cholesterol  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
 
-  </div>
+                <div class="marker-item">
+                    
+            HDL Cholesterol (High-density lipoprotein)
+                </div>
 
-  <!-- HDL Cholesterol (High-Density Lipoprotein) -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
-    <span>HDL Cholesterol (High-Density Lipoprotein)</span>
+</button>
 
-    <span class="toggle-icon ml-2">+</span>
-
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
 Often referred to as "good cholesterol", HDL helps remove excess cholesterol from your bloodstream and transports it back to the liver, where it can be broken down and removed from the body. Higher HDL levels are generally associated with a lower risk of heart disease, making this an important marker of cardiovascular health. Maintaining healthy HDL levels is often supported by regular exercise, maintaining a healthy weight and avoiding smoking.
+</div>
+     </div>    
+     
+     
+      <!-- Biomarker 3:   LDL Cholesterol  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
 
-  </div>
+                <div class="marker-item">
+                    
+            LDL Cholesterol (Low-density lipoprotein)
+                </div>
 
-  <!-- LDL Cholesterol (Low-Density Lipoprotein) -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
-    <span> LDL Cholesterol (Low-Density Lipoprotein)</span>
+</button>
 
-    <span class="toggle-icon ml-2">+</span>
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  </button>
+LDL is commonly known as "bad cholesterol" because high levels can lead to cholesterol building up within the walls of your arteries. Over time, this can narrow the arteries and increase the risk of heart attacks, strokes and other cardiovascular diseases. Monitoring LDL cholesterol is one of the most important ways of assessing long-term cardiovascular risk and is often used to guide lifestyle changes and cholesterol-lowering treatment where appropriate.
+</div>
+     </div>    
+    
+    
+    <!-- Biomarker 4:    Non-HDL Cholesterol  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
- LDL is commonly known as "bad cholesterol" because high levels can lead to cholesterol building up within the walls of your arteries. Over time, this can narrow the arteries and increase the risk of heart attacks, strokes and other cardiovascular diseases. Monitoring LDL cholesterol is one of the most important ways of assessing long-term cardiovascular risk and is often used to guide lifestyle changes and cholesterol-lowering treatment where appropriate.
+                <div class="marker-item">
+                    
+             Non-HDL Cholesterol
+                </div>
 
-  </div>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
- <!-- Non-HDL Cholesterol -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+</button>
 
-    <span>Non-HDL Cholesterol</span>
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-    <span class="toggle-icon ml-2">+</span>
-
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
 Non-HDL cholesterol measures all of the cholesterol that may contribute to the build-up of fatty deposits within your arteries. It includes LDL cholesterol as well as several other potentially harmful cholesterol particles. Many specialists consider non-HDL cholesterol to be one of the best indicators of cardiovascular risk, particularly in people with diabetes, obesity or raised triglyceride levels.
 
-  </div>
-  
-  <!-- Triglycerides -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+</div>
+     </div>    
+     
+     
+     
+         <!-- Biomarker 5:   Triglycerides  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
 
-    <span>Triglycerides</span>
+                <div class="marker-item">
+                    
+          Triglycerides
+                </div>
 
-    <span class="toggle-icon ml-2">+</span>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
-  </button>
+</button>
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
 Triglycerides are a type of fat found in your blood that your body uses as a source of energy. After eating, excess calories that are not immediately required are converted into triglycerides and stored in fat tissue. Persistently raised triglyceride levels may be associated with obesity, diabetes, excessive alcohol consumption, diets high in sugar and refined carbohydrates, and some inherited conditions. High triglyceride levels increase the risk of cardiovascular disease and, when very high, may also increase the risk of pancreatitis.
+</div>
+     </div> 
+     
+     
+     
+       
+         <!-- Biomarker 6:   Total Cholesterol / HDL Ratio -->
+      <div class="flex flex-wrap items-center justify-between">
+       
 
-  </div>
- 
- <!-- Total Cholesterol : HDL Ratio -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+                <div class="marker-item">
+                    
+         Total Cholesterol / HDL Ratio
+                </div>
 
-    <span>Total Cholesterol : HDL Ratio</span>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
-    <span class="toggle-icon ml-2">+</span>
+</button>
 
-  </button>
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
 The cholesterol-to-HDL ratio compares your total cholesterol with your HDL ("good") cholesterol. Rather than looking at individual cholesterol measurements alone, this ratio provides an overall assessment of cardiovascular risk by considering both protective and harmful cholesterol. In general, a lower ratio is associated with a lower risk of heart disease, while a higher ratio may indicate an increased cardiovascular risk.
-
-  </div>
- 
- 
+</div>
+     </div> 
+     
+     </div>
+     
 </div>
 
-<!-- Thyroid Function - MAIN DROPDOWN -->
-<button onclick="toggleFAQ(this)"
-  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
 
-  <span class="font-semibold text-blue-700">
-   Thyroid Function
-  </span>
+        <!-- =============================================
+             BLOOD SUGAR
+        ============================================== -->
+        
+        
+        <div class="biomarker-group">
 
-  <span class="flex items-center gap-2 text-sm text-blue-700">
-    <span>Learn More</span>
-    <span class="toggle-icon text-lg">+</span>
-  </span>
+            <button
+                class="biomarker-button"
+                onclick="toggleBiomarkers(this)">
+
+                <div>
+
+                    <span class="block">
+                           Blood Sugar/Diabetes Screen
+                    </span>
+
+                    <span
+                        class="block text-sm text-gray-500 font-normal mt-1">
+
+                            Longer-term glucose assessment
+
+                    </span>
+
+                </div>
+
+                <span class="biomarker-icon">
+                   +
+                </span>
+
+            </button>
+            <div class="biomarker-content hidden">
+
+<!-- Biomarker 1:    HbA1c  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+                    
+            HbA1c
+            
+                </div>
+
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<!-- Thyroid Function - HIDDEN -->
-<div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  <!-- Thyroid Stimulating Hormone (TSH) -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+HbA1c (glycated haemoglobin) measures your average blood glucose level over approximately the previous 2 to 3 months by assessing how much glucose has attached to your red blood cells. Unlike a single glucose reading, HbA1c provides a long-term picture of blood sugar control and is regarded as the gold standard test for diagnosing and monitoring diabetes. Raised HbA1c levels may indicate pre-diabetes or diabetes and, if left untreated, are associated with an increased risk of complications including heart disease, kidney disease, nerve damage and diabetic eye disease. Monitoring HbA1c can also help assess how well diabetes treatment and lifestyle changes are working over time.
+</div>
+     </div> 
+     
+     </div>
 
-    <span>Thyroid Stimulating Hormone (TSH)</span>
+       </div>
+        
 
-    <span class="toggle-icon ml-2">+</span>
+        <!-- =============================================
+             THYROID
+        ============================================== -->
 
-  </button>
+ <div class="biomarker-group">
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+            <button
+                class="biomarker-button"
+                onclick="toggleBiomarkers(this)">
+
+                <div>
+
+                    <span class="block">
+                            Thyroid Function
+                    </span>
+
+                    <span
+                        class="block text-sm text-gray-500 font-normal mt-1">
+
+                             Thyroid hormone assessment
+
+                    </span>
+
+                </div>
+
+                <span class="biomarker-icon">
+                   +
+                </span>
+
+            </button>
+            <div class="biomarker-content hidden">
+
+<!-- Biomarker 1:     Thyroid Stimulating Hormone (TSH)  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+                    
+             Thyroid Stimulating Hormone (TSH)
+            
+                </div>
+
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
+
+</button>
+
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
 Thyroid Stimulating Hormone (TSH) is produced by the pituitary gland and controls how much thyroid hormone your thyroid gland produces. It is usually the earliest marker to become abnormal when thyroid function changes, making it one of the most sensitive tests for assessing thyroid health. Raised TSH levels commonly suggest an underactive thyroid (hypothyroidism), while low levels may indicate an overactive thyroid (hyperthyroidism). As thyroid hormones regulate metabolism, energy production and many bodily functions, thyroid disorders may contribute to symptoms including fatigue, weight changes, sensitivity to temperature, mood changes, dry skin and alterations in heart rate.
+</div>
+     </div> 
+     
+     <!-- Biomarker 2:     Free Thyroxine (T4)  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
 
-  </div>
+                <div class="marker-item">
+                    
+             Free Thyroxine (T4)
+            
+                </div>
 
-  <!-- Free T4 (Thyroxine) -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
-    <span>Free T4 (Thyroxine)</span>
+</button>
 
-    <span class="toggle-icon ml-2">+</span>
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
 Free T4 is one of the two main hormones produced by your thyroid gland and plays a central role in regulating metabolism, body temperature, energy production and growth. Measuring Free T4 alongside TSH helps determine whether your thyroid is functioning normally and assists in diagnosing both underactive and overactive thyroid conditions. Abnormal Free T4 levels should always be interpreted alongside TSH to provide the most accurate assessment of thyroid function.
+</div>
+     </div> 
+     
+       <!-- Biomarker 3:     Free Triiodothyronine (T3) -->
+      <div class="flex flex-wrap items-center justify-between">
+       
 
-  </div>
+                <div class="marker-item">
+                    
+             Free Triiodothyronine (T3)
+            
+                </div>
 
-  <!--  Free T3 (Triiodothyronine) -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
-    <span>Free T3 (Triiodothyronine)</span>
+</button>
 
-    <span class="toggle-icon ml-2">+</span>
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
 Free T3 is the biologically active thyroid hormone responsible for regulating many of your body's metabolic processes. It influences energy levels, heart function, digestion, body temperature and the rate at which your body uses energy. Measuring Free T3 can provide additional information when investigating thyroid disorders, particularly when symptoms persist despite normal TSH or Free T4 levels or when hyperthyroidism is suspected.
-  </div>
- 
- 
 </div>
+     </div> 
+     
+     </div>
+</div>
+     
 
-<!-- Vitamins - MAIN DROPDOWN -->
-<button onclick="toggleFAQ(this)"
-  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
 
-  <span class="font-semibold text-blue-700">
-   Vitamins & Minerals </span>
+        <!-- =============================================
+             INFLAMMATION
+        ============================================== -->
 
-  <span class="flex items-center gap-2 text-sm text-blue-700">
-    <span>Learn More</span>
-    <span class="toggle-icon text-lg">+</span>
-  </span>
+ <div class="biomarker-group">
+
+            <button
+                class="biomarker-button"
+                onclick="toggleBiomarkers(this)">
+
+                <div>
+
+                    <span class="block">
+                             Inflammation
+                    </span>
+
+                    <span
+                        class="block text-sm text-gray-500 font-normal mt-1">
+
+                             Inflammatory marker - High-sensitivity C-Reactive Protein (hs-CRP)
+
+                    </span>
+
+                </div>
+
+                <span class="biomarker-icon">
+                   +
+                </span>
+
+            </button>
+            <div class="biomarker-content hidden">
+
+<!-- Biomarker 1:     High-sensitivity CRP  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+                    
+             High-sensitivity CRP
+            
+                </div>
+
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<!-- Vitamins - HIDDEN -->
-<div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  <!-- Vitamin D (25-OH Vitamin D) -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
-
-    <span>Vitamin D (25-OH Vitamin D)</span>
-
-    <span class="toggle-icon ml-2">+</span>
-
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-
-Vitamin D plays a vital role in maintaining healthy bones, teeth and muscles by helping your body absorb calcium and phosphate. It also supports normal immune function and contributes to muscle strength and general wellbeing. Low vitamin D levels are common in the UK and may contribute to tiredness, muscle weakness, bone pain and an increased risk of fractures. Measuring vitamin D helps identify deficiency and monitor response to supplementation.
-
-  </div>
-
-  <!-- Folate  -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
-
-    <span>Folate </span>
-
-    <span class="toggle-icon ml-2">+</span>
-
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-
-Folate is required for healthy red blood cell production, DNA synthesis and normal cell growth. It works closely with vitamin B12 and is particularly important during pregnancy to support normal fetal development. Low folate levels may contribute to fatigue, anaemia and poor cell regeneration. Measuring folate alongside vitamin B12 helps investigate nutritional deficiencies and the causes of macrocytic anaemia.
-
-
-  </div>
-
-  <!-- Active Vitamin B12 (Holotranscobalamin) -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
-
-    <span>Active Vitamin B12 (Holotranscobalamin)</span>
-
-    <span class="toggle-icon ml-2">+</span>
-
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-
-Vitamin B12 is essential for healthy red blood cell production, normal nerve function and DNA synthesis. Low vitamin B12 levels may lead to fatigue, weakness, poor concentration, memory problems, numbness or tingling in the hands and feet, and anaemia. Deficiency may develop due to poor dietary intake, reduced absorption, certain medications or autoimmune conditions such as pernicious anaemia.
-Active Vitamin B12 measures the proportion of vitamin B12 that is immediately available for your body's cells to use. It may detect vitamin B12 deficiency earlier than total vitamin B12 in some individuals and can provide additional information when investigating symptoms suggestive of deficiency despite apparently normal total B12 levels.
-
-  </div>
-    
-  <!-- Calcium -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
-
-    <span>Calcium</span>
-
-    <span class="toggle-icon ml-2">+</span>
-
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-
-Calcium is an essential mineral that plays a vital role in maintaining strong bones and teeth. It is also involved in normal muscle and nerve function, blood clotting and the healthy activity of the heart. Adequate vitamin D is important because it helps the body absorb and use calcium effectively.
-
-  </div>
-
- 
+C-Reactive Protein (CRP) is produced by the liver in response to inflammation anywhere in the body. It is a sensitive marker that rises rapidly following infection, injury or inflammation but does not identify the specific cause. This marker tests for ‘High-sensitivity CRP’ which measures very low levels of inflammation that may not be detected by a standard CRP test. It is commonly used to assess low-grade inflammation associated with cardiovascular disease.
+</div>
+     </div> 
+     
+     
+     </div>
 </div>
 
-<!-- IRON STUDIES - MAIN DROPDOWN -->
-<button onclick="toggleFAQ(this)"
-  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
 
-  <span class="font-semibold text-blue-700">
-   Iron Studies
-  </span>
+        <!-- =============================================
+             URIC ACID
+        ============================================== -->
 
-  <span class="flex items-center gap-2 text-sm text-blue-700">
-    <span>Learn More</span>
-    <span class="toggle-icon text-lg">+</span>
-  </span>
+      <div class="biomarker-group">
+
+            <button
+                class="biomarker-button"
+                onclick="toggleBiomarkers(this)">
+
+                <div>
+
+                    <span class="block">
+                             Uric Acid
+                    </span>
+
+                    <span
+                        class="block text-sm text-gray-500 font-normal mt-1">
+
+                             Metabolic health marker
+
+                    </span>
+
+                </div>
+
+                <span class="biomarker-icon">
+                   +
+                </span>
+
+            </button>
+            <div class="biomarker-content hidden">
+
+<!-- Biomarker 1:     Uric Acid  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+             Uric Acid
+            
+                </div>
+
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
 </button>
 
-<!-- Iron Studies - HIDDEN -->
-<div class="hidden px-4 pb-4 mb-6 border-b-2 border-gray-200">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  <!-- Iron Studies -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+Uric acid is produced when the body breaks down substances called purines, which are found naturally in your body and in certain foods. Healthy kidneys remove excess uric acid through the urine. High uric acid levels may increase the risk of gout, kidney stones and, in some cases, chronic kidney disease. Levels can also be influenced by diet, alcohol consumption, obesity and certain medications.
+</div>
+     </div> 
+     
+     </div>
+     </div>
+      
+     
+                 
+        <!-- =============================================
+             IRON
+        ============================================== -->
 
-    <span>Ferritin</span>
 
-    <span class="toggle-icon ml-2">+</span>
+      <div class="biomarker-group">
 
-  </button>
+            <button
+                class="biomarker-button"
+                onclick="toggleBiomarkers(this)">
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+                <div>
+
+                    <span class="block">
+                             Iron Status
+                    </span>
+
+                    <span
+                        class="block text-sm text-gray-500 font-normal mt-1">
+
+                             Iron stores and availability
+
+                    </span>
+
+                </div>
+
+                <span class="biomarker-icon">
+                   +
+                </span>
+
+            </button>
+            <div class="biomarker-content hidden">
+
+<!-- Biomarker 1:     Ferritin  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+            Ferritin
+            
+                </div>
+
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
+
+</button>
+
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
 Ferritin is the body's main iron storage protein and provides the most accurate indication of your iron stores. Iron is essential for producing healthy red blood cells, transporting oxygen around the body and supporting normal energy production. Low ferritin levels are one of the earliest signs of iron deficiency and may contribute to tiredness, weakness, poor concentration, headaches, restless legs and hair loss, even before anaemia develops. Raised ferritin levels may occur with inflammation, liver disease, excessive iron storage disorders such as haemochromatosis, alcohol excess or certain chronic medical conditions. Ferritin should always be interpreted alongside other iron markers to provide a complete assessment of your iron status.
+</div>
+     </div> 
+     
+     <!-- Biomarker 2:   Serum iron  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
 
-  </div>
+                <div class="marker-item">
+            Serum Iron
+            
+                </div>
 
-  <!-- Serum Iron  -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
-    <span>Serum Iron</span>
+</button>
 
-    <span class="toggle-icon ml-2">+</span>
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
 Serum iron measures the amount of iron circulating in your bloodstream that is available to produce haemoglobin and support normal body function. Iron levels naturally fluctuate throughout the day and can be influenced by diet, illness and recent iron supplementation. For this reason, serum iron is usually interpreted together with ferritin, transferrin and transferrin saturation to provide a more accurate picture of your body's iron balance. Low levels may suggest iron deficiency, while raised levels can occur with iron overload disorders or liver disease.
+</div>
+     </div> 
+     
+     
+        <!-- Biomarker 3:   Transferrin  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
 
-  </div>
+                <div class="marker-item">
+            Transferrin
+            
+                </div>
 
-  <!-- Transferrin -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
-    <span>Transferrin</span>
+</button>
 
-    <span class="toggle-icon ml-2">+</span>
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
-  </button>
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
 Transferrin is a protein produced by the liver that transports iron around your body to where it is needed, particularly for the production of red blood cells. When your iron stores are low, your body often produces more transferrin to maximise iron transport. Conversely, transferrin levels may fall in chronic illness, liver disease or malnutrition. Measuring transferrin alongside ferritin and serum iron helps distinguish between different causes of iron deficiency and iron overload.
 
-  </div>
+</div>
+     </div> 
  
- <!-- Total Iron Binding Capacity (TIBC) -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+ 
+     
+        <!-- Biomarker 4:   Total Iron Binding Capacity (TIBC)  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
 
-    <span>Total Iron Binding Capacity (TIBC)</span>
+                <div class="marker-item">
+           Total Iron Binding Capacity (TIBC)
+            
+                </div>
 
-    <span class="toggle-icon ml-2">+</span>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
-  </button>
+</button>
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
 Total Iron Binding Capacity (TIBC) measures the maximum amount of iron that transferrin can carry in the bloodstream. It provides an indirect assessment of transferrin levels and helps determine whether your body has sufficient iron stores. TIBC is often increased in iron deficiency as your body attempts to transport more iron, while lower levels may occur with chronic inflammation, liver disease or iron overload conditions.
 
-  </div>
- 
- 
- <!-- Unsaturated Iron Binding Capacity (UIBC) -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+</div>
+     </div> 
+   
+     
+        <!-- Biomarker 5:    Unsaturated Iron Binding Capacity (UIBC) -->
+      <div class="flex flex-wrap items-center justify-between">
+       
 
-    <span>Unsaturated Iron Binding Capacity (UIBC)</span>
+                <div class="marker-item">
+            Unsaturated Iron Binding Capacity (UIBC)
+            
+                </div>
 
-    <span class="toggle-icon ml-2">+</span>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
-  </button>
+</button>
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
 
 UIBC measures the amount of transferrin that is available to bind additional iron. It provides further information about your body's ability to transport iron and is commonly interpreted alongside serum iron and TIBC. Higher UIBC values may indicate iron deficiency, whereas lower values can be associated with iron overload.
 
-  </div>
- 
- <!-- Transferrin Saturation -->
-  <button onclick="toggleFAQ(this)"
-    class="w-full flex justify-between items-center p-4 text-left font-semibold text-blue-700 border-0 bg-transparent">
+</div>
+     </div> 
+     
+        <!-- Biomarker 6:     Transferrin Saturation  -->
+      <div class="flex flex-wrap items-center justify-between">
+       
 
-    <span>Transferrin Saturation</span>
+                <div class="marker-item">
+            Transferrin Saturation
+            
+                </div>
 
-    <span class="toggle-icon ml-2">+</span>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
 
-  </button>
+</button>
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
 Transferrin saturation calculates the percentage of transferrin that is carrying iron. It is one of the most useful markers for assessing how much iron is immediately available for use by your body. Low transferrin saturation commonly suggests iron deficiency, while persistently raised levels may indicate iron overload disorders such as hereditary haemochromatosis. This marker is particularly valuable when interpreted alongside ferritin.
 
-  </div>
- </div>
+</div>
+     </div>       
+     
+     </div>
 
-<!-- Testosterone - MAIN DROPDOWN -->
-<button onclick="toggleFAQ(this)"
-  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
-
-  <span class="font-semibold text-blue-700">
-    Testosterone </span>
-
-  <span class="flex items-center gap-2 text-sm text-blue-700">
-    <span>Learn More</span>
-    <span class="toggle-icon text-lg">+</span>
-  </span>
-
-</button>
+</div>
+    
 
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-Testosterone is the primary male sex hormone and plays an essential role in maintaining muscle mass, strength, bone density, energy levels, mood, libido, erectile function and sperm production. Testosterone levels naturally decline with age but may also be affected by obesity, stress, chronic illness, poor sleep and certain medications. Low testosterone may contribute to fatigue, reduced sex drive, erectile dysfunction, decreased muscle mass, increased body fat, low mood and reduced exercise performance. Measuring total testosterone is the first step in assessing male hormonal health and should be interpreted alongside free testosterone and SHBG for a more complete assessment.
+        <!-- =============================================
+             VITAMINS & MINERALS
+        ============================================== -->
 
-  </div>
-  
-<!-- URIC ACID - MAIN DROPDOWN -->
-<button onclick="toggleFAQ(this)"
-  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
+  <div class="biomarker-group">
 
-  <span class="font-semibold text-blue-700">
-    Uric Acid </span>
+            <button
+                class="biomarker-button"
+                onclick="toggleBiomarkers(this)">
 
-  <span class="flex items-center gap-2 text-sm text-blue-700">
-    <span>Learn More</span>
-    <span class="toggle-icon text-lg">+</span>
-  </span>
+                <div>
 
-</button>
+                    <span class="block">
+                             Vitamins & Minerals
+                    </span>
 
+                    <span
+                        class="block text-sm text-gray-500 font-normal mt-1">
 
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-Uric acid is produced when the body breaks down substances called purines, which are found naturally in your body and in certain foods. Healthy kidneys remove excess uric acid through the urine. High uric acid levels may increase the risk of gout, kidney stones and, in some cases, chronic kidney disease. Levels can also be influenced by diet, alcohol consumption, obesity and certain medications.
+                             Essential vitamin and mineral markers
 
-  </div>
-  
+                    </span>
 
-  <!-- Diabetes- MAIN DROPDOWN -->
-<button onclick="toggleFAQ(this)"
-  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
-
-  <span class="font-semibold text-blue-700">
-   Diabetes Screen (HbA1c) </span>
-
-  <span class="flex items-center gap-2 text-sm text-blue-700">
-    <span>Learn More</span>
-    <span class="toggle-icon text-lg">+</span>
-  </span>
-
-</button>
-
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-HbA1c (glycated haemoglobin) measures your average blood glucose level over approximately the previous 2 to 3 months by assessing how much glucose has attached to your red blood cells. Unlike a single glucose reading, HbA1c provides a long-term picture of blood sugar control and is regarded as the gold standard test for diagnosing and monitoring diabetes. Raised HbA1c levels may indicate pre-diabetes or diabetes and, if left untreated, are associated with an increased risk of complications including heart disease, kidney disease, nerve damage and diabetic eye disease. Monitoring HbA1c can also help assess how well diabetes treatment and lifestyle changes are working over time.
-
-
-  </div>
-  
-    <!-- CRP - MAIN DROPDOWN -->
-<button onclick="toggleFAQ(this)"
-  class="w-full flex items-center justify-between text-left p-0 bg-transparent border-0 cursor-pointer mb-4">
-
-  <span class="font-semibold text-blue-700">
-   High-Sensitivity C-Reactive Protein (hs-CRP)</span>
-
-  <span class="flex items-center gap-2 text-sm text-blue-700">
-    <span>Learn More</span>
-    <span class="toggle-icon text-lg">+</span>
-  </span>
-
-</button>
-
-
-  <div class="hidden px-4 pb-4 text-gray-600 leading-relaxed">
-C-Reactive Protein (CRP) is produced by the liver in response to inflammation anywhere in the body. It is a sensitive marker that rises rapidly following infection, injury or inflammation but does not identify the specific cause. 
-This marker tests for ‘High-sensitivity CRP’ which measures very low levels of inflammation that may not be detected by a standard CRP test. It is commonly used to assess low-grade inflammation associated with cardiovascular disease. 
-
-  </div>
-
-
-                     
                 </div>
 
-                <div class="bg-gray-50 rounded-xl shadow-md p-6 mb-8">
-                    <h2 class="text-xl font-semibold mb-4 text-blue-600">Important Pre-Test Information</h2>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                        <li><strong>Non-Fasting Lipids:</strong> This test will be performed on a random (non-fasting) sample. You may eat and drink as normal before your test.</li>
-                        <li><strong>Testosterone:</strong> For most accurate results, the sample should be collected in the morning (between 7:00 AM and 10:00 AM).</li>
-                        <li><strong>Biotin:</strong> Please stop taking Biotin supplements 7 days before the test, as they can interfere with thyroid and vitamin B12 results.</li>
-                    </ul>
+                <span class="biomarker-icon">
+                   +
+                </span>
+
+            </button>
+            <div class="biomarker-content hidden">
+
+<!-- Biomarker 1:  Vitamin D -->
+      <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+            Vitamin D (25-OH Vitamin D)
+            
                 </div>
 
-                <div class="text-center">
-                    <a href="appointment.html" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center">
-                        Book Now <i data-feather="calendar" class="ml-2"></i>
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
+
+</button>
+
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
+Vitamin D plays a vital role in maintaining healthy bones, teeth and muscles by helping your body absorb calcium and phosphate. It also supports normal immune function and contributes to muscle strength and general wellbeing. Low vitamin D levels are common in the UK and may contribute to tiredness, muscle weakness, bone pain and an increased risk of fractures. Measuring vitamin D helps identify deficiency and monitor response to supplementation.
+</div>
+     </div> 
+     
+     <!-- Biomarker 2:  Folate -->
+      <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+            Folate
+            
+                </div>
+
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
+
+</button>
+
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
+Folate is required for healthy red blood cell production, DNA synthesis and normal cell growth. It works closely with vitamin B12 and is particularly important during pregnancy to support normal fetal development. Low folate levels may contribute to fatigue, anaemia and poor cell regeneration. Measuring folate alongside vitamin B12 helps investigate nutritional deficiencies and the causes of macrocytic anaemia.
+</div>
+     </div> 
+     
+      
+     <!-- Biomarker 3: Active Vitamin B12 (Holotranscobalamin) -->
+      <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+           Active Vitamin B12 (Holotranscobalamin)
+            
+                </div>
+
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
+
+</button>
+
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
+Vitamin B12 is essential for healthy red blood cell production, normal nerve function and DNA synthesis. Low vitamin B12 levels may lead to fatigue, weakness, poor concentration, memory problems, numbness or tingling in the hands and feet, and anaemia. Deficiency may develop due to poor dietary intake, reduced absorption, certain medications or autoimmune conditions such as pernicious anaemia. Active Vitamin B12 measures the proportion of vitamin B12 that is immediately available for your body's cells to use. It may detect vitamin B12 deficiency earlier than total vitamin B12 in some individuals and can provide additional information when investigating symptoms suggestive of deficiency despite apparently normal total B12 levels.
+</div>
+     </div> 
+     
+         <!-- Biomarker 4: Calcium -->
+      <div class="flex flex-wrap items-center justify-between">
+       
+
+                <div class="marker-item">
+           Calcium
+            
+                </div>
+
+        
+       <button
+    type="button"
+    onclick="toggleLearnMore(this)"
+       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
+Learn More
+   
+    <span class="learn-more-icon">+</span>
+
+</button>
+
+<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
+
+Calcium is an essential mineral that plays a vital role in maintaining strong bones and teeth. It is also involved in normal muscle and nerve function, blood clotting and the healthy activity of the heart. Adequate vitamin D is important because it helps the body absorb and use calcium effectively.
+</div>
+     </div> 
+     
+     </div> 
+     
+</div>
+<br>
+
+<!-- =============================================
+     IMPORTANT PRE-TEST INFORMATION
+============================================= -->
+<section>
+    
+ <h2
+                        class="section-title mb-9">
+
+                        Important Pre-Test Information
+
+                    </h2>
+<div class="biomarker-group">
+
+    <button
+        class="biomarker-button"
+        onclick="toggleBiomarkers(this)">
+
+        <div>
+
+            <span class="block">
+                Please read before your blood test
+            </span>
+
+            <span class="block text-sm text-gray-500 font-normal mt-1">
+               
+            </span>
+
+        </div>
+
+        <span class="biomarker-icon">
+            +
+        </span>
+
+    </button>
+
+
+    <div class="biomarker-content hidden">
+
+        <!-- Non-Fasting Lipids -->
+        <div class="marker-item">
+            <strong>Non-Fasting Lipids</strong>
+        </div>
+
+        <p class="text-sm text-gray-500 font-normal leading-relaxed mb-4">
+            This test will be performed on a random (non-fasting) sample.
+            You may eat and drink as normal before your test.
+        </p>
+
+
+        <!-- Testosterone -->
+        <div class="marker-item">
+            <strong>Testosterone</strong>
+        </div>
+
+        <p class="text-sm text-gray-500 font-normal leading-relaxed mb-4">
+            For the most accurate results, the sample should be collected
+            in the morning, ideally between 7:00 AM and 10:00 AM.
+        </p>
+
+
+        <!-- Biotin -->
+        <div class="marker-item">
+            <strong>Biotin</strong>
+        </div>
+
+        <p class="text-sm text-gray-500 font-normal leading-relaxed mb-2">
+            Please stop taking Biotin supplements 7 days before the test,
+            as they can interfere with certain laboratory results, including
+            thyroid and vitamin B12 tests.
+        </p>
+        
+         <!-- Vitamin B12 -->
+        <div class="marker-item">
+            <strong>Active Vitamin B12</strong>
+        </div>
+
+        <p class="text-sm text-gray-500 font-normal leading-relaxed mb-2">
+            We can't provide exact numerical results for active vitamin B12 levels above 150 pmol/L — these results will be displayed as ">150 pmol/L".
+        </p>
+
+
+    </div>
+
+</div>
+</section>
+
+<br>
+                <!-- =============================================
+                     WHO IS IT FOR?
+                ============================================== -->
+
+                <section
+                    class="mb-16 bg-[#f7f9fb] rounded-lg p-7 md:p-10">
+
+
+                    <p class="eyebrow mb-3">
+
+                        Is this test right for me?
+
+                    </p>
+
+
+                    <h2
+                        class="section-title mb-6">
+
+                        A comprehensive male health check
+
+                    </h2>
+
+
+                    <p
+                        class="content-copy mb-7">
+
+                        This package may be suitable if you want
+                        a broad overview of several important areas
+                        of your health rather than testing one
+                        biomarker in isolation.
+
+                    </p>
+
+
+                    <div
+                        class="grid sm:grid-cols-2 gap-4">
+
+
+                        <div
+                            class="flex items-start gap-3">
+
+                            <i
+                                data-feather="check"
+                                class="w-5 h-5 text-blue-700 mt-1">
+                            </i>
+
+                            <span class="text-gray-700">
+                                General health screening
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="flex items-start gap-3">
+
+                            <i
+                                data-feather="check"
+                                class="w-5 h-5 text-blue-700 mt-1">
+                            </i>
+
+                            <span class="text-gray-700">
+                                Male hormone assessment
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="flex items-start gap-3">
+
+                            <i
+                                data-feather="check"
+                                class="w-5 h-5 text-blue-700 mt-1">
+                            </i>
+
+                            <span class="text-gray-700">
+                                Vitamin and iron assessment
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="flex items-start gap-3">
+
+                            <i
+                                data-feather="check"
+                                class="w-5 h-5 text-blue-700 mt-1">
+                            </i>
+
+                            <span class="text-gray-700">
+                                Metabolic health assessment
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     HOW IT WORKS
+                ============================================== -->
+
+                <section>
+
+
+                    <p class="eyebrow mb-3">
+
+                        Simple process
+
+                    </p>
+
+
+                    <h2
+                        class="section-title mb-9">
+
+                        What happens next?
+
+                    </h2>
+
+
+                    <div
+                        class="grid md:grid-cols-3 gap-8">
+
+
+                        <div>
+
+                            <div class="step-number">
+                                01
+                            </div>
+
+                            <h3
+                                class="font-semibold text-lg text-[#102a43] mb-3">
+
+                                Book
+
+                            </h3>
+
+                            <p
+                                class="text-gray-600 text-sm leading-relaxed">
+
+                                Choose your appointment and
+                                complete your booking online.
+
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="step-number">
+                                02
+                            </div>
+
+                            <h3
+                                class="font-semibold text-lg text-[#102a43] mb-3">
+
+                                Get tested
+
+                            </h3>
+
+                            <p
+                                class="text-gray-600 text-sm leading-relaxed">
+
+                                Attend the clinic or arrange
+                                home blood collection.
+
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="step-number">
+                                03
+                            </div>
+
+                            <h3
+                                class="font-semibold text-lg text-[#102a43] mb-3">
+
+                                Receive results
+
+                            </h3>
+
+                            <p
+                                class="text-gray-600 text-sm leading-relaxed">
+
+                                Your blood results are reviewed
+                                and provided to you.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+            </main>
+
+
+
+            <!-- =================================================
+                 RIGHT BOOKING CARD
+            ================================================== -->
+
+            <aside>
+
+
+                <div class="booking-card">
+
+
+                    <p class="eyebrow mb-3">
+
+                        Comprehensive Male
+
+                    </p>
+
+
+                    <div
+                        class="flex items-end gap-2 mb-5">
+
+                        <span
+                            class="text-4xl font-semibold text-[#102a43]">
+
+                            £199
+
+                        </span>
+
+                    </div>
+
+
+                    <p
+                        class="text-gray-600 leading-relaxed mb-7">
+
+                        A comprehensive male health assessment
+                        covering more than 50 biomarkers.
+
+                    </p>
+
+
+
+                    <div
+                        class="space-y-4 mb-7">
+
+
+                        <div
+                            class="flex items-center gap-3 text-sm text-gray-700">
+
+                            <i
+                                data-feather="check-circle"
+                                class="w-5 h-5 text-blue-700">
+                            </i>
+
+                            50+ biomarkers
+
+                        </div>
+
+
+                        <div
+                            class="flex items-center gap-3 text-sm text-gray-700">
+
+                            <i
+                                data-feather="activity"
+                                class="w-5 h-5 text-blue-700">
+                            </i>
+
+                            Male hormone screening
+
+                        </div>
+
+
+                        <div
+                            class="flex items-center gap-3 text-sm text-gray-700">
+
+                            <i
+                                data-feather="user-check"
+                                class="w-5 h-5 text-blue-700">
+                            </i>
+
+                            Doctor-reviewed results
+
+                        </div>
+
+
+                        <div
+                            class="flex items-center gap-3 text-sm text-gray-700">
+
+                            <i
+                                data-feather="home"
+                                class="w-5 h-5 text-blue-700">
+                            </i>
+
+                            Home collection available
+
+                        </div>
+
+                    </div>
+
+
+
+                    <a
+                        href="appointment.html"
+                        class="btn-primary w-full mb-3">
+
+                        Book This Test
+
+                        <i
+                            data-feather="arrow-right"
+                            class="ml-2 w-5 h-5">
+                        </i>
+
                     </a>
+
+
+                    <a
+                        href="homevisit.html"
+                        class="btn-secondary w-full">
+
+                        Home Collection
+
+                    </a>
+
+
+                    <p
+                        class="text-xs text-gray-500 text-center mt-5">
+
+                        No GP referral required.
+
+                    </p>
+
                 </div>
-            </div>
+
+            </aside>
+
+
         </div>
-<div>
-    
-    <br>
-    
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Prime Life Diagnostics</h3>
-                    <p class="text-gray-400">Your partner in health optimisation through precise blood testing.</p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     HOME COLLECTION BANNER
+============================================================ -->
+
+<section
+    class="py-16 bg-[#f5f8fb] border-y border-gray-100">
+
+    <div
+        class="max-w-6xl mx-auto px-5">
+
+        <div
+            class="flex flex-col md:flex-row md:items-center md:justify-between gap-8"
+            data-aos="fade-up">
+
+
+            <div
+                class="flex gap-5 items-start">
+
+                <div class="feature-icon">
+
+                    <i
+                        data-feather="home"
+                        class="w-5 h-5">
+                    </i>
+
                 </div>
 
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="bloodtestspanels.html" class="text-gray-400 hover:text-white transition-colors">Blood Tests</a></li>
-                        <li><a href="panels.html" class="text-gray-400 hover:text-white transition-colors">Test Panels</a></li>
-                        <li><a href="ourmission.html" class="text-gray-400 hover:text-white transition-colors">Our Mission</a></li>
-                        <li><a href="appointment.html" class="text-gray-400 hover:text-white transition-colors">Book Appointment</a></li>
-                          <li><a href="FAQs.html" class="text-gray-400 hover:text-white transition-colors">Frequently Asked Questions</a></li>
-                    </ul>
+
+                    <h2
+                        class="text-2xl font-semibold text-[#102a43] mb-2">
+
+                        Prefer to have your blood taken at home?
+
+                    </h2>
+
+                    <p class="text-gray-600">
+
+                        Our nationwide home blood collection
+                        service is available for this test.
+
+                    </p>
+
                 </div>
 
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
-                    <p class="text-gray-400">Email: info@primelifediagnostics.co.uk</p>
-                    <p class="text-gray-400">Phone: 01302 203565</p>
-                    <p class="text-gray-400">Address: 105 Scrooby Road, Bircotes, Doncaster, DN11 8JN</p>
-                </div>
             </div>
 
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 Prime Life Diagnostics. All rights reserved.</p>
-            </div>
+
+            <a
+                href="homevisit.html"
+                class="btn-secondary whitespace-nowrap">
+
+                Find Out More
+
+                <i
+                    data-feather="arrow-right"
+                    class="ml-2 w-4 h-4">
+                </i>
+
+            </a>
+
         </div>
-    </footer>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FAQ
+============================================================ -->
+
+<section
+    class="py-20 md:py-24 bg-white">
+
+    <div
+        class="max-w-4xl mx-auto px-5">
+
+
+        <div
+            class="text-center mb-12"
+            data-aos="fade-up">
+
+
+            <p class="eyebrow mb-3">
+
+                Questions
+
+            </p>
+
+
+            <h2 class="section-title">
+
+                Frequently asked questions
+
+            </h2>
+
+        </div>
+
+
+
+        <!-- FAQ 1 -->
+
+        <div class="faq-item">
+
+            <button
+                class="faq-button"
+                onclick="toggleFAQ(this)">
+
+                <span>
+                    What happens during my appointment?
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-answer hidden">
+
+                Your appointment will be carried out by a trained
+                healthcare professional. A small blood sample is
+                taken using sterile, single-use equipment and the
+                appointment is typically completed within minutes.
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FAQ 2 -->
+
+        <div class="faq-item">
+
+            <button
+                class="faq-button"
+                onclick="toggleFAQ(this)">
+
+                <span>
+                    Do I need a GP referral?
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-answer hidden">
+
+                No. You can book a private blood test directly
+                with Prime Life Diagnostics without a GP referral.
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FAQ 3 -->
+
+        <div class="faq-item">
+
+            <button
+                class="faq-button"
+                onclick="toggleFAQ(this)">
+
+                <span>
+                    When will I receive my results?
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-answer hidden">
+
+                Most blood test results are available within
+                24–72 hours, although some specialised tests may
+                take longer.
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FAQ 4 -->
+
+        <div class="faq-item">
+
+            <button
+                class="faq-button"
+                onclick="toggleFAQ(this)">
+
+                <span>
+                    Can I have this test at home?
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-answer hidden">
+
+                Yes. This test can be combined with our nationwide
+                home blood collection service.
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FAQ 5 -->
+
+        <div class="faq-item">
+
+            <button
+                class="faq-button"
+                onclick="toggleFAQ(this)">
+
+                <span>
+                    Who reviews my results?
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-answer hidden">
+
+                Results are reviewed as part of Prime Life
+                Diagnostics' doctor-led service.
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FINAL CTA
+============================================================ -->
+
+<section
+    class="final-cta py-20 md:py-24">
+
+    <div
+        class="relative z-10 max-w-4xl mx-auto px-5 text-center text-white"
+        data-aos="fade-up">
+
+
+        <p
+            class="uppercase tracking-[2px] text-sm font-semibold text-blue-200 mb-4">
+
+            Take the next step
+
+        </p>
+
+
+        <h2
+            class="text-4xl md:text-5xl font-semibold leading-tight mb-6">
+
+            Get a clearer picture
+            of your health.
+
+        </h2>
+
+
+        <p
+            class="text-lg md:text-xl text-white/80 mb-9">
+
+            Book your Comprehensive Male Blood Test today.
+
+        </p>
+
+
+        <a
+            href="appointment.html"
+            class="inline-flex items-center justify-center bg-white text-[#102a43] px-8 py-4 rounded-md font-semibold hover:bg-gray-100 transition">
+
+            Book for £199
+
+            <i
+                data-feather="arrow-right"
+                class="ml-3 w-5 h-5">
+            </i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer
+    class="bg-[#0b1c2b] text-white">
+
+    <div
+        class="max-w-7xl mx-auto px-5 py-16">
+
+
+        <div
+            class="grid md:grid-cols-3 gap-12">
+
+
+            <!-- Brand -->
+
+            <div>
+
+                <img
+                    src="Prime Life Diagnostics1-01.png"
+                    alt="Prime Life Diagnostics"
+                    class="h-16 w-auto mb-6 brightness-0 invert">
+
+                <p
+                    class="text-gray-400 leading-relaxed">
+
+                    Private blood testing and health checks
+                    designed to make understanding your health
+                    simpler.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- Links -->
+
+            <div>
+
+                <h3
+                    class="font-semibold text-lg mb-5">
+
+                    Quick Links
+
+                </h3>
+
+
+                <div class="space-y-3">
+
+                    <a
+                        href="index.html"
+                        class="block text-gray-400 hover:text-white">
+
+                        Home
+
+                    </a>
+
+
+                    <a
+                        href="bloodtestspanels.html"
+                        class="block text-gray-400 hover:text-white">
+
+                        Blood Tests
+
+                    </a>
+
+
+                    <a
+                        href="panels.html"
+                        class="block text-gray-400 hover:text-white">
+
+                        Health Checks
+
+                    </a>
+
+
+                    <a
+                        href="ourmission.html"
+                        class="block text-gray-400 hover:text-white">
+
+                        Our Mission
+
+                    </a>
+
+
+                    <a
+                        href="chooseus.html"
+                        class="block text-gray-400 hover:text-white">
+
+                        Why Us
+
+                    </a>
+
+
+                    <a
+                        href="FAQs.html"
+                        class="block text-gray-400 hover:text-white">
+
+                        FAQs
+
+                    </a>
+
+
+                    <a
+                        href="appointment.html"
+                        class="block text-gray-400 hover:text-white">
+
+                        Book Appointment
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Contact -->
+
+            <div>
+
+                <h3
+                    class="font-semibold text-lg mb-5">
+
+                    Contact
+
+                </h3>
+
+
+                <div
+                    class="space-y-3 text-gray-400">
+
+                    <p>
+                        info@primelifediagnostics.co.uk
+                    </p>
+
+                    <p>
+                        01302 203565
+                    </p>
+
+                    <p>
+                        105 Scrooby Road,<br>
+                        Bircotes,<br>
+                        Doncaster,<br>
+                        DN11 8JN
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Footer bottom -->
+
+        <div
+            class="border-t border-white/10 mt-14 pt-8">
+
+
+            <!-- Social icons -->
+
+            <div
+                class="flex justify-center gap-5 mb-8">
+
+
+                <!-- TikTok -->
+
+                <a
+                    href="https://www.tiktok.com/@prime.life.diagnostics"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="TikTok"
+                    class="text-gray-400 hover:text-white">
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="w-6 h-6">
+
+                        <path
+                            d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.68h-3.4v13.76a2.9 2.9 0 1 1-2.9-2.9c.2 0 .39.02.58.06V9.5a6.34 6.34 0 1 0 5.72 6.27V8.69a8.16 8.16 0 0 0 4.77 1.53V6.69z">
+                        </path>
+
+                    </svg>
+
+                </a>
+
+
+                <!-- Instagram -->
+
+                <a
+                    href="https://www.instagram.com/prime.life.diagnostics/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    class="text-gray-400 hover:text-white">
+
+                    <i
+                        data-feather="instagram">
+                    </i>
+
+                </a>
+
+
+                <!-- Facebook -->
+
+                <a
+                    href="https://www.facebook.com/profile.php?id=61581186570303&sk=about"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    class="text-gray-400 hover:text-white">
+
+                    <i
+                        data-feather="facebook">
+                    </i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Copyright -->
+
+            <div
+                class="text-center">
+
+                <p
+                    class="text-sm text-gray-500">
+
+                    © 2026 Prime Life Diagnostics.
+                    All rights reserved.
+
+                </p>
+
+
+
+                <!-- CQC / UKAS -->
+
+                <div
+                    class="flex justify-center items-center gap-7 mt-7">
+
+
+                    <a
+                        href="https://www.cqc.org.uk/provider/1-24970013163"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <img
+                            src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/cqc%20logo.webp"
+                            alt="CQC Regulated"
+                            class="h-14">
+
+                    </a>
+
+
+                    <img
+                        src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/UKAS-Accreditation-Symbol-purple-on-white-Medical.png"
+                        alt="UKAS Accredited"
+                        class="h-14">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+
+<script>
+
+
+    /* =========================================================
+       AOS
+    ========================================================= */
+
+    AOS.init({
+
+        duration: 700,
+
+        once: true,
+
+        offset: 70
+
+    });
+
+
+
+    /* =========================================================
+       FEATHER ICONS
+    ========================================================= */
+
+    feather.replace();
+
+
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    const menuBtn =
+        document.getElementById("menu-btn");
+
+    const closeMenu =
+        document.getElementById("close-menu");
+
+    const mobileMenu =
+        document.getElementById("mobile-menu");
+
+
+    menuBtn.addEventListener(
+        "click",
+        function () {
+
+            mobileMenu.classList.remove("hidden");
+
+        }
+    );
+
+
+    closeMenu.addEventListener(
+        "click",
+        function () {
+
+            mobileMenu.classList.add("hidden");
+
+        }
+    );
+
+
+    document
+        .querySelectorAll("#mobile-menu a")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    mobileMenu.classList.add("hidden");
+
+                }
+            );
+
+        });
+
+
+
+    /* =========================================================
+       BIOMARKER ACCORDIONS
+    ========================================================= */
+
+    function toggleBiomarkers(button) {
+
+        const content =
+            button.nextElementSibling;
+
+        const icon =
+            button.querySelector(
+                ".biomarker-icon"
+            );
+
+
+        content.classList.toggle(
+            "hidden"
+        );
+
+
+        if (
+            content.classList.contains(
+                "hidden"
+            )
+        ) {
+
+            icon.textContent = "+";
+
+        } else {
+
+            icon.textContent = "−";
+
+        }
+
+    }
+
+
+
+    /* =========================================================
+       FAQ
+    ========================================================= */
+
+    function toggleFAQ(button) {
+
+        const answer =
+            button.nextElementSibling;
+
+        const icon =
+            button.querySelector(
+                ".faq-icon"
+            );
+
+
+        answer.classList.toggle(
+            "hidden"
+        );
+
+
+        if (
+            answer.classList.contains(
+                "hidden"
+            )
+        ) {
+
+            icon.textContent = "+";
+
+        } else {
+
+            icon.textContent = "−";
+
+        }
+
+    }
+
+
+
+    /* =========================================================
+       DYNAMIC FIXED HEADER SPACING
+    ========================================================= */
+
+    function updateSpacing() {
+
+        const banner =
+            document.querySelector(
+                ".promo-banner"
+            );
+
+        const nav =
+            document.querySelector(
+                ".main-nav"
+            );
+
+
+        if (banner && nav) {
+
+            const totalHeight =
+                banner.offsetHeight +
+                nav.offsetHeight;
+
+
+            document.body.style.paddingTop =
+                totalHeight + "px";
+
+        }
+
+    }
+
+
+    window.addEventListener(
+        "load",
+        updateSpacing
+    );
+
+
+    window.addEventListener(
+        "resize",
+        updateSpacing
+    );
+
+
+</script>
 
     <script>
-        AOS.init({ duration: 800, once: true });
-        feather.replace();
+            
+                 
+    function toggleLearnMore(button) {
 
-        // Mobile menu functionality
-        const menuBtn = document.getElementById('menu-btn');
-        const closeMenu = document.getElementById('close-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
+        const content =
+            button.nextElementSibling;
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-        });
+        const icon =
+            button.querySelector(".learn-more-icon");
 
-        closeMenu.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
 
-        // Close menu when clicking links
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
+        content.classList.toggle("hidden");
 
-        // Toggle FAQ function
-        function toggleFAQ(button) {
-            const content = button.nextElementSibling;
-            const icon = button.querySelector('.toggle-icon');
 
-            content.classList.toggle('hidden');
+        if (content.classList.contains("hidden")) {
 
-            if (icon.textContent === '+') {
-                icon.textContent = '−';
-            } else {
-                icon.textContent = '+';
-            }
+            icon.textContent = "+";
+
+        } else {
+
+            icon.textContent = "−";
+
         }
-    </script>
+
+    }
+
+</script> 
 
 </body>
+
 </html>
