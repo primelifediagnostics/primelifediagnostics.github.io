@@ -1,719 +1,1050 @@
+<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
+   
+<meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-    <title>Comprehensive Male Blood Test | Prime Life Diagnostics</title>
+<title>
+    Book an Appointment | Prime Life Diagnostics
+</title>
 
-    <meta
-        name="description"
-        content="Comprehensive Male Blood Test from Prime Life Diagnostics. 50+ biomarkers including testosterone, thyroid, cholesterol, vitamins, iron, liver and kidney health.">
+<meta
+    name="description"
+    content="Book a private blood test appointment with Prime Life Diagnostics in Doncaster. Choose an in-clinic appointment, free health consultation or nationwide home blood collection."
+>
 
-    <meta name="robots" content="index, follow">
+<meta
+    name="robots"
+    content="index, follow"
+>
 
-    <link
-        rel="canonical"
-        href="https://primelifediagnostics.co.uk/comprehensive_male.html">
-
-    <link
-        rel="icon"
-        type="image/png"
-        href="/favicon-32x32.png">
-
-    <link
-        rel="icon"
-        type="image/png"
-        sizes="96x96"
-        href="/favicon-96x96.png">
-
-    <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/favicon-16x16.png">
-
-    <link
-        rel="icon"
-        type="image/x-icon"
-        href="/favicon.ico">
+<link
+    rel="canonical"
+    href="https://primelifediagnostics.co.uk/appointment.html"
+>
 
 
-    <!-- =========================================================
-         TAILWIND
-    ========================================================== -->
-
-    <script src="https://cdn.tailwindcss.com"></script>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
 
 
-    <!-- =========================================================
-         AOS
-    ========================================================== -->
-
-    <link
-        href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-        rel="stylesheet">
-
-    <script
-        src="https://unpkg.com/aos@2.3.1/dist/aos.js">
-    </script>
+<!-- AOS -->
+<link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+>
 
 
-    <!-- =========================================================
-         FEATHER ICONS
-    ========================================================== -->
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js">
-    </script>
+<!-- Feather Icons -->
+<script
+    src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js">
+</script>
 
 
-    <!-- =========================================================
-         GOOGLE ANALYTICS / ADS
-    ========================================================== -->
+<!-- Google Analytics -->
+<script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-JRCSHS3V6T">
+</script>
 
-    <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-JRCSHS3V6T">
-    </script>
+<script>
 
-    <script>
+    window.dataLayer = window.dataLayer || [];
 
-        window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
 
-        function gtag() {
-            dataLayer.push(arguments);
+    gtag(
+        'js',
+        new Date()
+    );
+
+    gtag(
+        'config',
+        'G-JRCSHS3V6T'
+    );
+
+</script>
+
+
+<!-- Google Ads -->
+<script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=AW-18295000895">
+</script>
+
+<script>
+
+    gtag(
+        'config',
+        'AW-18295000895'
+    );
+
+</script>
+
+
+<style>
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    body {
+
+        font-family:
+            Inter,
+            ui-sans-serif,
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+
+        color: #172033;
+
+        background: #ffffff;
+
+    }
+
+
+    /* ==================================
+       PROMO BANNER
+    =================================== */
+
+    .promo-banner {
+
+        position: fixed;
+
+        top: 0;
+        left: 0;
+        right: 0;
+
+        z-index: 60;
+
+        background: #111827;
+
+        color: white;
+
+        text-align: center;
+
+        padding:
+            10px
+            16px;
+
+        font-size: 13px;
+
+        font-weight: 600;
+
+        letter-spacing: 0.02em;
+
+    }
+
+
+    .promo-code {
+
+        font-weight: 800;
+
+        margin-left: 4px;
+
+    }
+
+
+    /* ==================================
+       NAVIGATION
+    =================================== */
+
+    .main-nav {
+
+        position: fixed;
+
+        top: 0;
+
+        left: 0;
+        right: 0;
+
+        z-index: 50;
+
+        background:
+            rgba(
+                255,
+                255,
+                255,
+                0.97
+            );
+
+        backdrop-filter: blur(12px);
+
+        border-bottom:
+            1px solid
+            rgba(
+                16,
+                42,
+                67,
+                0.08
+            );
+
+    }
+
+
+    .nav-inner {
+
+        max-width: 1280px;
+
+        margin: 0 auto;
+
+        padding:
+            14px
+            24px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+    }
+
+
+    .nav-logo {
+
+        height: 48px;
+
+        width: auto;
+
+    }
+
+
+    .nav-links {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 26px;
+
+    }
+
+
+    .nav-links a {
+
+        color: #102a43;
+
+        font-size: 14px;
+
+        font-weight: 600;
+
+        transition:
+            color
+            0.2s
+            ease;
+
+    }
+
+
+    .nav-links a:hover {
+
+        color: #1769aa;
+
+    }
+
+
+    .mobile-menu-btn {
+
+        display: none;
+
+        color: #102a43;
+
+    }
+
+
+    .mobile-menu {
+
+        display: none;
+
+        border-top:
+            1px solid
+            rgba(
+                16,
+                42,
+                67,
+                0.08
+            );
+
+        background: white;
+
+        padding:
+            12px
+            24px
+            20px;
+
+    }
+
+
+    .mobile-menu a {
+
+        display: block;
+
+        padding:
+            12px
+            0;
+
+        font-weight: 600;
+
+        color: #102a43;
+
+        border-bottom:
+            1px solid
+            #edf2f7;
+
+    }
+
+
+    /* ==================================
+       BUTTONS
+    =================================== */
+
+    .btn-primary {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        background: #1769aa;
+
+        color: white;
+
+        padding:
+            13px
+            22px;
+
+        border-radius: 10px;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        transition:
+            transform
+            0.2s
+            ease,
+            background
+            0.2s
+            ease;
+
+        box-shadow:
+            0 8px 20px
+            rgba(
+                23,
+                105,
+                170,
+                0.18
+            );
+
+    }
+
+
+    .btn-primary:hover {
+
+        background: #12568d;
+
+        transform:
+            translateY(-1px);
+
+    }
+
+
+    .btn-secondary {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        background: white;
+
+        color: #1769aa;
+
+        border:
+            1px solid
+            #1769aa;
+
+        padding:
+            12px
+            21px;
+
+        border-radius: 10px;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        transition:
+            all
+            0.2s
+            ease;
+
+    }
+
+
+    .btn-secondary:hover {
+
+        background: #f4f9fc;
+
+        transform:
+            translateY(-1px);
+
+    }
+
+
+    /* ==================================
+       HERO
+    =================================== */
+
+    .appointment-hero {
+
+        position: relative;
+
+        overflow: hidden;
+
+        background:
+            linear-gradient(
+                135deg,
+                #edf7fd 0%,
+                #ffffff 55%,
+                #eef5fb 100%
+            );
+
+    }
+
+
+    .appointment-hero::before {
+
+        content: "";
+
+        position: absolute;
+
+        width: 420px;
+        height: 420px;
+
+        border-radius: 9999px;
+
+        background:
+            rgba(
+                23,
+                105,
+                170,
+                0.07
+            );
+
+        top: -170px;
+        right: -130px;
+
+    }
+
+
+    .appointment-hero::after {
+
+        content: "";
+
+        position: absolute;
+
+        width: 280px;
+        height: 280px;
+
+        border-radius: 9999px;
+
+        background:
+            rgba(
+                16,
+                42,
+                67,
+                0.04
+            );
+
+        bottom: -150px;
+        left: -100px;
+
+    }
+
+
+    .hero-content {
+
+        position: relative;
+
+        z-index: 2;
+
+    }
+
+
+    .eyebrow {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        font-size: 12px;
+
+        font-weight: 800;
+
+        text-transform: uppercase;
+
+        letter-spacing: 0.14em;
+
+        color: #1769aa;
+
+    }
+
+
+    .section-title {
+
+        color: #102a43;
+
+        font-size:
+            clamp(
+                30px,
+                4vw,
+                46px
+            );
+
+        line-height: 1.08;
+
+        font-weight: 700;
+
+        letter-spacing:
+            -0.025em;
+
+    }
+
+
+    .content-copy {
+
+        color: #617285;
+
+        line-height: 1.8;
+
+        font-size: 16px;
+
+    }
+
+
+    /* ==================================
+       HERO BOOKING CARD
+    =================================== */
+
+    .hero-card {
+
+        background:
+            rgba(
+                255,
+                255,
+                255,
+                0.96
+            );
+
+        border:
+            1px solid
+            rgba(
+                16,
+                42,
+                67,
+                0.08
+            );
+
+        border-radius: 24px;
+
+        padding: 34px;
+
+        box-shadow:
+            0 20px 50px
+            rgba(
+                16,
+                42,
+                67,
+                0.10
+            );
+
+    }
+
+
+    .hero-card-icon {
+
+        width: 58px;
+        height: 58px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        border-radius: 16px;
+
+        background: #edf7fd;
+
+        color: #1769aa;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    /* ==================================
+       TRUST STRIP
+    =================================== */
+
+    .trust-strip {
+
+        background: #102a43;
+
+        color: white;
+
+    }
+
+
+    .trust-item {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+    }
+
+
+    .trust-item i {
+
+        width: 20px;
+        height: 20px;
+
+        flex-shrink: 0;
+
+        color: #7cc4ef;
+
+    }
+
+
+    /* ==================================
+       BOOKING OPTION CARDS
+    =================================== */
+
+    .booking-option {
+
+        background: white;
+
+        border:
+            1px solid
+            #e4ebf1;
+
+        border-radius: 20px;
+
+        padding: 30px;
+
+        height: 100%;
+
+        box-shadow:
+            0 12px 30px
+            rgba(
+                16,
+                42,
+                67,
+                0.05
+            );
+
+        transition:
+            transform
+            0.2s
+            ease,
+            box-shadow
+            0.2s
+            ease;
+
+    }
+
+
+    .booking-option:hover {
+
+        transform:
+            translateY(-4px);
+
+        box-shadow:
+            0 18px 40px
+            rgba(
+                16,
+                42,
+                67,
+                0.08
+            );
+
+    }
+
+
+    .option-icon {
+
+        width: 50px;
+        height: 50px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        border-radius: 14px;
+
+        background: #edf7fd;
+
+        color: #1769aa;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    /* ==================================
+       CLINIKO BOOKING
+    =================================== */
+
+    .booking-panel {
+
+        background: white;
+
+        border:
+            1px solid
+            #e1e9f0;
+
+        border-radius: 22px;
+
+        box-shadow:
+            0 18px 45px
+            rgba(
+                16,
+                42,
+                67,
+                0.07
+            );
+
+        overflow: hidden;
+
+    }
+
+
+    .booking-panel-header {
+
+        padding:
+            28px
+            30px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #f4f9fc,
+                #ffffff
+            );
+
+        border-bottom:
+            1px solid
+            #e5edf3;
+
+    }
+
+
+    .cliniko-frame {
+
+        width: 100%;
+
+        min-height: 1450px;
+
+        border: 0;
+
+        display: block;
+
+    }
+
+
+    /* ==================================
+       INFO BOX
+    =================================== */
+
+    .info-box {
+
+        background:
+            linear-gradient(
+                135deg,
+                #f4f9fc,
+                #ffffff
+            );
+
+        border:
+            1px solid
+            #e3edf4;
+
+        border-radius: 22px;
+
+        padding: 32px;
+
+    }
+
+
+    .info-icon {
+
+        width: 48px;
+        height: 48px;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        border-radius: 14px;
+
+        background: #edf7fd;
+
+        color: #1769aa;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    /* ==================================
+       FAQ
+    =================================== */
+
+    .faq-item {
+
+        border:
+            1px solid
+            #e5ebf0;
+
+        border-radius: 14px;
+
+        overflow: hidden;
+
+        background: white;
+
+    }
+
+
+    .faq-button {
+
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 20px;
+
+        padding:
+            20px
+            22px;
+
+        text-align: left;
+
+        font-weight: 700;
+
+        color: #102a43;
+
+    }
+
+
+    .faq-answer {
+
+        display: none;
+
+        padding:
+            0
+            22px
+            22px;
+
+        color: #617285;
+
+        line-height: 1.75;
+
+    }
+
+
+    .faq-icon {
+
+        flex-shrink: 0;
+
+    }
+
+
+    /* ==================================
+       FINAL CTA
+    =================================== */
+
+    .final-cta {
+
+        background:
+            linear-gradient(
+                135deg,
+                #102a43,
+                #1769aa
+            );
+
+        color: white;
+
+    }
+
+
+    /* ==================================
+       FOOTER
+    =================================== */
+
+    footer {
+
+        background: #0c2033;
+
+        color: #dce7f0;
+
+    }
+
+
+    .footer-link {
+
+        color: #c7d6e2;
+
+        transition:
+            color
+            0.2s
+            ease;
+
+    }
+
+
+    .footer-link:hover {
+
+        color: white;
+
+    }
+
+
+    /* ==================================
+       RESPONSIVE
+    =================================== */
+
+    @media (
+        max-width: 900px
+    ) {
+
+        .nav-links {
+
+            display: none;
+
         }
 
-        gtag('js', new Date());
 
-        gtag('config', 'G-JRCSHS3V6T');
+        .mobile-menu-btn {
 
-        gtag('config', 'AW-18295000895');
+            display: block;
 
-    </script>
+        }
+
+    }
 
 
-    <!-- =========================================================
-         PAGE STYLES
-    ========================================================== -->
+    @media (
+        max-width: 640px
+    ) {
 
-    <style>
+        .nav-inner {
 
-        html {
-            scroll-behavior: smooth;
+            padding:
+                12px
+                18px;
+
         }
 
 
-        body {
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            color: #172033;
-
-            background: #ffffff;
-        }
-
-
-        /* =====================================================
-           PROMOTION BAR
-        ===================================================== */
-
-        .promo-banner {
-
-            position: fixed;
-
-            top: 0;
-
-            left: 0;
-
-            width: 100%;
-
-            z-index: 9999;
-
-            background: #102a43;
-
-            color: white;
-
-            text-align: center;
-
-            padding: 9px 15px;
-
-            font-size: 13px;
-
-            letter-spacing: .2px;
-        }
-
-
-        .promo-code {
-
-            display: inline-block;
-
-            background: #ffffff;
-
-            color: #102a43;
-
-            padding: 3px 9px;
-
-            border-radius: 4px;
-
-            font-weight: 700;
-
-            margin-left: 5px;
-        }
-
-
-        /* =====================================================
-           NAVIGATION
-        ===================================================== */
-
-        .main-nav {
-
-            position: fixed;
-
-            top: 38px;
-
-            left: 0;
-
-            width: 100%;
-
-            z-index: 9998;
-
-            background:
-                rgba(255,255,255,.97);
-
-            backdrop-filter:
-                blur(12px);
-
-            border-bottom:
-                1px solid #edf1f5;
-        }
-
-
-        /* =====================================================
-           BUTTONS
-        ===================================================== */
-
-        .btn-primary {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            background: #1769aa;
-
-            color: white;
-
-            padding: 14px 24px;
-
-            border-radius: 5px;
-
-            font-weight: 600;
-
-            transition:
-                background .2s ease,
-                transform .2s ease;
-        }
-
-
-        .btn-primary:hover {
-
-            background: #12568d;
-
-            transform: translateY(-1px);
-        }
-
-
-        .btn-secondary {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            background: white;
-
-            border: 1px solid #d7e1e9;
-
-            color: #102a43;
-
-            padding: 14px 24px;
-
-            border-radius: 5px;
-
-            font-weight: 600;
-
-            transition: all .2s ease;
-        }
-
-
-        .btn-secondary:hover {
-
-            background: #f7f9fb;
-
-            border-color: #bdcedb;
-        }
-
-
-        /* =====================================================
-           BREADCRUMBS
-        ===================================================== */
-
-        .breadcrumbs a {
-
-            color: #718096;
-
-            transition: color .2s ease;
-        }
-
-
-        .breadcrumbs a:hover {
-
-            color: #1769aa;
-        }
-
-
-        /* =====================================================
-           PRODUCT HERO
-        ===================================================== */
-
-        .product-hero {
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #f4f8fb 0%,
-                    #ffffff 70%
-                );
-
-            border-bottom:
-                1px solid #e6edf2;
-        }
-
-
-        .product-image {
-
-            min-height: 500px;
-
-            width: 100%;
-
-            object-fit: cover;
-        }
-
-
-        .eyebrow {
-
-            color: #1769aa;
-
-            font-size: 12px;
-
-            font-weight: 700;
-
-            letter-spacing: 1.6px;
-
-            text-transform: uppercase;
-        }
-
-
-        /* =====================================================
-           TRUST STRIP
-        ===================================================== */
-
-        .trust-item {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 9px;
-
-            color: #4f6273;
-
-            font-size: 14px;
-        }
-
-
-        /* =====================================================
-           MAIN CONTENT
-        ===================================================== */
-
-        .section-title {
-
-            font-size: 34px;
-
-            line-height: 1.2;
-
-            font-weight: 600;
-
-            color: #102a43;
-        }
-
-
-        .content-copy {
-
-            color: #617285;
-
-            line-height: 1.8;
-
-            font-size: 16px;
-        }
-
-
-        /* =====================================================
-           STICKY BOOKING CARD
-        ===================================================== */
-
-        .booking-card {
-
-            position: sticky;
-
-            top: 145px;
-
-            background: white;
-
-            border:
-                1px solid #e0e8ee;
-
-            border-radius: 8px;
-
-            padding: 28px;
-
-            box-shadow:
-                0 12px 35px
-                rgba(16,42,67,.07);
-        }
-
-
-        /* =====================================================
-           FEATURE ITEMS
-        ===================================================== */
-
-        .feature {
-
-            display: flex;
-
-            gap: 15px;
-
-            align-items: flex-start;
-        }
-
-
-        .feature-icon {
-
-            width: 42px;
+        .nav-logo {
 
             height: 42px;
 
-            flex-shrink: 0;
-
-            border-radius: 50%;
-
-            background: #edf5fa;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            color: #1769aa;
         }
 
 
-        /* =====================================================
-           BIOMARKER ACCORDIONS
-        ===================================================== */
+        .promo-banner {
 
-        .biomarker-group {
+            font-size: 11px;
 
-            border:
-                1px solid #e2e9ef;
-
-            border-radius: 7px;
-
-            background: white;
-
-            overflow: hidden;
         }
 
 
-        .biomarker-button {
+        .hero-card {
 
-            width: 100%;
+            padding: 26px;
 
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            text-align: left;
-
-            padding: 21px 23px;
-
-            color: #102a43;
-
-            font-weight: 600;
-
-            transition:
-                background .2s ease;
         }
 
 
-        .biomarker-button:hover {
+        .cliniko-frame {
 
-            background: #f8fafc;
-        }
-
-
-        .biomarker-content {
-
-            padding:
-                0 23px
-                22px;
-
-            border-top:
-                1px solid #edf1f5;
-        }
-
-
-        .marker-item {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            padding:
-                10px 0;
-
-            color: #5c6f80;
-
-            font-size: 15px;
-        }
-
-
-        .marker-dot {
-
-            width: 6px;
-
-            height: 6px;
-
-            border-radius: 50%;
-
-            background: #1769aa;
-
-            flex-shrink: 0;
-        }
-
-
-        /* =====================================================
-           PROCESS
-        ===================================================== */
-
-        .step-number {
-
-            width: 50px;
-
-            height: 50px;
-
-            border-radius: 50%;
-
-            background: #102a43;
-
-            color: white;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            font-weight: 700;
-
-            margin-bottom: 18px;
-        }
-
-
-        /* =====================================================
-           FAQ
-        ===================================================== */
-
-        .faq-item {
-
-            border-bottom:
-                1px solid #e1e8ed;
-        }
-
-
-        .faq-button {
-
-            width: 100%;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            gap: 25px;
-
-            align-items: center;
-
-            text-align: left;
-
-            padding: 22px 0;
-
-            color: #102a43;
-
-            font-weight: 600;
-        }
-
-
-        .faq-answer {
-
-            color: #617285;
-
-            line-height: 1.7;
-
-            padding-bottom: 23px;
-        }
-
-
-        /* =====================================================
-           FINAL CTA
-        ===================================================== */
-
-        .final-cta {
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #102a43,
-                    #174d73
-                );
-
-            position: relative;
-
-            overflow: hidden;
-        }
-
-
-        .final-cta::after {
-
-            content: "";
-
-            position: absolute;
-
-            width: 500px;
-
-            height: 500px;
-
-            border-radius: 50%;
-
-            right: -180px;
-
-            top: -200px;
-
-            background:
-                rgba(255,255,255,.035);
-        }
-
-
-        /* =====================================================
-           MOBILE
-        ===================================================== */
-
-        @media (max-width: 768px) {
-
-            .promo-banner {
-
-                font-size: 12px;
-
-                padding: 8px;
-            }
-
-
-            .main-nav {
-
-                top: 35px;
-            }
-
-
-            .product-image {
-
-                min-height: 330px;
-
-                height: 330px;
-            }
-
-
-            .section-title {
-
-                font-size: 29px;
-            }
-
-
-            .booking-card {
-
-                position: static;
-            }
+            min-height: 1800px;
 
         }
 
-    </style>
+    }
+
+</style>
+   
 
 </head>
 
-
-
 <body>
 
+   
+<!-- ==================================
+     PROMO BANNER
+=================================== -->
 
-<!-- ============================================================
-     PROMOTION BAR
-============================================================ -->
+<div
+    id="promo-banner"
+    class="promo-banner">
 
-<div class="promo-banner">
-
-    <strong>
-        10% OFF IN-CLINIC BLOOD TESTS
-    </strong>
-
-    <span class="hidden sm:inline">
-        · Use code
-    </span>
-
+    10% OFF IN-CLINIC BLOOD TESTS ·
     <span class="promo-code">
-        PRIME10
+        Use code PRIME10
     </span>
 
 </div>
 
 
-
-<!-- ============================================================
+<!-- ==================================
      NAVIGATION
-============================================================ -->
+=================================== -->
 
-<nav class="main-nav">
+<header
+    id="main-nav"
+    class="main-nav">
 
-    <div class="max-w-7xl mx-auto px-5">
-
-        <div
-            class="flex items-center justify-between h-20">
+    <div class="nav-inner">
 
 
-            <!-- Logo -->
-
-            <a
+         <a
                 href="index.html"
                 class="flex items-center">
 
@@ -725,178 +1056,97 @@
                      <span class="text-[#1a237e]">Prime</span>
     <span class="text-[#2196f3]"> Life</span>
     <span class="text-[#757575]"> Diagnostics</span>
+    
+        </a>
 
 
+        <nav class="nav-links">
+
+
+            <a href="index.html">
+                Home
             </a>
 
 
-            <!-- Desktop Navigation -->
-
-            <div
-                class="hidden lg:flex items-center gap-7">
-
-                <a
-                    href="index.html"
-                    class="text-sm text-gray-600 hover:text-blue-700">
-
-                    Home
-
-                </a>
+            <a href="bloodtestspanels.html">
+                Blood Tests
+            </a>
 
 
-                <a
-                    href="bloodtestspanels.html"
-                    class="text-sm text-blue-700 font-semibold">
-
-                    Blood Tests
-
-                </a>
+            <a href="chooseus.html">
+                Why Us
+            </a>
 
 
-                <a
-                    href="panels.html"
-                    class="text-sm text-gray-600 hover:text-blue-700">
-
-                    Health Checks
-
-                </a>
+            <a href="ourmission.html">
+                About Us
+            </a>
 
 
-                <a
-                    href="chooseus.html"
-                    class="text-sm text-gray-600 hover:text-blue-700">
-
-                    Why Us
-
-                </a>
+            <a href="FAQs.html">
+                FAQs
+            </a>
 
 
-                <a
-                    href="ourmission.html"
-                    class="text-sm text-gray-600 hover:text-blue-700">
+            <a
+                href="appointment.html"
+                class="btn-primary">
 
-                    About
+                Book Now
 
-                </a>
+            </a>
 
-
-                <a
-                    href="FAQs.html"
-                    class="text-sm text-gray-600 hover:text-blue-700">
-
-                    FAQs
-
-                </a>
+        </nav>
 
 
-                <a
-                    href="appointment.html"
-                    class="btn-primary text-sm">
+        <button
+            id="mobile-menu-btn"
+            class="mobile-menu-btn"
+            aria-label="Open menu"
+            aria-expanded="false">
 
-                    Book Now
+            <i data-feather="menu"></i>
 
-                </a>
-
-            </div>
-
-
-            <!-- Mobile Button -->
-
-            <button
-                id="menu-btn"
-                class="lg:hidden text-gray-700"
-                aria-label="Open menu">
-
-                <i data-feather="menu"></i>
-
-            </button>
-
-        </div>
+        </button>
 
     </div>
 
-</nav>
 
-
-
-<!-- ============================================================
-     MOBILE MENU
-============================================================ -->
-
-<div
-    id="mobile-menu"
-    class="hidden fixed inset-0 z-[10000] bg-white">
-
-    <button
-        id="close-menu"
-        class="absolute top-6 right-6 text-gray-700"
-        aria-label="Close menu">
-
-        <i data-feather="x"></i>
-
-    </button>
-
+    <!-- Mobile Menu -->
 
     <div
-        class="flex flex-col items-center justify-center h-full gap-8">
+        id="mobile-menu"
+        class="mobile-menu">
 
-        <a
-            href="index.html"
-            class="text-xl text-gray-700">
 
+        <a href="index.html">
             Home
-
         </a>
 
 
-        <a
-            href="bloodtestspanels.html"
-            class="text-xl text-blue-700 font-semibold">
-
+        <a href="bloodtestspanels.html">
             Blood Tests
-
         </a>
 
 
-        <a
-            href="panels.html"
-            class="text-xl text-gray-700">
-
-            Health Checks
-
-        </a>
-
-
-        <a
-            href="chooseus.html"
-            class="text-xl text-gray-700">
-
+        <a href="chooseus.html">
             Why Us
-
         </a>
 
 
-        <a
-            href="ourmission.html"
-            class="text-xl text-gray-700">
-
-            About
-
+        <a href="ourmission.html">
+            About Us
         </a>
 
 
-        <a
-            href="FAQs.html"
-            class="text-xl text-gray-700">
-
+        <a href="FAQs.html">
             FAQs
-
         </a>
 
 
         <a
             href="appointment.html"
-            class="btn-primary">
+            class="mt-3 btn-primary">
 
             Book Appointment
 
@@ -904,2791 +1154,1603 @@
 
     </div>
 
-</div>
+</header>
 
 
+<!-- ==================================
+     MAIN
+=================================== -->
 
-<!-- ============================================================
-     PRODUCT HERO
-============================================================ -->
-
-<section
-    class="product-hero pt-32 md:pt-36 pb-16">
+<main>
 
 
-    <div class="max-w-7xl mx-auto px-5">
+    <!-- ==================================
+         HERO
+    =================================== -->
 
-
-        <!-- Breadcrumbs -->
-
-        <div
-            class="breadcrumbs flex flex-wrap items-center gap-2 text-sm mb-8">
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <span class="text-gray-400">
-                /
-            </span>
-
-            <a href="bloodtestspanels.html">
-                Blood Tests
-            </a>
-
-            <span class="text-gray-400">
-                /
-            </span>
-
-            <span class="text-gray-700">
-                Comprehensive Male Package
-            </span>
-
-        </div>
-
-
+    <section
+        class="appointment-hero pt-32 pb-20 md:pt-40 md:pb-24">
 
         <div
-            class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            class="max-w-7xl mx-auto px-6">
 
-
-            <!-- Image -->
 
             <div
-                class="rounded-lg overflow-hidden"
-                data-aos="fade-right">
+                class="grid lg:grid-cols-2 gap-12 items-center">
 
-                <img
-                    src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/two-men-athletes-running-park-30059233.webp"
-                    alt="Comprehensive Male Health Blood Test"
-                    class="product-image">
-
-            </div>
-
-
-
-            <!-- Product Information -->
-
-            <div
-                data-aos="fade-left">
-
-
-                <p class="eyebrow mb-4">
-
-                    Men's Health
-
-                </p>
-
-
-                <h1
-                    class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-[#102a43] mb-6">
-
-                    Comprehensive
-                    Male Package
-
-                </h1>
-
-
-                <p
-                    class="text-lg md:text-xl text-gray-600 leading-relaxed mb-7">
-
-                    A comprehensive health assessment covering
-                    50+ biomarkers, including male hormone
-                    screening and key markers relating to your
-                    general health and wellbeing.
-
-                </p>
-
-
-
-                <!-- Price -->
 
                 <div
-                    class="flex items-end gap-3 mb-8">
-
-                    <span
-                        class="text-4xl font-semibold text-[#102a43]">
-
-                        £199
-
-                    </span>
-
-                    <span
-                        class="text-gray-500 mb-1">
-
-                        per test
-
-                    </span>
-
-                </div>
-
-
-
-                <!-- CTA -->
-
-                <div
-                    class="flex flex-col sm:flex-row gap-3 mb-8">
-
-                    <a
-                        href="appointment.html"
-                        class="btn-primary">
-
-                        Book This Test
-
-                        <i
-                            data-feather="arrow-right"
-                            class="ml-3 w-5 h-5">
-                        </i>
-
-                    </a>
-
-
-                    <a
-                        href="#biomarkers"
-                        class="btn-secondary">
-
-                        View Biomarkers
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- Mini trust -->
-
-                <div
-                    class="grid sm:grid-cols-2 gap-4 pt-6 border-t border-gray-200">
-
-
-                    <div class="trust-item">
-
-                        <i
-                            data-feather="check-circle"
-                            class="w-5 h-5 text-blue-700">
-                        </i>
-
-                        50+ biomarkers
-
-                    </div>
-
-
-                    <div class="trust-item">
-
-                        <i
-                            data-feather="user-check"
-                            class="w-5 h-5 text-blue-700">
-                        </i>
-
-                        Doctor reviewed
-
-                    </div>
-
-
-                    <div class="trust-item">
-
-                        <i
-                            data-feather="home"
-                            class="w-5 h-5 text-blue-700">
-                        </i>
-
-                        Home collection available
-
-                    </div>
-
-
-                    <div class="trust-item">
-
-                        <i
-                            data-feather="shield"
-                            class="w-5 h-5 text-blue-700">
-                        </i>
-
-                        No GP referral required
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     MAIN TEST INFORMATION
-============================================================ -->
-
-<section class="py-20 md:py-24 bg-white">
-
-    <div
-        class="max-w-7xl mx-auto px-5">
-
-        <div
-            class="grid lg:grid-cols-[1fr_360px] gap-14 lg:gap-20 items-start">
-
-
-            <!-- =================================================
-                 LEFT CONTENT
-            ================================================== -->
-
-            <main>
-
-
-                <!-- =============================================
-                     ABOUT
-                ============================================== -->
-
-                <section
-                    class="mb-16"
+                    class="hero-content"
                     data-aos="fade-up">
 
 
-                    <p class="eyebrow mb-3">
+                    <p class="eyebrow mb-4">
 
-                        About this test
+                        Book an appointment
 
                     </p>
 
 
-                    <h2
+                    <h1
                         class="section-title mb-6">
 
-                        A broad overview of your health
+                        Your blood test.
+                        Your next step.
 
-                    </h2>
-
-
-                    <div
-                        class="content-copy space-y-5">
-
-                        <p>
-
-                            The Comprehensive Male Package provides
-                            a broad assessment of your health using
-                            more than 50 individual biomarkers.
-
-                        </p>
-
-                        <p>
-
-                            It combines general health testing with
-                            male hormone screening, giving you insight
-                            into several important areas of your health
-                            from one blood test.
-
-                        </p>
-
-                        <p>
-
-                            The package includes markers relating to
-                            testosterone, blood health, liver and kidney
-                            function, blood sugar, cholesterol, thyroid
-                            function, inflammation, iron and key vitamins.
-
-                        </p>
-
-                    </div>
-
-                </section>
-
-
-
-                <!-- =============================================
-                     WHAT IT LOOKS AT
-                ============================================== -->
-
-                <section
-                    class="mb-16">
-
-
-                    <p class="eyebrow mb-3">
-
-                        Comprehensive testing
-
-                    </p>
-
-
-                    <h2
-                        class="section-title mb-8">
-
-                        What does this test look at?
-
-                    </h2>
-
-
-
-                    <div
-                        class="grid sm:grid-cols-2 gap-8">
-
-
-                        <!-- Hormones -->
-
-                        <div class="feature">
-
-                            <div class="feature-icon">
-
-                                <i
-                                    data-feather="activity"
-                                    class="w-5 h-5">
-                                </i>
-
-                            </div>
-
-                            <div>
-
-                                <h3
-                                    class="font-semibold text-lg text-[#102a43] mb-2">
-
-                                    Male hormones
-
-                                </h3>
-
-                                <p
-                                    class="text-gray-600 leading-relaxed text-sm">
-
-                                    Includes testosterone testing as
-                                    part of your overall male health
-                                    assessment.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- Blood health -->
-
-                        <div class="feature">
-
-                            <div class="feature-icon">
-
-                                <i
-                                    data-feather="droplet"
-                                    class="w-5 h-5">
-                                </i>
-
-                            </div>
-
-                            <div>
-
-                                <h3
-                                    class="font-semibold text-lg text-[#102a43] mb-2">
-
-                                    Blood health
-
-                                </h3>
-
-                                <p
-                                    class="text-gray-600 leading-relaxed text-sm">
-
-                                    A Full Blood Count assesses important
-                                    components of your blood.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- Heart -->
-
-                        <div class="feature">
-
-                            <div class="feature-icon">
-
-                                <i
-                                    data-feather="heart"
-                                    class="w-5 h-5">
-                                </i>
-
-                            </div>
-
-                            <div>
-
-                                <h3
-                                    class="font-semibold text-lg text-[#102a43] mb-2">
-
-                                    Heart & metabolic health
-
-                                </h3>
-
-                                <p
-                                    class="text-gray-600 leading-relaxed text-sm">
-
-                                    Includes lipid testing and HbA1c
-                                    to assess important metabolic
-                                    health markers.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- Organ -->
-
-                        <div class="feature">
-
-                            <div class="feature-icon">
-
-                                <i
-                                    data-feather="shield"
-                                    class="w-5 h-5">
-                                </i>
-
-                            </div>
-
-                            <div>
-
-                                <h3
-                                    class="font-semibold text-lg text-[#102a43] mb-2">
-
-                                    Organ function
-
-                                </h3>
-
-                                <p
-                                    class="text-gray-600 leading-relaxed text-sm">
-
-                                    Includes liver and kidney function
-                                    markers as part of the overall
-                                    health assessment.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- Thyroid -->
-
-                        <div class="feature">
-
-                            <div class="feature-icon">
-
-                                <i
-                                    data-feather="zap"
-                                    class="w-5 h-5">
-                                </i>
-
-                            </div>
-
-                            <div>
-
-                                <h3
-                                    class="font-semibold text-lg text-[#102a43] mb-2">
-
-                                    Thyroid function
-
-                                </h3>
-
-                                <p
-                                    class="text-gray-600 leading-relaxed text-sm">
-
-                                    Thyroid markers are included to
-                                    assess thyroid function.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- Nutrition -->
-
-                        <div class="feature">
-
-                            <div class="feature-icon">
-
-                                <i
-                                    data-feather="sun"
-                                    class="w-5 h-5">
-                                </i>
-
-                            </div>
-
-                            <div>
-
-                                <h3
-                                    class="font-semibold text-lg text-[#102a43] mb-2">
-
-                                    Vitamins & nutrition
-
-                                </h3>
-
-                                <p
-                                    class="text-gray-600 leading-relaxed text-sm">
-
-                                    Includes iron markers, Vitamin D,
-                                    Vitamin B12 and folate.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                </section>
-
-
-
-<!-- =============================================
-     BIOMARKERS
-============================================== -->
-
-<section
-    id="biomarkers"
-    class="mb-16">
-
-    <p class="eyebrow mb-3">
-        What's included
-    </p>
-
-    <h2
-        class="section-title mb-4">
-
-        Your biomarkers
-
-    </h2>
-
-    <p
-        class="content-copy mb-8">
-
-        This package contains more than 50 individual
-        biomarkers across multiple areas of health.
-        Explore the main groups below.
-
-    </p>
-
-
-    <div class="space-y-3">
-
-
-        <!-- =============================================
-             MALE HORMONES
-        ============================================== -->
-
-        <div class="biomarker-group">
-
-            <button
-                class="biomarker-button"
-                onclick="toggleBiomarkers(this)">
-
-                <div>
-
-                    <span class="block">
-                        Male Hormones
-                    </span>
-
-                    <span
-                        class="block text-sm text-gray-500 font-normal mt-1">
-
-                        Testosterone assessment
-
-                    </span>
-
-                </div>
-
-                <span class="biomarker-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="biomarker-content hidden">
- <!-- Biomarker 1: Testosteron -->
-       <div class="flex flex-wrap items-center justify-between">
-           
-
-                <div class="marker-item">
-                    
-                   Testosterone
-                </div>
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-      class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-
-    Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-    Testosterone is the primary male sex hormone and plays an essential role in maintaining muscle mass, strength, bone density, energy levels, mood, libido, erectile function and sperm production. Testosterone levels naturally decline with age but may also be affected by obesity, stress, chronic illness, poor sleep and certain medications. Low testosterone may contribute to fatigue, reduced sex drive, erectile dysfunction, decreased muscle mass, increased body fat, low mood and reduced exercise performance. Measuring total testosterone is the first step in assessing male hormonal health and should be interpreted alongside free testosterone and SHBG for a more complete assessment.
-</div>
-                
-   </div>            
-               
-</div>
-
-<!-- =============================================
-     FULL BLOOD COUNT
-============================================== -->
- 
-
- 
-   <div class="biomarker-group">
-
-            <button
-                class="biomarker-button"
-                onclick="toggleBiomarkers(this)">
-
-                <div>
-
-                    <span class="block">
-                        Full Blood Count (FBC)
-                    </span>
-
-                    <span
-                        class="block text-sm text-gray-500 font-normal mt-1">
-
-                       General blood health
-
-                    </span>
-
-                </div>
-
-                <span class="biomarker-icon">
-                    +
-                </span>
-
-            </button>
-
-  <div class="biomarker-content hidden">
-
-    <!-- Biomarker 1: Haemoglobin -->
-       <div class="flex flex-wrap items-center justify-between">
-           
-
-                <div class="marker-item">
-                    
-                    Haemoglobin
-                </div>
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-      class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-
-    Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-    Haemoglobin is the iron-containing protein found within red blood cells that carries oxygen from your lungs to every tissue in your body. Measuring haemoglobin is one of the most important ways to assess your body's ability to deliver oxygen efficiently. Low haemoglobin levels may indicate anaemia caused by various conditions. 
-</div>
-                
-   </div>            
-
- <!-- Biomarker 2: Red Blood Cell Count (RBC) -->
-       <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-                 Red Blood Cell (RBC) Count
-                </div>
-     
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-
-    Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-    This test measures the number of red blood cells circulating in your bloodstream and helps assess your body's oxygen-carrying capacity.
-</div>
-                  </div>  
-
-            <!-- Biomarker 3: Haematocrit (HCT) -->
-        <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-                Haematocrit (HCT)
-                </div>
-       
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-      class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-
-    Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-   Haematocrit measures the percentage of your blood that is made up of red blood cells.
-</div>
-                
-           </div>     
-
- <!-- Biomarker 4: Mean Corpuscular Volume (MCV) -->
-        <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-               Mean Corpuscular Volume (MCV)
-                </div>
-     
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-
-    Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-MCV measures the average size of your red blood cells. It is particularly useful when investigating the cause of anaemia, as different deficiencies affect red blood cell size in different ways.
-  
-</div>
-                
-               
-  </div>  
-
-<!-- Biomarker 5: Mean Corpuscular Hemoglobin (MCH) -->
-       <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-               Mean Corpuscular Hemoglobin (MCH)
-                </div>
-    
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-
-    Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-MCH measures the average amount of haemoglobin contained within each red blood cell. It helps assess how effectively your red blood cells are able to carry oxygen around the body.
-  
-</div>
-                
-      </div>              
-
-<!-- Biomarker 6: Mean Corpuscular Hemoglobin Concentration (MCHC) -->
-        <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-               Mean Corpuscular Hemoglobin Concentration (MCHC)
-                </div>
-        
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-      class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-
-    Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-MCHC measures the average concentration of haemoglobin within your red blood cells.
-  
-</div>
-                
-      </div>          
-
-<!-- Biomarker 7: Red Cell Distribution Width (RDW) -->
-        <div class="flex flex-wrap items-center justify-between">
-            
-
-                <div class="marker-item">
-                    
-             Red Cell Distribution Width (RDW)
-                </div>
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-
-    Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-RDW measures the variation in the size of your red blood cells. Healthy red blood cells are usually similar in size, whereas greater variation may indicate that new and older blood cells differ significantly.
-  
-</div>
-                
-      </div>           
-
-<!-- Biomarker 8: Platelets -->
-        <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-             Platelets
-                </div>
-       
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-
-    Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Platelets are small blood cells that play a vital role in helping your blood clot after an injury, preventing excessive bleeding. Measuring your platelet count can help identify clotting disorders, inflammation, infection and conditions affecting the bone marrow.
-  
-</div>
-                
-             
-  </div>  
-
-<!-- Biomarker 9: Mean Platelet Volume (MPV) -->
-       <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-             Mean Platelet Volume (MPV)
-                </div>
-      
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-
-    Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-MPV measures the average size of your platelets.
-  
-</div>
-                
-    </div>             
-
-
-<!-- Biomarker 10: White Blood Cells (WBC) -->
-       <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-             White Blood Cell (WBC) Count
-                </div>
-       
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-           
-    Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-White blood cells are a key part of your immune system and help protect your body against infections and disease. This test measures the total number of white blood cells circulating in your bloodstream. Raised levels commonly occur during infections or inflammation, while lower levels may result from certain viral infections, medications, autoimmune conditions or bone marrow disorders.
-  
-</div>
-                
-         </div>  
-         
-<!-- Biomarker 11.1: Neutorphils -->
-        <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-             Neutrophils
-                </div>
-      
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-
-    Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Neutrophils are the most abundant type of white blood cell and form your body's first line of defence against bacterial infections. Increased neutrophil levels are commonly seen with bacterial infections, inflammation, physical stress and corticosteroid treatment. Low levels may increase your susceptibility to infection and can occur with some viral illnesses, medications or bone marrow disorders.
-  
-</div>
-       </div>        
-
-<!-- Biomarker 11: Lymphocytes -->
-     <div class="flex flex-wrap items-center justify-between">
-          
-
-                <div class="marker-item">
-                    
-             Lymphocytes
-                </div>
-      
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-
-    Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Lymphocytes are specialised white blood cells that help your immune system recognise and fight viruses, bacteria and other harmful organisms. They also play an important role in producing antibodies and developing long-term immunity. Abnormal lymphocyte levels may occur with viral infections, autoimmune diseases, chronic infections and certain blood disorders.
-
-</div>
-                
-    </div>             
-
-<!-- Biomarker 11: Monocytes -->
-        <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-           Monocytes
-                </div>
-  
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-      class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-
-    Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Monocytes are white blood cells that help remove damaged cells, bacteria and other foreign material from the body. They also support tissue repair following infection or inflammation.
-</div>
-    </div>             
-
-<!-- Biomarker 12: Eosinophils  -->
-        <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-           Eosinophils 
-                </div>
-       
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-
-    Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Eosinophils are white blood cells involved in allergic reactions and defending the body against parasitic infections. Elevated levels are commonly associated with allergies, asthma, eczema and certain parasitic infections.
-</div>
-                
-   </div>                
-
-
-
-<!-- Biomarker 13: Basophils  -->
-       <div class="flex flex-wrap items-center justify-between">
-
-       
-
-                <div class="marker-item">
-                    
-           Basophils
-                </div>
-      
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Basophils are the least common type of white blood cell and contribute to allergic and inflammatory responses by releasing substances such as histamine. Although abnormalities are uncommon, raised basophil levels may be associated with allergic conditions, chronic inflammation or certain bone marrow disorders.
-</div>
-               
-</div>
-  </div>
-        <!-- =============================================
-             LIVER FUNCTION
-        ============================================== -->
-
-            
-            <div class="biomarker-group">
-
-            <button
-                class="biomarker-button"
-                onclick="toggleBiomarkers(this)">
-
-                <div>
-
-                    <span class="block">
-                         Liver Function
-                    </span>
-
-                    <span
-                        class="block text-sm text-gray-500 font-normal mt-1">
-
-                        Liver health assessment
-
-                    </span>
-
-                </div>
-
-                <span class="biomarker-icon">
-                   +
-                </span>
-
-            </button>
-            <div class="biomarker-content hidden">
-
-<!-- Biomarker 1:  Alanine Transaminase (ALT)  -->
-      <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-           Alanine Transaminase (ALT)
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-   
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-ALT is an enzyme found primarily within liver cells. When the liver becomes inflamed or damaged, ALT is released into the bloodstream, making it one of the most sensitive markers of liver cell injury. Raised ALT levels are commonly associated with fatty liver disease, viral hepatitis, alcohol-related liver disease and certain medications.
-</div>
-     </div>    
-
-<!-- Biomarker 2:   Alkaline Phosphatase (ALP)  -->
-      <div class="flex flex-wrap items-center justify-between">
-
-                <div class="marker-item">
-                    
-               Alkaline Phosphatase (ALP)
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-ALP is an enzyme found mainly in the liver, bile ducts and bones. Raised ALP levels may indicate conditions affecting the liver or bile ducts, such as bile flow obstruction, but can also occur during periods of increased bone growth or in certain bone disorders.
-</div>
-      </div>
-            
-               
-          
-<!-- Biomarker 3:   Aspartate Aminotransferase (AST)  -->
-      <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-              Aspartate Aminotransferase (AST)
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-       <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-AST is an enzyme found in the liver, heart, muscles and several other tissues. While elevated AST may indicate liver inflammation or damage, it can also rise following muscle injury, strenuous exercise or certain medical conditions affecting the heart or muscles.
-</div>
-          
-</div>
-         
-<!-- Biomarker 4:  Gamma-glutamyl Transferase (GGT)  -->
-     <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-              Gamma-glutamyl Transferase (GGT)
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-    
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-GGT is an enzyme found mainly in the liver and bile ducts. It is one of the most sensitive markers of liver health and is particularly useful for identifying liver damage associated with excessive alcohol consumption. GGT levels may also be raised in people with fatty liver disease, obesity, diabetes, certain medications or disorders affecting the bile ducts.
-</div>
-                
-     </div>  
-     
-         
-<!-- Biomarker 5:  Bilirubin  -->
-     <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    Bilirubin
-                    
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-    
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Bilirubin is a yellow pigment produced when old red blood cells are naturally broken down. Healthy liver cells process bilirubin before it is removed from the body in bile. Elevated bilirubin levels may cause jaundice, where the skin and eyes appear yellow, and can occur due to liver disease, bile duct obstruction, inherited conditions such as Gilbert's syndrome or increased breakdown of red blood cells. Bilirubin is also responsible for the yellow and green colour changes seen as bruises heal.
-</div>
-                
-       </div>         
-
-         
-<!-- Biomarker 6:  Albumin  -->
-     <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                   Albumin
-                    
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Albumin is the most abundant protein produced by the liver and performs many important functions, including maintaining fluid balance within the bloodstream and transporting hormones, vitamins, fatty acids and medications throughout the body. Low albumin levels may suggest liver disease, kidney disease, inflammation, malnutrition or poor absorption of nutrients.
-</div>
-             
-</div>
-
-<!-- Biomarker 7:  Total protein  -->
-     <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-               Total protein
-                    
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-    
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Total protein measures the combined amount of albumin and globulins circulating in your blood. It provides an overview of your nutritional status and can help assess liver function, kidney function and immune health.
-</div>
-        </div>
-            
-<!-- Biomarker 8: Globulin -->
-      <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-             Globulin
-                    
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-   
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Globulins are a group of proteins that play an essential role in your immune system by helping your body fight infection and transport important substances throughout the bloodstream. Abnormal globulin levels may occur with infections, chronic inflammation, autoimmune conditions, liver disease and certain blood disorders.
-</div>
-                
-</div>  
-</div>
-
- 
-        <!-- =============================================
-             KIDNEY FUNCTION
-        ============================================== -->
-
-         
-            <div class="biomarker-group">
-
-            <button
-                class="biomarker-button"
-                onclick="toggleBiomarkers(this)">
-
-                <div>
-
-                    <span class="block">
-                          Kidney Function
-                    </span>
-
-                    <span
-                        class="block text-sm text-gray-500 font-normal mt-1">
-
-                         Kidney health and electrolyte assessment
-
-                    </span>
-
-                </div>
-
-                <span class="biomarker-icon">
-                   +
-                </span>
-
-            </button>
-            <div class="biomarker-content hidden">
-
-<!-- Biomarker 1:   Creatinine  -->
-      <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-            Creatinine
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-   
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Creatinine is a waste product produced naturally by your muscles as part of normal daily activity. Healthy kidneys remove creatinine from the blood and excrete it in urine, making it one of the most widely used markers of kidney function. Raised creatinine levels may indicate reduced kidney function, although levels can also be influenced by muscle mass, dehydration, certain medications and recent strenuous exercise. Measuring creatinine alongside eGFR provides a more complete assessment of kidney health.
-</div>
-     </div>    
- 
- <!-- Biomarker 2:    Estimated Glomerular Filtration Rate (eGFR)  -->
-      <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-             Estimated Glomerular Filtration Rate (eGFR)
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-   
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-eGFR estimates how efficiently your kidneys filter waste products and excess fluid from your blood. It is calculated using your creatinine level together with factors such as your age and sex. eGFR is one of the most important indicators of kidney function and is commonly used to detect and monitor chronic kidney disease. A persistently reduced eGFR may suggest impaired kidney function and should always be interpreted alongside your clinical history and other blood test results.
-</div>
-     </div>    
- 
-  <!-- Biomarker 3:     Urea  -->
-      <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-              Urea
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-   
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Urea is a waste product formed when your body breaks down protein. It is transported in the bloodstream and removed by the kidneys. Measuring urea helps assess kidney function, hydration status and protein metabolism.
-</div>
-     </div>   
- 
-   <!-- Biomarker 4:     Sodium  -->
-      <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-              Sodium
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-   
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Sodium is an essential electrolyte that helps regulate fluid balance, blood pressure, nerve signalling and muscle function. Your kidneys and hormones work together to keep sodium levels within a narrow range. Abnormal sodium levels may occur with dehydration, kidney disease, heart failure, hormonal disorders or certain medications, and can affect normal brain and muscle function.
-</div>
-     </div>   
- 
- 
- 
-   <!-- Biomarker 5:    Chloride  -->
-      <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-              Chloride
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-   
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Chloride is an electrolyte that works alongside sodium and potassium to help maintain fluid balance, blood pressure and the body's acid-base balance. Abnormal chloride levels often occur alongside changes in other electrolytes and may be associated with dehydration, kidney disease, prolonged vomiting, diarrhoea or metabolic disorders.
-</div>
-     </div>   
- 
- </div>
-
-                
-
-        <!-- =============================================
-             CHOLESTEROL
-        ============================================== -->
-
-      <div class="biomarker-group">
-
-            <button
-                class="biomarker-button"
-                onclick="toggleBiomarkers(this)">
-
-                <div>
-
-                    <span class="block">
-                           Cholesterol & Heart Health
-                    </span>
-
-                    <span
-                        class="block text-sm text-gray-500 font-normal mt-1">
-
-                           Blood lipid assessment
-
-                    </span>
-
-                </div>
-
-                <span class="biomarker-icon">
-                   +
-                </span>
-
-            </button>
-            <div class="biomarker-content hidden">
-
-<!-- Biomarker 1:   Total Cholesterol  -->
-      <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-            Total Cholesterol
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-   
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Cholesterol is a fatty substance that your body needs to build healthy cells, produce hormones and make vitamin D. Although cholesterol is essential for good health, having too much cholesterol in your blood can increase your risk of heart disease and stroke. Measuring total cholesterol provides an overall assessment of your cholesterol level and is interpreted alongside HDL, LDL and triglycerides to give a more complete picture of your cardiovascular health.
-</div>
-     </div>    
-     
-     <!-- Biomarker 2:   HDL Cholesterol  -->
-      <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-            HDL Cholesterol (High-density lipoprotein)
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-   
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Often referred to as "good cholesterol", HDL helps remove excess cholesterol from your bloodstream and transports it back to the liver, where it can be broken down and removed from the body. Higher HDL levels are generally associated with a lower risk of heart disease, making this an important marker of cardiovascular health. Maintaining healthy HDL levels is often supported by regular exercise, maintaining a healthy weight and avoiding smoking.
-</div>
-     </div>    
-     
-     
-      <!-- Biomarker 3:   LDL Cholesterol  -->
-      <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-            LDL Cholesterol (Low-density lipoprotein)
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-   
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-LDL is commonly known as "bad cholesterol" because high levels can lead to cholesterol building up within the walls of your arteries. Over time, this can narrow the arteries and increase the risk of heart attacks, strokes and other cardiovascular diseases. Monitoring LDL cholesterol is one of the most important ways of assessing long-term cardiovascular risk and is often used to guide lifestyle changes and cholesterol-lowering treatment where appropriate.
-</div>
-     </div>    
-    
-    
-    <!-- Biomarker 4:    Non-HDL Cholesterol  -->
-      <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-             Non-HDL Cholesterol
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-   
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Non-HDL cholesterol measures all of the cholesterol that may contribute to the build-up of fatty deposits within your arteries. It includes LDL cholesterol as well as several other potentially harmful cholesterol particles. Many specialists consider non-HDL cholesterol to be one of the best indicators of cardiovascular risk, particularly in people with diabetes, obesity or raised triglyceride levels.
-
-</div>
-     </div>    
-     
-     
-     
-         <!-- Biomarker 5:   Triglycerides  -->
-      <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-          Triglycerides
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-   
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-Triglycerides are a type of fat found in your blood that your body uses as a source of energy. After eating, excess calories that are not immediately required are converted into triglycerides and stored in fat tissue. Persistently raised triglyceride levels may be associated with obesity, diabetes, excessive alcohol consumption, diets high in sugar and refined carbohydrates, and some inherited conditions. High triglyceride levels increase the risk of cardiovascular disease and, when very high, may also increase the risk of pancreatitis.
-</div>
-     </div> 
-     
-     
-     
-       
-         <!-- Biomarker 6:   Total Cholesterol / HDL Ratio -->
-      <div class="flex flex-wrap items-center justify-between">
-       
-
-                <div class="marker-item">
-                    
-         Total Cholesterol / HDL Ratio
-                </div>
-
-        
-       <button
-    type="button"
-    onclick="toggleLearnMore(this)"
-       class="learn-more-button mt-2 text-sm text-blue-900 font-normal text-blue-700">
-Learn More
-   
-    <span class="learn-more-icon">+</span>
-
-</button>
-
-<div class="learn-more-content hidden text-sm text-gray-500 font-normal leading-relaxed mt-2 pb-2">
-
-The cholesterol-to-HDL ratio compares your total cholesterol with your HDL ("good") cholesterol. Rather than looking at individual cholesterol measurements alone, this ratio provides an overall assessment of cardiovascular risk by considering both protective and harmful cholesterol. In general, a lower ratio is associated with a lower risk of heart disease, while a higher ratio may indicate an increased cardiovascular risk.
-</div>
-     </div> 
-     
-     </div>
-     
-
-
-
-        <!-- =============================================
-             BLOOD SUGAR
-        ============================================== -->
-
-        <div class="biomarker-group">
-
-            <button
-                class="biomarker-button"
-                onclick="toggleBiomarkers(this)">
-
-                <div>
-
-                    <span class="block">
-                        Blood Sugar
-                    </span>
-
-                    <span
-                        class="block text-sm text-gray-500 font-normal mt-1">
-
-                        Longer-term glucose assessment
-
-                    </span>
-
-                </div>
-
-                <span class="biomarker-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="biomarker-content hidden">
-
-                <div class="marker-item">
-                    <span class="marker-dot"></span>
-                    HbA1c
-                </div>
-
-                <a
-                    href="biomarkers.html#blood-sugar"
-                    class="inline-flex items-center mt-3 mb-2 text-sm font-semibold text-blue-700 hover:text-blue-900">
-
-                    Learn more
-
-                    <i
-                        data-feather="arrow-right"
-                        class="ml-2 w-4 h-4">
-                    </i>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =============================================
-             THYROID
-        ============================================== -->
-
-        <div class="biomarker-group">
-
-            <button
-                class="biomarker-button"
-                onclick="toggleBiomarkers(this)">
-
-                <div>
-
-                    <span class="block">
-                        Thyroid Function
-                    </span>
-
-                    <span
-                        class="block text-sm text-gray-500 font-normal mt-1">
-
-                        Thyroid hormone assessment
-
-                    </span>
-
-                </div>
-
-                <span class="biomarker-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="biomarker-content hidden">
-
-                <div class="marker-item">
-                    <span class="marker-dot"></span>
-                    Thyroid Stimulating Hormone (TSH)
-                </div>
-
-                <div class="marker-item">
-                    <span class="marker-dot"></span>
-                    Free Thyroxine (T4)
-                </div>
-
-                <div class="marker-item">
-                    <span class="marker-dot"></span>
-                    Free Triiodothyronine (T3)
-                </div>
-
-                <a
-                    href="biomarkers.html#thyroid"
-                    class="inline-flex items-center mt-3 mb-2 text-sm font-semibold text-blue-700 hover:text-blue-900">
-
-                    Learn more
-
-                    <i
-                        data-feather="arrow-right"
-                        class="ml-2 w-4 h-4">
-                    </i>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =============================================
-             INFLAMMATION
-        ============================================== -->
-
-        <div class="biomarker-group">
-
-            <button
-                class="biomarker-button"
-                onclick="toggleBiomarkers(this)">
-
-                <div>
-
-                    <span class="block">
-                        Inflammation
-                    </span>
-
-                    <span
-                        class="block text-sm text-gray-500 font-normal mt-1">
-
-                        General inflammatory marker
-
-                    </span>
-
-                </div>
-
-                <span class="biomarker-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="biomarker-content hidden">
-
-                <div class="marker-item">
-                    <span class="marker-dot"></span>
-                    C-Reactive Protein (CRP)
-                </div>
-
-                <a
-                    href="biomarkers.html#inflammation"
-                    class="inline-flex items-center mt-3 mb-2 text-sm font-semibold text-blue-700 hover:text-blue-900">
-
-                    Learn more
-
-                    <i
-                        data-feather="arrow-right"
-                        class="ml-2 w-4 h-4">
-                    </i>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =============================================
-             URIC ACID
-        ============================================== -->
-
-        <div class="biomarker-group">
-
-            <button
-                class="biomarker-button"
-                onclick="toggleBiomarkers(this)">
-
-                <div>
-
-                    <span class="block">
-                        Uric Acid
-                    </span>
-
-                    <span
-                        class="block text-sm text-gray-500 font-normal mt-1">
-
-                        Metabolic health marker
-
-                    </span>
-
-                </div>
-
-                <span class="biomarker-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="biomarker-content hidden">
-
-                <div class="marker-item">
-                    <span class="marker-dot"></span>
-                    Uric Acid
-                </div>
-
-                <a
-                    href="biomarkers.html#uric-acid"
-                    class="inline-flex items-center mt-3 mb-2 text-sm font-semibold text-blue-700 hover:text-blue-900">
-
-                    Learn more
-
-                    <i
-                        data-feather="arrow-right"
-                        class="ml-2 w-4 h-4">
-                    </i>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =============================================
-             IRON
-        ============================================== -->
-
-        <div class="biomarker-group">
-
-            <button
-                class="biomarker-button"
-                onclick="toggleBiomarkers(this)">
-
-                <div>
-
-                    <span class="block">
-                        Iron Status
-                    </span>
-
-                    <span
-                        class="block text-sm text-gray-500 font-normal mt-1">
-
-                        Iron stores and availability
-
-                    </span>
-
-                </div>
-
-                <span class="biomarker-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="biomarker-content hidden">
-
-                <div class="marker-item">
-                    <span class="marker-dot"></span>
-                    Ferritin
-                </div>
-
-                <div class="marker-item">
-                    <span class="marker-dot"></span>
-                    Iron
-                </div>
-
-                <div class="marker-item">
-                    <span class="marker-dot"></span>
-                    Transferrin
-                </div>
-
-                <div class="marker-item">
-                    <span class="marker-dot"></span>
-                    Total Iron Binding Capacity (TIBC)
-                </div>
-
-                <div class="marker-item">
-                    <span class="marker-dot"></span>
-                    Transferrin Saturation
-                </div>
-
-                <a
-                    href="biomarkers.html#iron"
-                    class="inline-flex items-center mt-3 mb-2 text-sm font-semibold text-blue-700 hover:text-blue-900">
-
-                    Learn more
-
-                    <i
-                        data-feather="arrow-right"
-                        class="ml-2 w-4 h-4">
-                    </i>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =============================================
-             VITAMINS & MINERALS
-        ============================================== -->
-
-        <div class="biomarker-group">
-
-            <button
-                class="biomarker-button"
-                onclick="toggleBiomarkers(this)">
-
-                <div>
-
-                    <span class="block">
-                        Vitamins & Minerals
-                    </span>
-
-                    <span
-                        class="block text-sm text-gray-500 font-normal mt-1">
-
-                        Essential vitamin and mineral markers
-
-                    </span>
-
-                </div>
-
-                <span class="biomarker-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="biomarker-content hidden">
-
-                <div class="marker-item">
-                    <span class="marker-dot"></span>
-                    Vitamin D
-                </div>
-
-                <div class="marker-item">
-                    <span class="marker-dot"></span>
-                    Vitamin B12
-                </div>
-
-                <div class="marker-item">
-                    <span class="marker-dot"></span>
-                    Folate
-                </div>
-
-                <div class="marker-item">
-                    <span class="marker-dot"></span>
-                    Calcium
-                </div>
-
-                <a
-                    href="biomarkers.html#vitamins-minerals"
-                    class="inline-flex items-center mt-3 mb-2 text-sm font-semibold text-blue-700 hover:text-blue-900">
-
-                    Learn more
-
-                    <i
-                        data-feather="arrow-right"
-                        class="ml-2 w-4 h-4">
-                    </i>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-                <!-- =============================================
-                     WHO IS IT FOR?
-                ============================================== -->
-
-                <section
-                    class="mb-16 bg-[#f7f9fb] rounded-lg p-7 md:p-10">
-
-
-                    <p class="eyebrow mb-3">
-
-                        Is this test right for me?
-
-                    </p>
-
-
-                    <h2
-                        class="section-title mb-6">
-
-                        A comprehensive male health check
-
-                    </h2>
+                    </h1>
 
 
                     <p
-                        class="content-copy mb-7">
+                        class="content-copy text-lg mb-6">
 
-                        This package may be suitable if you want
-                        a broad overview of several important areas
-                        of your health rather than testing one
-                        biomarker in isolation.
+                        Book a private blood test appointment with
+                        Prime Life Diagnostics. Choose an
+                        in-clinic appointment or arrange a home
+                        blood collection where available.
+
+                    </p>
+
+
+                    <p
+                        class="content-copy mb-8">
+
+                        A free health consultation is also available
+                        as part of our service.
 
                     </p>
 
 
                     <div
-                        class="grid sm:grid-cols-2 gap-4">
+                        class="flex flex-col sm:flex-row gap-3">
 
 
-                        <div
-                            class="flex items-start gap-3">
+                        <a
+                            href="#booking"
+                            class="btn-primary">
 
-                            <i
-                                data-feather="check"
-                                class="w-5 h-5 text-blue-700 mt-1">
-                            </i>
-
-                            <span class="text-gray-700">
-                                General health screening
-                            </span>
-
-                        </div>
-
-
-                        <div
-                            class="flex items-start gap-3">
+                            Book Your Appointment
 
                             <i
-                                data-feather="check"
-                                class="w-5 h-5 text-blue-700 mt-1">
+                                data-feather="arrow-down"
+                                class="w-4 h-4">
                             </i>
 
-                            <span class="text-gray-700">
-                                Male hormone assessment
-                            </span>
-
-                        </div>
+                        </a>
 
 
-                        <div
-                            class="flex items-start gap-3">
+                        <a
+                            href="bloodtestspanels.html"
+                            class="btn-secondary">
 
-                            <i
-                                data-feather="check"
-                                class="w-5 h-5 text-blue-700 mt-1">
-                            </i>
+                            View Blood Tests
 
-                            <span class="text-gray-700">
-                                Vitamin and iron assessment
-                            </span>
-
-                        </div>
-
-
-                        <div
-                            class="flex items-start gap-3">
-
-                            <i
-                                data-feather="check"
-                                class="w-5 h-5 text-blue-700 mt-1">
-                            </i>
-
-                            <span class="text-gray-700">
-                                Metabolic health assessment
-                            </span>
-
-                        </div>
+                        </a>
 
                     </div>
 
-                </section>
+                </div>
 
 
-
-                <!-- =============================================
-                     HOW IT WORKS
-                ============================================== -->
-
-                <section>
+                <div
+                    class="hero-card"
+                    data-aos="fade-up"
+                    data-aos-delay="150">
 
 
-                    <p class="eyebrow mb-3">
+                    <div class="hero-card-icon">
 
-                        Simple process
-
-                    </p>
-
-
-                    <h2
-                        class="section-title mb-9">
-
-                        What happens next?
-
-                    </h2>
-
-
-                    <div
-                        class="grid md:grid-cols-3 gap-8">
-
-
-                        <div>
-
-                            <div class="step-number">
-                                01
-                            </div>
-
-                            <h3
-                                class="font-semibold text-lg text-[#102a43] mb-3">
-
-                                Book
-
-                            </h3>
-
-                            <p
-                                class="text-gray-600 text-sm leading-relaxed">
-
-                                Choose your appointment and
-                                complete your booking online.
-
-                            </p>
-
-                        </div>
-
-
-                        <div>
-
-                            <div class="step-number">
-                                02
-                            </div>
-
-                            <h3
-                                class="font-semibold text-lg text-[#102a43] mb-3">
-
-                                Get tested
-
-                            </h3>
-
-                            <p
-                                class="text-gray-600 text-sm leading-relaxed">
-
-                                Attend the clinic or arrange
-                                home blood collection.
-
-                            </p>
-
-                        </div>
-
-
-                        <div>
-
-                            <div class="step-number">
-                                03
-                            </div>
-
-                            <h3
-                                class="font-semibold text-lg text-[#102a43] mb-3">
-
-                                Receive results
-
-                            </h3>
-
-                            <p
-                                class="text-gray-600 text-sm leading-relaxed">
-
-                                Your blood results are reviewed
-                                and provided to you.
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-
-            </main>
-
-
-
-            <!-- =================================================
-                 RIGHT BOOKING CARD
-            ================================================== -->
-
-            <aside>
-
-
-                <div class="booking-card">
-
-
-                    <p class="eyebrow mb-3">
-
-                        Comprehensive Male
-
-                    </p>
-
-
-                    <div
-                        class="flex items-end gap-2 mb-5">
-
-                        <span
-                            class="text-4xl font-semibold text-[#102a43]">
-
-                            £199
-
-                        </span>
+                        <i
+                            data-feather="calendar"
+                            class="w-7 h-7">
+                        </i>
 
                     </div>
 
 
                     <p
-                        class="text-gray-600 leading-relaxed mb-7">
+                        class="text-sm font-bold uppercase tracking-[0.12em] text-[#1769aa] mb-3">
 
-                        A comprehensive male health assessment
-                        covering more than 50 biomarkers.
+                        Book with confidence
 
                     </p>
 
 
+                    <h2
+                        class="text-2xl md:text-3xl font-semibold text-[#102a43] mb-4">
 
-                    <div
-                        class="space-y-4 mb-7">
+                        Simple, private and
+                        convenient
+
+                    </h2>
 
 
-                        <div
-                            class="flex items-center gap-3 text-sm text-gray-700">
+                    <div class="space-y-4">
+
+
+                        <div class="flex gap-3 items-start">
 
                             <i
                                 data-feather="check-circle"
-                                class="w-5 h-5 text-blue-700">
+                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
                             </i>
 
-                            50+ biomarkers
+                            <p class="content-copy">
+
+                                No GP referral required
+
+                            </p>
 
                         </div>
 
 
-                        <div
-                            class="flex items-center gap-3 text-sm text-gray-700">
+                        <div class="flex gap-3 items-start">
 
                             <i
-                                data-feather="activity"
-                                class="w-5 h-5 text-blue-700">
+                                data-feather="check-circle"
+                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
                             </i>
 
-                            Male hormone screening
+                            <p class="content-copy">
+
+                                Appointments available at our
+                                Doncaster clinic
+
+                            </p>
 
                         </div>
 
 
-                        <div
-                            class="flex items-center gap-3 text-sm text-gray-700">
+                        <div class="flex gap-3 items-start">
 
                             <i
-                                data-feather="user-check"
-                                class="w-5 h-5 text-blue-700">
+                                data-feather="check-circle"
+                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
                             </i>
 
-                            Doctor-reviewed results
+                            <p class="content-copy">
+
+                                Nationwide home blood collection
+                                available for eligible services
+
+                            </p>
 
                         </div>
 
 
-                        <div
-                            class="flex items-center gap-3 text-sm text-gray-700">
+                        <div class="flex gap-3 items-start">
 
                             <i
-                                data-feather="home"
-                                class="w-5 h-5 text-blue-700">
+                                data-feather="check-circle"
+                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
                             </i>
 
-                            Home collection available
+                            <p class="content-copy">
+
+                                Free health consultation included
+
+                            </p>
 
                         </div>
 
                     </div>
 
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================
+         TRUST STRIP
+    =================================== -->
+
+    <section class="trust-strip">
+
+        <div
+            class="max-w-7xl mx-auto px-6 py-7">
+
+
+            <div
+                class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+
+                <div class="trust-item">
+
+                    <i data-feather="user-check"></i>
+
+                    <span>
+                        Doctor Reviewed
+                    </span>
+
+                </div>
+
+
+                <div class="trust-item">
+
+                    <i data-feather="calendar"></i>
+
+                    <span>
+                        Easy Online Booking
+                    </span>
+
+                </div>
+
+
+                <div class="trust-item">
+
+                    <i data-feather="home"></i>
+
+                    <span>
+                        Home Collection
+                    </span>
+
+                </div>
+
+
+                <div class="trust-item">
+
+                    <i data-feather="shield"></i>
+
+                    <span>
+                        Private & Confidential
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================
+         CHOOSE YOUR APPOINTMENT
+    =================================== -->
+
+    <section
+        class="py-20 md:py-24">
+
+
+        <div
+            class="max-w-7xl mx-auto px-6">
+
+
+            <div
+                class="text-center max-w-3xl mx-auto mb-12"
+                data-aos="fade-up">
+
+
+                <p class="eyebrow mb-3">
+                    Choose your appointment
+                </p>
+
+
+                <h2
+                    class="section-title mb-5">
+
+                    The right option for you
+
+                </h2>
+
+
+                <p class="content-copy text-lg">
+
+                    Choose between an in-clinic appointment,
+                    a free health consultation or a nationwide
+                    home blood collection appointment.
+
+                </p>
+
+            </div>
+
+
+            <div
+                class="grid md:grid-cols-3 gap-6">
+
+
+                <!-- In clinic -->
+
+                <div
+                    class="booking-option"
+                    data-aos="fade-up"
+                    data-aos-delay="50">
+
+
+                    <div class="option-icon">
+
+                        <i
+                            data-feather="activity"
+                            class="w-5 h-5">
+                        </i>
+
+                    </div>
+
+
+                    <h3
+                        class="text-xl font-semibold text-[#102a43] mb-3">
+
+                        In-Clinic Blood Test
+
+                    </h3>
+
+
+                    <p
+                        class="content-copy mb-6">
+
+                        Visit our clinic at 105 Scrooby Road,
+                        Bircotes, Doncaster for your private blood
+                        test appointment.
+
+                    </p>
 
 
                     <a
-                        href="appointment.html"
-                        class="btn-primary w-full mb-3">
+                        href="#booking"
+                        class="btn-primary w-full">
 
-                        Book This Test
+                        Book In-Clinic
+
+                    </a>
+
+                </div>
+
+
+                <!-- Consultation -->
+
+                <div
+                    class="booking-option"
+                    data-aos="fade-up"
+                    data-aos-delay="100">
+
+
+                    <div class="option-icon">
+
+                        <i
+                            data-feather="message-circle"
+                            class="w-5 h-5">
+                        </i>
+
+                    </div>
+
+
+                    <h3
+                        class="text-xl font-semibold text-[#102a43] mb-3">
+
+                        Free Health Consultation
+
+                    </h3>
+
+
+                    <p
+                        class="content-copy mb-6">
+
+                        Book our complimentary health consultation
+                        and indicate whether you would prefer a
+                        virtual or in-clinic consultation.
+
+                    </p>
+
+
+                    <a
+                        href="#booking"
+                        class="btn-primary w-full">
+
+                        Book Free Consultation
+
+                    </a>
+
+                </div>
+
+
+                <!-- Home visit -->
+
+                <div
+                    class="booking-option"
+                    data-aos="fade-up"
+                    data-aos-delay="150">
+
+
+                    <div class="option-icon">
+
+                        <i
+                            data-feather="home"
+                            class="w-5 h-5">
+                        </i>
+
+                    </div>
+
+
+                    <h3
+                        class="text-xl font-semibold text-[#102a43] mb-3">
+
+                        Home Blood Collection
+
+                    </h3>
+
+
+                    <p
+                        class="content-copy mb-6">
+
+                        Prefer to stay at home? Arrange a nationwide
+                        home blood collection appointment for
+                        eligible tests.
+
+                    </p>
+
+
+                    <a
+
+                        href="#booking"
+                        class="btn-primary w-full">
+
+
+                        Arrange Home Visit
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================
+         BOOKING AREA
+    =================================== -->
+
+    <section
+        id="booking"
+        class="py-20 md:py-24 bg-gray-50">
+
+
+        <div
+            class="max-w-7xl mx-auto px-6">
+
+
+            <div
+                class="text-center max-w-3xl mx-auto mb-12"
+                data-aos="fade-up">
+
+
+                <p class="eyebrow mb-3">
+                    Online booking
+                </p>
+
+
+                <h2
+                    class="section-title mb-5">
+
+                    Book your in clinic appointment
+
+                </h2>
+
+
+                <p
+                    class="content-copy text-lg">
+
+                    Select your service below and follow the
+                    Cliniko booking process to choose your
+                    appointment.
+
+                </p>
+
+            </div>
+
+
+            <div
+                class="booking-panel"
+                data-aos="fade-up">
+
+
+                <div
+                    class="booking-panel-header">
+
+
+                    <div
+                        class="flex items-start gap-4">
+
+
+                        <div
+                            class="w-11 h-11 rounded-xl bg-[#edf7fd] text-[#1769aa] flex items-center justify-center flex-shrink-0">
+
+                            <i
+                                data-feather="calendar"
+                                class="w-5 h-5">
+                            </i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3
+                                class="text-xl font-semibold text-[#102a43] mb-1">
+
+                                Prime Life Diagnostics In-Clinic
+                                Appointment Booking
+
+                            </h3>
+
+
+                            <p
+                                class="text-[#617285]">
+
+                                Choose your blood test or
+                                free health consultation.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+               <iframe id='cliniko-65791173' src='https://prime-life-diagnostics-ltd.uk3.cliniko.com/bookings?embedded=true' frameborder='0' scrolling='auto' width='100%' height='1000' style='pointer-events: auto;' allow='payment'></iframe>
+<script type='text/javascript'>
+  window.addEventListener('message', function handleIFrameMessage (e) {
+    var clinikoBookings = document.getElementById('cliniko-65791173');
+    if (typeof e.data !== 'string') return;
+    if (e.data.search('cliniko-bookings-resize') > -1) {
+      var height = Number(e.data.split(':')[1]);
+      clinikoBookings.style.height = height + 'px';
+    }
+    e.data.search('cliniko-bookings-page') > -1 && clinikoBookings.scrollIntoView();
+  });
+</script>
+
+            </div>
+
+        </div>
+        
+        
+
+    </section>
+
+ <section
+        id="booking"
+        class="py-20 md:py-24 bg-gray-50">
+
+
+        <div
+            class="max-w-7xl mx-auto px-6">
+
+
+            <div
+                class="text-center max-w-3xl mx-auto mb-12"
+                data-aos="fade-up">
+
+
+                <p class="eyebrow mb-3">
+            
+
+                <h2
+                    class="section-title mb-5">
+
+                    Book your Home Collection Appointment
+
+                </h2>
+
+
+                <p
+                    class="content-copy text-lg">
+
+                    Select your service below: </p>
+                    
+                     <p
+                    class="content-copy text-lg">
+                    NOTE: Please select any available date and time to proceed with your booking. This is for system purposes only. Once your request is received, a nurse will contact you directly to arrange a suitable appointment date and time.
+
+                </p>
+
+            </div>
+
+
+            <div
+                class="booking-panel"
+                data-aos="fade-up">
+
+
+                <div
+                    class="booking-panel-header">
+
+
+                    <div
+                        class="flex items-start gap-4">
+
+
+                        <div
+                            class="w-11 h-11 rounded-xl bg-[#edf7fd] text-[#1769aa] flex items-center justify-center flex-shrink-0">
+
+                            <i
+                                data-feather="calendar"
+                                class="w-5 h-5">
+                            </i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3
+                                class="text-xl font-semibold text-[#102a43] mb-1">
+
+                                Prime Life Diagnostics Home Blood Collection
+                                Appointment Booking
+
+                            </h3>
+
+
+                            <p
+                                class="text-[#617285]">
+
+                                Choose your blood test.
+
+                            </p>
+
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+
+                <!-- Start Square Appointments Embed Code --><script src='https://square.site/appointments/buyer/widget/e2g3lvnwpyxjz1/LKT9FZPQXGPEK.js'></script><!-- End Square Appointments Embed Code -->
+
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ==================================
+         BEFORE BOOKING
+    =================================== -->
+
+    <section
+        class="py-20 md:py-24">
+
+
+        <div
+            class="max-w-7xl mx-auto px-6">
+
+
+            <div
+                class="grid lg:grid-cols-2 gap-12 items-center">
+
+
+                <div
+                    data-aos="fade-right">
+
+
+                    <p class="eyebrow mb-3">
+                        Before booking
+                    </p>
+
+
+                    <h2
+                        class="section-title mb-6">
+
+                        A few things to check first
+
+                    </h2>
+
+
+                    <p
+                        class="content-copy text-lg mb-6">
+
+                        Before booking, check the information for
+                        your chosen blood test. Some tests require
+                        specific preparation, such as fasting or
+                        avoiding certain activities.
+
+                    </p>
+
+
+                    <p
+                        class="content-copy mb-8">
+
+                        The requirements can vary between tests,
+                        so please make sure you have read the
+                        relevant test information before attending.
+
+                    </p>
+
+
+                    <a
+                        href="bloodtestspanels.html"
+                        class="btn-secondary">
+
+                        Browse Test Panels
 
                         <i
                             data-feather="arrow-right"
-                            class="ml-2 w-5 h-5">
+                            class="w-4 h-4">
                         </i>
 
                     </a>
+
+                </div>
+
+
+                <div
+                    class="info-box"
+                    data-aos="fade-left">
+
+
+                    <div class="info-icon">
+
+                        <i
+                            data-feather="clipboard"
+                            class="w-6 h-6">
+                        </i>
+
+                    </div>
+
+
+                    <h3
+                        class="text-2xl font-semibold text-[#102a43] mb-5">
+
+                        Your appointment
+
+                    </h3>
+
+
+                    <div class="space-y-5">
+
+
+                        <div class="flex gap-4 items-start">
+
+
+                            <i
+                                data-feather="check-circle"
+                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
+                            </i>
+
+
+                            <div>
+
+                                <h4
+                                    class="font-semibold text-[#102a43] mb-1">
+
+                                    Check your test
+
+                                </h4>
+
+
+                                <p class="content-copy">
+
+                                    Make sure you know whether your
+                                    chosen test requires any
+                                    preparation.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="flex gap-4 items-start">
+
+
+                            <i
+                                data-feather="check-circle"
+                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
+                            </i>
+
+
+                            <div>
+
+                                <h4
+                                    class="font-semibold text-[#102a43] mb-1">
+
+                                    Bring what you need
+
+                                </h4>
+
+
+                                <p class="content-copy">
+
+                                    Follow the appointment
+                                    instructions provided when
+                                    you book.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="flex gap-4 items-start">
+
+
+                            <i
+                                data-feather="check-circle"
+                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
+                            </i>
+
+
+                            <div>
+
+                                <h4
+                                    class="font-semibold text-[#102a43] mb-1">
+
+                                    Arrive prepared
+
+                                </h4>
+
+
+                                <p class="content-copy">
+
+                                    Our healthcare professional will
+                                    guide you through the blood
+                                    collection process.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================
+         FREE CONSULTATION
+    =================================== -->
+
+    <section
+        class="py-20 md:py-24 bg-gray-50">
+
+
+        <div
+            class="max-w-7xl mx-auto px-6">
+
+
+            <div
+                class="grid lg:grid-cols-2 gap-10 items-center">
+
+
+                <div
+                    class="info-box"
+                    data-aos="fade-right">
+
+
+                    <div class="info-icon">
+
+                        <i
+                            data-feather="message-circle"
+                            class="w-6 h-6">
+                        </i>
+
+                    </div>
+
+
+                    <p class="eyebrow mb-3">
+                        Included with your booking
+                    </p>
+
+
+                    <h2
+                        class="text-3xl font-bold text-[#102a43] mb-5">
+
+                        Free Health Consultation
+
+                    </h2>
+
+
+                    <p
+                        class="content-copy mb-6">
+
+                        Our current booking service includes access
+                        to a complimentary health consultation.
+                        When booking, indicate in the comments
+                        whether you would prefer a virtual or
+                        in-clinic consultation.
+
+                    </p>
+
+
+                    <a
+                        href="#booking"
+                        class="btn-primary">
+
+                        Book Free Consultation
+
+                        <i
+                            data-feather="arrow-right"
+                            class="w-4 h-4">
+                        </i>
+
+                    </a>
+
+                </div>
+
+
+                <div
+                    data-aos="fade-left">
+
+
+                    <p class="eyebrow mb-3">
+                        Patient support
+                    </p>
+
+
+                    <h2
+                        class="section-title mb-6">
+
+                        More than just a blood test
+
+                    </h2>
+
+
+                    <p
+                        class="content-copy mb-5">
+
+                        We want the booking process to be as
+                        straightforward as possible. The consultation
+                        option gives you an opportunity to discuss
+                        your health and your testing needs.
+
+                    </p>
+
+
+                    <p
+                        class="content-copy">
+
+                        Blood testing provides information about
+                        your health, but results should always be
+                        considered alongside your symptoms,
+                        history and other relevant clinical
+                        information.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================
+         HOME BLOOD COLLECTION
+    =================================== -->
+
+    <section
+        class="py-20 md:py-24">
+
+
+        <div
+            class="max-w-7xl mx-auto px-6">
+
+
+            <div
+                class="grid lg:grid-cols-2 gap-12 items-center">
+
+
+                <div
+                    data-aos="fade-right">
+
+
+                    <p class="eyebrow mb-3">
+                        Prefer to stay at home?
+                    </p>
+
+
+                    <h2
+                        class="section-title mb-6">
+
+                        We can come to you
+
+                    </h2>
+
+
+                    <p
+                        class="content-copy text-lg mb-6">
+
+                        Our nationwide home blood collection
+                        service allows a qualified healthcare
+                        professional to visit you at home for
+                        eligible blood tests.
+
+                    </p>
+
+
+                    <p
+                        class="content-copy mb-8">
+
+                        The current home collection fee is
+                        <strong class="text-[#102a43]">
+                            +£59
+                        </strong>
+                        in addition to the cost of your chosen
+                        blood test.
+
+                    </p>
 
 
                     <a
                         href="homevisit.html"
-                        class="btn-secondary w-full">
+                        class="btn-primary">
 
-                        Home Collection
+                        Find Out More
+
+                        <i
+                            data-feather="arrow-right"
+                            class="w-4 h-4">
+                        </i>
 
                     </a>
 
-
-                    <p
-                        class="text-xs text-gray-500 text-center mt-5">
-
-                        No GP referral required.
-
-                    </p>
-
                 </div>
 
-            </aside>
+
+                <div
+                    class="info-box"
+                    data-aos="fade-left">
 
 
-        </div>
+                    <div class="info-icon">
 
-    </div>
+                        <i
+                            data-feather="home"
+                            class="w-6 h-6">
+                        </i>
 
-</section>
-
-
-
-<!-- ============================================================
-     HOME COLLECTION BANNER
-============================================================ -->
-
-<section
-    class="py-16 bg-[#f5f8fb] border-y border-gray-100">
-
-    <div
-        class="max-w-6xl mx-auto px-5">
-
-        <div
-            class="flex flex-col md:flex-row md:items-center md:justify-between gap-8"
-            data-aos="fade-up">
+                    </div>
 
 
-            <div
-                class="flex gap-5 items-start">
+                    <h3
+                        class="text-2xl font-semibold text-[#102a43] mb-5">
 
-                <div class="feature-icon">
+                        Home collection
 
-                    <i
-                        data-feather="home"
-                        class="w-5 h-5">
-                    </i>
+                    </h3>
 
-                </div>
 
-                <div>
+                    <div class="space-y-4">
 
-                    <h2
-                        class="text-2xl font-semibold text-[#102a43] mb-2">
 
-                        Prefer to have your blood taken at home?
+                        <div class="flex gap-4 items-start">
 
-                    </h2>
 
-                    <p class="text-gray-600">
+                            <i
+                                data-feather="check"
+                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
+                            </i>
 
-                        Our nationwide home blood collection
-                        service is available for this test.
 
-                    </p>
+                            <p class="content-copy">
+
+                                Nationwide service
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="flex gap-4 items-start">
+
+
+                            <i
+                                data-feather="check"
+                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
+                            </i>
+
+
+                            <p class="content-copy">
+
+                                Qualified healthcare professional
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="flex gap-4 items-start">
+
+
+                            <i
+                                data-feather="check"
+                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
+                            </i>
+
+
+                            <p class="content-copy">
+
+                                Private and convenient
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="flex gap-4 items-start">
+
+
+                            <i
+                                data-feather="check"
+                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
+                            </i>
+
+
+                            <p class="content-copy">
+
+                                Home visit fee: +£59
+
+                            </p>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
 
-
-            <a
-                href="homevisit.html"
-                class="btn-secondary whitespace-nowrap">
-
-                Find Out More
-
-                <i
-                    data-feather="arrow-right"
-                    class="ml-2 w-4 h-4">
-                </i>
-
-            </a>
-
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
+    <!-- ==================================
+         FAQ
+    =================================== -->
 
-<!-- ============================================================
-     FAQ
-============================================================ -->
-
-<section
-    class="py-20 md:py-24 bg-white">
-
-    <div
-        class="max-w-4xl mx-auto px-5">
+    <section
+        class="py-20 md:py-24 bg-gray-50">
 
 
         <div
-            class="text-center mb-12"
+            class="max-w-4xl mx-auto px-6">
+
+
+            <div
+                class="text-center mb-12"
+                data-aos="fade-up">
+
+
+                <p class="eyebrow mb-3">
+                    Before your appointment
+                </p>
+
+
+                <h2
+                    class="section-title mb-5">
+
+                    Frequently asked questions
+
+                </h2>
+
+            </div>
+
+
+            <div class="space-y-4">
+
+
+                <div
+                    class="faq-item"
+                    data-aos="fade-up">
+
+
+                    <button
+                        type="button"
+                        class="faq-button"
+                        onclick="toggleFAQ(this)">
+
+
+                        <span>
+                            Do I need a GP referral?
+                        </span>
+
+
+                        <i
+                            data-feather="plus"
+                            class="faq-icon w-5 h-5">
+                        </i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        No. Our private blood testing service does
+                        not require a GP referral. You can select
+                        and book eligible tests directly with
+                        Prime Life Diagnostics.
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="faq-item"
+                    data-aos="fade-up">
+
+
+                    <button
+                        type="button"
+                        class="faq-button"
+                        onclick="toggleFAQ(this)">
+
+
+                        <span>
+                            How long does an appointment take?
+                        </span>
+
+
+                        <i
+                            data-feather="plus"
+                            class="faq-icon w-5 h-5">
+                        </i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        The blood collection itself is usually
+                        quick. Appointments are designed to be
+                        efficient and typically take around
+                        10–15 minutes, including preparation and
+                        aftercare.
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="faq-item"
+                    data-aos="fade-up">
+
+
+                    <button
+                        type="button"
+                        class="faq-button"
+                        onclick="toggleFAQ(this)">
+
+
+                        <span>
+                            When will I receive my results?
+                        </span>
+
+
+                        <i
+                            data-feather="plus"
+                            class="faq-icon w-5 h-5">
+                        </i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        Most results are available within
+                        24–72 hours. Some specialised tests may
+                        take longer.
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="faq-item"
+                    data-aos="fade-up">
+
+
+                    <button
+                        type="button"
+                        class="faq-button"
+                        onclick="toggleFAQ(this)">
+
+
+                        <span>
+                            Do I need to fast before my appointment?
+                        </span>
+
+
+                        <i
+                            data-feather="plus"
+                            class="faq-icon w-5 h-5">
+                        </i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        It depends on the test you are having.
+                        Some tests require fasting while others
+                        do not. Please check the preparation
+                        information for your chosen test before
+                        attending.
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="faq-item"
+                    data-aos="fade-up">
+
+
+                    <button
+                        type="button"
+                        class="faq-button"
+                        onclick="toggleFAQ(this)">
+
+
+                        <span>
+                            Can I have my blood test at home?
+                        </span>
+
+
+                        <i
+                            data-feather="plus"
+                            class="faq-icon w-5 h-5">
+                        </i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        Yes. We offer nationwide home blood
+                        collection for eligible tests. The current
+                        home collection fee is +£59.
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="faq-item"
+                    data-aos="fade-up">
+
+
+                    <button
+                        type="button"
+                        class="faq-button"
+                        onclick="toggleFAQ(this)">
+
+
+                        <span>
+                            How do I book a free health consultation?
+                        </span>
+
+
+                        <i
+                            data-feather="plus"
+                            class="faq-icon w-5 h-5">
+                        </i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        Use the booking system above and select
+                        the FREE Health Consultation service.
+                        When booking, indicate in the comments
+                        whether you would prefer a virtual or
+                        in-clinic consultation.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================
+         CONTACT
+    =================================== -->
+
+    <section
+        class="py-20 md:py-24">
+
+
+        <div
+            class="max-w-4xl mx-auto px-6 text-center"
             data-aos="fade-up">
 
 
             <p class="eyebrow mb-3">
+                Need help booking?
+            </p>
 
-                Questions
+
+            <h2
+                class="section-title mb-5">
+
+                We're here to help
+
+            </h2>
+
+
+            <p
+                class="content-copy text-lg max-w-2xl mx-auto mb-8">
+
+                Have a question about a test, preparation or
+                booking? Contact Prime Life Diagnostics and we'll
+                be happy to help.
 
             </p>
 
 
-            <h2 class="section-title">
-
-                Frequently asked questions
-
-            </h2>
-
-        </div>
+            <div
+                class="flex flex-col sm:flex-row justify-center gap-4">
 
 
+                <a
+                    href="tel:01302203565"
+                    class="btn-secondary">
 
-        <!-- FAQ 1 -->
+                    <i
+                        data-feather="phone"
+                        class="w-4 h-4">
+                    </i>
 
-        <div class="faq-item">
+                    01302 203565
 
-            <button
-                class="faq-button"
-                onclick="toggleFAQ(this)">
-
-                <span>
-                    What happens during my appointment?
-                </span>
-
-                <span class="faq-icon">
-                    +
-                </span>
-
-            </button>
+                </a>
 
 
-            <div class="faq-answer hidden">
+                <a
+                    href="mailto:info@primelifediagnostics.co.uk"
+                    class="btn-secondary">
 
-                Your appointment will be carried out by a trained
-                healthcare professional. A small blood sample is
-                taken using sterile, single-use equipment and the
-                appointment is typically completed within minutes.
+                    <i
+                        data-feather="mail"
+                        class="w-4 h-4">
+                    </i>
+
+                    Email Us
+
+                </a>
 
             </div>
 
         </div>
 
+    </section>
 
 
-        <!-- FAQ 2 -->
+    <!-- ==================================
+         FINAL CTA
+    =================================== -->
 
-        <div class="faq-item">
-
-            <button
-                class="faq-button"
-                onclick="toggleFAQ(this)">
-
-                <span>
-                    Do I need a GP referral?
-                </span>
-
-                <span class="faq-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="faq-answer hidden">
-
-                No. You can book a private blood test directly
-                with Prime Life Diagnostics without a GP referral.
-
-            </div>
-
-        </div>
-
-
-
-        <!-- FAQ 3 -->
-
-        <div class="faq-item">
-
-            <button
-                class="faq-button"
-                onclick="toggleFAQ(this)">
-
-                <span>
-                    When will I receive my results?
-                </span>
-
-                <span class="faq-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="faq-answer hidden">
-
-                Most blood test results are available within
-                24–72 hours, although some specialised tests may
-                take longer.
-
-            </div>
-
-        </div>
-
-
-
-        <!-- FAQ 4 -->
-
-        <div class="faq-item">
-
-            <button
-                class="faq-button"
-                onclick="toggleFAQ(this)">
-
-                <span>
-                    Can I have this test at home?
-                </span>
-
-                <span class="faq-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="faq-answer hidden">
-
-                Yes. This test can be combined with our nationwide
-                home blood collection service.
-
-            </div>
-
-        </div>
-
-
-
-        <!-- FAQ 5 -->
-
-        <div class="faq-item">
-
-            <button
-                class="faq-button"
-                onclick="toggleFAQ(this)">
-
-                <span>
-                    Who reviews my results?
-                </span>
-
-                <span class="faq-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="faq-answer hidden">
-
-                Results are reviewed as part of Prime Life
-                Diagnostics' doctor-led service.
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     FINAL CTA
-============================================================ -->
-
-<section
-    class="final-cta py-20 md:py-24">
-
-    <div
-        class="relative z-10 max-w-4xl mx-auto px-5 text-center text-white"
-        data-aos="fade-up">
-
-
-        <p
-            class="uppercase tracking-[2px] text-sm font-semibold text-blue-200 mb-4">
-
-            Take the next step
-
-        </p>
-
-
-        <h2
-            class="text-4xl md:text-5xl font-semibold leading-tight mb-6">
-
-            Get a clearer picture
-            of your health.
-
-        </h2>
-
-
-        <p
-            class="text-lg md:text-xl text-white/80 mb-9">
-
-            Book your Comprehensive Male Blood Test today.
-
-        </p>
-
-
-        <a
-            href="appointment.html"
-            class="inline-flex items-center justify-center bg-white text-[#102a43] px-8 py-4 rounded-md font-semibold hover:bg-gray-100 transition">
-
-            Book for £199
-
-            <i
-                data-feather="arrow-right"
-                class="ml-3 w-5 h-5">
-            </i>
-
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     FOOTER
-============================================================ -->
-
-<footer
-    class="bg-[#0b1c2b] text-white">
-
-    <div
-        class="max-w-7xl mx-auto px-5 py-16">
+    <section
+        class="final-cta py-20 md:py-24">
 
 
         <div
-            class="grid md:grid-cols-3 gap-12">
+            class="max-w-4xl mx-auto px-6 text-center"
+            data-aos="fade-up">
+
+
+            <p
+                class="text-sm font-bold uppercase tracking-[0.14em] text-blue-200 mb-4">
+
+                Ready to get started?
+
+            </p>
+
+
+            <h2
+                class="text-3xl md:text-5xl font-bold leading-tight mb-6">
+
+                Book your private blood test
+
+            </h2>
+
+
+            <p
+                class="text-blue-100 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+
+                Choose your test and book an appointment with
+                Prime Life Diagnostics.
+
+            </p>
+
+
+            <div
+                class="flex flex-col sm:flex-row justify-center gap-3">
+
+
+                <a
+                    href="#booking"
+                    class="inline-flex items-center justify-center gap-2 bg-white text-[#102a43] px-6 py-3 rounded-xl font-bold hover:bg-gray-100 transition">
+
+                    Book Your Appointment
+
+                    <i
+                        data-feather="arrow-right"
+                        class="w-4 h-4">
+                    </i>
+
+                </a>
+
+
+                <a
+                    href="bloodtestspanels.html"
+                    class="inline-flex items-center justify-center gap-2 border border-white/40 text-white px-6 py-3 rounded-xl font-bold hover:bg-white/10 transition">
+
+                    View Blood Tests
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ==================================
+     FOOTER
+=================================== -->
+
+<footer>
+
+    <div
+        class="max-w-7xl mx-auto px-6 py-16">
+
+
+        <div
+            class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
 
 
             <!-- Brand -->
@@ -3696,29 +2758,28 @@ The cholesterol-to-HDL ratio compares your total cholesterol with your HDL ("goo
             <div>
 
                 <img
-                    src="Prime Life Diagnostics1-01.png"
+                    src="https://primelifediagnostics.co.uk/Prime%20Life%20Diagnostics1-01.png"
                     alt="Prime Life Diagnostics"
-                    class="h-16 w-auto mb-6 brightness-0 invert">
+                    class="h-14 w-auto mb-5 brightness-0 invert">
+
 
                 <p
-                    class="text-gray-400 leading-relaxed">
+                    class="text-[#9fb1c1] leading-relaxed">
 
-                    Private blood testing and health checks
-                    designed to make understanding your health
-                    simpler.
+                    Private blood testing and health checks designed
+                    to make understanding your health simpler.
 
                 </p>
 
             </div>
 
 
-
-            <!-- Links -->
+            <!-- Quick links -->
 
             <div>
 
                 <h3
-                    class="font-semibold text-lg mb-5">
+                    class="text-white font-semibold mb-5">
 
                     Quick Links
 
@@ -3727,9 +2788,10 @@ The cholesterol-to-HDL ratio compares your total cholesterol with your HDL ("goo
 
                 <div class="space-y-3">
 
+
                     <a
                         href="index.html"
-                        class="block text-gray-400 hover:text-white">
+                        class="block footer-link">
 
                         Home
 
@@ -3738,7 +2800,7 @@ The cholesterol-to-HDL ratio compares your total cholesterol with your HDL ("goo
 
                     <a
                         href="bloodtestspanels.html"
-                        class="block text-gray-400 hover:text-white">
+                        class="block footer-link">
 
                         Blood Tests
 
@@ -3746,26 +2808,8 @@ The cholesterol-to-HDL ratio compares your total cholesterol with your HDL ("goo
 
 
                     <a
-                        href="panels.html"
-                        class="block text-gray-400 hover:text-white">
-
-                        Health Checks
-
-                    </a>
-
-
-                    <a
-                        href="ourmission.html"
-                        class="block text-gray-400 hover:text-white">
-
-                        Our Mission
-
-                    </a>
-
-
-                    <a
                         href="chooseus.html"
-                        class="block text-gray-400 hover:text-white">
+                        class="block footer-link">
 
                         Why Us
 
@@ -3773,8 +2817,26 @@ The cholesterol-to-HDL ratio compares your total cholesterol with your HDL ("goo
 
 
                     <a
+                        href="ourmission.html"
+                        class="block footer-link">
+
+                        About Us
+
+                    </a>
+
+
+                    <a
+                        href="location.html"
+                        class="block footer-link">
+
+                        Find Us
+
+                    </a>
+
+
+                    <a
                         href="FAQs.html"
-                        class="block text-gray-400 hover:text-white">
+                        class="block footer-link">
 
                         FAQs
 
@@ -3783,7 +2845,7 @@ The cholesterol-to-HDL ratio compares your total cholesterol with your HDL ("goo
 
                     <a
                         href="appointment.html"
-                        class="block text-gray-400 hover:text-white">
+                        class="block footer-link">
 
                         Book Appointment
 
@@ -3794,13 +2856,12 @@ The cholesterol-to-HDL ratio compares your total cholesterol with your HDL ("goo
             </div>
 
 
-
             <!-- Contact -->
 
             <div>
 
                 <h3
-                    class="font-semibold text-lg mb-5">
+                    class="text-white font-semibold mb-5">
 
                     Contact
 
@@ -3808,32 +2869,72 @@ The cholesterol-to-HDL ratio compares your total cholesterol with your HDL ("goo
 
 
                 <div
-                    class="space-y-3 text-gray-400">
+                    class="space-y-4 text-[#9fb1c1]">
 
-                    <p>
-                        info@primelifediagnostics.co.uk
-                    </p>
 
-                    <p>
-                        01302 203565
-                    </p>
+                    <div class="flex gap-3">
 
-                    <p>
-                        105 Scrooby Road,<br>
-                        Bircotes,<br>
-                        Doncaster,<br>
-                        DN11 8JN
-                    </p>
+                        <i
+                            data-feather="mail"
+                            class="w-5 h-5 flex-shrink-0 mt-0.5">
+                        </i>
+
+
+                        <a
+                            href="mailto:info@primelifediagnostics.co.uk"
+                            class="footer-link break-all">
+
+                            info@primelifediagnostics.co.uk
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="flex gap-3">
+
+                        <i
+                            data-feather="phone"
+                            class="w-5 h-5 flex-shrink-0 mt-0.5">
+                        </i>
+
+
+                        <a
+                            href="tel:01302203565"
+                            class="footer-link">
+
+                            01302 203565
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="flex gap-3">
+
+                        <i
+                            data-feather="map-pin"
+                            class="w-5 h-5 flex-shrink-0 mt-0.5">
+                        </i>
+
+
+                        <span>
+
+                            105 Scrooby Road,<br>
+                            Bircotes,<br>
+                            Doncaster,<br>
+                            DN11 8JN
+
+                        </span>
+
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
 
-
-
-        <!-- Footer bottom -->
+            <!-- Footer bottom -->
 
         <div
             class="border-t border-white/10 mt-14 pt-8">
@@ -3952,19 +3053,18 @@ The cholesterol-to-HDL ratio compares your total cholesterol with your HDL ("goo
     </div>
 
 </footer>
-
-
-
-<!-- ============================================================
+<!-- ==================================
      JAVASCRIPT
-============================================================ -->
+=================================== -->
+
+<script
+    src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+</script>
+
 
 <script>
 
-
-    /* =========================================================
-       AOS
-    ========================================================= */
+    /* AOS */
 
     AOS.init({
 
@@ -3977,168 +3077,151 @@ The cholesterol-to-HDL ratio compares your total cholesterol with your HDL ("goo
     });
 
 
-
-    /* =========================================================
-       FEATHER ICONS
-    ========================================================= */
+    /* Feather Icons */
 
     feather.replace();
 
 
-
-    /* =========================================================
+    /* ==================================
        MOBILE MENU
-    ========================================================= */
+    =================================== */
 
-    const menuBtn =
-        document.getElementById("menu-btn");
-
-    const closeMenu =
-        document.getElementById("close-menu");
-
-    const mobileMenu =
-        document.getElementById("mobile-menu");
-
-
-    menuBtn.addEventListener(
-        "click",
-        function () {
-
-            mobileMenu.classList.remove("hidden");
-
-        }
-    );
-
-
-    closeMenu.addEventListener(
-        "click",
-        function () {
-
-            mobileMenu.classList.add("hidden");
-
-        }
-    );
-
-
-    document
-        .querySelectorAll("#mobile-menu a")
-        .forEach(function (link) {
-
-            link.addEventListener(
-                "click",
-                function () {
-
-                    mobileMenu.classList.add("hidden");
-
-                }
-            );
-
-        });
-
-
-
-    /* =========================================================
-       BIOMARKER ACCORDIONS
-    ========================================================= */
-
-    function toggleBiomarkers(button) {
-
-        const content =
-            button.nextElementSibling;
-
-        const icon =
-            button.querySelector(
-                ".biomarker-icon"
-            );
-
-
-        content.classList.toggle(
-            "hidden"
+    const mobileMenuButton =
+        document.getElementById(
+            'mobile-menu-btn'
         );
 
 
-        if (
-            content.classList.contains(
-                "hidden"
-            )
-        ) {
+    const mobileMenu =
+        document.getElementById(
+            'mobile-menu'
+        );
 
-            icon.textContent = "+";
 
-        } else {
+    if (
+        mobileMenuButton &&
+        mobileMenu
+    ) {
 
-            icon.textContent = "−";
+        mobileMenuButton.addEventListener(
+            'click',
+            () => {
 
-        }
+                const isOpen =
+                    mobileMenu.style.display === 'block';
+
+
+                mobileMenu.style.display =
+                    isOpen
+                        ? 'none'
+                        : 'block';
+
+
+                mobileMenuButton.setAttribute(
+                    'aria-expanded',
+                    String(!isOpen)
+                );
+
+
+                mobileMenuButton.innerHTML =
+                    isOpen
+                        ? '<i data-feather="menu"></i>'
+                        : '<i data-feather="x"></i>';
+
+
+                feather.replace();
+
+            }
+        );
 
     }
 
 
-
-    /* =========================================================
+    /* ==================================
        FAQ
-    ========================================================= */
+    =================================== */
 
     function toggleFAQ(button) {
 
         const answer =
             button.nextElementSibling;
 
+
         const icon =
             button.querySelector(
-                ".faq-icon"
+                '.faq-icon'
             );
 
 
-        answer.classList.toggle(
-            "hidden"
-        );
+        const isOpen =
+            answer.style.display === 'block';
 
 
-        if (
-            answer.classList.contains(
-                "hidden"
-            )
-        ) {
+        if (isOpen) {
 
-            icon.textContent = "+";
+            answer.style.display =
+                'none';
 
-        } else {
 
-            icon.textContent = "−";
+            icon.setAttribute(
+                'data-feather',
+                'plus'
+            );
 
         }
+
+        else {
+
+            answer.style.display =
+                'block';
+
+
+            icon.setAttribute(
+                'data-feather',
+                'minus'
+            );
+
+        }
+
+
+        feather.replace();
 
     }
 
 
-
-    /* =========================================================
-       DYNAMIC FIXED HEADER SPACING
-    ========================================================= */
+    /* ==================================
+       HEADER SPACING
+    =================================== */
 
     function updateSpacing() {
 
-        const banner =
-            document.querySelector(
-                ".promo-banner"
+        const promo =
+            document.getElementById(
+                'promo-banner'
             );
+
 
         const nav =
-            document.querySelector(
-                ".main-nav"
+            document.getElementById(
+                'main-nav'
             );
 
 
-        if (banner && nav) {
+        if (
+            promo &&
+            nav
+        ) {
 
-            const totalHeight =
-                banner.offsetHeight +
-                nav.offsetHeight;
+            const promoHeight =
+                promo.offsetHeight;
+
+
+            nav.style.top =
+                `${promoHeight}px`;
 
 
             document.body.style.paddingTop =
-                totalHeight + "px";
+                `${promoHeight + nav.offsetHeight}px`;
 
         }
 
@@ -4146,47 +3229,56 @@ The cholesterol-to-HDL ratio compares your total cholesterol with your HDL ("goo
 
 
     window.addEventListener(
-        "load",
+        'load',
         updateSpacing
     );
 
 
     window.addEventListener(
-        "resize",
+        'resize',
         updateSpacing
     );
 
+
+    /* ==================================
+       CLOSE MOBILE MENU AFTER LINK
+    =================================== */
+
+    document
+        .querySelectorAll(
+            '#mobile-menu a'
+        )
+        .forEach(
+            link => {
+
+                link.addEventListener(
+                    'click',
+                    () => {
+
+                        mobileMenu.style.display =
+                            'none';
+
+
+                        mobileMenuButton.setAttribute(
+                            'aria-expanded',
+                            'false'
+                        );
+
+
+                        mobileMenuButton.innerHTML =
+                            '<i data-feather="menu"></i>';
+
+
+                        feather.replace();
+
+                    }
+                );
+
+            }
+        );
 
 </script>
-
-    <script>
-            
-                 
-    function toggleLearnMore(button) {
-
-        const content =
-            button.nextElementSibling;
-
-        const icon =
-            button.querySelector(".learn-more-icon");
-
-
-        content.classList.toggle("hidden");
-
-
-        if (content.classList.contains("hidden")) {
-
-            icon.textContent = "+";
-
-        } else {
-
-            icon.textContent = "−";
-
-        }
-
-    }
-
-</script> 
+   
 
 </body>
 
