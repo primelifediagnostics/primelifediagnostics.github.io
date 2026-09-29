@@ -902,7 +902,7 @@ letter-spacing: 0.02em;
     }
 
 </style>
-   
+ <style>
 /* ==========================================
    PRIME LIFE DIAGNOSTICS
    MOBILE RESPONSIVE FIX
@@ -950,6 +950,36 @@ main,
 nav {
     max-width: 100%;
 }
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Prevent fixed-width elements creating overflow */
+    .w-screen {
+        width: 100%;
+    }
+
+    /* Make buttons fit smaller screens */
+    button,
+    .btn {
+        max-width: 100%;
+    }
+
+}
+</style>
+
 </head>
 
 <body>
