@@ -103,30 +103,29 @@
        PROMO BANNER
     ========================== */
 
-    .promo-banner {
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-z-index: 60;
-
-
-background: #111827;
-
-color: white;
-
-text-align: center;
-
-padding: 10px 16px;
-
-font-size: 13px;
-font-weight: 600;
-
-letter-spacing: 0.02em;
-
-
+.promo-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    background: #102a43;
+    color: white;
+    text-align: center;
+    padding: 9px 15px;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+.promo-code {
+    background: white;
+    color: #102a43;
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-weight: 700;
+    margin-left: 5px;
+}
 
 
     /* =========================
@@ -195,17 +194,18 @@ letter-spacing: 0.02em;
 
         align-items: center;
 
-        gap: 26px;
+        gap: 28px;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
 
     .nav-links a {
 
-        color: #102a43;
+        color: #4b5563;
 
         font-size: 14px;
 
-        font-weight: 600;
+        font-weight: 400;
 
         transition:
             color
@@ -216,7 +216,34 @@ letter-spacing: 0.02em;
 
     .nav-links a:hover {
 
+        color: #1d4ed8;
+    }
+
+    .nav-links a.nav-active,
+    .nav-links a.nav-active:hover {
+
         color: #1769aa;
+    }
+
+    .nav-links a.nav-book-button,
+    .nav-links a.nav-book-button:hover {
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        border-radius: 5px;
+        background: #1769aa;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.25s ease;
+    }
+
+    .nav-links a.nav-book-button:hover {
+
+        background: #12568d;
+        transform: translateY(-1px);
     }
 
 
@@ -225,6 +252,10 @@ letter-spacing: 0.02em;
         display: none;
 
         color: #102a43;
+        border: 0;
+        background: transparent;
+        padding: 8px;
+        cursor: pointer;
     }
 
 
@@ -232,39 +263,92 @@ letter-spacing: 0.02em;
 
         display: none;
 
-        border-top:
-            1px solid
-            rgba(
-                16,
-                42,
-                67,
-                0.08
-            );
-
-        background: white;
-
-        padding:
-            12px
-            24px
-            20px;
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        overflow-y: auto;
+        background: #ffffff;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
+    .mobile-menu.is-open {
+
+        display: block;
+    }
+
+    .mobile-menu-links {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        min-height: 100vh;
+        padding: 88px 24px 32px;
+    }
+
+    .mobile-menu-close {
+
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        border: 0;
+        background: transparent;
+        color: #102a43;
+        padding: 8px;
+        cursor: pointer;
+    }
 
     .mobile-menu a {
 
-        display: block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        font-weight: 400;
+        color: #374151;
+        font-size: 20px;
+        text-align: center;
+        border-bottom: 0;
+    }
 
-        padding:
-            12px
-            0;
+    .mobile-menu a:hover,
+    .mobile-menu a:focus-visible {
 
+        color: #1d4ed8;
+    }
+
+    .mobile-menu a.mobile-active,
+    .mobile-menu a.mobile-active:hover,
+    .mobile-menu a.mobile-active:focus-visible {
+
+        color: #1769aa;
+    }
+
+    .mobile-menu a.mobile-book-button,
+    .mobile-menu a.mobile-book-button:hover,
+    .mobile-menu a.mobile-book-button:focus-visible {
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 27px;
+        border: 0;
+        border-radius: 5px;
+        background: #1769aa;
+        color: #ffffff;
+        font-size: 16px;
         font-weight: 600;
+        line-height: normal;
+        transition: all 0.25s ease;
+    }
 
-        color: #102a43;
+    .mobile-menu a.mobile-book-button:hover,
+    .mobile-menu a.mobile-book-button:focus-visible {
 
-        border-bottom:
-            1px solid
-            #edf2f7;
+        background: #12568d;
+        transform: translateY(-1px);
     }
 
 
@@ -878,6 +962,18 @@ letter-spacing: 0.02em;
 
 
     @media (
+        max-width: 768px
+    ) {
+
+        .promo-banner {
+            font-size: 12px;
+            padding: 8px 8px;
+        }
+
+    }
+
+
+    @media (
         max-width: 640px
     ) {
 
@@ -892,7 +988,8 @@ letter-spacing: 0.02em;
         }
 
         .promo-banner {
-            font-size: 11px;
+            font-size: 12px;
+            padding: 8px 8px;
         }
 
         .hero-card {
@@ -993,10 +1090,11 @@ nav {
     id="promo-banner"
     class="promo-banner">
 
-    10% OFF IN-CLINIC BLOOD TESTS ·
-    <span class="promo-code">
-        Use code PRIME10
-    </span>
+    <strong>10% OFF IN-CLINIC BLOOD TESTS</strong>
+
+    <span class="hidden sm:inline"> · Use code</span>
+
+    <span class="promo-code">PRIME10</span>
 
 </div>
 
@@ -1043,8 +1141,12 @@ nav {
             </a>
 
             <a href="ourmission.html"
-               class="text-[#1769aa]">
+               class="nav-active">
                 About Us
+            </a>
+
+            <a href="location.html">
+                Find Us
             </a>
 
             <a href="FAQs.html">
@@ -1053,7 +1155,7 @@ nav {
 
             <a
                 href="appointment.html"
-                class="btn-primary">
+                class="btn-primary nav-book-button text-sm px-5 py-3">
 
                 Book Now
 
@@ -1066,6 +1168,7 @@ nav {
             id="mobile-menu-btn"
             class="mobile-menu-btn"
             aria-label="Open menu"
+            aria-controls="mobile-menu"
             aria-expanded="false">
 
             <i data-feather="menu"></i>
@@ -1074,12 +1177,29 @@ nav {
 
     </div>
 
+</header>
 
     <!-- Mobile Menu -->
 
-    <div
+    <nav
         id="mobile-menu"
-        class="mobile-menu">
+        class="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation"
+        aria-hidden="true">
+
+        <button
+            id="close-mobile-menu"
+            class="mobile-menu-close"
+            type="button"
+            aria-label="Close menu">
+
+            <i data-feather="x"></i>
+
+        </button>
+
+        <div class="mobile-menu-links">
 
         <a href="index.html">
             Home
@@ -1093,8 +1213,12 @@ nav {
             Why Us
         </a>
 
-        <a href="ourmission.html">
+        <a href="ourmission.html" class="mobile-active">
             About Us
+        </a>
+
+        <a href="location.html">
+            Find Us
         </a>
 
         <a href="FAQs.html">
@@ -1103,15 +1227,15 @@ nav {
 
         <a
             href="appointment.html"
-            class="mt-3 btn-primary">
+            class="btn-primary mobile-book-button">
 
             Book Appointment
 
         </a>
 
-    </div>
+        </div>
 
-</header>
+    </nav>
 
 
 <!-- =========================
@@ -2780,41 +2904,125 @@ nav {
             'mobile-menu'
         );
 
+    const closeMobileMenuButton =
+        document.getElementById(
+            'close-mobile-menu'
+        );
+
 
     if (
         mobileMenuButton &&
-        mobileMenu
+        mobileMenu &&
+        closeMobileMenuButton
     ) {
+
+        const setMobileMenuOpen = isOpen => {
+
+            mobileMenu.classList.toggle(
+                'is-open',
+                isOpen
+            );
+
+            mobileMenu.setAttribute(
+                'aria-hidden',
+                String(!isOpen)
+            );
+
+            mobileMenuButton.setAttribute(
+                'aria-expanded',
+                String(isOpen)
+            );
+
+            mobileMenuButton.setAttribute(
+                'aria-label',
+                isOpen ? 'Close menu' : 'Open menu'
+            );
+
+            mobileMenuButton.innerHTML =
+                isOpen
+                    ? '<i data-feather="x"></i>'
+                    : '<i data-feather="menu"></i>';
+
+            document.body.style.overflow =
+                isOpen ? 'hidden' : '';
+
+            feather.replace();
+
+            if (isOpen) {
+                closeMobileMenuButton.focus();
+            } else {
+                mobileMenuButton.focus();
+            }
+
+        };
 
         mobileMenuButton.addEventListener(
             'click',
-            () => {
+            () => setMobileMenuOpen(true)
+        );
 
-                const isOpen =
-                    mobileMenu.style.display === 'block';
+        closeMobileMenuButton.addEventListener(
+            'click',
+            () => setMobileMenuOpen(false)
+        );
 
-                mobileMenu.style.display =
-                    isOpen
-                        ? 'none'
-                        : 'block';
+        mobileMenu.addEventListener(
+            'keydown',
+            event => {
 
-                mobileMenuButton.setAttribute(
-                    'aria-expanded',
-                    String(!isOpen)
-                );
+                if (event.key === 'Escape') {
+                    setMobileMenuOpen(false);
+                    return;
+                }
 
-                mobileMenuButton.innerHTML =
-                    isOpen
-                        ? '<i data-feather="menu"></i>'
-                        : '<i data-feather="x"></i>';
+                if (event.key !== 'Tab') {
+                    return;
+                }
 
-                feather.replace();
+                const focusableElements =
+                    mobileMenu.querySelectorAll(
+                        'a[href], button:not([disabled])'
+                    );
+
+                const firstElement =
+                    focusableElements[0];
+
+                const lastElement =
+                    focusableElements[
+                        focusableElements.length - 1
+                    ];
+
+                if (
+                    event.shiftKey &&
+                    document.activeElement === firstElement
+                ) {
+                    event.preventDefault();
+                    lastElement.focus();
+                } else if (
+                    !event.shiftKey &&
+                    document.activeElement === lastElement
+                ) {
+                    event.preventDefault();
+                    firstElement.focus();
+                }
 
             }
         );
 
-    }
+        mobileMenu
+            .querySelectorAll('a')
+            .forEach(
+                link => {
 
+                    link.addEventListener(
+                        'click',
+                        () => setMobileMenuOpen(false)
+                    );
+
+                }
+            );
+
+    }
 
     /* FAQ */
 
@@ -2921,38 +3129,6 @@ nav {
         updateSpacing
     );
 
-
-    /* Close mobile menu after link click */
-
-    document
-        .querySelectorAll(
-            '#mobile-menu a'
-        )
-        .forEach(
-            link => {
-
-                link.addEventListener(
-                    'click',
-                    () => {
-
-                        mobileMenu.style.display =
-                            'none';
-
-                        mobileMenuButton.setAttribute(
-                            'aria-expanded',
-                            'false'
-                        );
-
-                        mobileMenuButton.innerHTML =
-                            '<i data-feather="menu"></i>';
-
-                        feather.replace();
-
-                    }
-                );
-
-            }
-        );
 
 </script>
    
