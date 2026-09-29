@@ -964,7 +964,53 @@
 
 </style>
    
+/* ==========================================
+   PRIME LIFE DIAGNOSTICS
+   MOBILE RESPONSIVE FIX
+   Prevent horizontal scrolling
+========================================== */
 
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Prevent images from being wider than the screen */
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+/* Prevent long text / links from forcing the page wider */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+    overflow-wrap: break-word;
+}
+
+/* Make sections stay inside the viewport */
+section,
+header,
+footer,
+main,
+nav {
+    max-width: 100%;
+}
 </head>
 
 <body>
