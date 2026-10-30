@@ -420,6 +420,165 @@
 
 
         /* =====================================================
+           CUSTOM TEST BANNER (full-width rectangle above panels)
+        ===================================================== */
+
+        .custom-banner {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 32px;
+
+            width: 100%;
+
+            margin-bottom: 36px;
+
+            padding: 34px 40px;
+
+            border-radius: 8px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #102a43,
+                    #174d73
+                );
+
+            color: #ffffff;
+        }
+
+
+        .custom-banner-icon {
+
+            flex-shrink: 0;
+
+            width: 68px;
+
+            height: 68px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,.10);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .custom-banner-text {
+
+            flex: 1;
+
+            min-width: 0;
+        }
+
+
+        .custom-banner-label {
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            color: #bfdcf0;
+
+            margin-bottom: 8px;
+        }
+
+
+        .custom-banner-title {
+
+            font-size: 26px;
+
+            font-weight: 600;
+
+            line-height: 1.25;
+
+            margin-bottom: 8px;
+        }
+
+
+        .custom-banner-desc {
+
+            color: rgba(255,255,255,.82);
+
+            font-size: 15px;
+
+            line-height: 1.65;
+
+            max-width: 640px;
+        }
+
+
+        .custom-banner-actions {
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            gap: 12px;
+        }
+
+
+        .custom-banner-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 13px 24px;
+
+            border-radius: 5px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            white-space: nowrap;
+
+            transition: all .2s ease;
+        }
+
+
+        .custom-banner-btn.solid {
+
+            background: #ffffff;
+
+            color: #102a43;
+        }
+
+
+        .custom-banner-btn.solid:hover {
+
+            background: #e8f1f8;
+        }
+
+
+        .custom-banner-btn.outline {
+
+            border: 1px solid rgba(255,255,255,.45);
+
+            color: #ffffff;
+        }
+
+
+        .custom-banner-btn.outline:hover {
+
+            background: rgba(255,255,255,.10);
+        }
+
+
+        /* =====================================================
            PANEL CARD
         ===================================================== */
 
@@ -760,6 +919,32 @@
             .search-wrapper {
 
                 top: 105px;
+            }
+
+
+            .custom-banner {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 22px;
+
+                padding: 28px 22px;
+            }
+
+
+            .custom-banner-title {
+
+                font-size: 22px;
+            }
+
+
+            .custom-banner-actions {
+
+                width: 100%;
+
+                flex-direction: column;
             }
 
 
@@ -1219,6 +1404,65 @@
 
 
         <!-- =====================================================
+             CUSTOM / BESPOKE TEST ENQUIRY BANNER
+        ====================================================== -->
+
+        <div
+            id="customBanner"
+            class="custom-banner"
+            data-aos="fade-up">
+
+            <div class="custom-banner-icon">
+
+                <i
+                    data-feather="help-circle"
+                    class="w-8 h-8">
+                </i>
+
+            </div>
+
+
+            <div class="custom-banner-text">
+
+                <p class="custom-banner-label">
+                    Bespoke Testing
+                </p>
+
+                <h3 class="custom-banner-title">
+                    Can't see the test you need?
+                </h3>
+
+                <p class="custom-banner-desc">
+                    If the blood test you are looking for isn't
+                    listed, get in touch with us. We'll discuss
+                    your requirements and let you know whether
+                    that test or a tailored package can be offered.
+                </p>
+
+            </div>
+
+
+            <div class="custom-banner-actions">
+
+                <a
+                    href="tel:01302203565"
+                    class="custom-banner-btn solid">
+                    Call us
+                </a>
+
+                <a
+                    href="mailto:info@primelifediagnostics.co.uk?subject=Blood%20test%20enquiry"
+                    class="custom-banner-btn outline">
+                    Email us
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
              PANEL GRID
         ====================================================== -->
 
@@ -1226,67 +1470,7 @@
             id="panelGrid"
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
 
-<!-- =================================================
-     0. CUSTOM / BESPOKE BLOOD TEST ENQUIRY
-================================================== -->
 
-<article
-    class="panel-card"
-    data-aos="fade-up"
-    data-category="custom bespoke other test not listed enquiry request contact">
-
-    <div class="panel-image flex items-center justify-center"
-         style="background: linear-gradient(135deg, #102a43, #174d73);">
-
-        <i data-feather="help-circle"
-           class="text-white"
-           style="width:64px;height:64px;stroke-width:1.5;"></i>
-
-    </div>
-
-    <div class="panel-content">
-
-        <div class="panel-category">
-            Bespoke Testing
-        </div>
-
-        <h3 class="panel-title">
-            Can't See the Test You Need?
-        </h3>
-
-        <p class="panel-description">
-            If the blood test you are looking for isn't listed,
-            get in touch with us. We'll discuss your requirements
-            and let you know whether that test or a tailored
-            package can be offered.
-        </p>
-
-        <div class="panel-footer">
-
-            <div class="panel-price" style="font-size:18px;">
-                Get in touch
-                <small>to discuss your needs</small>
-            </div>
-
-            <div class="panel-links">
-
-                <a href="mailto:info@primelifediagnostics.co.uk?subject=Blood%20test%20enquiry"
-                   class="learn-link">
-                    Email us →
-                </a>
-
-                <a href="tel:01302203565"
-                   class="book-link">
-                    Call us
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</article>
             <!-- =================================================
                  1. COMPREHENSIVE MALE
             ================================================== -->
@@ -2419,14 +2603,9 @@
             </article>
 
 
+        </div>
+        <!-- end #panelGrid -->
 
-          
-
-                    </div>
-
-                </div>
-
-        
 
 
         <!-- =====================================================
@@ -2455,7 +2634,13 @@
             <p class="text-gray-500 mb-5">
 
                 Try searching for a different test,
-                biomarker or health area.
+                biomarker or health area, or
+                <a
+                    href="mailto:info@primelifediagnostics.co.uk?subject=Blood%20test%20enquiry"
+                    class="text-blue-700 font-semibold">
+                    contact us
+                </a>
+                to discuss whether we can offer it.
 
             </p>
 
@@ -2469,6 +2654,8 @@
 
         </div>
 
+
+    </div>
 
 </section>
 
