@@ -163,7 +163,8 @@
       '<h2>Cookies on our website</h2>' +
       '<p>We use analytics and advertising cookies to understand how our website is used and ' +
       'how our adverts perform. They are only set if you accept. You can change your choice ' +
-      'at any time using &ldquo;Cookie settings&rdquo; at the bottom of any page.</p>' +
+      'at any time using &ldquo;Cookie settings&rdquo; at the bottom of any page. ' +
+      '<a href="/privacy-policy.html" style="color:#1769aa;font-weight:600">Privacy &amp; Cookie Policy</a></p>' +
       '<div class="pld-row">' +
       '<button type="button" class="pld-accept">Accept cookies</button>' +
       '<button type="button" class="pld-reject">Reject cookies</button>' +
@@ -198,12 +199,21 @@
     var wrap = document.createElement('div');
     wrap.id = 'pld-cookie-link';
     wrap.style.cssText = 'text-align:center;padding:12px 16px;font-size:13px';
+    var link = document.createElement('a');
+    link.href = '/privacy-policy.html';
+    link.textContent = 'Privacy & Cookie Policy';
+    link.style.cssText = 'color:inherit;text-decoration:underline;opacity:.8';
+    var sep = document.createElement('span');
+    sep.textContent = '  |  ';
+    sep.style.cssText = 'opacity:.5';
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.textContent = 'Cookie settings';
     btn.style.cssText = 'background:none;border:0;padding:0;color:inherit;font:inherit;' +
       'text-decoration:underline;cursor:pointer;opacity:.8';
     btn.addEventListener('click', function () { showBanner(true); });
+    wrap.appendChild(link);
+    wrap.appendChild(sep);
     wrap.appendChild(btn);
     footer.appendChild(wrap);
   }
