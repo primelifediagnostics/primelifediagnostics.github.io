@@ -234,9 +234,9 @@
       track('whatsapp_click', info);
     } else if (href.indexOf('mailto:') === 0) {
       track('email_click', info);
-    } else if (/appointment\.html|#booking/.test(href)) {
-      track('booking_click', info);
-    }
+   } else if (/appointment\.html/i.test(href)) {
+  track('appointment_page_click', info);
+}
   }, true);
 
   // The Setmore booking form lives inside an iframe, which the page cannot see into.
