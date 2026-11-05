@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thank You | Prime Life Diagnostics</title>
+    <meta name="description" content="Thank you for booking with Prime Life Diagnostics.">
+
+    <!-- Keep this page out of Google search results -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="icon" type="image/png" href="/favicon-32x32.png">
+
+    <!-- Cookie consent + Google Analytics / Google Ads (loads only after consent) -->
+    <script src="/tracking.js"></script>
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #102a43;
+            background: #f5f9fc;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid #d9e2ec;
+            padding: 14px 20px;
+            text-align: center;
+        }
+
+        header img { height: 52px; width: auto; }
+
+        main {
+            max-width: 640px;
+            margin: 48px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #d9e2ec;
+            border-radius: 16px;
+            padding: 40px 28px;
+            box-shadow: 0 6px 24px rgba(16, 42, 67, .08);
+        }
+
+        .tick {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: #e6f4ea;
+            color: #1e8e3e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            font-weight: 700;
+        }
+
+        h1 { margin: 0 0 12px; font-size: 28px; }
+        p { margin: 0 0 14px; color: #486581; }
+
+        .actions {
+            margin-top: 26px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 10px;
+            border: 2px solid #1769aa;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .btn-primary { background: #1769aa; color: #fff; }
+        .btn-secondary { background: #fff; color: #1769aa; }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="/"><img src="/prime_life_logo_transparent.png" alt="Prime Life Diagnostics"></a>
+    </header>
+
+    <main>
+        <div class="card">
+            <div class="tick" aria-hidden="true">&#10003;</div>
+
+            <h1>Thank you for booking</h1>
+
+            <p>Your appointment with Prime Life Diagnostics has been submitted. You should receive a
+                confirmation message shortly.</p>
+
+            <p>If you don&rsquo;t receive anything, or you need to change your booking, please call us on
+                <a href="tel:01302203565">01302 203565</a> or email
+                <a href="mailto:info@primelifediagnostics.co.uk">info@primelifediagnostics.co.uk</a>.</p>
+
+            <div class="actions">
+                <a class="btn btn-primary" href="/location.html">Find the clinic</a>
+                <a class="btn btn-secondary" href="/">Back to home page</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Counts one completed booking (only for visitors who accepted cookies).
+        // Guarded so refreshing this page does not count the same booking twice.
+        window.pldWhenTracking(function () {
+            var key = 'pld_booking_complete_sent';
+            try {
+                if (window.sessionStorage.getItem(key)) { return; }
+                window.sessionStorage.setItem(key, '1');
+            } catch (e) { /* storage blocked - count it anyway */ }
+            window.pldTrack('booking_complete', { page_path: '/thank-you.html' });
+        });
+    </script>
+
+</body>
+
+</html>
