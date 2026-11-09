@@ -6,8 +6,9 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#102a43">
   <title>Booking Received | Prime Life Diagnostics</title>
-  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   <style>
     :root {
       --navy: #102a43;
@@ -25,10 +26,31 @@
       background: #f7f9fc;
       line-height: 1.7;
     }
-    .site-header { background: #fff; border-bottom: 1px solid var(--border); }
-    .brand { color: var(--navy); font-weight: 800; letter-spacing: -.025em; }
-    .nav-link { color: #334155; font-weight: 600; }
-    .nav-link:hover { color: var(--blue); }
+    /* Promo bar + navigation: copied from index.html so the top of the page matches */
+    .promo-banner {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 9999;
+      background: #102a43; color: white; text-align: center;
+      padding: 9px 15px; font-size: 13px; letter-spacing: .2px;
+    }
+    .promo-code {
+      background: white; color: #102a43; padding: 3px 9px;
+      border-radius: 4px; font-weight: 700; margin-left: 5px;
+    }
+    .main-nav {
+      position: fixed; top: 38px; left: 0; width: 100%; z-index: 9998;
+      background: rgba(255,255,255,.97); backdrop-filter: blur(10px);
+      border-bottom: 1px solid #edf1f5;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: #1769aa; color: white; padding: 15px 27px;
+      border-radius: 5px; font-weight: 600; transition: all .25s ease;
+    }
+    .btn-primary:hover { background: #12568d; transform: translateY(-1px); }
+    @media (max-width: 768px) {
+      .promo-banner { font-size: 12px; padding: 8px 8px; }
+      .main-nav { top: 35px; }
+    }
     .hero { background: linear-gradient(135deg, #102a43 0%, #1769aa 100%); color: white; }
     .eyebrow { color: #dbeafe; font-size: .82rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
     .tick {
@@ -65,7 +87,6 @@
     footer a { color: white; text-decoration: underline; text-underline-offset: 3px; }
     :focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
     @media (max-width: 640px) {
-      .mobile-nav { display: flex; flex-wrap: wrap; gap: 10px 18px; }
       .card { border-radius: 12px; }
     }
   </style>
@@ -73,22 +94,65 @@
   <script src="/tracking.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="mx-auto max-w-6xl px-5 py-4">
-      <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <a class="brand text-xl sm:text-2xl" href="index.html" aria-label="Prime Life Diagnostics home">
-          Prime Life Diagnostics
-          <span class="mt-0.5 block text-xs font-semibold tracking-wide" style="color:var(--blue)">Your Blood Tests. Simplified.</span>
+  <!-- PROMOTIONAL BAR (same as index.html) -->
+  <div class="promo-banner">
+    <strong>10% OFF IN-CLINIC BLOOD TESTS</strong>
+    <span class="hidden sm:inline"> · Use code</span>
+    <span class="promo-code">PRIME10</span>
+  </div>
+
+  <!-- NAVIGATION (same as index.html) -->
+  <nav class="main-nav">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center">
+          <img
+            src="Prime Life Diagnostics1-01.png"
+            alt="Prime Life Diagnostics"
+            class="h-14 md:h-16 w-auto"
+          >
+          <span class="text-[#1a237e]">Prime</span>
+          <span class="text-[#2196f3]"> Life</span>
+          <span class="text-[#757575]"> Diagnostics</span>
         </a>
-        <nav class="mobile-nav text-sm" aria-label="Main navigation">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link" href="bloodtestspanels.html">Blood Tests</a>
-          <a class="nav-link" href="FAQs.html">FAQs</a>
-          <a class="nav-link" href="appointment.html">Book an Appointment</a>
-        </nav>
+
+        <!-- Desktop navigation -->
+        <div class="hidden lg:flex items-center gap-7">
+          <a href="bloodtestspanels.html" class="text-sm text-gray-600 hover:text-blue-700">Blood Tests</a>
+          <a href="index.html#how-it-works" class="text-sm text-gray-600 hover:text-blue-700">How It Works</a>
+          <a href="chooseus.html" class="text-sm text-gray-600 hover:text-blue-700">Why Us</a>
+          <a href="ourmission.html" class="text-sm text-gray-600 hover:text-blue-700">About</a>
+          <a href="location.html" class="text-sm text-gray-600 hover:text-blue-700">Find Us</a>
+          <a href="FAQs.html" class="text-sm text-gray-600 hover:text-blue-700">FAQs</a>
+          <a href="appointment.html" class="btn-primary text-sm px-5 py-3">Book Now</a>
+        </div>
+
+        <!-- Mobile button -->
+        <button id="menu-btn" class="lg:hidden text-gray-700" aria-label="Open menu">
+          <i data-feather="menu"></i>
+        </button>
+
       </div>
     </div>
-  </header>
+  </nav>
+
+  <!-- MOBILE MENU (same as index.html) -->
+  <div id="mobile-menu" class="hidden fixed inset-0 z-[10000] bg-white">
+    <button id="close-menu" class="absolute top-6 right-6 text-gray-700" aria-label="Close menu">
+      <i data-feather="x"></i>
+    </button>
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+      <a href="bloodtestspanels.html" class="text-xl text-gray-700">Blood Tests</a>
+      <a href="index.html#how-it-works" class="text-xl text-gray-700">How It Works</a>
+      <a href="chooseus.html" class="text-xl text-gray-700">Why Us</a>
+      <a href="ourmission.html" class="text-xl text-gray-700">About</a>
+      <a href="location.html" class="text-xl text-gray-700">Find Us</a>
+      <a href="FAQs.html" class="text-xl text-gray-700">FAQs</a>
+      <a href="appointment.html" class="btn-primary">Book Appointment</a>
+    </div>
+  </div>
 
   <main>
     <section class="hero">
@@ -159,6 +223,28 @@
 
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    /* Icons, mobile menu and header spacing (same behaviour as index.html) */
+    if (window.feather) { feather.replace(); }
+
+    var menuBtn = document.getElementById('menu-btn');
+    var closeMenu = document.getElementById('close-menu');
+    var mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', function () { mobileMenu.classList.remove('hidden'); });
+    closeMenu.addEventListener('click', function () { mobileMenu.classList.add('hidden'); });
+    document.querySelectorAll('#mobile-menu a').forEach(function (link) {
+      link.addEventListener('click', function () { mobileMenu.classList.add('hidden'); });
+    });
+
+    function updateSpacing() {
+      var banner = document.querySelector('.promo-banner');
+      var nav = document.querySelector('.main-nav');
+      if (banner && nav) {
+        document.body.style.paddingTop = (banner.offsetHeight + nav.offsetHeight) + 'px';
+      }
+    }
+    window.addEventListener('load', updateSpacing);
+    window.addEventListener('resize', updateSpacing);
 
     (function () {
       // Booking type comes from the redirect URL set in Setmore:
