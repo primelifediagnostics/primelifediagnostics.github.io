@@ -83,8 +83,6 @@
       padding: 11px 18px; border-radius: 9px; text-decoration: none;
     }
     .secondary-button:hover { background: rgba(255,255,255,.1); }
-    footer { background: var(--navy); color: #e2e8f0; }
-    footer a { color: white; text-decoration: underline; text-underline-offset: 3px; }
     :focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
     @media (max-width: 640px) {
       .card { border-radius: 12px; }
@@ -199,24 +197,98 @@
     </section>
   </main>
 
-  <footer>
-    <div class="mx-auto max-w-6xl px-5 py-8">
-      <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+  <!-- FOOTER (same as index.html) -->
+  <footer class="bg-[#0b1c2b] text-white">
+    <div class="max-w-7xl mx-auto px-5 py-16">
+      <div class="grid md:grid-cols-3 gap-12">
+
+        <!-- Brand -->
         <div>
-          <p class="text-lg font-bold text-white">Prime Life Diagnostics Ltd</p>
-          <p class="mt-1 text-sm">Your Blood Tests. Simplified.</p>
-          <p class="mt-2 text-sm">105 Scrooby Road, Bircotes, Doncaster, DN11 8JN</p>
-          <p class="text-sm"><a href="tel:01302203565">01302 203565</a></p>
+          <img
+            src="Prime Life Diagnostics1-01.png"
+            alt="Prime Life Diagnostics"
+            class="h-16 w-auto mb-6 brightness-0 invert">
+          <p class="text-gray-400 leading-relaxed max-w-sm">
+            Private blood testing and health checks designed
+            to make understanding your health simpler.
+          </p>
         </div>
-        <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm">
-          <a href="index.html">Home</a>
-          <a href="appointment.html">Book an appointment</a>
-          <a href="appointment.html#homevisit">Home visits</a>
-          <a href="FAQs.html">FAQs</a>
+
+        <!-- Links -->
+        <div>
+          <h3 class="font-semibold text-lg mb-5">Quick Links</h3>
+          <div class="space-y-3">
+            <a href="bloodtestspanels.html" class="block text-gray-400 hover:text-white">Blood Tests</a>
+            <a href="chooseus.html" class="block text-gray-400 hover:text-white">Why Us</a>
+            <a href="ourmission.html" class="block text-gray-400 hover:text-white">Our Mission</a>
+            <a href="FAQs.html" class="block text-gray-400 hover:text-white">FAQs</a>
+            <a href="appointment.html" class="block text-gray-400 hover:text-white">Book Appointment</a>
+          </div>
         </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="font-semibold text-lg mb-5">Contact</h3>
+          <div class="space-y-3 text-gray-400">
+            <p>info@primelifediagnostics.co.uk</p>
+            <p>01302 203565</p>
+            <p>
+              105 Scrooby Road,<br>
+              Bircotes, Doncaster,<br>
+              DN11 8JN
+            </p>
+          </div>
+        </div>
+
       </div>
-      <div class="mt-6 border-t border-white/20 pt-4 text-xs text-slate-300">
-        <p>&copy; <span id="current-year">2026</span> Prime Life Diagnostics Ltd. All rights reserved.</p>
+
+      <!-- Footer bottom -->
+      <div class="border-t border-white/10 mt-14 pt-8">
+
+        <!-- Social icons -->
+        <div class="flex justify-center gap-5 mb-8">
+
+          <a href="https://www.tiktok.com/@prime.life.diagnostics" target="_blank" rel="noopener noreferrer"
+             aria-label="TikTok" class="text-gray-400 hover:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.68h-3.4v13.76a2.9 2.9 0 1 1-2.9-2.9c.2 0 .39.02.58.06V9.5a6.34 6.34 0 1 0 5.72 6.27V8.69a8.16 8.16 0 0 0 4.77 1.53V6.69z"></path>
+            </svg>
+          </a>
+
+          <a href="https://www.instagram.com/prime.life.diagnostics/" target="_blank" rel="noopener noreferrer"
+             aria-label="Instagram" class="text-gray-400 hover:text-white">
+            <i data-feather="instagram"></i>
+          </a>
+
+          <a href="https://www.facebook.com/profile.php?id=61581186570303&sk=about" target="_blank" rel="noopener noreferrer"
+             aria-label="Facebook" class="text-gray-400 hover:text-white">
+            <i data-feather="facebook"></i>
+          </a>
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center">
+          <p class="text-sm text-gray-500">
+            &copy; <span id="current-year">2026</span> Prime Life Diagnostics.
+            All rights reserved.
+          </p>
+
+          <!-- CQC / UKAS -->
+          <div class="flex justify-center items-center gap-7 mt-7">
+            <a href="https://www.cqc.org.uk/provider/1-24970013163" target="_blank" rel="noopener noreferrer">
+              <img
+                src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/cqc%20logo.webp"
+                alt="CQC Regulated"
+                class="h-14">
+            </a>
+            <img
+              src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/UKAS-Accreditation-Symbol-purple-on-white-Medical.png"
+              alt="UKAS Accredited"
+              class="h-14">
+          </div>
+        </div>
+
       </div>
     </div>
   </footer>
