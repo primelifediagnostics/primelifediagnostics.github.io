@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#102a43">
+  <title>Booking Received | Prime Life Diagnostics</title>
+  <link rel="icon" href="favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --navy: #102a43;
+      --blue: #1769aa;
+      --light-blue: #eef6fc;
+      --text: #334155;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #f7f9fc;
+      line-height: 1.7;
+    }
+    .site-header { background: #fff; border-bottom: 1px solid var(--border); }
+    .brand { color: var(--navy); font-weight: 800; letter-spacing: -.025em; }
+    .nav-link { color: #334155; font-weight: 600; }
+    .nav-link:hover { color: var(--blue); }
+    .hero { background: linear-gradient(135deg, #102a43 0%, #1769aa 100%); color: white; }
+    .eyebrow { color: #dbeafe; font-size: .82rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .tick {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(255,255,255,.15); border: 2px solid rgba(255,255,255,.7);
+      font-size: 28px; line-height: 1; margin-bottom: 16px;
+    }
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: clamp(20px, 4vw, 32px);
+      box-shadow: 0 5px 20px rgba(15, 40, 65, .035);
+    }
+    .card h2 { color: var(--navy); font-size: 1.25rem; font-weight: 750; line-height: 1.35; margin: 0 0 12px; }
+    .card ol { margin: 10px 0 0; padding-left: 1.25rem; list-style: decimal; }
+    .card li { margin: 8px 0; padding-left: 2px; }
+    .notice { background: var(--light-blue); border-left: 4px solid var(--blue); border-radius: 8px; padding: 16px 18px; }
+    .primary-button {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: white; color: var(--navy); font-weight: 700;
+      padding: 12px 18px; border-radius: 9px; text-decoration: none;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .primary-button:hover { background: #eff6ff; transform: translateY(-1px); }
+    .secondary-button {
+      display: inline-flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(255,255,255,.65); color: white; font-weight: 700;
+      padding: 11px 18px; border-radius: 9px; text-decoration: none;
+    }
+    .secondary-button:hover { background: rgba(255,255,255,.1); }
+    footer { background: var(--navy); color: #e2e8f0; }
+    footer a { color: white; text-decoration: underline; text-underline-offset: 3px; }
+    :focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+    @media (max-width: 640px) {
+      .mobile-nav { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+      .card { border-radius: 12px; }
+    }
+  </style>
+  <!-- Cookie consent + Google Analytics / Google Ads (loads only after consent) -->
+  <script src="/tracking.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="mx-auto max-w-6xl px-5 py-4">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <a class="brand text-xl sm:text-2xl" href="index.html" aria-label="Prime Life Diagnostics home">
+          Prime Life Diagnostics
+          <span class="mt-0.5 block text-xs font-semibold tracking-wide" style="color:var(--blue)">Your Blood Tests. Simplified.</span>
+        </a>
+        <nav class="mobile-nav text-sm" aria-label="Main navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="bloodtestspanels.html">Blood Tests</a>
+          <a class="nav-link" href="FAQs.html">FAQs</a>
+          <a class="nav-link" href="appointment.html">Book an Appointment</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="mx-auto max-w-6xl px-5 py-12 sm:py-16">
+        <div class="tick" aria-hidden="true">&#10003;</div>
+        <p class="eyebrow mb-3">Booking received</p>
+        <h1 class="max-w-3xl text-3xl font-extrabold leading-tight sm:text-5xl">Thank you, your booking has been received</h1>
+        <p id="thanks-lead" class="mt-5 max-w-2xl text-base leading-7 text-blue-50 sm:text-lg">
+          We look forward to seeing you. Here is what happens next.
+        </p>
+        <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+          <a class="primary-button" href="index.html">Back to Home</a>
+          <a class="secondary-button" href="tel:01302203565">Call 01302 203565</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-4xl px-5 py-8 sm:py-12">
+      <div class="card">
+        <h2>What happens next</h2>
+
+        <!-- Shown for in-clinic bookings (default) -->
+        <ol id="steps-clinic">
+          <li>You should receive a confirmation email from our booking system. If it does not arrive within a few minutes, please check your junk folder.</li>
+          <li>Come to your appointment at our clinic at the date and time you chose. Bring your photo ID if you have it.</li>
+          <li>Your sample is taken and sent to the laboratory. Your results are reviewed by a doctor before they are released to you.</li>
+        </ol>
+
+        <!-- Shown for home collection bookings -->
+        <ol id="steps-home" hidden>
+          <li>You should receive a confirmation email from our booking system. If it does not arrive within a few minutes, please check your junk folder.</li>
+          <li>A nurse will contact you directly to arrange a suitable date and time for your home blood collection.</li>
+          <li>Your sample is taken and sent to the laboratory. Your results are reviewed by a doctor before they are released to you.</li>
+        </ol>
+      </div>
+
+      <div class="notice mt-6">
+        <p class="font-bold text-slate-900">Need to change or cancel?</p>
+        <p class="mt-1 text-sm">
+          Please see our <a class="font-semibold underline" style="color:var(--blue)" href="booking-cancellation-policy.html">Booking &amp; Cancellation Policy</a>,
+          or call us on <a class="font-semibold underline" style="color:var(--blue)" href="tel:01302203565">01302 203565</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="mx-auto max-w-6xl px-5 py-8">
+      <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p class="text-lg font-bold text-white">Prime Life Diagnostics Ltd</p>
+          <p class="mt-1 text-sm">Your Blood Tests. Simplified.</p>
+          <p class="mt-2 text-sm">105 Scrooby Road, Bircotes, Doncaster, DN11 8JN</p>
+          <p class="text-sm"><a href="tel:01302203565">01302 203565</a></p>
+        </div>
+        <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          <a href="index.html">Home</a>
+          <a href="appointment.html">Book an appointment</a>
+          <a href="appointment.html#homevisit">Home visits</a>
+          <a href="FAQs.html">FAQs</a>
+        </div>
+      </div>
+      <div class="mt-6 border-t border-white/20 pt-4 text-xs text-slate-300">
+        <p>&copy; <span id="current-year">2026</span> Prime Life Diagnostics Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    (function () {
+      // Booking type comes from the redirect URL set in Setmore:
+      //   in-clinic account -> https://primelifediagnostics.co.uk/thank-you.html?type=clinic
+      //   home account      -> https://primelifediagnostics.co.uk/thank-you.html?type=home
+      var type = 'clinic';
+      try {
+        var q = new URLSearchParams(window.location.search).get('type');
+        if (q === 'home') { type = 'home'; }
+      } catch (e) { /* default to clinic */ }
+
+      if (type === 'home') {
+        document.getElementById('steps-clinic').hidden = true;
+        document.getElementById('steps-home').hidden = false;
+      }
+
+      // Record the booking once per browser session, so refreshing this page does not double count.
+      // Only runs if the visitor has accepted cookies (pldWhenTracking waits for that).
+      function fire() {
+        var key = 'pld_booking_complete_sent';
+        try {
+          if (window.sessionStorage.getItem(key)) { return; }
+          window.sessionStorage.setItem(key, '1');
+        } catch (e) { /* if storage is blocked, fire anyway */ }
+        if (typeof window.pldTrack === 'function') {
+          window.pldTrack('booking_complete', {
+            booking_type: type,
+            page_path: window.location.pathname
+          });
+        }
+      }
+
+      if (typeof window.pldWhenTracking === 'function') {
+        window.pldWhenTracking(fire);
+      }
+    })();
+  </script>
+</body>
+</html>
