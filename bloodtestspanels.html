@@ -61,7 +61,7 @@
     <!-- Cookie consent + Google Analytics / Google Ads (loads only after consent) -->
     <script src="/tracking.js"></script>
 
-    
+
 
 
     <!-- =========================================================
@@ -591,6 +591,12 @@
 
             height: 100%;
 
+            /* Needed so the stretched "Learn more" link
+               is positioned relative to the card */
+            position: relative;
+
+            cursor: pointer;
+
             transition:
                 transform .25s ease,
                 box-shadow .25s ease,
@@ -609,6 +615,13 @@
 
             border-color:
                 #cfdde7;
+        }
+
+
+        /* Keyboard focus outline on the whole card */
+        .panel-card:focus-within {
+
+            border-color: #1769aa;
         }
 
 
@@ -749,6 +762,20 @@
         }
 
 
+        /* Stretched link: an invisible layer covering the whole card,
+           so clicking anywhere on the card opens "Learn more" */
+        .learn-link::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 1;
+        }
+
+
         .book-link {
 
             display: inline-flex;
@@ -771,6 +798,11 @@
             font-weight: 600;
 
             white-space: nowrap;
+
+            /* Sits above the stretched link so it stays clickable */
+            position: relative;
+
+            z-index: 2;
 
             transition:
                 background .2s ease;
@@ -1021,7 +1053,7 @@
                     src="Prime Life Diagnostics1-01.png"
                     alt="Prime Life Diagnostics"
                     class="h-14 md:h-16 w-auto">
-                
+
  <span class="text-[#1a237e]">Prime</span>
     <span class="text-[#2196f3]"> Life</span>
     <span class="text-[#757575]"> Diagnostics</span>
@@ -1141,7 +1173,7 @@
             class="text-xl text-gray-700">
             About
         </a>
-        
+
 <a href="location.html"
                    class="text-xl text-gray-700">
                   Find Us
@@ -3257,7 +3289,7 @@
                         data-feather="instagram"
                         class="w-6 h-6">
                     </i>
-                    
+
                 </a>
 
 
