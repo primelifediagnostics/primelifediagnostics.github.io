@@ -1,242 +1,126 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-   
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
-
-<title>
-    Book an Appointment | Prime Life Diagnostics
-</title>
+<title>Book an Appointment | Prime Life Diagnostics</title>
 
 <meta
     name="description"
-    content="Book a private blood test appointment with Prime Life Diagnostics in Doncaster. Choose an in-clinic appointment, free health consultation or nationwide home blood collection."
->
+    content="Book a private blood test appointment with Prime Life Diagnostics in Doncaster. Choose an in-clinic appointment, free health consultation or nationwide home blood collection.">
 
-<meta
-    name="robots"
-    content="index, follow"
->
+<meta name="robots" content="index, follow">
 
-<link
-    rel="canonical"
-    href="https://primelifediagnostics.co.uk/appointment.html"
->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Prime Life Diagnostics">
-    <meta property="og:title" content="Book an Appointment | Prime Life Diagnostics">
-    <meta property="og:description" content="Book a private blood test appointment with Prime Life Diagnostics in Doncaster. Choose an in-clinic appointment, free health consultation or nationwide home blood collection.">
-    <meta property="og:url" content="https://primelifediagnostics.co.uk/appointment.html">
-    <meta property="og:image" content="https://primelifediagnostics.co.uk/Prime%20Life%20Diagnostics1-01.jpg">
-    <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://primelifediagnostics.co.uk/appointment.html">
 
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Prime Life Diagnostics">
+<meta property="og:title" content="Book an Appointment | Prime Life Diagnostics">
+<meta property="og:description" content="Book a private blood test appointment with Prime Life Diagnostics in Doncaster. Choose an in-clinic appointment, free health consultation or nationwide home blood collection.">
+<meta property="og:url" content="https://primelifediagnostics.co.uk/appointment.html">
+<meta property="og:image" content="https://primelifediagnostics.co.uk/Prime%20Life%20Diagnostics1-01.jpg">
+<meta name="twitter:card" content="summary_large_image">
 
 <!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com"></script>
 
-
 <!-- AOS -->
-<link
-    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-    rel="stylesheet"
->
-
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <!-- Feather Icons -->
-<script
-    src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js">
-</script>
-
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
 <!-- Cookie consent + Google Analytics / Google Ads (loads only after consent) -->
-    <script src="/tracking.js"></script>
-
-
-
-
-
-
-
-
-
-
+<script src="/tracking.js"></script>
 
 <style>
 
     html {
         scroll-behavior: smooth;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
-
 
     body {
-
-        font-family:
-            Inter,
-            ui-sans-serif,
-            system-ui,
-            -apple-system,
-            BlinkMacSystemFont,
-            "Segoe UI",
-            sans-serif;
-
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         color: #172033;
-
         background: #ffffff;
-
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
+    *, *::before, *::after { box-sizing: border-box; }
 
-    /* ==================================
-       PROMO BANNER
-    =================================== */
+    img, video, iframe { max-width: 100%; }
+
+    h1, h2, h3, h4, p, a, span { overflow-wrap: break-word; }
+
+    /* ---------- Promo banner ---------- */
 
     .promo-banner {
-
         position: fixed;
-
-        top: 0;
-        left: 0;
-        right: 0;
-
+        top: 0; left: 0; right: 0;
         z-index: 60;
-
         background: #102a43;
-
         color: white;
-
         text-align: center;
-
         padding: 9px 15px;
-
         font-size: 13px;
-
         letter-spacing: 0.2px;
-
     }
 
-
     .promo-code {
-
         background: white;
         color: #102a43;
         padding: 3px 9px;
         border-radius: 4px;
         font-weight: 700;
         margin-left: 5px;
-
     }
 
-
-    /* ==================================
-       NAVIGATION
-    =================================== */
+    /* ---------- Navigation ---------- */
 
     .main-nav {
-
         position: fixed;
-
-        top: 0;
-
-        left: 0;
-        right: 0;
-
+        top: 0; left: 0; right: 0;
         z-index: 50;
-
-        background:
-            rgba(
-                255,
-                255,
-                255,
-                0.97
-            );
-
+        background: rgba(255, 255, 255, 0.97);
         backdrop-filter: blur(12px);
-
-        border-bottom:
-            1px solid
-            rgba(
-                16,
-                42,
-                67,
-                0.08
-            );
-
+        border-bottom: 1px solid rgba(16, 42, 67, 0.08);
     }
-
 
     .nav-inner {
-
         max-width: 1280px;
-
         margin: 0 auto;
-
-        padding:
-            14px
-            24px;
-
+        padding: 14px 24px;
         display: flex;
-
         align-items: center;
-
         justify-content: space-between;
-
     }
-
-
-    .nav-logo {
-
-        height: 48px;
-
-        width: auto;
-
-    }
-
 
     .nav-links {
-
         display: flex;
-
         align-items: center;
-
         gap: 28px;
         font-family: Arial, Helvetica, sans-serif;
-
     }
-
 
     .nav-links a {
-
         color: #4b5563;
-
         font-size: 14px;
-
         font-weight: 400;
-
-        transition:
-            color
-            0.2s
-            ease;
-
+        transition: color 0.2s ease;
     }
 
-
-    .nav-links a:hover {
-
-        color: #1d4ed8;
-
-    }
-
+    .nav-links a:hover { color: #1d4ed8; }
 
     .nav-links a.nav-book-button,
     .nav-links a.nav-book-button:hover {
-
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -247,51 +131,28 @@
         font-size: 14px;
         font-weight: 600;
         transition: all 0.25s ease;
-
     }
-
 
     .nav-links a.nav-book-button:hover {
-
         background: #12568d;
         transform: translateY(-1px);
-
     }
 
-
-    .mobile-menu-btn {
-
-        display: none;
-
-        color: #102a43;
-
-    }
-
+    .mobile-menu-btn { display: none; color: #102a43; }
 
     .mobile-menu {
-
         display: none;
-
         position: fixed;
         inset: 0;
         z-index: 10000;
         overflow-y: auto;
         background: #ffffff;
-        padding: 0;
         font-family: Arial, Helvetica, sans-serif;
-
     }
 
-
-    .mobile-menu.is-open {
-
-        display: block;
-
-    }
-
+    .mobile-menu.is-open { display: block; }
 
     .mobile-menu-links {
-
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -299,12 +160,9 @@
         gap: 32px;
         min-height: 100%;
         padding: 88px 24px 32px;
-
     }
 
-
     .mobile-menu-close {
-
         position: absolute;
         top: 24px;
         right: 24px;
@@ -313,878 +171,378 @@
         color: #102a43;
         padding: 8px;
         cursor: pointer;
-
     }
 
-
     .mobile-menu a {
-
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 0;
         font-weight: 400;
         color: #374151;
         font-size: 20px;
         text-align: center;
-        border-bottom: 0;
-
     }
-
 
     .mobile-menu a:hover,
-    .mobile-menu a:focus-visible {
-
-        color: #1d4ed8;
-
-    }
-
+    .mobile-menu a:focus-visible { color: #1d4ed8; }
 
     .mobile-menu a.mobile-book-button,
     .mobile-menu a.mobile-book-button:hover,
     .mobile-menu a.mobile-book-button:focus-visible {
-
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
         padding: 15px 27px;
-        border: 0;
         border-radius: 5px;
         background: #1769aa;
         color: #ffffff;
         font-size: 16px;
         font-weight: 600;
-        line-height: normal;
-        transition: all 0.25s ease;
-
     }
 
-
-    .mobile-menu a.mobile-book-button:hover,
-    .mobile-menu a.mobile-book-button:focus-visible {
-
-        background: #12568d;
-        transform: translateY(-1px);
-
-    }
-
-
-    /* ==================================
-       BUTTONS
-    =================================== */
+    /* ---------- Buttons ---------- */
 
     .btn-primary {
-
         display: inline-flex;
-
         align-items: center;
-
         justify-content: center;
-
         gap: 8px;
-
         background: #1769aa;
-
         color: white;
-
-        padding:
-            13px
-            22px;
-
+        padding: 13px 22px;
         border-radius: 10px;
-
         font-size: 14px;
-
         font-weight: 700;
-
-        transition:
-            transform
-            0.2s
-            ease,
-            background
-            0.2s
-            ease;
-
-        box-shadow:
-            0 8px 20px
-            rgba(
-                23,
-                105,
-                170,
-                0.18
-            );
-
+        transition: transform 0.2s ease, background 0.2s ease;
+        box-shadow: 0 8px 20px rgba(23, 105, 170, 0.18);
     }
 
-
-    .btn-primary:hover {
-
-        background: #12568d;
-
-        transform:
-            translateY(-1px);
-
-    }
-
+    .btn-primary:hover { background: #12568d; transform: translateY(-1px); }
 
     .btn-secondary {
-
         display: inline-flex;
-
         align-items: center;
-
         justify-content: center;
-
         gap: 8px;
-
         background: white;
-
         color: #1769aa;
-
-        border:
-            1px solid
-            #1769aa;
-
-        padding:
-            12px
-            21px;
-
+        border: 1px solid #1769aa;
+        padding: 12px 21px;
         border-radius: 10px;
-
         font-size: 14px;
-
         font-weight: 700;
-
-        transition:
-            all
-            0.2s
-            ease;
-
+        transition: all 0.2s ease;
     }
 
+    .btn-secondary:hover { background: #f4f9fc; transform: translateY(-1px); }
 
-    .btn-secondary:hover {
-
-        background: #f4f9fc;
-
-        transform:
-            translateY(-1px);
-
-    }
-
-
-    /* ==================================
-       HERO
-    =================================== */
-
-    .appointment-hero {
-
-        position: relative;
-
-        overflow: hidden;
-
-        background:
-            linear-gradient(
-                135deg,
-                #edf7fd 0%,
-                #ffffff 55%,
-                #eef5fb 100%
-            );
-
-    }
-
-
-    .appointment-hero::before {
-
-        content: "";
-
-        position: absolute;
-
-        width: 420px;
-        height: 420px;
-
-        border-radius: 9999px;
-
-        background:
-            rgba(
-                23,
-                105,
-                170,
-                0.07
-            );
-
-        top: -170px;
-        right: -130px;
-
-    }
-
-
-    .appointment-hero::after {
-
-        content: "";
-
-        position: absolute;
-
-        width: 280px;
-        height: 280px;
-
-        border-radius: 9999px;
-
-        background:
-            rgba(
-                16,
-                42,
-                67,
-                0.04
-            );
-
-        bottom: -150px;
-        left: -100px;
-
-    }
-
-
-    .hero-content {
-
-        position: relative;
-
-        z-index: 2;
-
-    }
-
+    /* ---------- Type ---------- */
 
     .eyebrow {
-
         display: inline-flex;
-
         align-items: center;
-
         gap: 8px;
-
         font-size: 12px;
-
         font-weight: 800;
-
         text-transform: uppercase;
-
         letter-spacing: 0.14em;
-
         color: #1769aa;
-
     }
-
 
     .section-title {
-
         color: #102a43;
-
-        font-size:
-            clamp(
-                30px,
-                4vw,
-                46px
-            );
-
-        line-height: 1.08;
-
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.1;
         font-weight: 700;
-
-        letter-spacing:
-            -0.025em;
-
+        letter-spacing: -0.025em;
     }
-
 
     .content-copy {
-
         color: #617285;
-
-        line-height: 1.8;
-
+        line-height: 1.75;
         font-size: 16px;
-
     }
 
+    /* ---------- Hero ---------- */
 
-    /* ==================================
-       HERO BOOKING CARD
-    =================================== */
-
-    .hero-card {
-
-        background:
-            rgba(
-                255,
-                255,
-                255,
-                0.96
-            );
-
-        border:
-            1px solid
-            rgba(
-                16,
-                42,
-                67,
-                0.08
-            );
-
-        border-radius: 24px;
-
-        padding: 34px;
-
-        box-shadow:
-            0 20px 50px
-            rgba(
-                16,
-                42,
-                67,
-                0.10
-            );
-
+    .appointment-hero {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #edf7fd 0%, #ffffff 55%, #eef5fb 100%);
     }
 
+    .appointment-hero::before {
+        content: "";
+        position: absolute;
+        width: 420px;
+        height: 420px;
+        border-radius: 9999px;
+        background: rgba(23, 105, 170, 0.07);
+        top: -170px;
+        right: -130px;
+    }
 
-    .hero-card-icon {
+    .hero-inner { position: relative; z-index: 2; }
 
-        width: 58px;
-        height: 58px;
-
-        display: flex;
-
+    .chip {
+        display: inline-flex;
         align-items: center;
-
-        justify-content: center;
-
-        border-radius: 16px;
-
-        background: #edf7fd;
-
-        color: #1769aa;
-
-        margin-bottom: 20px;
-
-    }
-
-
-    /* ==================================
-       TRUST STRIP
-    =================================== */
-
-    .trust-strip {
-
-        background: #102a43;
-
-        color: white;
-
-    }
-
-
-    .trust-item {
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 12px;
-
-    }
-
-
-    .trust-item i {
-
-        width: 20px;
-        height: 20px;
-
-        flex-shrink: 0;
-
-        color: #7cc4ef;
-
-    }
-
-
-    /* ==================================
-       BOOKING OPTION CARDS
-    =================================== */
-
-    .booking-option {
-
+        gap: 7px;
         background: white;
-
-        border:
-            1px solid
-            #e4ebf1;
-
-        border-radius: 20px;
-
-        padding: 30px;
-
-        height: 100%;
-
-        box-shadow:
-            0 12px 30px
-            rgba(
-                16,
-                42,
-                67,
-                0.05
-            );
-
-        transition:
-            transform
-            0.2s
-            ease,
-            box-shadow
-            0.2s
-            ease;
-
+        border: 1px solid #e1e9f0;
+        border-radius: 9999px;
+        padding: 7px 14px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #102a43;
     }
 
+    .chip i { width: 15px; height: 15px; color: #1769aa; }
 
-    .booking-option:hover {
+    /* ---------- Step label ---------- */
 
-        transform:
-            translateY(-4px);
-
-        box-shadow:
-            0 18px 40px
-            rgba(
-                16,
-                42,
-                67,
-                0.08
-            );
-
-    }
-
-
-    .option-icon {
-
-        width: 50px;
-        height: 50px;
-
+    .step-label {
         display: flex;
-
         align-items: center;
-
-        justify-content: center;
-
-        border-radius: 14px;
-
-        background: #edf7fd;
-
-        color: #1769aa;
-
-        margin-bottom: 18px;
-
+        gap: 10px;
+        font-weight: 700;
+        color: #102a43;
+        margin-bottom: 14px;
     }
 
+    .step-num {
+        width: 28px;
+        height: 28px;
+        border-radius: 9999px;
+        background: #1769aa;
+        color: white;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
 
-    /* ==================================
-       CLINIKO BOOKING
-    =================================== */
+    /* ---------- Option tabs ---------- */
+
+    .option-tab {
+        position: relative;
+        text-align: left;
+        width: 100%;
+        background: white;
+        border: 2px solid #e1e9f0;
+        border-radius: 18px;
+        padding: 20px 22px;
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        cursor: pointer;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .option-tab:hover { border-color: #9cc7e6; }
+
+    .option-tab[aria-selected="true"] {
+        border-color: #1769aa;
+        background: #f4f9fc;
+        box-shadow: 0 12px 30px rgba(23, 105, 170, 0.14);
+    }
+
+    .option-tab .tab-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 13px;
+        background: #edf7fd;
+        color: #1769aa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .option-tab .tab-tick {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 22px;
+        height: 22px;
+        border-radius: 9999px;
+        background: #1769aa;
+        color: white;
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .option-tab[aria-selected="true"] .tab-tick { display: flex; }
+
+    .option-tab:focus-visible,
+    .btn-primary:focus-visible,
+    .btn-secondary:focus-visible {
+        outline: 3px solid #7cc4ef;
+        outline-offset: 2px;
+    }
+
+    /* ---------- Booking panel ---------- */
 
     .booking-panel {
-
         background: white;
-
-        border:
-            1px solid
-            #e1e9f0;
-
+        border: 1px solid #e1e9f0;
         border-radius: 22px;
-
-        box-shadow:
-            0 18px 45px
-            rgba(
-                16,
-                42,
-                67,
-                0.07
-            );
-
+        box-shadow: 0 18px 45px rgba(16, 42, 67, 0.07);
         overflow: hidden;
-
     }
 
-
-    .booking-panel-header {
-
-        padding:
-            28px
-            30px;
-
-        background:
-            linear-gradient(
-                135deg,
-                #f4f9fc,
-                #ffffff
-            );
-
-        border-bottom:
-            1px solid
-            #e5edf3;
-
+    .panel-info {
+        padding: 22px 26px;
+        background: linear-gradient(135deg, #f4f9fc, #ffffff);
+        border-bottom: 1px solid #e5edf3;
     }
 
+    .panel-info ul { list-style: none; padding: 0; margin: 0; }
 
-    .cliniko-frame {
-
-        width: 100%;
-
-        min-height: 1450px;
-
-        border: 0;
-
-        display: block;
-
+    .panel-info li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        color: #3d4f63;
+        font-size: 15px;
+        line-height: 1.55;
+        margin-bottom: 8px;
     }
 
+    .panel-info li:last-child { margin-bottom: 0; }
 
-    /* ==================================
-       INFO BOX
-    =================================== */
-
-    .info-box {
-
-        background:
-            linear-gradient(
-                135deg,
-                #f4f9fc,
-                #ffffff
-            );
-
-        border:
-            1px solid
-            #e3edf4;
-
-        border-radius: 22px;
-
-        padding: 32px;
-
-    }
-
-
-    .info-icon {
-
-        width: 48px;
-        height: 48px;
-
-        display: inline-flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        border-radius: 14px;
-
-        background: #edf7fd;
-
+    .panel-info li i {
+        width: 18px;
+        height: 18px;
         color: #1769aa;
-
-        margin-bottom: 18px;
-
+        flex-shrink: 0;
+        margin-top: 3px;
     }
 
+    .frame-wrap { position: relative; min-height: 260px; }
 
-    /* ==================================
-       FAQ
-    =================================== */
+    .frame-lock {
+        padding: 56px 24px;
+        text-align: center;
+        color: #617285;
+        background: #fafcfe;
+    }
+
+    .frame-lock i { width: 30px; height: 30px; color: #9cc7e6; margin-bottom: 10px; }
+
+    .booking-frame {
+        display: block;
+        width: 100%;
+        height: 760px;
+        border: 0;
+    }
+
+    /* ---------- Terms box ---------- */
+
+    .terms-box {
+        background: white;
+        border: 1px solid #e1e9f0;
+        border-radius: 16px;
+        padding: 18px 20px;
+    }
+
+    .terms-box label {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        cursor: pointer;
+        color: #3d4f63;
+        line-height: 1.55;
+        font-size: 15px;
+    }
+
+    .terms-box input[type="checkbox"] {
+        width: 22px;
+        height: 22px;
+        margin-top: 2px;
+        flex-shrink: 0;
+        accent-color: #1769aa;
+        cursor: pointer;
+    }
+
+    /* ---------- FAQ ---------- */
 
     .faq-item {
-
-        border:
-            1px solid
-            #e5ebf0;
-
+        border: 1px solid #e5ebf0;
         border-radius: 14px;
-
-        overflow: hidden;
-
         background: white;
-
+        overflow: hidden;
     }
 
-
-    .faq-button {
-
-        width: 100%;
-
+    .faq-item summary {
+        list-style: none;
+        cursor: pointer;
         display: flex;
-
         align-items: center;
-
         justify-content: space-between;
-
         gap: 20px;
-
-        padding:
-            20px
-            22px;
-
-        text-align: left;
-
+        padding: 18px 22px;
         font-weight: 700;
-
         color: #102a43;
-
     }
 
+    .faq-item summary::-webkit-details-marker { display: none; }
 
-    .faq-answer {
-
-        display: none;
-
-        padding:
-            0
-            22px
-            22px;
-
-        color: #617285;
-
-        line-height: 1.75;
-
-    }
-
-
-    .faq-icon {
-
+    .faq-item summary::after {
+        content: "+";
+        font-size: 22px;
+        line-height: 1;
+        color: #1769aa;
         flex-shrink: 0;
-
     }
 
+    .faq-item[open] summary::after { content: "\2212"; }
 
-    /* ==================================
-       FINAL CTA
-    =================================== */
-
-    .final-cta {
-
-        background:
-            linear-gradient(
-                135deg,
-                #102a43,
-                #1769aa
-            );
-
-        color: white;
-
+    .faq-item .faq-answer {
+        padding: 0 22px 20px;
+        color: #617285;
+        line-height: 1.75;
     }
 
+    /* ---------- Footer ---------- */
 
-    /* ==================================
-       FOOTER
-    =================================== */
+    footer { background: #0c2033; color: #dce7f0; }
 
-    footer {
+    /* ---------- Responsive ---------- */
 
-        background: #0c2033;
-
-        color: #dce7f0;
-
+    @media (max-width: 900px) {
+        .nav-links { display: none; }
+        .mobile-menu-btn { display: block; }
     }
 
-
-    .footer-link {
-
-        color: #c7d6e2;
-
-        transition:
-            color
-            0.2s
-            ease;
-
+    @media (max-width: 768px) {
+        .promo-banner { font-size: 12px; padding: 8px; }
     }
 
-
-    .footer-link:hover {
-
-        color: white;
-
+    @media (max-width: 640px) {
+        .nav-inner { padding: 12px 18px; }
+        .booking-frame { height: 820px; }
+        .option-tab { padding: 16px; }
+        .panel-info { padding: 18px; }
     }
 
-
-    /* ==================================
-       RESPONSIVE
-    =================================== */
-
-    @media (
-        max-width: 900px
-    ) {
-
-        .nav-links {
-
-            display: none;
-
-        }
-
-
-        .mobile-menu-btn {
-
-            display: block;
-
-        }
-
-    }
-
-
-    @media (
-        max-width: 768px
-    ) {
-
-        .promo-banner {
-
-            font-size: 12px;
-            padding: 8px 8px;
-
-        }
-
-    }
-
-
-    @media (
-        max-width: 640px
-    ) {
-
-        .nav-inner {
-
-            padding:
-                12px
-                18px;
-
-        }
-
-
-        .nav-logo {
-
-            height: 42px;
-
-        }
-
-
-        .promo-banner {
-
-            font-size: 12px;
-            padding: 8px 8px;
-
-        }
-
-
-        .hero-card {
-
-            padding: 26px;
-
-        }
-
-
-        .cliniko-frame {
-
-            min-height: 1800px;
-
-        }
-
+    @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
     }
 
 </style>
-
-    <style>
-/* ==========================================
-   PRIME LIFE DIAGNOSTICS
-   MOBILE RESPONSIVE FIX
-   Prevent horizontal scrolling
-========================================== */
-
-html,
-body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-/* Prevent images from being wider than the screen */
-img,
-video,
-iframe {
-    max-width: 100%;
-}
-
-/* Prevent long text / links from forcing the page wider */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-span {
-    overflow-wrap: break-word;
-}
-
-/* Make sections stay inside the viewport */
-section,
-header,
-footer,
-main,
-nav {
-    max-width: 100%;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    .container {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    /* Prevent fixed-width elements creating overflow */
-    .w-screen {
-        width: 100%;
-    }
-
-    /* Make buttons fit smaller screens */
-    button,
-    .btn {
-        max-width: 100%;
-    }
-
-}
-</style>
-
 
 </head>
 
 <body>
 
-   
 <!-- ==================================
      PROMO BANNER
 =================================== -->
 
-<div
-    id="promo-banner"
-    class="promo-banner">
-
+<div id="promo-banner" class="promo-banner">
     <strong>10% OFF IN-CLINIC BLOOD TESTS</strong>
-
     <span class="hidden sm:inline"> · Use code</span>
-
     <span class="promo-code">PRIME10</span>
-
 </div>
 
 
@@ -1192,70 +550,32 @@ nav {
      NAVIGATION
 =================================== -->
 
-<header
-    id="main-nav"
-    class="main-nav">
+<header id="main-nav" class="main-nav">
 
     <div class="nav-inner">
 
+        <a href="index.html" class="flex items-center">
 
-         <a
-                href="index.html"
-                class="flex items-center">
+            <img
+                src="Prime Life Diagnostics1-01.png"
+                alt="Prime Life Diagnostics"
+                class="h-14 md:h-16 w-auto">
 
-                <img
-                    src="Prime Life Diagnostics1-01.png"
-                    alt="Prime Life Diagnostics"
-                    class="h-14 md:h-16 w-auto">
-                    
-                     <span class="text-[#1a237e]">Prime</span>
-    <span class="text-[#2196f3]"> Life</span>
-    <span class="text-[#757575]"> Diagnostics</span>
-    
+            <span class="text-[#1a237e]">Prime</span>
+            <span class="text-[#2196f3]"> Life</span>
+            <span class="text-[#757575]"> Diagnostics</span>
+
         </a>
 
-
         <nav class="nav-links">
-
-
-            <a href="index.html">
-                Home
-            </a>
-
-
-            <a href="bloodtestspanels.html">
-                Blood Tests
-            </a>
-
-
-            <a href="chooseus.html">
-                Why Us
-            </a>
-
-
-            <a href="ourmission.html">
-                About Us
-               
-            </a>
- <a href="location.html">
-                  Find Us
-                </a>
-
-            <a href="FAQs.html">
-                FAQs
-            </a>
-
-
-            <a
-                href="appointment.html"
-                class="btn-primary nav-book-button text-sm px-5 py-3">
-
-                Book Now
-
-            </a>
-
+            <a href="index.html">Home</a>
+            <a href="bloodtestspanels.html">Blood Tests</a>
+            <a href="chooseus.html">Why Us</a>
+            <a href="ourmission.html">About Us</a>
+            <a href="location.html">Find Us</a>
+            <a href="FAQs.html">FAQs</a>
+            <a href="appointment.html" class="btn-primary nav-book-button text-sm px-5 py-3">Book Now</a>
         </nav>
-
 
         <button
             id="mobile-menu-btn"
@@ -1263,9 +583,7 @@ nav {
             aria-label="Open menu"
             aria-controls="mobile-menu"
             aria-expanded="false">
-
             <i data-feather="menu"></i>
-
         </button>
 
     </div>
@@ -1273,67 +591,35 @@ nav {
 </header>
 
 
-    <!-- Mobile Menu -->
+<!-- Mobile Menu -->
 
-    <nav
-        id="mobile-menu"
-        class="mobile-menu"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Mobile navigation"
-        aria-hidden="true">
+<nav
+    id="mobile-menu"
+    class="mobile-menu"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Mobile navigation"
+    aria-hidden="true">
 
-        <button
-            id="close-mobile-menu"
-            class="mobile-menu-close"
-            type="button"
-            aria-label="Close menu">
+    <button
+        id="close-mobile-menu"
+        class="mobile-menu-close"
+        type="button"
+        aria-label="Close menu">
+        <i data-feather="x"></i>
+    </button>
 
-            <i data-feather="x"></i>
+    <div class="mobile-menu-links">
+        <a href="index.html">Home</a>
+        <a href="bloodtestspanels.html">Blood Tests</a>
+        <a href="chooseus.html">Why Us</a>
+        <a href="location.html">Find Us</a>
+        <a href="ourmission.html">About Us</a>
+        <a href="FAQs.html">FAQs</a>
+        <a href="appointment.html" class="btn-primary mobile-book-button">Book Appointment</a>
+    </div>
 
-        </button>
-
-        <div class="mobile-menu-links">
-
-        <a href="index.html">
-            Home
-        </a>
-
-
-        <a href="bloodtestspanels.html">
-            Blood Tests
-        </a>
-
-
-        <a href="chooseus.html">
-            Why Us
-        </a>
-       
- <a href="location.html">
-                  Find Us
-                </a>
-
-        <a href="ourmission.html">
-            About Us
-        </a>
-
-
-        <a href="FAQs.html">
-            FAQs
-        </a>
-
-
-        <a
-            href="appointment.html"
-            class="btn-primary mobile-book-button">
-
-            Book Appointment
-
-        </a>
-
-        </div>
-
-    </nav>
+</nav>
 
 
 <!-- ==================================
@@ -1342,604 +628,157 @@ nav {
 
 <main>
 
-
     <!-- ==================================
-         HERO
+         HERO + BOOKING (all in one view)
     =================================== -->
 
-    <section
-        class="appointment-hero pt-32 pb-20 md:pt-40 md:pb-24">
+    <section id="booking" class="appointment-hero pt-10 pb-16 md:pt-14 md:pb-20">
 
-        <div
-            class="max-w-7xl mx-auto px-6">
+        <!-- Anchor kept so old links to #homevisit still work -->
+        <span id="homevisit"></span>
 
+        <div class="hero-inner max-w-5xl mx-auto px-5 sm:px-6">
 
-            <div
-                class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Heading -->
+            <div class="text-center max-w-3xl mx-auto mb-8">
 
+                <p class="eyebrow mb-3">Book an appointment</p>
 
-                <div
-                    class="hero-content"
-                    data-aos="fade-up">
+                <h1 class="section-title mb-4">Book your private blood test</h1>
 
+                <p class="content-copy text-lg mb-5">
+                    Two quick steps: choose where, then pick your test and time.
+                </p>
 
-                    <p class="eyebrow mb-4">
+                <div class="flex flex-wrap justify-center gap-2.5">
+                    <span class="chip"><i data-feather="check-circle"></i> No GP referral needed</span>
+                    <span class="chip"><i data-feather="user-check"></i> Doctor reviewed</span>
+                    <span class="chip"><i data-feather="clock"></i> Most results in 24–72 hours</span>
+                </div>
 
-                        Book an appointment
-
-                    </p>
-
-
-                    <h1
-                        class="section-title mb-6">
-
-                        Your blood test.
-                        Your next step.
-
-                    </h1>
+            </div>
 
 
-                    <p
-                        class="content-copy text-lg mb-6">
+            <!-- STEP 1: choose option -->
 
-                        Book a private blood test appointment with
-                        Prime Life Diagnostics. Choose an
-                        in-clinic appointment or arrange a home
-                        blood collection where available.
+            <div class="mb-6">
 
-                    </p>
-
-
-
-
-<div class="flex flex-col gap-3">
-
-    <!-- Top row: two booking buttons -->
-    <div class="flex flex-col sm:flex-row gap-3">
-
-        <a
-            href="#booking"
-            class="btn-primary">
-
-            Book Your In-Clinic Appointment
-
-            <i
-                data-feather="arrow-down"
-                class="w-4 h-4">
-            </i>
-
-        </a>
-
-
-        <a
-            href="#homevisit"
-            class="btn-primary">
-
-            Book Your Home Collection Appointment
-
-            <i
-                data-feather="arrow-down"
-                class="w-4 h-4">
-            </i>
-
-        </a>
-
-    </div>
-
-
-    <!-- Bottom row: View Blood Tests -->
-    <a
-        href="bloodtestspanels.html"
-        class="btn-secondary w-full sm:w-auto">
-
-        View Blood Tests
-
-    </a>
-
-</div>
-</div>
+                <div class="step-label">
+                    <span class="step-num">1</span>
+                    Where would you like your blood test?
+                </div>
 
                 <div
-                    class="hero-card"
-                    data-aos="fade-up"
-                    data-aos-delay="150">
+                    class="grid md:grid-cols-2 gap-4"
+                    role="tablist"
+                    aria-label="Appointment type">
+
+                    <button
+                        type="button"
+                        role="tab"
+                        id="tab-clinic"
+                        class="option-tab"
+                        data-option="clinic"
+                        aria-selected="true"
+                        aria-controls="panel-clinic">
+
+                        <span class="tab-icon"><i data-feather="map-pin" class="w-5 h-5"></i></span>
+
+                        <span>
+                            <span class="block font-bold text-[#102a43] text-lg">In-clinic appointment</span>
+                            <span class="block text-[#617285] text-sm mt-1">
+                                105 Scrooby Road, Bircotes, Doncaster
+                            </span>
+                        </span>
+
+                        <span class="tab-tick"><i data-feather="check" class="w-3.5 h-3.5"></i></span>
+
+                    </button>
+
+                    <button
+                        type="button"
+                        role="tab"
+                        id="tab-home"
+                        class="option-tab"
+                        data-option="home"
+                        aria-selected="false"
+                        aria-controls="panel-home">
+
+                        <span class="tab-icon"><i data-feather="home" class="w-5 h-5"></i></span>
+
+                        <span>
+                            <span class="block font-bold text-[#102a43] text-lg">Home blood collection</span>
+                            <span class="block text-[#617285] text-sm mt-1">
+                                Nationwide · +£59 home visit fee
+                            </span>
+                        </span>
+
+                        <span class="tab-tick"><i data-feather="check" class="w-3.5 h-3.5"></i></span>
+
+                    </button>
+
+                </div>
+
+            </div>
 
 
-                    <div class="hero-card-icon">
+            <!-- STEP 2: booking -->
 
-                        <i
-                            data-feather="calendar"
-                            class="w-7 h-7">
-                        </i>
+            <div>
 
-                    </div>
+                <div class="step-label">
+                    <span class="step-num">2</span>
+                    <span id="step3-title">Choose your blood test and appointment time</span>
+                </div>
 
+                <div class="booking-panel">
 
-                    <p
-                        class="text-sm font-bold uppercase tracking-[0.12em] text-[#1769aa] mb-3">
+                    <!-- Panel: in clinic -->
 
-                        Book with confidence
+                    <div id="panel-clinic" role="tabpanel" aria-labelledby="tab-clinic">
 
-                    </p>
-
-
-                    <h2
-                        class="text-2xl md:text-3xl font-semibold text-[#102a43] mb-4">
-
-                        Simple, private and
-                        convenient
-
-                    </h2>
-
-
-                    <div class="space-y-4">
-
-
-                        <div class="flex gap-3 items-start">
-
-                            <i
-                                data-feather="check-circle"
-                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
-                            </i>
-
-                            <p class="content-copy">
-
-                                No GP referral required
-
-                            </p>
-
-                        </div>
-
-
-                        <div class="flex gap-3 items-start">
-
-                            <i
-                                data-feather="check-circle"
-                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
-                            </i>
-
-                            <p class="content-copy">
-
-                                Appointments available at our
-                                Doncaster clinic
-
-                            </p>
-
-                        </div>
-
-
-                        <div class="flex gap-3 items-start">
-
-                            <i
-                                data-feather="check-circle"
-                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
-                            </i>
-
-                            <p class="content-copy">
-
-                                Nationwide home blood collection
-                                available
-
-                            </p>
-
-                        </div>
-
-
+                        <div class="panel-info">
+                            <ul>
+                                <li><i data-feather="clock"></i> Appointments usually take around 15-20 minutes.</li>
+                                <li><i data-feather="clipboard"></i> Some tests need fasting. Check the preparation information for your chosen test, or call us if you're unsure.</li>
                         
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================
-         TRUST STRIP
-    =================================== -->
-
-    <section class="trust-strip">
-
-        <div
-            class="max-w-7xl mx-auto px-6 py-7">
-
-
-            <div
-                class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-
-                <div class="trust-item">
-
-                    <i data-feather="user-check"></i>
-
-                    <span>
-                        Doctor Reviewed
-                    </span>
-
-                </div>
-
-
-                <div class="trust-item">
-
-                    <i data-feather="calendar"></i>
-
-                    <span>
-                        Easy Online Booking
-                    </span>
-
-                </div>
-
-
-                <div class="trust-item">
-
-                    <i data-feather="home"></i>
-
-                    <span>
-                        Home Collection
-                    </span>
-
-                </div>
-
-
-                <div class="trust-item">
-
-                    <i data-feather="shield"></i>
-
-                    <span>
-                        Private & Confidential
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================
-         CHOOSE YOUR APPOINTMENT
-    =================================== -->
-
-    <section
-        class="py-20 md:py-24">
-
-
-        <div
-            class="max-w-7xl mx-auto px-6">
-
-
-            <div
-                class="text-center max-w-3xl mx-auto mb-12"
-                data-aos="fade-up">
-
-
-                <p class="eyebrow mb-3">
-                    Choose your appointment
-                </p>
-
-
-                <h2
-                    class="section-title mb-5">
-
-                    The right option for you
-
-                </h2>
-
-
-                <p class="content-copy text-lg">
-
-                    Choose between an in-clinic appointment,
-                or a nationwide
-                    home blood collection appointment.
-
-                </p>
-
-            </div>
-
-
-            <div
-                class="grid md:grid-cols-2 gap-6">
-
-
-                <!-- In clinic -->
-
-                <div
-                    class="booking-option"
-                    data-aos="fade-up"
-                    data-aos-delay="50">
-
-
-                    <div class="option-icon">
-
-                        <i
-                            data-feather="activity"
-                            class="w-5 h-5">
-                        </i>
-
-                    </div>
-
-
-                    <h3
-                        class="text-xl font-semibold text-[#102a43] mb-3">
-
-                        In-Clinic Blood Test
-
-                    </h3>
-
-
-                    <p
-                        class="content-copy mb-6">
-
-                        Visit our clinic at 105 Scrooby Road,
-                        Bircotes, Doncaster for your private blood
-                        test appointment.
-
-                    </p>
-
-
-                    <a
-                        href="#booking"
-                        class="btn-primary w-full">
-
-                        Book In-Clinic
-
-                    </a>
-
-                </div>
-
-
-
-
-
-                <!-- Home visit -->
-
-                <div
-                    class="booking-option"
-                    data-aos="fade-up"
-                    data-aos-delay="150">
-
-
-                    <div class="option-icon">
-
-                        <i
-                            data-feather="home"
-                            class="w-5 h-5">
-                        </i>
-
-                    </div>
-
-
-                    <h3
-                        class="text-xl font-semibold text-[#102a43] mb-3">
-
-                        Home Blood Collection
-
-                    </h3>
-
-
-                    <p
-                        class="content-copy mb-6">
-
-                        Prefer to stay at home? Arrange a nationwide
-                        home blood collection.
-
-                    </p>
-
-
-                    <a
-
-                        href="#homevisit"
-                        class="btn-primary w-full">
-
-
-                        Arrange Home Visit
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-   
-    <!-- ==================================
-         BEFORE BOOKING
-    =================================== -->
-
-    <section
-        class="py-20 md:py-24">
-
-
-        <div
-            class="max-w-7xl mx-auto px-6">
-
-
-            <div
-                class="grid lg:grid-cols-2 gap-12 items-center">
-
-
-                <div
-                    data-aos="fade-right">
-
-
-                    <p class="eyebrow mb-3">
-                        Before booking
-                    </p>
-
-
-                    <h2
-                        class="section-title mb-6">
-
-                        A few things to check first
-
-                    </h2>
-
-
-                    <p
-                        class="content-copy text-lg mb-6">
-
-                        Before booking, check the information for
-                        your chosen blood test. Some tests require
-                        specific preparation, such as fasting or
-                        avoiding certain activities.
-
-                    </p>
-
-
-                    <p
-                        class="content-copy mb-8">
-
-                        The requirements can vary between tests,
-                        so please make sure you have read the
-                        relevant test information before attending.
-
-                    </p>
-
-
-                    <a
-                        href="bloodtestspanels.html"
-                        class="btn-secondary">
-
-                        Browse Test Panels
-
-                        <i
-                            data-feather="arrow-right"
-                            class="w-4 h-4">
-                        </i>
-
-                    </a>
-
-                </div>
-
-
-                <div
-                    class="info-box"
-                    data-aos="fade-left">
-
-
-                    <div class="info-icon">
-
-                        <i
-                            data-feather="clipboard"
-                            class="w-6 h-6">
-                        </i>
-
-                    </div>
-
-
-                    <h3
-                        class="text-2xl font-semibold text-[#102a43] mb-5">
-
-                        Your appointment
-
-                    </h3>
-
-
-                    <div class="space-y-5">
-
-
-                        <div class="flex gap-4 items-start">
-
-
-                            <i
-                                data-feather="check-circle"
-                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
-                            </i>
-
-
-                            <div>
-
-                                <h4
-                                    class="font-semibold text-[#102a43] mb-1">
-
-                                    Check your test
-
-                                </h4>
-
-
-                                <p class="content-copy">
-
-                                    Make sure you know whether your
-                                    chosen test requires any
-                                    preparation.
-
-                                </p>
-
-                            </div>
+                                <li><i data-feather="tag"></i> 10% off in-clinic blood tests <strong>AUTOMATICALLY APPLIED</strong>.</li>
+                            </ul>
+                        </div>
+
+                        <div class="frame-wrap">
+
+                            <iframe
+                                class="booking-frame"
+                                title="In-clinic appointment booking"
+                                src="https://primelifediagnostics.setmore.com"
+                                allow="web-share; payment"></iframe>
 
                         </div>
 
-
-                        <div class="flex gap-4 items-start">
-
-
-                            <i
-                                data-feather="check-circle"
-                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
-                            </i>
+                    </div>
 
 
-                            <div>
+                    <!-- Panel: home collection -->
 
-                                <h4
-                                    class="font-semibold text-[#102a43] mb-1">
+                    <div id="panel-home" role="tabpanel" aria-labelledby="tab-home" hidden>
 
-                                    Bring what you need
-
-                                </h4>
-
-
-                                <p class="content-copy">
-
-                                    Follow the appointment
-                                    instructions provided when
-                                    you book.
-
-                                </p>
-
-                            </div>
-
+                        <div class="panel-info">
+                            <ul>
+                                <li><i data-feather="check-circle"></i> <span><strong>How it works:</strong> choose your blood test and select any available date and time to send your request. This is for system purposes only.</span></li>
+                                <li><i data-feather="phone-call"></i> A nurse will contact you directly to arrange a suitable appointment date and time.</li>
+                                <li><i data-feather="tag"></i> The home collection fee is <strong>+£59</strong>, in addition to the cost of your chosen blood test.</li>
+                            </ul>
                         </div>
 
+                        <div class="frame-wrap">
 
-                        <div class="flex gap-4 items-start">
-
-
-                            <i
-                                data-feather="check-circle"
-                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
-                            </i>
-
-
-                            <div>
-
-                                <h4
-                                    class="font-semibold text-[#102a43] mb-1">
-
-                                    Arrive prepared
-
-                                </h4>
-
-
-                                <p class="content-copy">
-
-                                    Our healthcare professional will
-                                    guide you through the blood
-                                    collection process.
-
-                                </p>
-
-                            </div>
+                            <iframe
+                                class="booking-frame"
+                                title="Home blood collection booking request"
+                                src="https://primelifediagnosticsltd.setmore.com"
+                                loading="lazy"
+                                allow="web-share; payment"></iframe>
 
                         </div>
 
@@ -1947,601 +786,41 @@ nav {
 
                 </div>
 
-            </div>
 
-        </div>
-
-    </section>
-    
-    <!-- ==================================
-     BOOKING AREA
-=================================== -->
-
-<section
-    id="booking"
-    class="py-20 md:py-24 bg-gray-50">
-
-   
-<div
-    class="max-w-7xl mx-auto px-6">
-
-
-    <div
-        class="text-center max-w-3xl mx-auto mb-12"
-        data-aos="fade-up">
-
-
-        <p class="eyebrow mb-3">
-            Online booking
-        </p>
-
-
-        <h2
-            class="section-title mb-5">
-
-            Book your In-Clinic appointment
-
-        </h2>
-
-
-        <p
-            class="content-copy text-lg">
-
-            Select your service below and follow the
-            booking process to choose your
-            appointment.
-
-        </p>
-
-    </div>
-
-
-    <!-- ==================================
-         AGE & TERMS NOTICE
-    =================================== -->
-
-    <div
-        class="max-w-3xl mx-auto mb-10"
-        data-aos="fade-up">
-
-
-        <div
-            class="bg-white border border-gray-200 rounded-2xl shadow-sm px-6 py-6 md:px-8">
-
-
-            <div
-                class="flex flex-col items-center text-center">
-
-
-                <!-- Icon -->
-
-                <div
-                    class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
-
-                    <i
-                        data-feather="shield"
-                        class="w-6 h-6 text-[#1769aa]">
-                    </i>
-
-                </div>
-
-
-                <!-- 18+ -->
-
-                <h3
-                    class="text-lg font-bold text-[#102a43] mb-2">
-
-                    18+ Only
-
-                </h3>
-
-
-                <!-- Main notice -->
-
-                <p
-                    class="text-[#617285] leading-relaxed">
-
-                    Our private blood testing service is available
-                    to patients aged 18 and over.
-
-                </p>
-
-
-                <p
-                    class="text-[#617285] leading-relaxed mt-2">
-
-                    By booking an appointment, you confirm that you
-                    are aged 18 or over and agree to our
-
+                <p class="text-center text-sm text-gray-500 mt-5">
+                    Our private blood testing service is for patients aged 18 and over.
+                    By booking an appointment, you confirm that you are aged 18 or over and agree to our
                     <a
                         href="https://primelifediagnostics.co.uk/terms.html"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="text-[#1769aa] font-semibold hover:text-[#12568d] hover:underline">
-
-                        Terms &amp; Conditions
-
-                    </a>.
-
+                        class="text-[#1769aa] font-semibold underline">Terms &amp; Conditions</a>.
                 </p>
 
 
-                <!-- Supporting note -->
+                <!-- Help under the booking -->
 
-                <p
-                    class="text-sm text-gray-500 mt-4">
+                <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
 
-                    Please read the Terms &amp; Conditions before
-                    proceeding with your booking.
+                    <span class="text-[#617285]">Prefer to book by phone or have a question?</span>
 
-                </p>
+                    <a href="tel:01302203565" class="btn-secondary">
+                        <i data-feather="phone" class="w-4 h-4"></i>
+                        01302 203565
+                    </a>
 
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- ==================================
-         BOOKING PANEL
-    =================================== -->
-
-    <div
-        class="booking-panel"
-        data-aos="fade-up">
-
-
-        <div
-            class="booking-panel-header">
-
-
-            <div
-                class="flex items-start gap-4">
-
-
-                <div
-                    class="w-11 h-11 rounded-xl bg-[#edf7fd] text-[#1769aa] flex items-center justify-center flex-shrink-0">
-
-                    <i
-                        data-feather="calendar"
-                        class="w-5 h-5">
-                    </i>
-
-                </div>
-
-
-                <div>
-
-                    <h3
-                        class="text-xl font-semibold text-[#102a43] mb-1">
-
-                        Prime Life Diagnostics In-Clinic
-                        Appointment Booking
-
-                    </h3>
-
-
-                    <p
-                        class="text-[#617285]">
-
-                        Choose your blood test.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-      <iframe 
-  src="https://primelifediagnostics.setmore.com" 
-  width="100%" 
-  height="700px" 
-  frameborder="0" 
-  style="border:0;" 
-  allow="web-share; payment">
-</iframe>
-
-        <script type="text/javascript">
-
-            window.addEventListener(
-                'message',
-                function handleIFrameMessage(e) {
-
-                    var clinikoBookings =
-                        document.getElementById(
-                            'cliniko-65791173'
-                        );
-
-                    if (
-                        typeof e.data !== 'string'
-                    ) {
-                        return;
-                    }
-
-
-                    if (
-                        e.data.search(
-                            'cliniko-bookings-resize'
-                        ) > -1
-                    ) {
-
-                        var height =
-                            Number(
-                                e.data.split(':')[1]
-                            );
-
-                        clinikoBookings.style.height =
-                            height + 'px';
-
-                    }
-
-
-                    if (
-                        e.data.search(
-                            'cliniko-bookings-page'
-                        ) > -1
-                    ) {
-
-                        clinikoBookings.scrollIntoView();
-
-                    }
-
-                }
-            );
-
-        </script>
-
-
-    </div>
-
-</div>
-
-
-</section>
-
-
-
- <section
-        id="homevisit"
-        class="py-20 md:py-24 bg-gray-50">
-
-
-        <div
-            class="max-w-7xl mx-auto px-6">
-
-
-            <div
-                class="text-center max-w-3xl mx-auto mb-12"
-                data-aos="fade-up">
-
-
-                <p class="eyebrow mb-3">
-            
-
-                <h2
-                    class="section-title mb-5">
-
-                    Book your Home Collection Appointment
-
-                </h2>
-
-
-                <p
-                    class="content-copy text-lg">
-
-                    Select your service below: </p>
-                    
-                     <p
-                    class="content-copy text-lg">
-                    NOTE: Please select any available date and time to proceed with your booking. This is for system purposes only. Once your request is received, a nurse will contact you directly to arrange a suitable appointment date and time.
-
-                </p>
-
-            </div>
-
-
-            <div
-                class="booking-panel"
-                data-aos="fade-up">
-
-
-                <div
-                    class="booking-panel-header">
-
-
-                    <div
-                        class="flex items-start gap-4">
-
-
-                        <div
-                            class="w-11 h-11 rounded-xl bg-[#edf7fd] text-[#1769aa] flex items-center justify-center flex-shrink-0">
-
-                            <i
-                                data-feather="calendar"
-                                class="w-5 h-5">
-                            </i>
-
-                        </div>
-
-
-                        <div>
-
-                            <h3
-                                class="text-xl font-semibold text-[#102a43] mb-1">
-
-                                Prime Life Diagnostics Home Blood Collection
-                                Appointment Booking
-
-                            </h3>
-
-
-                            <p
-                                class="text-[#617285]">
-
-                                Choose your blood test.
-
-                            </p>
-
-                        </div>
-                        
-                    </div>
-
-                </div>
-
-
-               <iframe 
-  src="https://primelifediagnosticsltd.setmore.com" 
-  width="100%" 
-  height="700px" 
-  frameborder="0" 
-  style="border:0;" 
-  allow="web-share; payment">
-</iframe>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    
-
-    <section
-        class="py-20 md:py-24 bg-gray-50">
-
-
-        <div
-            class="max-w-7xl mx-auto px-6">
-
-
-            <div
-                class="grid lg:grid-cols-2 gap-10 items-center">
-
-
-                <div
-                    data-aos="fade-left">
-
-
-                    <p class="eyebrow mb-3">
-                        Patient support
-                    </p>
-
-
-                    <h2
-                        class="section-title mb-6">
-
-                        More than just a blood test
-
-                    </h2>
-
-
-                    <p
-                        class="content-copy mb-5">
-
-                        We want the booking process to be as
-                        straightforward as possible. The consultation
-                        option gives you an opportunity to discuss
-                        your health and your testing needs.
-
-                    </p>
-
-
-                    <p
-                        class="content-copy">
-
-                        Blood testing provides information about
-                        your health, but results should always be
-                        considered alongside your symptoms,
-                        history and other relevant clinical
-                        information.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================
-         HOME BLOOD COLLECTION
-    =================================== -->
-
-    <section
-        class="py-20 md:py-24">
-
-
-        <div
-            class="max-w-7xl mx-auto px-6">
-
-
-            <div
-                class="grid lg:grid-cols-2 gap-12 items-center">
-
-
-                <div
-                    data-aos="fade-right">
-
-
-                    <p class="eyebrow mb-3">
-                        Prefer to stay at home?
-                    </p>
-
-
-                    <h2
-                        class="section-title mb-6">
-
-                        We can come to you
-
-                    </h2>
-
-
-                    <p
-                        class="content-copy text-lg mb-6">
-
-                        Our nationwide home blood collection
-                        service allows a qualified healthcare
-                        professional to visit you at home.
-
-                    </p>
-
-
-                    <p
-                        class="content-copy mb-8">
-
-                        The current home collection fee is
-                        <strong class="text-[#102a43]">
-                            +£59
-                        </strong>
-                        in addition to the cost of your chosen
-                        blood test.
-
-                    </p>
-
-
-                    <a
-                        href="appointment.html#homevisit"
-                        class="btn-primary">
-
-                        Book your Home Collection
-
-                        <i
-                            data-feather="arrow-right"
-                            class="w-4 h-4">
-                        </i>
-
+                    <a href="mailto:info@primelifediagnostics.co.uk" class="btn-secondary">
+                        <i data-feather="mail" class="w-4 h-4"></i>
+                        Email us
                     </a>
 
                 </div>
 
-
-                <div
-                    class="info-box"
-                    data-aos="fade-left">
-
-
-                    <div class="info-icon">
-
-                        <i
-                            data-feather="home"
-                            class="w-6 h-6">
-                        </i>
-
-                    </div>
-
-
-                    <h3
-                        class="text-2xl font-semibold text-[#102a43] mb-5">
-
-                        Home collection
-
-                    </h3>
-
-
-                    <div class="space-y-4">
-
-
-                        <div class="flex gap-4 items-start">
-
-
-                            <i
-                                data-feather="check"
-                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
-                            </i>
-
-
-                            <p class="content-copy">
-
-                                Nationwide service
-
-                            </p>
-
-                        </div>
-
-
-                        <div class="flex gap-4 items-start">
-
-
-                            <i
-                                data-feather="check"
-                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
-                            </i>
-
-
-                            <p class="content-copy">
-
-                                Qualified healthcare professional
-
-                            </p>
-
-                        </div>
-
-
-                        <div class="flex gap-4 items-start">
-
-
-                            <i
-                                data-feather="check"
-                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
-                            </i>
-
-
-                            <p class="content-copy">
-
-                                Private and convenient
-
-                            </p>
-
-                        </div>
-
-
-                        <div class="flex gap-4 items-start">
-
-
-                            <i
-                                data-feather="check"
-                                class="w-5 h-5 text-[#1769aa] mt-1 flex-shrink-0">
-                            </i>
-
-
-                            <p class="content-copy">
-
-                                Home visit fee: +£59
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
+                <p class="text-center text-sm text-gray-500 mt-4">
+                    Not sure which test you need?
+                    <a href="bloodtestspanels.html" class="text-[#1769aa] font-semibold underline">Browse our blood tests</a>
+                    and check the preparation information before you book.
+                </p>
 
             </div>
 
@@ -2554,363 +833,51 @@ nav {
          FAQ
     =================================== -->
 
-    <section
-        class="py-20 md:py-24 bg-gray-50">
+    <section class="py-16 md:py-20 bg-gray-50">
 
+        <div class="max-w-3xl mx-auto px-6">
 
-        <div
-            class="max-w-4xl mx-auto px-6">
-
-
-            <div
-                class="text-center mb-12"
-                data-aos="fade-up">
-
-
-                <p class="eyebrow mb-3">
-                    Before your appointment
-                </p>
-
-
-                <h2
-                    class="section-title mb-5">
-
-                    Frequently asked questions
-
-                </h2>
-
+            <div class="text-center mb-10">
+                <p class="eyebrow mb-3">Before your appointment</p>
+                <h2 class="section-title">Frequently asked questions</h2>
             </div>
 
+            <div class="space-y-3">
 
-            <div class="space-y-4">
-
-
-                <div
-                    class="faq-item"
-                    data-aos="fade-up">
-
-
-                    <button
-                        type="button"
-                        class="faq-button"
-                        onclick="toggleFAQ(this)">
-
-
-                        <span>
-                            Do I need a GP referral?
-                        </span>
-
-
-                        <i
-                            data-feather="plus"
-                            class="faq-icon w-5 h-5">
-                        </i>
-
-                    </button>
-
-
+                <details class="faq-item">
+                    <summary>Do I need a GP referral?</summary>
                     <div class="faq-answer">
-
-                        No. Our private blood testing service does
-                        not require a GP referral. You can select
-                        and book directly with
-                        Prime Life Diagnostics.
-
+                        No. Our private blood testing service does not require a GP referral. You can select and book directly with Prime Life Diagnostics.
                     </div>
+                </details>
 
-                </div>
-
-
-                <div
-                    class="faq-item"
-                    data-aos="fade-up">
-
-
-                    <button
-                        type="button"
-                        class="faq-button"
-                        onclick="toggleFAQ(this)">
-
-
-                        <span>
-                            How long does an appointment take?
-                        </span>
-
-
-                        <i
-                            data-feather="plus"
-                            class="faq-icon w-5 h-5">
-                        </i>
-
-                    </button>
-
-
+                <details class="faq-item">
+                    <summary>How long does an appointment take?</summary>
                     <div class="faq-answer">
-
-                        The blood collection itself is usually
-                        quick. Appointments are designed to be
-                        efficient and typically take around
-                        10–15 minutes, including preparation and
-                        aftercare.
-
+                        The blood collection itself is usually quick. Appointments are designed to be efficient and typically take around 10–15 minutes, including preparation and aftercare.
                     </div>
+                </details>
 
-                </div>
-
-
-                <div
-                    class="faq-item"
-                    data-aos="fade-up">
-
-
-                    <button
-                        type="button"
-                        class="faq-button"
-                        onclick="toggleFAQ(this)">
-
-
-                        <span>
-                            When will I receive my results?
-                        </span>
-
-
-                        <i
-                            data-feather="plus"
-                            class="faq-icon w-5 h-5">
-                        </i>
-
-                    </button>
-
-
+                <details class="faq-item">
+                    <summary>When will I receive my results?</summary>
                     <div class="faq-answer">
-
-                        Most results are available within
-                        24–72 hours. Some specialised tests may
-                        take longer.
-
+                        Most results are available within 24–72 hours. Some specialised tests may take longer.
                     </div>
+                </details>
 
-                </div>
-
-
-                <div
-                    class="faq-item"
-                    data-aos="fade-up">
-
-
-                    <button
-                        type="button"
-                        class="faq-button"
-                        onclick="toggleFAQ(this)">
-
-
-                        <span>
-                            Do I need to fast before my appointment?
-                        </span>
-
-
-                        <i
-                            data-feather="plus"
-                            class="faq-icon w-5 h-5">
-                        </i>
-
-                    </button>
-
-
+                <details class="faq-item">
+                    <summary>Do I need to fast before my appointment?</summary>
                     <div class="faq-answer">
-
-                        It depends on the test you are having.
-                        Some tests require fasting while others
-                        do not. Please check the preparation
-                        information for your chosen test before
-                        attending.
-
+                        It depends on the test you are having. Some tests require fasting while others do not. Please check the preparation information for your chosen test before attending.
                     </div>
+                </details>
 
-                </div>
-
-
-                <div
-                    class="faq-item"
-                    data-aos="fade-up">
-
-
-                    <button
-                        type="button"
-                        class="faq-button"
-                        onclick="toggleFAQ(this)">
-
-
-                        <span>
-                            Can I have my blood test at home?
-                        </span>
-
-
-                        <i
-                            data-feather="plus"
-                            class="faq-icon w-5 h-5">
-                        </i>
-
-                    </button>
-
-
+                <details class="faq-item">
+                    <summary>Can I have my blood test at home?</summary>
                     <div class="faq-answer">
-
-                        Yes. We offer nationwide home blood
-                        collection. The current
-                        home collection fee is +£59.
-
+                        Yes. We offer nationwide home blood collection. The current home collection fee is +£59, in addition to the cost of your chosen blood test.
                     </div>
-
-                </div>
-
-
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================
-         CONTACT
-    =================================== -->
-
-    <section
-        class="py-20 md:py-24">
-
-
-        <div
-            class="max-w-4xl mx-auto px-6 text-center"
-            data-aos="fade-up">
-
-
-            <p class="eyebrow mb-3">
-                Need help booking?
-            </p>
-
-
-            <h2
-                class="section-title mb-5">
-
-                We're here to help
-
-            </h2>
-
-
-            <p
-                class="content-copy text-lg max-w-2xl mx-auto mb-8">
-
-                Have a question about a test, preparation or
-                booking? Contact Prime Life Diagnostics and we'll
-                be happy to help.
-
-            </p>
-
-
-            <div
-                class="flex flex-col sm:flex-row justify-center gap-4">
-
-
-                <a
-                    href="tel:01302203565"
-                    class="btn-secondary">
-
-                    <i
-                        data-feather="phone"
-                        class="w-4 h-4">
-                    </i>
-
-                    01302 203565
-
-                </a>
-
-
-                <a
-                    href="mailto:info@primelifediagnostics.co.uk"
-                    class="btn-secondary">
-
-                    <i
-                        data-feather="mail"
-                        class="w-4 h-4">
-                    </i>
-
-                    Email Us
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================
-         FINAL CTA
-    =================================== -->
-
-    <section
-        class="final-cta py-20 md:py-24">
-
-
-        <div
-            class="max-w-4xl mx-auto px-6 text-center"
-            data-aos="fade-up">
-
-
-            <p
-                class="text-sm font-bold uppercase tracking-[0.14em] text-blue-200 mb-4">
-
-                Ready to get started?
-
-            </p>
-
-
-            <h2
-                class="text-3xl md:text-5xl font-bold leading-tight mb-6">
-
-                Book your private blood test
-
-            </h2>
-
-
-            <p
-                class="text-blue-100 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
-
-                Choose your test and book an appointment with
-                Prime Life Diagnostics.
-
-            </p>
-
-
-            <div
-                class="flex flex-col sm:flex-row justify-center gap-3">
-
-
-                <a
-                    href="#booking"
-                    class="inline-flex items-center justify-center gap-2 bg-white text-[#102a43] px-6 py-3 rounded-xl font-bold hover:bg-gray-100 transition">
-
-                    Book Your Appointment
-
-                    <i
-                        data-feather="arrow-right"
-                        class="w-4 h-4">
-                    </i>
-
-                </a>
-
-
-                <a
-                    href="bloodtestspanels.html"
-                    class="inline-flex items-center justify-center gap-2 border border-white/40 text-white px-6 py-3 rounded-xl font-bold hover:bg-white/10 transition">
-
-                    View Blood Tests
-
-                </a>
+                </details>
 
             </div>
 
@@ -2925,157 +892,62 @@ nav {
      FOOTER
 ============================================================ -->
 
-<footer
-    class="bg-[#0b1c2b] text-white">
+<footer class="bg-[#0b1c2b] text-white">
 
     <div class="max-w-7xl mx-auto px-5 py-16">
 
-
         <div class="grid md:grid-cols-3 gap-12">
 
-
             <!-- Brand -->
-
             <div>
-
                 <img
                     src="Prime Life Diagnostics1-01.png"
                     alt="Prime Life Diagnostics"
                     class="h-16 w-auto mb-6 brightness-0 invert">
 
-                <p
-                    class="text-gray-400 leading-relaxed max-w-sm">
-
-                    Private blood testing and health checks
-                    designed to make understanding your health
-                    simpler.
-
+                <p class="text-gray-400 leading-relaxed max-w-sm">
+                    Private blood testing and health checks designed to make understanding your health simpler.
                 </p>
-
             </div>
-
 
             <!-- Quick Links -->
-
             <div>
-
-                <h3
-                    class="font-semibold text-lg mb-5">
-
-                    Quick Links
-
-                </h3>
+                <h3 class="font-semibold text-lg mb-5">Quick Links</h3>
 
                 <div class="space-y-3">
-
-                    <a
-                        href="index.html"
-                        class="block text-gray-400 hover:text-white transition">
-
-                        Home
-
-                    </a>
-
-                    <a
-                        href="bloodtestspanels.html"
-                        class="block text-gray-400 hover:text-white transition">
-
-                        Blood Tests
-
-                    </a>
-
-
-                    <a
-                        href="ourmission.html"
-                        class="block text-gray-400 hover:text-white transition">
-
-                        Our Mission
-
-                    </a>
-
-                    <a
-                        href="chooseus.html"
-                        class="block text-gray-400 hover:text-white transition">
-
-                        Why Us
-
-                    </a>
-
-                    <a href="location.html"
-                   class="block text-gray-400 hover:text-white transition">
-                  Find Us
-                </a>
-
-                    <a
-                        href="FAQs.html"
-                        class="block text-gray-400 hover:text-white transition">
-
-                        FAQs
-
-                    </a>
-
-                    <a
-                        href="appointment.html"
-                        class="block text-gray-400 hover:text-white transition">
-
-                        Book Appointment
-
-                    </a>
-
+                    <a href="index.html" class="block text-gray-400 hover:text-white transition">Home</a>
+                    <a href="bloodtestspanels.html" class="block text-gray-400 hover:text-white transition">Blood Tests</a>
+                    <a href="ourmission.html" class="block text-gray-400 hover:text-white transition">Our Mission</a>
+                    <a href="chooseus.html" class="block text-gray-400 hover:text-white transition">Why Us</a>
+                    <a href="location.html" class="block text-gray-400 hover:text-white transition">Find Us</a>
+                    <a href="FAQs.html" class="block text-gray-400 hover:text-white transition">FAQs</a>
+                    <a href="appointment.html" class="block text-gray-400 hover:text-white transition">Book Appointment</a>
                 </div>
-
             </div>
 
-
             <!-- Contact -->
-
             <div>
+                <h3 class="font-semibold text-lg mb-5">Contact</h3>
 
-                <h3
-                    class="font-semibold text-lg mb-5">
-
-                    Contact
-
-                </h3>
-
-                <div
-                    class="space-y-3 text-gray-400">
-
-                    <p>
-                        info@primelifediagnostics.co.uk
-                    </p>
-
-                    <p>
-                        01302 203565
-                    </p>
-
+                <div class="space-y-3 text-gray-400">
+                    <p>info@primelifediagnostics.co.uk</p>
+                    <p>01302 203565</p>
                     <p>
                         105 Scrooby Road,<br>
                         Bircotes,<br>
                         Doncaster,<br>
                         DN11 8JN
                     </p>
-
                 </div>
-
             </div>
 
         </div>
 
+        <!-- Social media -->
 
+        <div class="border-t border-white/10 mt-14 pt-8">
 
-        <!-- =====================================================
-             SOCIAL MEDIA
-        ====================================================== -->
-
-        <div
-            class="border-t border-white/10 mt-14 pt-8">
-
-            <div
-                class="flex justify-center gap-5 mb-8">
-
-
-                <!-- TikTok -->
+            <div class="flex justify-center gap-5 mb-8">
 
                 <a
                     href="https://www.tiktok.com/@prime.life.diagnostics"
@@ -3084,22 +956,10 @@ nav {
                     aria-label="TikTok"
                     class="text-gray-400 hover:text-white transition">
 
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        class="w-6 h-6">
-
-                        <path
-                            d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.68h-3.4v13.76a2.9 2.9 0 1 1-2.9-2.9c.2 0 .39.02.58.06V9.5a6.34 6.34 0 1 0 5.72 6.27V8.69a8.16 8.16 0 0 0 4.77 1.53V6.69z">
-                        </path>
-
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.68h-3.4v13.76a2.9 2.9 0 1 1-2.9-2.9c.2 0 .39.02.58.06V9.5a6.34 6.34 0 1 0 5.72 6.27V8.69a8.16 8.16 0 0 0 4.77 1.53V6.69z"></path>
                     </svg>
-
                 </a>
-
-
-                <!-- Instagram -->
 
                 <a
                     href="https://www.instagram.com/prime.life.diagnostics/"
@@ -3107,16 +967,8 @@ nav {
                     rel="noopener noreferrer"
                     aria-label="Instagram"
                     class="text-gray-400 hover:text-white transition">
-
-                    <i
-                        data-feather="instagram"
-                        class="w-6 h-6">
-                    </i>
-                    
+                    <i data-feather="instagram" class="w-6 h-6"></i>
                 </a>
-
-
-                <!-- Facebook -->
 
                 <a
                     href="https://www.facebook.com/profile.php?id=61581186570303&sk=about"
@@ -3124,50 +976,28 @@ nav {
                     rel="noopener noreferrer"
                     aria-label="Facebook"
                     class="text-gray-400 hover:text-white transition">
-
-                    <i
-                        data-feather="facebook"
-                        class="w-6 h-6">
-                    </i>
-
+                    <i data-feather="facebook" class="w-6 h-6"></i>
                 </a>
 
             </div>
 
+            <div class="border-t border-white/10 pt-7 text-center">
 
-
-            <!-- Copyright -->
-
-            <div
-                class="border-t border-white/10 pt-7 text-center">
-
-                <p
-                    class="text-sm text-gray-500">
-
-                    © 2026 Prime Life Diagnostics.
-                    All rights reserved.
-
+                <p class="text-sm text-gray-500">
+                    © 2026 Prime Life Diagnostics. All rights reserved.
                 </p>
 
-
-                <!-- Accreditation -->
-
-                <div
-                    class="flex justify-center items-center gap-7 mt-7">
-
+                <div class="flex justify-center items-center gap-7 mt-7">
 
                     <a
                         href="https://www.cqc.org.uk/provider/1-24970013163"
                         target="_blank"
                         rel="noopener noreferrer">
-
                         <img
                             src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/cqc%20logo.webp"
                             alt="CQC Regulated"
                             class="h-14">
-
                     </a>
-
 
                     <img
                         src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/UKAS-Accreditation-Symbol-purple-on-white-Medical.png"
@@ -3185,33 +1015,20 @@ nav {
 </footer>
 
 
-
 <!-- ==================================
      JAVASCRIPT
 =================================== -->
 
-<script
-    src="https://unpkg.com/aos@2.3.1/dist/aos.js">
-</script>
-
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
 
-    /* AOS */
+    /* AOS (safe if the library fails to load) */
+    if (window.AOS) {
+        AOS.init({ duration: 700, once: true, offset: 70 });
+    }
 
-    AOS.init({
-
-        duration: 700,
-
-        once: true,
-
-        offset: 70
-
-    });
-
-
-    /* Feather Icons */
-
+    /* Feather icons */
     feather.replace();
 
 
@@ -3219,183 +1036,118 @@ nav {
        MOBILE MENU
     =================================== */
 
-    const mobileMenuButton =
-        document.getElementById(
-            'mobile-menu-btn'
-        );
+    (function () {
 
+        var btn = document.getElementById('mobile-menu-btn');
+        var menu = document.getElementById('mobile-menu');
+        var closeBtn = document.getElementById('close-mobile-menu');
 
-    const mobileMenu =
-        document.getElementById(
-            'mobile-menu'
-        );
+        if (!btn || !menu || !closeBtn) return;
 
-    const closeMobileMenuButton =
-        document.getElementById(
-            'close-mobile-menu'
-        );
+        function setOpen(isOpen) {
+            menu.classList.toggle('is-open', isOpen);
+            menu.setAttribute('aria-hidden', String(!isOpen));
+            btn.setAttribute('aria-expanded', String(isOpen));
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+            (isOpen ? closeBtn : btn).focus();
+        }
 
+        btn.addEventListener('click', function () { setOpen(true); });
+        closeBtn.addEventListener('click', function () { setOpen(false); });
 
-    if (
-        mobileMenuButton &&
-        mobileMenu &&
-        closeMobileMenuButton
-    ) {
+        menu.addEventListener('keydown', function (event) {
 
-        const setMobileMenuOpen = isOpen => {
+            if (event.key === 'Escape') { setOpen(false); return; }
+            if (event.key !== 'Tab') return;
 
-            mobileMenu.classList.toggle(
-                'is-open',
-                isOpen
-            );
+            var focusable = menu.querySelectorAll('a[href], button:not([disabled])');
+            var first = focusable[0];
+            var last = focusable[focusable.length - 1];
 
-
-            mobileMenu.setAttribute(
-                'aria-hidden',
-                String(!isOpen)
-            );
-
-
-            mobileMenuButton.setAttribute(
-                'aria-expanded',
-                String(isOpen)
-            );
-
-
-            document.body.style.overflow =
-                isOpen ? 'hidden' : '';
-
-            if (isOpen) {
-                closeMobileMenuButton.focus();
-            } else {
-                mobileMenuButton.focus();
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
             }
 
-        };
+        });
 
+        menu.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () { setOpen(false); });
+        });
 
-        mobileMenuButton.addEventListener(
-            'click',
-            () => setMobileMenuOpen(true)
-        );
-
-
-        closeMobileMenuButton.addEventListener(
-            'click',
-            () => setMobileMenuOpen(false)
-        );
-
-
-        mobileMenu.addEventListener(
-            'keydown',
-            event => {
-
-                if (event.key === 'Escape') {
-                    setMobileMenuOpen(false);
-                    return;
-                }
-
-                if (event.key !== 'Tab') {
-                    return;
-                }
-
-                const focusableElements =
-                    mobileMenu.querySelectorAll(
-                        'a[href], button:not([disabled])'
-                    );
-
-                const firstElement =
-                    focusableElements[0];
-
-                const lastElement =
-                    focusableElements[
-                        focusableElements.length - 1
-                    ];
-
-                if (
-                    event.shiftKey &&
-                    document.activeElement === firstElement
-                ) {
-                    event.preventDefault();
-                    lastElement.focus();
-                } else if (
-                    !event.shiftKey &&
-                    document.activeElement === lastElement
-                ) {
-                    event.preventDefault();
-                    firstElement.focus();
-                }
-
-            }
-        );
-
-
-        mobileMenu
-            .querySelectorAll('a')
-            .forEach(
-                link => {
-
-                    link.addEventListener(
-                        'click',
-                        () => setMobileMenuOpen(false)
-                    );
-
-                }
-            );
-
-    }
+    })();
 
 
     /* ==================================
-       FAQ
+       BOOKING OPTIONS + TERMS
     =================================== */
 
-    function toggleFAQ(button) {
+    (function () {
 
-        const answer =
-            button.nextElementSibling;
+        var tabs = document.querySelectorAll('.option-tab');
+        var panels = {
+            clinic: document.getElementById('panel-clinic'),
+            home: document.getElementById('panel-home')
+        };
 
+        function track(name, params) {
+            try {
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', name, params || {});
+                }
+            } catch (e) {}
+        }
 
-        const icon =
-            button.querySelector(
-                '.faq-icon'
-            );
+        /* Only the selected booking system is shown:
+           in-clinic  -> primelifediagnostics.setmore.com
+           home visit -> primelifediagnosticsltd.setmore.com */
 
+        function selectOption(key, shouldTrack) {
 
-        const isOpen =
-            answer.style.display === 'block';
+            if (!panels[key]) return;
 
+            tabs.forEach(function (tab) {
+                tab.setAttribute('aria-selected', String(tab.getAttribute('data-option') === key));
+            });
 
-        if (isOpen) {
+            Object.keys(panels).forEach(function (k) {
+                panels[k].hidden = (k !== key);
+            });
 
-            answer.style.display =
-                'none';
-
-
-            icon.setAttribute(
-                'data-feather',
-                'plus'
-            );
+            if (shouldTrack) {
+                track('booking_option_selected', { booking_option: key });
+            }
 
         }
 
-        else {
+        tabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                selectOption(tab.getAttribute('data-option'), true);
+            });
+        });
 
-            answer.style.display =
-                'block';
+        /* Links like appointment.html#homevisit select the right option */
 
+        function applyHash() {
 
-            icon.setAttribute(
-                'data-feather',
-                'minus'
-            );
+            if (location.hash === '#homevisit') {
+                selectOption('home', false);
+                document.getElementById('booking').scrollIntoView();
+            } else if (location.hash === '#booking') {
+                selectOption('clinic', false);
+            }
 
         }
 
+        window.addEventListener('hashchange', applyHash);
 
-        feather.replace();
+        selectOption('clinic', false);
+        applyHash();
 
-    }
+    })();
 
 
     /* ==================================
@@ -3404,53 +1156,24 @@ nav {
 
     function updateSpacing() {
 
-        const promo =
-            document.getElementById(
-                'promo-banner'
-            );
+        var promo = document.getElementById('promo-banner');
+        var nav = document.getElementById('main-nav');
 
+        if (promo && nav) {
 
-        const nav =
-            document.getElementById(
-                'main-nav'
-            );
+            var promoHeight = promo.offsetHeight;
 
-
-        if (
-            promo &&
-            nav
-        ) {
-
-            const promoHeight =
-                promo.offsetHeight;
-
-
-            nav.style.top =
-                `${promoHeight}px`;
-
-
-            document.body.style.paddingTop =
-                `${promoHeight + nav.offsetHeight}px`;
+            nav.style.top = promoHeight + 'px';
+            document.body.style.paddingTop = (promoHeight + nav.offsetHeight) + 'px';
 
         }
 
     }
 
-
-    window.addEventListener(
-        'load',
-        updateSpacing
-    );
-
-
-    window.addEventListener(
-        'resize',
-        updateSpacing
-    );
-
+    window.addEventListener('load', updateSpacing);
+    window.addEventListener('resize', updateSpacing);
 
 </script>
-   
 
 </body>
 
