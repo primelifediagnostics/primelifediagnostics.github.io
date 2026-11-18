@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testosterone Blood Tests Doncaster | Prime Life Diagnostics</title>
+<meta name="description" content="Private testosterone blood tests near Doncaster from £65. Compare Silver and Gold male hormone screens at our Bircotes clinic. Doctor-led service, no GP referral.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="Testosterone Blood Tests Doncaster | Prime Life Diagnostics">
+<meta property="og:description" content="Private testosterone blood tests near Doncaster from £65. Compare Silver and Gold male hormone screens at our Bircotes clinic. Doctor-led service, no GP referral.">
+<meta property="og:image" content="https://www.primelifediagnostics.co.uk/Prime%20Life%20Diagnostics1-01.jpg">
+<meta property="og:url" content="https://www.primelifediagnostics.co.uk/testosterone-blood-tests-doncaster.html">
+<link rel="canonical" href="https://www.primelifediagnostics.co.uk/testosterone-blood-tests-doncaster.html">
+<link rel="icon" type="image/png" href="/favicon-32x32.png">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Feather Icons -->
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<!-- Cookie consent + Google Analytics / Google Ads (loads only after consent) -->
+<script src="/tracking.js"></script>
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Prime Life Diagnostics",
+  "image": "https://www.primelifediagnostics.co.uk/Prime Life Diagnostics1-01.png",
+  "description": "Private blood testing and laboratory services.",
+  "url": "https://www.primelifediagnostics.co.uk",
+  "telephone": "01302 203565",
+  "email": "info@primelifediagnostics.co.uk",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "105 Scrooby Road, Bircotes",
+    "addressLocality": "Doncaster",
+    "postalCode": "DN11 8JN",
+    "addressCountry": "GB"
+  },
+  "priceRange": "£49-£199",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Tuesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "09:00",
+      "closes": "12:00"
+    }
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between Silver and Gold?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Silver (£65) covers total and free testosterone, SHBG, albumin and the Free Androgen Index. Gold (£99) adds LH and FSH."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What time of day should I test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mornings, ideally 7:00–10:00 am. We open at 9:00 am, so book the earliest appointment available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When will I get my results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most results are available within 24–72 hours. They are reviewed as part of our doctor-led service."
+      }
+    }
+  ]
+}</script>
+
+<style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+            background: #ffffff;
+        }
+
+        /* ------------------------------
+           PROMO BAR
+        ------------------------------ */
+
+        .promo-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            background: #102a43;
+            color: white;
+            text-align: center;
+            padding: 9px 15px;
+            font-size: 13px;
+            letter-spacing: .2px;
+        }
+
+        .promo-code {
+            background: white;
+            color: #102a43;
+            padding: 3px 9px;
+            border-radius: 4px;
+            font-weight: 700;
+            margin-left: 5px;
+        }
+
+
+        /* ------------------------------
+           NAVIGATION
+        ------------------------------ */
+
+        .main-nav {
+            position: fixed;
+            top: 38px;
+            left: 0;
+            width: 100%;
+            z-index: 9998;
+            background: rgba(255,255,255,.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #edf1f5;
+        }
+
+
+        /* ------------------------------
+           HERO
+        ------------------------------ */
+
+        .hero {
+            min-height: 720px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                90deg,
+                rgba(7,24,40,.88) 0%,
+                rgba(7,24,40,.65) 48%,
+                rgba(7,24,40,.20) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* ------------------------------
+           BUTTONS
+        ------------------------------ */
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #1769aa;
+            color: white;
+            padding: 15px 27px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all .25s ease;
+        }
+
+        .btn-primary:hover {
+            background: #12568d;
+            transform: translateY(-1px);
+        }
+
+        .btn-white {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            color: #12304a;
+            padding: 15px 27px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all .25s ease;
+        }
+
+        .btn-white:hover {
+            background: #f2f5f8;
+            transform: translateY(-1px);
+        }
+
+
+        /* ------------------------------
+           SECTION
+        ------------------------------ */
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-light {
+            background: #f7f9fb;
+        }
+
+        .section-title {
+            font-size: 38px;
+            line-height: 1.15;
+            font-weight: 600;
+            color: #102a43;
+        }
+
+        .section-subtitle {
+            color: #64748b;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+
+        /* ------------------------------
+           TEST CARDS
+        ------------------------------ */
+
+        .health-card {
+            background: white;
+            border: 1px solid #e7edf2;
+            padding: 30px;
+            border-radius: 8px;
+            transition: all .25s ease;
+            height: 100%;
+        }
+
+        .health-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 40px rgba(16,42,67,.10);
+            border-color: #d5e1ea;
+        }
+
+        .health-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #eaf3f9;
+            color: #1769aa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+
+        /* ------------------------------
+           STEPS
+        ------------------------------ */
+
+        .step-number {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #102a43;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+
+        /* ------------------------------
+           TRUST
+        ------------------------------ */
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #425466;
+            font-size: 15px;
+        }
+
+        .trust-item i {
+            color: #1769aa;
+        }
+
+
+        /* ------------------------------
+           FAQ
+        ------------------------------ */
+
+        .faq-item {
+            border-bottom: 1px solid #e5eaf0;
+        }
+
+        .faq-button {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 0;
+            text-align: left;
+            font-weight: 600;
+            color: #102a43;
+        }
+
+
+        /* ------------------------------
+           MOBILE
+        ------------------------------ */
+
+        @media (max-width: 768px) {
+
+            .promo-banner {
+                font-size: 12px;
+                padding: 8px 8px;
+            }
+
+            .main-nav {
+                top: 35px;
+            }
+
+            .hero {
+                min-height: 680px;
+            }
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .section-title {
+                font-size: 31px;
+            }
+
+        }
+
+    </style>
+<style>
+/* ==========================================
+   PRIME LIFE DIAGNOSTICS
+   MOBILE RESPONSIVE FIX
+   Prevent horizontal scrolling
+========================================== */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Prevent images from being wider than the screen */
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+/* Prevent long text / links from forcing the page wider */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+    overflow-wrap: break-word;
+}
+
+/* Make sections stay inside the viewport */
+section,
+header,
+footer,
+main,
+nav {
+    max-width: 100%;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Prevent fixed-width elements creating overflow */
+    .w-screen {
+        width: 100%;
+    }
+
+    /* Make buttons fit smaller screens */
+    button,
+    .btn {
+        max-width: 100%;
+    }
+
+}
+</style>
+<style>
+.page-hero{background:linear-gradient(135deg,#102a43 0%,#1b4a73 100%);padding:64px 0 56px}
+body{padding-top:119px}
+.section-tight{padding:56px 0}
+.hours-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #e5eaf0;font-size:15px}
+@media(max-width:768px){body{padding-top:116px}.section-tight{padding:44px 0}.page-hero{padding:44px 0 40px}}
+</style>
+</head>
+
+<body>
+
+
+
+<!-- ============================================================
+     PROMOTIONAL BAR
+============================================================ -->
+
+<div class="promo-banner">
+
+    <strong>10% OFF IN-CLINIC BLOOD TESTS</strong>
+
+    <span class="hidden sm:inline"> · Use code</span>
+
+    <span class="promo-code">PRIME10</span>
+
+</div>
+
+
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+
+<nav class="main-nav">
+
+    <div class="max-w-7xl mx-auto px-5">
+
+        <div class="flex items-center justify-between h-20">
+
+            <!-- Logo -->
+
+            <a href="index.html" class="flex items-center">
+
+                <img
+                    src="Prime Life Diagnostics1-01.png"
+                    alt="Prime Life Diagnostics"
+                    class="h-14 md:h-16 w-auto"
+                >
+                 <span class="text-[#1a237e]">Prime</span>
+    <span class="text-[#2196f3]"> Life</span>
+    <span class="text-[#757575]"> Diagnostics</span>
+
+            </a>
+
+
+            <!-- Desktop navigation -->
+
+            <div class="hidden lg:flex items-center gap-7">
+
+                <a href="bloodtestspanels.html"
+                   class="text-sm text-gray-600 hover:text-blue-700">
+                    Blood Tests
+                </a>
+
+                <a href="#how-it-works"
+                   class="text-sm text-gray-600 hover:text-blue-700">
+                    How It Works
+                </a>
+
+                <a href="chooseus.html"
+                   class="text-sm text-gray-600 hover:text-blue-700">
+                    Why Us
+                </a>
+
+                <a href="ourmission.html"
+                   class="text-sm text-gray-600 hover:text-blue-700">
+                    About
+                </a>
+
+                <a href="location.html"
+                   class="text-sm text-gray-600 hover:text-blue-700">
+                  Find Us
+                </a>
+                
+                <a href="FAQs.html"
+                   class="text-sm text-gray-600 hover:text-blue-700">
+                    FAQs
+                </a>
+
+                <a href="appointment.html"
+                   class="btn-primary text-sm px-5 py-3">
+                    Book Now
+                </a>
+
+            </div>
+
+
+            <!-- Mobile button -->
+
+            <button
+                id="menu-btn"
+                class="lg:hidden text-gray-700"
+                aria-label="Open menu">
+
+                <i data-feather="menu"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ============================================================
+     MOBILE MENU
+============================================================ -->
+
+<div
+    id="mobile-menu"
+    class="hidden fixed inset-0 z-[10000] bg-white">
+
+    <button
+        id="close-menu"
+        class="absolute top-6 right-6 text-gray-700"
+        aria-label="Close menu">
+
+        <i data-feather="x"></i>
+
+    </button>
+
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+
+        <a href="bloodtestspanels.html"
+           class="text-xl text-gray-700">
+            Blood Tests
+        </a>
+
+
+        <a href="#how-it-works"
+           class="text-xl text-gray-700">
+            How It Works
+        </a>
+
+        <a href="chooseus.html"
+           class="text-xl text-gray-700">
+            Why Us
+        </a>
+
+        <a href="ourmission.html"
+           class="text-xl text-gray-700">
+            About
+        </a>
+
+<a href="location.html"
+                   class="text-xl text-gray-700">
+                  Find Us
+                </a>
+                
+        <a href="FAQs.html"
+           class="text-xl text-gray-700">
+            FAQs
+        </a>
+
+        <a href="appointment.html"
+           class="btn-primary">
+            Book Appointment
+        </a>
+
+    </div>
+
+</div>
+
+
+
+
+<section class="page-hero"><div class="max-w-7xl mx-auto px-5"><div class="max-w-3xl text-white">
+<p class="uppercase tracking-[3px] text-sm font-semibold mb-4 opacity-90">Hormone testing · Bircotes, Doncaster</p>
+<h1 class="text-4xl md:text-5xl font-semibold leading-tight mb-5">Testosterone Blood Tests in Doncaster</h1>
+<p class="text-lg md:text-xl text-white/90 mb-7 max-w-2xl">Check your testosterone with a private blood test. Choose Silver or Gold and book online.</p>
+<div class="flex flex-col sm:flex-row gap-4"><a href="appointment.html" class="btn-white">Book a Blood Test <i data-feather="arrow-right" class="ml-3 w-5"></i></a>
+<a href="tel:01302203565" class="border border-white/70 text-white px-7 py-4 rounded-md font-semibold hover:bg-white/10 transition text-center">Call 01302 203565</a></div>
+</div></div></section>
+<section class="border-b border-gray-100 bg-white"><div class="max-w-7xl mx-auto px-5"><div class="grid grid-cols-2 md:grid-cols-4 gap-6 py-6">
+<div class="trust-item"><i data-feather="check-circle"></i><span>Doctor reviewed</span></div>
+<div class="trust-item"><i data-feather="user-check"></i><span>No GP referral</span></div>
+<div class="trust-item"><i data-feather="home"></i><span>Home collection</span></div>
+<div class="trust-item"><i data-feather="shield"></i><span>CQC regulated</span></div>
+</div></div></section>
+<section class="section-tight section-light"><div class="max-w-7xl mx-auto px-5">
+<div class="max-w-2xl mb-8"><p class="text-blue-700 font-semibold uppercase tracking-wider text-sm mb-3">Choose your screen</p><h2 class="section-title">Testosterone blood tests</h2></div>
+<div class="grid md:grid-cols-2 gap-6"><div class="bg-white p-7 border border-gray-200 rounded-lg flex flex-col">
+<p class="text-sm text-gray-500 mb-3">Hormones</p>
+<h3 class="text-xl font-semibold mb-3"><a href="wellman_screen.html" class="hover:text-blue-700">Male Hormone Screen Silver</a></h3>
+<p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">Total and free testosterone, SHBG, albumin and Free Androgen Index.</p>
+<div class="flex items-center justify-between"><span class="text-2xl font-semibold text-gray-900">£65</span><a href="appointment.html" class="text-blue-700 font-semibold text-sm">Book →</a></div></div><div class="bg-white p-7 border border-gray-200 rounded-lg flex flex-col">
+<p class="text-sm text-gray-500 mb-3">Hormones</p>
+<h3 class="text-xl font-semibold mb-3"><a href="male_hormone_screen_gold.html" class="hover:text-blue-700">Male Hormone Screen Gold</a></h3>
+<p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">Everything in Silver, plus LH and FSH.</p>
+<div class="flex items-center justify-between"><span class="text-2xl font-semibold text-gray-900">£99</span><a href="appointment.html" class="text-blue-700 font-semibold text-sm">Book →</a></div></div></div><p class="text-gray-500 text-sm mt-6">Want testosterone inside a wider check? See the <a href="comprehensive_male.html" class="text-blue-700 font-semibold">Comprehensive Male</a> package (£199).</p></div></section><section class="section-tight bg-white"><div class="max-w-7xl mx-auto px-5"><div class="grid lg:grid-cols-2 gap-10 items-start"><div><div class="bg-[#eaf3f9] border border-[#d5e1ea] rounded-lg p-6 md:p-8"><h3 class="font-semibold text-lg text-[#102a43] mb-2">Book an early appointment</h3><p class="text-gray-700 leading-relaxed">Testosterone is generally highest in the morning, so samples are usually taken between 7:00 and 10:00 am. We open at 9:00 am, so book the earliest slot you can, and sample at a similar time of day if you repeat the test.</p></div></div><div><h3 class="font-semibold text-xl text-[#102a43] mb-4">Who might consider it</h3><ul class="space-y-3"><li class="flex gap-3"><i data-feather="check" class="text-blue-700 mt-1 shrink-0"></i><span class="text-gray-700">Reduced libido, low energy or reduced muscle mass</span></li><li class="flex gap-3"><i data-feather="check" class="text-blue-700 mt-1 shrink-0"></i><span class="text-gray-700">Wanting to monitor testosterone over time</span></li><li class="flex gap-3"><i data-feather="check" class="text-blue-700 mt-1 shrink-0"></i><span class="text-gray-700">Wanting more than testosterone alone (Gold adds LH and FSH)</span></li></ul><p class="text-sm text-gray-500 mt-4">These symptoms have many causes, so a hormone test is one part of the picture. No fasting requirement is listed for these screens.</p></div></div></div></section>
+<!--rel--><section class="section-tight bg-white"><div class="max-w-7xl mx-auto px-5">
+<div class="max-w-2xl mb-8"><p class="text-blue-700 font-semibold uppercase tracking-wider text-sm mb-3">Related guides</p><h2 class="section-title">More in Doncaster</h2></div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"><a href="private-blood-tests-doncaster.html" class="health-card" style="padding:22px"><h3 class="text-lg font-semibold text-gray-900 mb-2">Private blood tests in Doncaster</h3><p class="text-gray-600 text-sm mb-3">All our tests and how booking works.</p><span class="text-blue-700 font-semibold text-sm">Read more →</span></a><a href="male_hormone_screen_gold.html" class="health-card" style="padding:22px"><h3 class="text-lg font-semibold text-gray-900 mb-2">Male Hormone Screen Gold</h3><p class="text-gray-600 text-sm mb-3">£99 · Testosterone, SHBG, LH, FSH, FAI and albumin.</p><span class="text-blue-700 font-semibold text-sm">Read more →</span></a><a href="wellman_screen.html" class="health-card" style="padding:22px"><h3 class="text-lg font-semibold text-gray-900 mb-2">Male Hormone Screen Silver</h3><p class="text-gray-600 text-sm mb-3">£65 · Total and free testosterone, SHBG, FAI and albumin.</p><span class="text-blue-700 font-semibold text-sm">Read more →</span></a><a href="comprehensive_male.html" class="health-card" style="padding:22px"><h3 class="text-lg font-semibold text-gray-900 mb-2">Comprehensive Male Package</h3><p class="text-gray-600 text-sm mb-3">£199 · 50+ markers including male hormones.</p><span class="text-blue-700 font-semibold text-sm">Read more →</span></a></div></div></section>
+<section id="visit" class="section-tight section-light"><div class="max-w-7xl mx-auto px-5">
+<div class="grid lg:grid-cols-2 gap-10 items-start"><div>
+<p class="text-blue-700 font-semibold uppercase tracking-wider text-sm mb-3">Visit us</p>
+<h2 class="section-title mb-5">Our Doncaster clinic</h2>
+<address class="not-italic text-gray-700 leading-relaxed mb-6">105 Scrooby Road,<br>Bircotes, Doncaster,<br>DN11 8JN</address>
+
+<div class="flex flex-col sm:flex-row gap-4"><a href="appointment.html" class="btn-primary">Book a Blood Test</a>
+<a href="https://www.google.com/maps/search/?api=1&query=105+Scrooby+Road+Bircotes+Doncaster+DN11+8JN" target="_blank" rel="noopener noreferrer" class="border border-[#1769aa] text-[#1769aa] px-7 py-4 rounded-md font-semibold text-center hover:bg-[#eaf3f9]">Get directions</a></div>
+<p class="text-sm text-gray-500 mt-4">Parking or access questions? Call <a href="tel:01302203565" class="text-blue-700">01302 203565</a>.</p>
+</div><div><div class="hours-row"><span class="font-semibold text-[#102a43]">Monday</span><span class="text-gray-600">Closed</span></div><div class="hours-row"><span class="font-semibold text-[#102a43]">Tuesday</span><span class="text-gray-600">9:00 am – 7:00 pm</span></div><div class="hours-row"><span class="font-semibold text-[#102a43]">Wednesday</span><span class="text-gray-600">Closed</span></div><div class="hours-row"><span class="font-semibold text-[#102a43]">Thursday</span><span class="text-gray-600">9:00 am – 7:00 pm</span></div><div class="hours-row"><span class="font-semibold text-[#102a43]">Friday</span><span class="text-gray-600">9:00 am – 7:00 pm</span></div><div class="hours-row"><span class="font-semibold text-[#102a43]">Saturday</span><span class="text-gray-600">Closed</span></div><div class="hours-row"><span class="font-semibold text-[#102a43]">Sunday</span><span class="text-gray-600">9:00 am – 12:00 pm</span></div></div></div></div></section>
+<section class="section-tight bg-white"><div class="max-w-4xl mx-auto px-5">
+<div class="text-center mb-8"><p class="text-blue-700 font-semibold uppercase tracking-wider text-sm mb-3">Frequently asked questions</p><h2 class="section-title">Quick answers</h2></div>
+<div><div class="faq-item"><button onclick="toggleFAQ(this)" class="faq-button"><span>What is the difference between Silver and Gold?</span><span class="faq-icon">+</span></button>
+<div class="hidden pb-6 text-gray-600 leading-relaxed">Silver (£65) covers total and free testosterone, SHBG, albumin and the Free Androgen Index. Gold (£99) adds LH and FSH.</div></div><div class="faq-item"><button onclick="toggleFAQ(this)" class="faq-button"><span>What time of day should I test?</span><span class="faq-icon">+</span></button>
+<div class="hidden pb-6 text-gray-600 leading-relaxed">Mornings, ideally 7:00–10:00 am. We open at 9:00 am, so book the earliest appointment available.</div></div><div class="faq-item"><button onclick="toggleFAQ(this)" class="faq-button"><span>When will I get my results?</span><span class="faq-icon">+</span></button>
+<div class="hidden pb-6 text-gray-600 leading-relaxed">Most results are available within 24–72 hours. They are reviewed as part of our doctor-led service.</div></div></div></div></section>
+<div class="max-w-4xl mx-auto px-5 pb-10"><p class="text-xs text-gray-500">General information only, not medical advice. Results are best read with your symptoms and history. If you feel acutely unwell, contact your GP or NHS 111, or call 999 in an emergency.</p></div>
+<section class="relative py-16 overflow-hidden"><img src="blood-taking.jpg" alt="" class="absolute inset-0 w-full h-full object-cover"><div class="absolute inset-0 bg-[#102a43]/85"></div>
+<div class="relative max-w-4xl mx-auto px-5 text-center text-white"><h2 class="text-3xl md:text-4xl font-semibold mb-4">Ready to book your blood test?</h2>
+<p class="text-lg text-white/85 mb-7">Book online at our Doncaster clinic. No GP referral needed.</p>
+<a href="appointment.html" class="btn-white">Book Your Appointment <i data-feather="calendar" class="ml-3"></i></a></div></section>
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer class="bg-[#0b1c2b] text-white">
+
+    <div class="max-w-7xl mx-auto px-5 py-16">
+
+        <div class="grid md:grid-cols-3 gap-12">
+
+
+            <!-- Brand -->
+
+            <div>
+
+                <img
+                    src="Prime Life Diagnostics1-01.png"
+                    alt="Prime Life Diagnostics"
+                    class="h-16 w-auto mb-6 brightness-0 invert">
+
+                <p class="text-gray-400 leading-relaxed max-w-sm">
+
+                    Private blood testing and health checks designed
+                    to make understanding your health simpler.
+
+                </p>
+
+            </div>
+
+
+            <!-- Links -->
+
+            <div>
+
+                <h3 class="font-semibold text-lg mb-5">
+                    Quick Links
+                </h3>
+
+                <div class="space-y-3">
+
+                    <a href="bloodtestspanels.html"
+                       class="block text-gray-400 hover:text-white">
+                        Blood Tests
+                    </a>
+                    <a href="private-blood-tests-doncaster.html" class="block text-gray-400 hover:text-white">Blood Tests Doncaster</a>
+
+                    <a href="panels.html"
+                       class="block text-gray-400 hover:text-white">
+                        Health Checks
+                    </a>
+
+                    <a href="chooseus.html"
+                       class="block text-gray-400 hover:text-white">
+                        Why Us
+                    </a>
+
+                    <a href="ourmission.html"
+                       class="block text-gray-400 hover:text-white">
+                        Our Mission
+                    </a>
+
+                    <a href="FAQs.html"
+                       class="block text-gray-400 hover:text-white">
+                        FAQs
+                    </a>
+
+                    <a href="appointment.html"
+                       class="block text-gray-400 hover:text-white">
+                        Book Appointment
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Contact -->
+
+            <div>
+
+                <h3 class="font-semibold text-lg mb-5">
+                    Contact
+                </h3>
+
+                <div class="space-y-3 text-gray-400">
+
+                    <p>
+                        info@primelifediagnostics.co.uk
+                    </p>
+
+                    <p>
+                        01302 203565
+                    </p>
+
+                    <p>
+                        105 Scrooby Road,<br>
+                        Bircotes, Doncaster,<br>
+                        DN11 8JN
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+   <!-- Footer bottom -->
+
+        <div
+            class="border-t border-white/10 mt-14 pt-8">
+
+
+            <!-- Social icons -->
+
+            <div
+                class="flex justify-center gap-5 mb-8">
+
+
+                <!-- TikTok -->
+
+                <a
+                    href="https://www.tiktok.com/@prime.life.diagnostics"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="TikTok"
+                    class="text-gray-400 hover:text-white">
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="w-6 h-6">
+
+                        <path
+                            d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.68h-3.4v13.76a2.9 2.9 0 1 1-2.9-2.9c.2 0 .39.02.58.06V9.5a6.34 6.34 0 1 0 5.72 6.27V8.69a8.16 8.16 0 0 0 4.77 1.53V6.69z">
+                        </path>
+
+                    </svg>
+
+                </a>
+
+
+                <!-- Instagram -->
+
+                <a
+                    href="https://www.instagram.com/prime.life.diagnostics/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    class="text-gray-400 hover:text-white">
+
+                    <i
+                        data-feather="instagram">
+                    </i>
+
+                </a>
+
+
+                <!-- Facebook -->
+
+                <a
+                    href="https://www.facebook.com/profile.php?id=61581186570303&sk=about"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    class="text-gray-400 hover:text-white">
+
+                    <i
+                        data-feather="facebook">
+                    </i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Copyright -->
+
+            <div
+                class="text-center">
+
+                <p
+                    class="text-sm text-gray-500">
+
+                    © 2026 Prime Life Diagnostics.
+                    All rights reserved.
+
+                </p>
+
+
+
+                <!-- CQC / UKAS -->
+
+                <div
+                    class="flex justify-center items-center gap-7 mt-7">
+
+
+                    <a
+                        href="https://www.cqc.org.uk/provider/1-24970013163"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <img
+                            src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/cqc%20logo.webp"
+                            alt="CQC Regulated"
+                            class="h-14">
+
+                    </a>
+
+
+                    <img
+                        src="https://huggingface.co/spaces/ahmadsalha/prime-life-diagnostics-almost-final/resolve/main/images/UKAS-Accreditation-Symbol-purple-on-white-Medical.png"
+                        alt="UKAS Accredited"
+                        class="h-14">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- ================================
+     PRIME LIFE DIAGNOSTICS
+     PROFESSIONAL WHATSAPP BUTTON
+================================= -->
+
+<a
+    href="https://wa.me/447356212742?text=Hello%20Prime%20Life%20Diagnostics%2C%20I%27d%20like%20to%20make%20an%20enquiry."
+    class="pld-whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Prime Life Diagnostics on WhatsApp"
+>
+
+    <!-- Notification dot -->
+    <span class="pld-whatsapp-dot"></span>
+
+    <!-- Text -->
+    <span class="pld-whatsapp-text">
+        <strong>Chat to us</strong>
+        <small>WhatsApp</small>
+    </span>
+
+    <!-- WhatsApp icon -->
+   <span class="pld-whatsapp-icon">
+    <svg
+        viewBox="0 0 32 32"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+    >
+        <circle cx="16" cy="16" r="15" fill="none" />
+
+        <path
+            fill="currentColor"
+            d="M16 2.5C8.54 2.5 2.5 8.54 2.5 16c0 2.38.62 4.61 1.8 6.58L2.5 29.5l7.08-1.76A13.44 13.44 0 0 0 16 29.5c7.46 0 13.5-6.04 13.5-13.5S23.46 2.5 16 2.5Zm0 24.55c-2.1 0-4.16-.56-5.96-1.62l-.43-.25-4.2 1.04 1.06-4.1-.28-.44A11.03 11.03 0 1 1 16 27.05Z"
+        />
+
+        <path
+            fill="currentColor"
+            d="M21.4 17.82c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.03 1.01-1.03 2.47s1.06 2.87 1.21 3.07c.15.2 2.08 3.17 5.04 4.44.7.3 1.24.48 1.66.62.7.22 1.34.19 1.84.12.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.56-.35Z"
+        />
+    </svg>
+</span>
+
+</a>
+
+
+<style>
+
+/* =================================
+   PRIME LIFE DIAGNOSTICS
+   WHATSAPP WIDGET
+================================= */
+
+.pld-whatsapp {
+    position: fixed;
+
+    right: 24px;
+    bottom: 24px;
+
+    height: 58px;
+    min-width: 58px;
+
+    padding: 0 18px 0 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(16, 42, 67, 0.08);
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 30px rgba(16, 42, 67, 0.14),
+        0 2px 8px rgba(16, 42, 67, 0.08);
+
+    z-index: 99999;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+
+    animation: pld-whatsapp-entry 0.7s ease-out both;
+}
+
+
+/* Hover */
+
+.pld-whatsapp:hover {
+
+    transform: translateY(-3px);
+
+    border-color: rgba(37, 211, 102, 0.35);
+
+    box-shadow:
+        0 12px 35px rgba(16, 42, 67, 0.18),
+        0 3px 10px rgba(37, 211, 102, 0.12);
+
+}
+
+
+/* =================================
+   WHATSAPP ICON
+================================= */
+
+.pld-whatsapp-icon {
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #25D366;
+
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    flex-shrink: 0;
+
+    box-shadow:
+        0 4px 12px rgba(37, 211, 102, 0.25);
+
+    transition: transform 0.25s ease;
+}
+
+
+.pld-whatsapp:hover .pld-whatsapp-icon {
+
+    transform: scale(1.07);
+
+}
+
+
+.pld-whatsapp-icon svg {
+    width: 25px;
+    height: 25px;
+}
+
+
+/* =================================
+   TEXT
+================================= */
+
+.pld-whatsapp-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.15;
+
+    white-space: nowrap;
+
+}
+
+
+.pld-whatsapp-text strong {
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #102A43;
+
+}
+
+
+.pld-whatsapp-text small {
+
+    margin-top: 3px;
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    color: #627D98;
+
+}
+
+
+/* =================================
+   NOTIFICATION DOT
+================================= */
+
+.pld-whatsapp-dot {
+
+    position: absolute;
+
+    top: 5px;
+    left: 46px;
+
+    width: 9px;
+    height: 9px;
+
+    background: #25D366;
+
+    border: 2px solid #ffffff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 0 rgba(37, 211, 102, 0.4);
+
+    animation: pld-whatsapp-pulse 2.5s infinite;
+
+}
+
+
+/* =================================
+   ENTRY ANIMATION
+================================= */
+
+@keyframes pld-whatsapp-entry {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(0.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =================================
+   PULSE ANIMATION
+================================= */
+
+@keyframes pld-whatsapp-pulse {
+
+    0% {
+
+        box-shadow:
+            0 0 0 0 rgba(37, 211, 102, 0.45);
+
+    }
+
+    70% {
+
+        box-shadow:
+            0 0 0 7px rgba(37, 211, 102, 0);
+
+    }
+
+    100% {
+
+        box-shadow:
+            0 0 0 0 rgba(37, 211, 102, 0);
+
+    }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 640px) {
+
+    .pld-whatsapp {
+
+        right: 16px;
+        bottom: 16px;
+
+        width: 54px;
+        height: 54px;
+
+        min-width: 54px;
+
+        padding: 0;
+
+        justify-content: center;
+
+        border-radius: 50%;
+
+    }
+
+
+    .pld-whatsapp-text {
+
+        display: none;
+
+    }
+
+
+    .pld-whatsapp-icon {
+
+        width: 40px;
+        height: 40px;
+
+    }
+
+
+    .pld-whatsapp-dot {
+
+        top: 3px;
+        right: 2px;
+        left: auto;
+
+    }
+
+}
+
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pld-whatsapp,
+    .pld-whatsapp-dot {
+
+        animation: none;
+
+    }
+
+}
+
+</style>
+
+
+
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+
+<script>
+
+    /* AOS */
+
+    window.AOS && AOS.init({
+        duration: 700,
+        once: true,
+        offset: 80
+    });
+
+
+    /* Feather icons */
+
+    window.feather && feather.replace();
+
+
+    /* Mobile menu */
+
+    const menuBtn = document.getElementById("menu-btn");
+    const closeMenu = document.getElementById("close-menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+
+    menuBtn.addEventListener("click", function () {
+
+        mobileMenu.classList.remove("hidden");
+
+    });
+
+
+    closeMenu.addEventListener("click", function () {
+
+        mobileMenu.classList.add("hidden");
+
+    });
+
+
+    document.querySelectorAll("#mobile-menu a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            mobileMenu.classList.add("hidden");
+
+        });
+
+    });
+
+
+    /* FAQ */
+
+    function toggleFAQ(button) {
+
+        const content = button.nextElementSibling;
+        const icon = button.querySelector(".faq-icon");
+
+        content.classList.toggle("hidden");
+
+        if (content.classList.contains("hidden")) {
+
+            icon.textContent = "+";
+
+        } else {
+
+            icon.textContent = "−";
+
+        }
+
+    }
+
+
+    /* Dynamic body spacing */
+
+    function updateSpacing() {
+
+        const banner = document.querySelector(".promo-banner");
+        const nav = document.querySelector(".main-nav");
+
+        if (banner && nav) {
+
+            document.body.style.paddingTop =
+                (banner.offsetHeight + nav.offsetHeight) + "px";
+
+        }
+
+    }
+
+
+    window.addEventListener("load", updateSpacing);
+
+    window.addEventListener("resize", updateSpacing);
+
+</script>
+
+
+
+</body>
+</html>
