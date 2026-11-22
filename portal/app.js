@@ -4,6 +4,8 @@
    ===================================================================== */
 const CFG = window.PORTAL_CONFIG || {};
 const BUCKET = "patient-files";
+const SITE_URL = CFG.siteUrl || (location.origin + location.pathname);   // where email links (confirm, reset) should open
+const NB = (window.NativeBridge && window.NativeBridge.isNative) ? window.NativeBridge : null;   // set only inside the phone app
 const CLINIC_EMAIL = "info@primelifediagnostics.co.uk";
 const CLINIC_PHONE = "01302 203565";
 const IDLE_MINUTES = 30;               // automatic sign-out after inactivity
@@ -59,7 +61,7 @@ async function doSignUp(e){
   if(pw.length<10) return toast("Please choose a password of at least 10 characters.");
   if(pw!==pw2) return toast("The two passwords don't match.");
   await guard(async()=>{
-    must(await sb.auth.signUp({email,password:pw,options:{emailRedirectTo:location.origin+location.pathname}}),"Couldn't create account");
+    must(await sb.auth.signUp({email,password:pw,options:{emailRedirectTo:SITE_URL}}),"Couldn't create account");
     loginMsg("Check your email",`We've sent a confirmation link to <b>${esc(email)}</b>. Click it to activate your account, then come back here to sign in.<br><br><span class="small muted">Please use the same email address you gave the clinic, so your results can be linked to your account.</span>`);
   },"Creating account…");
 }
@@ -67,7 +69,7 @@ async function doForgot(e){
   e.preventDefault();
   const email=$("fgEmail").value.trim();
   await guard(async()=>{
-    must(await sb.auth.resetPasswordForEmail(email,{redirectTo:location.origin+location.pathname}),"Couldn't send reset email");
+    must(await sb.auth.resetPasswordForEmail(email,{redirectTo:SITE_URL}),"Couldn't send reset email");
     loginMsg("Check your email",`If an account exists for <b>${esc(email)}</b>, we've sent a link to reset your password.`);
   },"Sending…");
 }
@@ -124,10 +126,11 @@ async function afterSignIn(){
       me=toPatient(rows[0]);
     }finally{busy(false)}
     showApp(); audit("signed_in",{patient_id:me.id}); go("dashboard");
+    if(NB) nativeAfterPatientSignIn();
   }
 }
 function addSignOutToMsg(){$("msgBody").insertAdjacentHTML("beforeend",`<div style="margin-top:18px"><button class="btn block" onclick="logout()">Sign out</button></div>`)}
-async function logout(){try{await sb.auth.signOut()}catch(e){}role=null;me=null;db.patients=[];FILES={};ctx={};showLogin();setTab("in")}
+async function logout(){if(NB){try{await nativeBeforeSignOut()}catch(e){}}try{await sb.auth.signOut()}catch(e){}role=null;me=null;db.patients=[];FILES={};ctx={};showLogin();setTab("in")}
 
 /* ---------- automatic sign-out when idle ---------- */
 let idleT=null;
@@ -217,7 +220,7 @@ async function boot(){
   sb.auth.onAuthStateChange((ev)=>{ if(ev==="PASSWORD_RECOVERY"){showLogin();showScreen("scrReset")} });
   const {data}=await sb.auth.getSession();
   if(/type=recovery/.test(location.hash)) return; // handled by the event above
-  if(data.session){ await guard(afterSignIn,"Loading…") } else { showLogin(); setTab("in") }
+  if(data.session){ if(NB && !(await nativeUnlockGate())){ await logout(); return } await guard(afterSignIn,"Loading…") } else { showLogin(); setTab("in") }
   history.replaceState(null,"",location.pathname);
 }
 /* ============================================================
@@ -635,7 +638,7 @@ function pProfile(V){
     <p class="small muted" style="margin:14px 0 0">Need to update something? Call <b>${CLINIC_PHONE}</b> or email <b>${CLINIC_EMAIL}</b>.</p></div>
   <div class="card"><h3>Password</h3><p class="small muted">Use at least 10 characters. Don't reuse a password from another site.</p>
     <button class="btn ghost" onclick="changePwModal()">Change password</button>
-    <h3 style="margin-top:24px">Use the portal like an app</h3>${installHelp()}
+    <h3 style="margin-top:24px">${NB?"App settings":"Use the portal like an app"}</h3>${installHelp()}
     <h3 style="margin-top:24px">Your data</h3><p class="small muted">You can ask for a copy of your data at any time by emailing <b>${CLINIC_EMAIL}</b>.</p>
     <h3 style="margin-top:24px">Delete your portal account</h3><p class="small muted">This permanently deletes your login. Your clinical records are kept securely by the clinic for 8 years, as the law requires, and you can still get your results by contacting us.</p>
     <button class="btn ghost" style="color:var(--red);border-color:#f3c9c6" onclick="deleteAccountModal()">Delete my account</button></div></div>`;
@@ -684,7 +687,7 @@ async function removeDoc(pid,docId){
   if(!await confirmBox("Remove this document? The patient will no longer see it."))return;
   await guard(async()=>{await deleteDocument(docId);await reloadPatient(pid);audit("removed_document",{patient_id:pid});render()},"Removing…")}
 function confirmBox(msg){return new Promise(res=>{window._cb=v=>{closeModal();res(v)};modal(`<h3>Are you sure?</h3><p>${esc(msg)}</p><div class="row"><button class="btn ghost" onclick="_cb(false)">Cancel</button><button class="btn right" onclick="_cb(true)">Yes, continue</button></div>`)})}
-function inviteText(p){const url=location.origin+location.pathname;return `Hello ${p.name.split(" ")[0]}, your Prime Life Diagnostics results will be available in our secure patient portal.\n\n1. Go to ${url}\n2. Choose "Create account"\n3. Use this email address: ${p.email}\n4. Click the link in the confirmation email, then sign in.\n\nAny questions, call us on ${CLINIC_PHONE}.`}
+function inviteText(p){const url=SITE_URL;return `Hello ${p.name.split(" ")[0]}, your Prime Life Diagnostics results will be available in our secure patient portal.\n\n1. Go to ${url}\n2. Choose "Create account"\n3. Use this email address: ${p.email}\n4. Click the link in the confirmation email, then sign in.\n\nAny questions, call us on ${CLINIC_PHONE}.`}
 function inviteModal(pid){const p=db.patients.find(x=>x.id===pid);
   if(!p.email) return toast("Add an email address for this patient first (Edit details).");
   modal(`<h3>Invite ${esc(p.name)} to the portal</h3><p class="small muted">Send this by text, WhatsApp or email. The patient must sign up with <b>${esc(p.email)}</b> so their account links to this record automatically.</p>
@@ -823,17 +826,112 @@ async function saveReview(releaseIt){
   },releaseIt?"Releasing…":"Saving…");
 }
 /* =====================================================================
+   PHONE APP EXTRAS (only active inside the iPhone / Android app)
+   - push notifications ("Your results are ready")
+   - Face ID / fingerprint unlock
+   On the website none of this runs.
+   ===================================================================== */
+const BIO_KEY="plp_biometric_v1", TOKEN_KEY="plp_push_token_v1", LOCK_AFTER_MS=60*1000;
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{v==null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){}}
+let bioAvailable=false, pausedAt=0, locked=false;
+
+async function nativeInit(){
+  if(!NB) return;
+  document.documentElement.classList.add("in-app");
+  const back=$("backLink"); if(back) back.classList.add("hidden");
+  try{bioAvailable=await NB.biometryAvailable()}catch(e){bioAvailable=false}
+  // tapping a notification opens that report
+  NB.onPushTap(async data=>{
+    if(role!=="patient"||!me) return;
+    await refreshPatient();
+    if(data&&data.report_id&&me.reports.find(r=>r.id===data.report_id)) go("report",{id:data.report_id,navParent:"reports"}); else go("dashboard");
+  });
+  NB.onTokenRefresh(t=>{if(role==="patient")saveDeviceToken(t)});
+  // lock again after the app has been in the background for a while
+  NB.onPause(()=>{pausedAt=Date.now()});
+  NB.onResume(async()=>{
+    if(!role) return;
+    if(lsGet(BIO_KEY)==="1"&&bioAvailable&&pausedAt&&Date.now()-pausedAt>LOCK_AFTER_MS){
+      if(!(await nativeUnlockGate())) return logout();
+    }
+    if(role==="patient"&&me){await refreshPatient();render()}
+  });
+  try{NB.hideSplash()}catch(e){}
+}
+async function refreshPatient(){
+  try{const rows=must(await sb.from("patients").select(PATIENT_SELECT),"Refreshing");if(rows.length){FILES={};me=toPatient(rows[0])}}catch(e){}
+}
+
+/* ---------- Face ID / fingerprint ---------- */
+async function nativeUnlockGate(){
+  if(!NB||lsGet(BIO_KEY)!=="1"||!bioAvailable) return true;
+  if(locked) return false; locked=true;
+  try{
+    showLogin(); loginMsg("Unlock Prime Life","Use Face ID, Touch ID or your fingerprint to open your results.",false);
+    $("msgBody").insertAdjacentHTML("beforeend",`<div style="margin-top:18px"><button class="btn block" id="unlockBtn">Unlock</button><p style="text-align:center;margin:14px 0 0"><button class="linkbtn" id="unlockOut">Sign in with password instead</button></p></div>`);
+    const ok=await new Promise(res=>{
+      const tryIt=async()=>{if(await NB.biometricUnlock("Unlock your Prime Life results"))res(true)};
+      $("unlockBtn").onclick=tryIt; $("unlockOut").onclick=()=>res(false); tryIt();
+    });
+    if(ok&&role) showApp();
+    return ok;
+  } finally { locked=false }
+}
+function biometricName(){return /iphone|ipad/i.test(navigator.userAgent)?"Face ID / Touch ID":"fingerprint or face unlock"}
+function offerBiometrics(){
+  if(!bioAvailable||lsGet(BIO_KEY)!=null) return;
+  modal(`<h3>Unlock faster next time?</h3><p class="small muted">Use ${biometricName()} to open the app instead of typing your password. You can change this in My details.</p>
+   <div class="row"><button class="btn ghost" onclick="lsSet(BIO_KEY,'0');closeModal()">Not now</button><button class="btn right" onclick="enableBiometrics()">Turn on</button></div>`);
+}
+async function enableBiometrics(){
+  if(await NB.biometricUnlock("Confirm it's you")){lsSet(BIO_KEY,"1");closeModal();toast("Turned on.");if(page==="profile")render()}
+  else toast("Couldn't confirm. Please try again.");
+}
+function disableBiometrics(){lsSet(BIO_KEY,"0");toast("Turned off.");render()}
+
+/* ---------- push notifications ---------- */
+async function saveDeviceToken(token){
+  if(!token) return;
+  try{must(await sb.rpc("register_device",{p_token:token,p_platform:NB.platform}),"Notifications");lsSet(TOKEN_KEY,token)}catch(e){console.warn(e)}
+}
+async function enableNotifications(fromButton){
+  try{
+    const token=await NB.pushToken();
+    if(!token){ if(fromButton) toast("Notifications are switched off for this app in your phone's Settings."); return }
+    await saveDeviceToken(token); if(fromButton){toast("Notifications turned on.");render()}
+  }catch(e){ if(fromButton) toast("Couldn't turn on notifications.") }
+}
+async function nativeAfterPatientSignIn(){
+  await enableNotifications(false);
+  setTimeout(offerBiometrics,800);
+}
+async function nativeBeforeSignOut(){
+  const t=lsGet(TOKEN_KEY);
+  if(t){try{await sb.rpc("unregister_device",{p_token:t})}catch(e){} lsSet(TOKEN_KEY,null)}
+  lsSet(BIO_KEY,null);
+}
+function nativeSettingsHtml(){
+  const bioOn=lsGet(BIO_KEY)==="1", pushOn=!!lsGet(TOKEN_KEY);
+  return `<p class="small muted" style="margin-bottom:10px"><b>Notifications:</b> ${pushOn?"on. We'll tell you when results are ready (never the results themselves).":"off."}</p>
+   ${pushOn?"":`<button class="btn ghost" onclick="enableNotifications(true)">Turn on notifications</button>`}
+   ${bioAvailable?`<p class="small muted" style="margin:16px 0 10px"><b>Unlock with ${biometricName()}:</b> ${bioOn?"on":"off"}</p>
+   ${bioOn?`<button class="btn ghost" onclick="disableBiometrics()">Turn off</button>`:`<button class="btn ghost" onclick="enableBiometrics()">Turn on</button>`}`:""}`;
+}
+const nativeReady = NB ? nativeInit().catch(()=>{}) : Promise.resolve();
+/* =====================================================================
    INSTALL AS AN APP (home-screen / PWA)
    ===================================================================== */
 let installEvt=null;
 addEventListener("beforeinstallprompt",e=>{e.preventDefault();installEvt=e;if(page==="profile")render()});
 function isStandalone(){return matchMedia("(display-mode: standalone)").matches||navigator.standalone===true}
 function installHelp(){
+  if(NB) return nativeSettingsHtml();
   if(isStandalone()) return `<p class="small muted">You're using the Prime Life app. ✓</p>`;
   if(installEvt) return `<p class="small muted">Add the portal to your home screen so it opens like an app.</p><button class="btn navy" onclick="installEvt.prompt();installEvt.userChoice.finally(()=>{installEvt=null;render()})">Install the app</button>`;
   const ios=/iphone|ipad|ipod/i.test(navigator.userAgent);
   return `<div class="install-tip">${ios?"On iPhone or iPad: open this page in <b>Safari</b>, tap the <b>Share</b> button, then <b>Add to Home Screen</b>.":"On Android: open the browser menu (⋮) and tap <b>Install app</b> or <b>Add to Home screen</b>. On a computer, look for the install icon in the address bar."}</div>`;
 }
-if("serviceWorker" in navigator) addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+if(!NB && "serviceWorker" in navigator) addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
 
-boot();
+nativeReady.then(boot);

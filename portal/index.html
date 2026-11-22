@@ -298,7 +298,7 @@ td input.num{width:80px}
       <div class="secure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Secure, encrypted connection</div>
     </div>
     <div class="login-foot">Your blood tests<span>.</span> Simplified<span>.</span></div>
-    <p style="text-align:center;margin-top:10px"><a href="/" class="linkbtn" style="color:var(--muted);font-weight:500;text-decoration:none">← Back to primelifediagnostics.co.uk</a></p>
+    <p id="backLink" style="text-align:center;margin-top:10px"><a href="/" class="linkbtn" style="color:var(--muted);font-weight:500;text-decoration:none">← Back to primelifediagnostics.co.uk</a></p>
   </div>
 </section>
 
@@ -316,6 +316,7 @@ td input.num{width:80px}
 <div id="modalRoot"></div>
 <div id="busy" class="hidden"><div class="box"><div class="spin"></div><span id="busyMsg">Loading…</span></div></div>
 
+<script src="native.js" onerror="void 0"></script>
 <script src="config.js"></script>
 <script src="app.js"></script>
 </body>
