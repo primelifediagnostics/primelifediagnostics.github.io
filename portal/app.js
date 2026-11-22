@@ -197,7 +197,7 @@ function render(){
   if(!me) return;
   $("whoName").textContent=me.name;
   $("whoAv").textContent=initials(me.name);
-  $("whoRole").textContent= role==="patient"?"Patient · "+me.no:({reception:"Reception",doctor:"Doctor",admin:"Admin"}[me.role]||"Clinic staff");
+  $("whoRole").textContent= role==="patient"?"Patient · "+me.no:({manager:"Manager",reception:"Reception",doctor:"Doctor",admin:"Manager"}[me.role]||"Manager");
   const nav = role==="patient"
    ? [["dashboard","Overview",ICON.home],["reports","My results",ICON.rep],["documents","Documents",ICON.doc],["profile","My details",ICON.user]]
    : [["clinic-home","Review queue",ICON.inbox,awaiting().length],["upload","Upload lab report",ICON.up],["patients","Patients",ICON.users]];
@@ -636,7 +636,22 @@ function pProfile(V){
   <div class="card"><h3>Password</h3><p class="small muted">Use at least 10 characters. Don't reuse a password from another site.</p>
     <button class="btn ghost" onclick="changePwModal()">Change password</button>
     <h3 style="margin-top:24px">Use the portal like an app</h3>${installHelp()}
-    <h3 style="margin-top:24px">Your data</h3><p class="small muted">You can ask for a copy of your data, or ask us to delete it, at any time by emailing <b>${CLINIC_EMAIL}</b>.</p></div></div>`;
+    <h3 style="margin-top:24px">Your data</h3><p class="small muted">You can ask for a copy of your data at any time by emailing <b>${CLINIC_EMAIL}</b>.</p>
+    <h3 style="margin-top:24px">Delete your portal account</h3><p class="small muted">This permanently deletes your login. Your clinical records are kept securely by the clinic for 8 years, as the law requires, and you can still get your results by contacting us.</p>
+    <button class="btn ghost" style="color:var(--red);border-color:#f3c9c6" onclick="deleteAccountModal()">Delete my account</button></div></div>`;
+}
+function deleteAccountModal(){
+  modal(`<h3>Delete your portal account?</h3><p class="small muted">You won't be able to sign in any more. Your results stay with the clinic, and you can create a new account later with the same email address.</p>
+   <div class="field"><label>Type DELETE to confirm</label><input class="inp" id="delConfirm" autocomplete="off"></div>
+   <div class="row"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn right" style="background:var(--red)" onclick="deleteAccount()">Delete my account</button></div>`);
+}
+async function deleteAccount(){
+  if($("delConfirm").value.trim().toUpperCase()!=="DELETE") return toast("Please type DELETE to confirm.");
+  await guard(async()=>{
+    must(await sb.rpc("delete_my_account"),"Couldn't delete your account");
+    closeModal(); try{await sb.auth.signOut()}catch(e){}
+    role=null;me=null;showLogin();loginMsg("Your account has been deleted","Your portal login has been removed. If you need your results in future, please contact us on <b>"+CLINIC_PHONE+"</b>.");
+  },"Deleting…");
 }
 function changePwModal(){
   modal(`<h3>Change password</h3><form onsubmit="event.preventDefault();savePw()">
