@@ -41,7 +41,7 @@ async function audit(action,o={}){try{if(sb)await sb.from("audit_log").insert({a
    SIGN-IN SCREENS
    ===================================================================== */
 function showScreen(id){["scrSignin","scrSignup","scrForgot","scrReset","scrMfa","scrMsg"].forEach(s=>$(s).classList.toggle("hidden",s!==id))}
-function showLogin(){$("app").classList.add("hidden");$("login").classList.remove("hidden")}
+function showLogin(){$("app").classList.add("hidden");$("login").classList.remove("hidden");const li=$("loginInstall");if(li)li.innerHTML=installBanner()}
 function showApp(){$("login").classList.add("hidden");$("app").classList.remove("hidden")}
 function loginMsg(title,body,back=true){$("msgTitle").textContent=title;$("msgBody").innerHTML=body;$("msgBack").classList.toggle("hidden",!back);showScreen("scrMsg")}
 function setTab(t){$("tabIn").classList.toggle("on",t==="in");$("tabUp").classList.toggle("on",t==="up");showScreen(t==="in"?"scrSignin":"scrSignup")}
@@ -127,10 +127,11 @@ async function afterSignIn(){
     }finally{busy(false)}
     showApp(); audit("signed_in",{patient_id:me.id}); go("dashboard");
     if(NB) nativeAfterPatientSignIn();
+    if(pendingReport&&me.reports.find(r=>r.id===pendingReport)) go("report",{id:pendingReport,navParent:"reports"});
   }
 }
 function addSignOutToMsg(){$("msgBody").insertAdjacentHTML("beforeend",`<div style="margin-top:18px"><button class="btn block" onclick="logout()">Sign out</button></div>`)}
-async function logout(){if(NB){try{await nativeBeforeSignOut()}catch(e){}}try{await sb.auth.signOut()}catch(e){}role=null;me=null;db.patients=[];FILES={};ctx={};showLogin();setTab("in")}
+async function logout(){if(NB){try{await nativeBeforeSignOut()}catch(e){}}else{try{await disableWebPush(true)}catch(e){}}try{await sb.auth.signOut()}catch(e){}role=null;me=null;db.patients=[];FILES={};ctx={};showLogin();setTab("in")}
 
 /* ---------- automatic sign-out when idle ---------- */
 let idleT=null;
@@ -422,9 +423,9 @@ const ICON={
 function released(p){return p.reports.filter(r=>r.status==="released").sort((a,b)=>b.date.localeCompare(a.date))}
 function pDash(V){
   const reps=released(me), latest=reps[0];
-  if(!latest){V.innerHTML=`<div class="top"><div><h1>Hello, ${esc(me.name.split(" ")[0])}</h1><p class="sub">Your results will appear here once your doctor has reviewed them.</p></div></div>`;return}
+  if(!latest){V.innerHTML=`${installBanner()}${pushCard()}<div class="top"><div><h1>Hello, ${esc(me.name.split(" ")[0])}</h1><p class="sub">Your results will appear here once your doctor has reviewed them.</p></div></div>`;return}
   const c=counts(latest.markers), flagged=latest.markers.filter(m=>["red","amber"].includes(statusOf(m).key)).sort((a,b)=>(statusOf(a).key==="red"?0:1)-(statusOf(b).key==="red"?0:1));
-  V.innerHTML=`
+  V.innerHTML=`${installBanner()}${pushCard()}
   <div class="top"><div><h1>Hello, ${esc(me.name.split(" ")[0])}</h1><p class="sub">Your latest results are from <b>${dt(latest.date)}</b> and have been reviewed by ${esc(latest.doctor)}.</p></div>
     <button class="btn" onclick="go('report',{id:'${latest.id}',navParent:'reports'})">View full report</button></div>
   <div class="grid g4">
@@ -638,7 +639,7 @@ function pProfile(V){
     <p class="small muted" style="margin:14px 0 0">Need to update something? Call <b>${CLINIC_PHONE}</b> or email <b>${CLINIC_EMAIL}</b>.</p></div>
   <div class="card"><h3>Password</h3><p class="small muted">Use at least 10 characters. Don't reuse a password from another site.</p>
     <button class="btn ghost" onclick="changePwModal()">Change password</button>
-    <h3 style="margin-top:24px">${NB?"App settings":"Use the portal like an app"}</h3>${installHelp()}
+    ${NB?`<h3 style="margin-top:24px">App settings</h3>${nativeSettingsHtml()}`:`<h3 style="margin-top:24px">Notifications</h3>${webNotificationSettingsHtml()}${isStandalone()?"":`<h3 style="margin-top:24px">Use the portal like an app</h3>${installHelp()}`}`}
     <h3 style="margin-top:24px">Your data</h3><p class="small muted">You can ask for a copy of your data at any time by emailing <b>${CLINIC_EMAIL}</b>.</p>
     <h3 style="margin-top:24px">Delete your portal account</h3><p class="small muted">This permanently deletes your login. Your clinical records are kept securely by the clinic for 8 years, as the law requires, and you can still get your results by contacting us.</p>
     <button class="btn ghost" style="color:var(--red);border-color:#f3c9c6" onclick="deleteAccountModal()">Delete my account</button></div></div>`;
@@ -920,10 +921,99 @@ function nativeSettingsHtml(){
 }
 const nativeReady = NB ? nativeInit().catch(()=>{}) : Promise.resolve();
 /* =====================================================================
+   FREE NOTIFICATIONS + "INSTALL THE APP" (website version)
+   Uses the phone's built-in web notifications (no app store needed).
+   iPhone: works once the portal is added to the Home Screen (iOS 16.4+).
+   Android / computers: works in Chrome, Edge and Firefox.
+   ===================================================================== */
+const VAPID_PUBLIC = CFG.vapidPublicKey || "";
+const INSTALL_DISMISS_KEY = "plp_install_dismissed_v1", PUSH_DISMISS_KEY = "plp_push_card_dismissed_v1", WEBPUSH_ENDPOINT_KEY = "plp_webpush_endpoint_v1";
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const isPhone = isIOS || /android/i.test(navigator.userAgent);
+const pendingReport = new URLSearchParams(location.search).get("report");   // set when a notification is tapped
+
+function webPushSupported(){ return !NB && !!VAPID_PUBLIC && "serviceWorker" in navigator && "PushManager" in window && "Notification" in window }
+function webPushState(){
+  if(NB) return "app";
+  if(!VAPID_PUBLIC) return "off";
+  if(isIOS && !isStandalone()) return "needs-install";          // iPhone only allows it from the Home Screen app
+  if(!webPushSupported()) return "unsupported";
+  if(Notification.permission==="denied") return "blocked";
+  if(Notification.permission==="granted" && lsGet(WEBPUSH_ENDPOINT_KEY)) return "on";
+  return "available";
+}
+function b64urlToBytes(s){const p="=".repeat((4-s.length%4)%4);const b=atob((s+p).replace(/-/g,"+").replace(/_/g,"/"));return Uint8Array.from(b,c=>c.charCodeAt(0))}
+function bufToB64url(buf){let s="";new Uint8Array(buf).forEach(b=>s+=String.fromCharCode(b));return btoa(s).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"")}
+
+async function enableWebPush(){
+  if(webPushState()==="needs-install") return showInstallHelp();
+  if(!webPushSupported()) return toast("This browser doesn't support notifications.");
+  await guard(async()=>{
+    const perm=await Notification.requestPermission();
+    if(perm!=="granted"){toast(perm==="denied"?"Notifications are blocked. You can allow them in your browser or phone settings.":"Notifications not turned on.");return}
+    const reg=await navigator.serviceWorker.ready;
+    let sub=await reg.pushManager.getSubscription();
+    if(!sub) sub=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:b64urlToBytes(VAPID_PUBLIC)});
+    const j=sub.toJSON();
+    must(await sb.rpc("register_web_push",{p_endpoint:j.endpoint,p_p256dh:j.keys.p256dh,p_auth:j.keys.auth,p_device:(isIOS?"iPhone":/android/i.test(navigator.userAgent)?"Android":"Computer")}),"Notifications");
+    lsSet(WEBPUSH_ENDPOINT_KEY,j.endpoint); lsSet(PUSH_DISMISS_KEY,"1");
+    toast("Notifications turned on. We'll tell you when results are ready."); render();
+  },"Turning on…");
+}
+async function disableWebPush(silent){
+  try{
+    const ep=lsGet(WEBPUSH_ENDPOINT_KEY);
+    if(ep&&sb) await sb.rpc("unregister_web_push",{p_endpoint:ep});
+    if("serviceWorker" in navigator){const reg=await navigator.serviceWorker.getRegistration();const sub=reg&&await reg.pushManager.getSubscription();if(sub)await sub.unsubscribe()}
+  }catch(e){}
+  lsSet(WEBPUSH_ENDPOINT_KEY,null);
+  if(!silent){toast("Notifications turned off.");render()}
+}
+
+/* ---------- "Install the app" ---------- */
+function canOfferInstall(){ return !NB && isPhone && !isStandalone() }
+function installBanner(where){
+  if(!canOfferInstall()||lsGet(INSTALL_DISMISS_KEY)) return "";
+  return `<div class="install-banner"><img src="icons/icon-192.png" alt=""><div style="flex:1;min-width:0"><b>Get the Prime Life app</b><span>${isIOS?"Add it to your Home Screen. It's free and takes 10 seconds.":"Install it on your phone. It's free and takes a few seconds."}</span></div>
+    <button class="btn" onclick="${installEvt?"installEvt.prompt();installEvt.userChoice.finally(()=>{installEvt=null;render()})":"showInstallHelp()"}">${installEvt?"Install":"How"}</button>
+    <button class="ib-x" aria-label="Dismiss" onclick="lsSet(INSTALL_DISMISS_KEY,'1');this.closest('.install-banner').remove()">✕</button></div>`;
+}
+function showInstallHelp(){
+  modal(isIOS?`<h3>Add Prime Life to your Home Screen</h3>
+    <ol class="install-steps"><li>Make sure this page is open in <b>Safari</b>.</li><li>Tap the <b>Share</b> button <span class="kbd">⬆︎</span> at the bottom (or top) of the screen.</li><li>Scroll down and tap <b>Add to Home Screen</b>, then <b>Add</b>.</li><li>Open <b>Prime Life</b> from your Home Screen and sign in. You can then turn on notifications in <b>My details</b>.</li></ol>
+    <button class="btn block" onclick="closeModal()">Got it</button>`
+   :`<h3>Install the Prime Life app</h3>
+    <ol class="install-steps"><li>Open this page in <b>Chrome</b>.</li><li>Tap the menu <span class="kbd">⋮</span> at the top right.</li><li>Tap <b>Install app</b> (or <b>Add to Home screen</b>), then <b>Install</b>.</li><li>Open <b>Prime Life</b> from your home screen and sign in.</li></ol>
+    <button class="btn block" onclick="closeModal()">Got it</button>`);
+}
+function pushCard(){
+  if(role!=="patient"||lsGet(PUSH_DISMISS_KEY)) return "";
+  const st=webPushState();
+  if(st!=="available"&&st!=="needs-install") return "";
+  if(st==="needs-install"&&installBanner()) return "";     // the install banner already covers this
+  return `<div class="push-card"><div class="pc-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
+    <div style="flex:1;min-width:0"><b>Get told when your results are ready</b><span>${st==="needs-install"?"Add the app to your Home Screen first, then turn on notifications.":"We'll send a notification, never the results themselves."}</span></div>
+    <button class="btn navy" onclick="enableWebPush()">${st==="needs-install"?"How":"Turn on"}</button>
+    <button class="ib-x" aria-label="Dismiss" onclick="lsSet(PUSH_DISMISS_KEY,'1');this.closest('.push-card').remove()">✕</button></div>`;
+}
+function webNotificationSettingsHtml(){
+  const st=webPushState();
+  const msg={on:"<b>On.</b> We'll tell you on this device when results are ready (never the results themselves).",
+    available:"Get a notification on this device when your results are ready.",
+    "needs-install":"On iPhone, notifications work once Prime Life is added to your Home Screen.",
+    blocked:"Notifications are blocked for this site. Allow them in your browser or phone settings, then come back here.",
+    unsupported:"This browser doesn't support notifications. Try Chrome, or add the app to your Home Screen.",
+    off:"Notifications aren't available yet."}[st]||"";
+  const btn= st==="on"?`<button class="btn ghost" onclick="disableWebPush()">Turn off</button>`
+    : st==="available"?`<button class="btn navy" onclick="enableWebPush()">Turn on notifications</button>`
+    : st==="needs-install"?`<button class="btn navy" onclick="showInstallHelp()">How to add it</button>`:"";
+  return `<p class="small muted" style="margin-bottom:10px">${msg}</p>${btn}`;
+}
+/* =====================================================================
    INSTALL AS AN APP (home-screen / PWA)
    ===================================================================== */
 let installEvt=null;
-addEventListener("beforeinstallprompt",e=>{e.preventDefault();installEvt=e;if(page==="profile")render()});
+addEventListener("beforeinstallprompt",e=>{e.preventDefault();installEvt=e;if(role)render();else{const li=$("loginInstall");if(li)li.innerHTML=installBanner()}});
 function isStandalone(){return matchMedia("(display-mode: standalone)").matches||navigator.standalone===true}
 function installHelp(){
   if(NB) return nativeSettingsHtml();
