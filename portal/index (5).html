@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Patient Portal | Prime Life Diagnostics</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2f3660">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Prime Life">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<style>
+/* ---------- Brand palette (taken from the Prime Life Diagnostics logo) ---------- */
+:root{
+  --ink:#2f3660;          /* PRIME navy */
+  --navy:#082f6c;         /* test-tube navy */
+  --sky:#1495ce;          /* LIFE blue */
+  --sky-soft:#e8f4fb;
+  --brand-red:#e10302;    /* blood red */
+  --silver:#9397a2;       /* DIAGNOSTICS grey */
+  --teal:#1495ce; --teal-soft:#e8f4fb;   /* aliases used by the app */
+  --bg:#f5f7fb; --card:#fff; --line:#e6eaf1; --text:#1e2440; --muted:#6b7187;
+  --green:#1f9d63; --green-soft:#e6f6ee; --amber:#d98a0b; --amber-soft:#fdf3df;
+  --red:#d64545; --red-soft:#fcebea; --radius:18px;
+  --shadow:0 1px 2px rgba(47,54,96,.04),0 8px 24px rgba(47,54,96,.06);
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.m-val,.stat .v{font-family:Montserrat,Manrope,sans-serif}
+button{font-family:inherit;cursor:pointer}
+input,textarea,select{font-family:inherit;font-size:14px}
+.hidden{display:none!important}
+
+/* ---------- Login ---------- */
+#login{min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:40px 18px;position:relative;overflow:hidden;
+  background:radial-gradient(900px 500px at 10% -10%,rgba(20,149,206,.13),transparent 60%),radial-gradient(700px 500px at 110% 110%,rgba(8,47,108,.10),transparent 60%),var(--bg)}
+.login-wrap{width:100%;max-width:440px;position:relative}
+.login-card{background:#fff;border-radius:24px;box-shadow:0 2px 4px rgba(47,54,96,.04),0 24px 60px rgba(47,54,96,.10);padding:40px 40px 32px}
+.login-logo{display:block;width:200px;height:auto;margin:0 auto 26px}
+.login-card h2{margin:0 0 4px;font-size:22px;font-weight:600;color:var(--ink);text-align:center}
+.login-card .sub{color:var(--muted);margin:0 0 24px;text-align:center;font-size:14px}
+.seg{display:flex;background:#f0f3f8;border-radius:12px;padding:4px;margin-bottom:22px}
+.seg button{flex:1;border:0;background:transparent;padding:9px;border-radius:9px;font-weight:600;color:var(--muted);font-size:14px;transition:.15s}
+.seg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(47,54,96,.12)}
+label{display:block;font-size:12.5px;font-weight:600;margin:0 0 6px;color:#454b66;letter-spacing:.2px}
+.field{margin-bottom:16px}
+.inp{width:100%;padding:12px 14px;border:1px solid #dde2ec;border-radius:12px;background:#fff;outline:none;transition:.15s}
+.inp:focus{border-color:var(--sky);box-shadow:0 0 0 4px rgba(20,149,206,.12)}
+.btn{border:0;border-radius:12px;padding:12px 20px;font-weight:600;font-size:14px;background:var(--ink);color:#fff;display:inline-flex;align-items:center;gap:8px;justify-content:center;transition:.15s;text-decoration:none}
+.btn:hover{background:var(--navy);transform:translateY(-1px)}
+.btn.block{width:100%;padding:14px}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{background:#f6f8fc}
+.btn.navy{background:var(--sky)}
+.btn.navy:hover{background:#0f82b6}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.hint{font-size:12.5px;color:var(--muted);margin-top:16px;background:#f6f8fc;border-radius:12px;padding:10px 12px;text-align:center}
+.login-foot{text-align:center;color:var(--silver);font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-top:22px}
+.login-foot span{color:var(--brand-red)}
+.secure{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12px;color:var(--muted);margin-top:14px}
+.mfa{display:flex;gap:8px;margin:8px 0 18px;justify-content:center}
+.mfa input{width:46px;height:54px;text-align:center;font-size:20px;font-weight:700;border:1px solid #dde2ec;border-radius:12px}
+.mfa input:focus{outline:none;border-color:var(--sky);box-shadow:0 0 0 4px rgba(20,149,206,.12)}
+
+/* ---------- App shell: white top bar ---------- */
+.app{min-height:100vh}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:0 28px;height:72px;display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.brand img{height:42px;width:auto;display:block}
+.wordmark{font-family:Montserrat,sans-serif;line-height:1.05}
+.wordmark .a{font-weight:700;font-size:16px;letter-spacing:.6px;color:var(--ink)}
+.wordmark .a b{color:var(--sky);font-weight:700}
+.wordmark .b{font-weight:500;font-size:9.5px;letter-spacing:3.4px;color:var(--silver);display:block;margin-top:3px}
+#navItems{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.nav{border:0;background:transparent;color:var(--muted);padding:9px 14px;border-radius:10px;font-weight:600;font-size:14px;display:flex;gap:8px;align-items:center;white-space:nowrap;transition:.15s}
+.nav:hover{color:var(--ink);background:#f3f5fa}
+.nav.on{color:var(--ink);background:var(--sky-soft)}
+.nav.on svg{color:var(--sky)}
+.nav .count{background:var(--brand-red);color:#fff;font-size:11px;border-radius:20px;padding:0 7px;line-height:18px}
+.who{margin-left:auto;display:flex;align-items:center;gap:12px;flex:none}
+.who-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--ink));color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px}
+.who-txt{font-size:13px;line-height:1.25;color:var(--muted)}
+.who-txt b{display:block;color:var(--ink);font-size:13.5px}
+.who button{background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:7px 12px;font-size:12.5px;font-weight:600}
+.who button:hover{background:#f6f8fc}
+main{padding:36px 28px 72px;max-width:1180px;margin:0 auto;width:100%}
+
+/* ---------- Page elements ---------- */
+.top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.top h1{margin:0;font-size:28px;font-weight:600;color:var(--ink);letter-spacing:-.2px}
+.top .sub{color:var(--muted);margin:4px 0 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:18px}
+.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:1.4fr 1fr}
+.stat{display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden}
+.stat:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--line)}
+.stat.green:before{background:var(--green)}.stat.amber:before{background:var(--amber)}.stat.red:before{background:var(--red)}
+.stat .k{font-size:11.5px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:1.2px}
+.stat .v{font-size:32px;font-weight:600;color:var(--ink)}
+.stat.green .v{color:var(--green)}.stat.amber .v{color:var(--amber)}.stat.red .v{color:var(--red)}
+h3{margin:0 0 14px;font-size:16px;font-weight:600;color:var(--ink)}
+.muted{color:var(--muted)}.small{font-size:13px}
+
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;white-space:nowrap}
+.chip:before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.chip.green{background:var(--green-soft);color:var(--green)}
+.chip.amber{background:var(--amber-soft);color:#a86a05}
+.chip.red{background:var(--red-soft);color:var(--red)}
+.chip.grey{background:#eff1f6;color:#666d84}
+.chip.teal{background:var(--sky-soft);color:var(--sky)}
+
+.rep-row{display:flex;align-items:center;gap:16px;padding:16px 8px;border-bottom:1px solid var(--line);cursor:pointer;border-radius:12px;transition:.15s}
+.rep-row:last-child{border-bottom:0}
+.rep-row:hover{background:#f7f9fc}
+.rep-ic{width:44px;height:44px;border-radius:12px;background:var(--sky-soft);color:var(--sky);display:grid;place-items:center;flex:none}
+.rep-row .t{font-weight:700;color:var(--ink)}
+.rep-row .chips{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+
+.cat{margin-top:30px}
+.cat h4{margin:0 0 12px;font-size:12px;text-transform:uppercase;letter-spacing:1.6px;color:var(--silver);font-weight:600}
+.marker{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:10px;transition:.15s;box-shadow:0 1px 2px rgba(47,54,96,.03)}
+.marker:hover{border-color:#cfd8e6;box-shadow:var(--shadow)}
+.m-head{display:grid;grid-template-columns:1.3fr 120px 1.7fr 130px;gap:20px;align-items:center;cursor:pointer}
+.m-name{font-weight:700;color:var(--ink)}
+.m-name small{display:block;font-weight:500;color:var(--muted);font-size:12.5px;margin-top:2px}
+.m-val{font-size:21px;font-weight:600;color:var(--ink)}
+.m-val small{font-size:12px;color:var(--muted);font-weight:600;margin-left:3px;font-family:Manrope,sans-serif}
+.bar-wrap{position:relative;padding-top:24px}
+.bar{height:8px;border-radius:8px;display:flex;overflow:hidden}
+.bar span{height:100%}
+.pin{position:absolute;top:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center}
+.pin b{font-size:11px;background:var(--ink);color:#fff;border-radius:6px;padding:1px 7px;white-space:nowrap}
+.pin i{width:2px;height:22px;background:var(--ink);display:block}
+.pin.out b{background:var(--red)}.pin.out i{background:var(--red)}
+.ticks{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:5px;position:relative;height:14px}
+.ticks span{position:absolute;transform:translateX(-50%)}
+.m-detail{display:none;margin-top:18px;padding-top:18px;border-top:1px dashed var(--line);grid-template-columns:1.4fr 1fr;gap:24px}
+.marker.open .m-detail{display:grid}
+.explain p{margin:0 0 8px;font-size:14px}
+.trend svg{width:100%;height:90px}
+.status-cell{text-align:right}
+
+.doc-note{background:linear-gradient(135deg,#f3f9fd,#f7f8fc);border:1px solid #dcebf5;border-radius:16px;padding:18px;display:flex;gap:14px}
+.doc-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--ink));color:#fff;display:grid;place-items:center;font-weight:700;flex:none;font-size:14px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:4px;display:block}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{border:1px solid var(--line);background:#fff;border-radius:20px;padding:7px 14px;font-size:13px;font-weight:600;color:#4f5671;transition:.15s}
+.filters button:hover{border-color:#cfd8e6}
+.filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:700;padding:10px;border-bottom:1px solid var(--line)}
+td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr.click{cursor:pointer} tr.click:hover td{background:#f7f9fc}
+td input{width:100%;padding:7px 9px;border:1px solid #dde2ec;border-radius:8px}
+td input.num{width:80px}
+
+.drop{border:2px dashed #c9d3e2;border-radius:18px;padding:42px;text-align:center;background:#fafbfe;transition:.15s}
+.drop.over{border-color:var(--sky);background:var(--sky-soft)}
+.steps{display:flex;margin-bottom:24px}
+.step{flex:1;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--muted)}
+.step b{width:28px;height:28px;border-radius:50%;background:#e8ecf3;display:grid;place-items:center;font-size:12px;flex:none}
+.step.on{color:var(--ink)}.step.on b{background:var(--ink);color:#fff}
+.step.done b{background:var(--sky);color:#fff}
+.step:not(:last-child):after{content:"";flex:1;height:2px;background:#e8ecf3;margin:0 12px;border-radius:2px}
+.progress{height:8px;background:#ebeff5;border-radius:8px;overflow:hidden;margin:16px 0 8px}
+.progress div{height:100%;background:linear-gradient(90deg,var(--sky),var(--ink));width:0;transition:width .3s}
+.log{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#4f5671;background:#f6f8fc;border-radius:12px;padding:14px;max-height:170px;overflow:auto;white-space:pre-wrap}
+
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(30px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:14px;font-weight:600;font-size:14px;opacity:0;transition:.25s;z-index:60;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.modal-bg{position:fixed;inset:0;background:rgba(30,36,64,.45);backdrop-filter:blur(3px);display:grid;place-items:center;z-index:40;padding:20px}
+.modal{background:#fff;border-radius:22px;padding:28px;width:100%;max-width:460px;box-shadow:0 30px 80px rgba(0,0,0,.2)}
+.modal h3{font-size:19px}
+.row{display:flex;gap:10px;align-items:center}.right{margin-left:auto}
+.back{border:0;background:none;color:var(--sky);font-weight:700;padding:0;margin-bottom:12px;font-size:14px}
+.doc-row{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.doc-row:last-child{border-bottom:0}
+.file-ic{width:40px;height:48px;border-radius:8px;background:#fdecec;color:var(--brand-red);font-size:10px;font-weight:800;display:grid;place-items:center;flex:none}
+.file-ic.w{background:#e7eefb;color:#2b579a}
+
+.viewer-bg{position:fixed;inset:0;background:rgba(30,36,64,.6);z-index:45;display:flex;flex-direction:column;padding:24px}
+.viewer{background:#fff;border-radius:20px;max-width:900px;width:100%;margin:0 auto;flex:1;display:flex;flex-direction:column;overflow:hidden}
+.viewer-head{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.viewer-body{flex:1;overflow:auto;background:#eef1f6;padding:20px}
+.viewer-body canvas{display:block;margin:0 auto 16px;max-width:100%;height:auto!important;box-shadow:0 2px 10px rgba(0,0,0,.12);background:#fff}
+.docx-page{background:#fff;max-width:720px;margin:0 auto;padding:48px 56px;box-shadow:0 2px 10px rgba(0,0,0,.12);font-size:14.5px;line-height:1.6}
+.docx-page h1{font-size:20px;color:var(--ink)}
+.letter-card{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-top:12px}
+.letter-card>div:nth-child(2){flex:1 1 150px;min-width:0}
+.letter-drop{border:2px dashed #c9d3e2;border-radius:14px;padding:18px;text-align:center;background:#fafbfe}
+.letter-drop.over{border-color:var(--sky);background:var(--sky-soft)}
+
+.linkbtn{border:0;background:none;color:var(--sky);font-weight:600;font-size:13px;padding:0;cursor:pointer}
+.linkbtn:hover{text-decoration:underline}
+.login-links{display:flex;justify-content:space-between;align-items:center;margin:-4px 0 18px}
+#busy{position:fixed;inset:0;background:rgba(245,247,251,.7);backdrop-filter:blur(2px);z-index:80;display:grid;place-items:center}
+#busy .box{background:#fff;border-radius:16px;padding:18px 24px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center;font-weight:600;color:var(--ink)}
+.spin{width:20px;height:20px;border:3px solid var(--sky-soft);border-top-color:var(--sky);border-radius:50%;animation:sp 0.8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.mfa-code{font-size:24px;letter-spacing:8px;text-align:center;font-weight:700}
+.install-tip{background:var(--sky-soft);border-radius:12px;padding:12px 14px;font-size:13.5px}
+@media (display-mode: standalone){.topbar{padding-top:env(safe-area-inset-top)}}
+
+.flag-row{display:grid;grid-template-columns:1fr 1.4fr auto;gap:16px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+@media (max-width:900px){
+  .flag-row{grid-template-columns:1fr auto;gap:6px 12px}.flag-row .bar-wrap{grid-column:1/-1;grid-row:2}
+  .topbar-in{height:auto;flex-wrap:wrap;padding:12px 16px;gap:10px}
+  #navItems{order:3;width:100%}
+  .who-txt{display:none}
+  main{padding:22px 16px 60px}.g4{grid-template-columns:repeat(2,1fr)}.g3,.g2{grid-template-columns:1fr}
+  .m-head{grid-template-columns:1fr 100px}.m-head .bar-cell{grid-column:1/-1}.status-cell{text-align:left}
+  .m-detail{grid-template-columns:1fr}
+  .login-card{padding:30px 22px 24px}
+}
+
+
+/* ---------- Install banner + notifications card ---------- */
+.install-banner,.push-card{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 12px 12px 14px;margin-bottom:18px;box-shadow:var(--shadow);position:relative}
+.install-banner img{width:44px;height:44px;border-radius:11px;flex:none;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.install-banner b,.push-card b{display:block;color:var(--ink);font-size:14px}
+.install-banner span,.push-card span{display:block;color:var(--muted);font-size:12.5px;line-height:1.35}
+.install-banner .btn,.push-card .btn{padding:9px 14px;flex:none}
+.push-card{background:linear-gradient(135deg,#f3f9fd,#fff);border-color:#dcebf5}
+.pc-ic{width:40px;height:40px;border-radius:50%;background:var(--sky-soft);color:var(--sky);display:grid;place-items:center;flex:none}
+.ib-x{border:0;background:none;color:var(--silver);font-size:14px;padding:4px 6px;flex:none}
+#loginInstall .install-banner{margin-bottom:14px}
+.install-steps{padding-left:20px;margin:6px 0 18px;line-height:1.6;font-size:14.5px}
+.install-steps li{margin-bottom:8px}
+.kbd{display:inline-block;border:1px solid var(--line);border-radius:6px;padding:0 6px;font-size:12px;background:#f6f8fc}
+/* ---------- Phones + app: bottom tab bar ---------- */
+@media (max-width:700px){
+  .topbar{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}
+  .topbar-in{flex-wrap:nowrap;height:64px;padding:0 16px}
+  #navItems{position:fixed;left:0;right:0;bottom:0;z-index:30;order:0;width:auto;gap:0;display:flex;justify-content:space-around;
+    background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+    padding:6px 6px calc(8px + env(safe-area-inset-bottom));overflow:visible}
+  .nav{position:relative;flex:1;flex-direction:column;gap:3px;font-size:11px;font-weight:600;padding:6px 2px;border-radius:12px;white-space:normal;text-align:center;line-height:1.15}
+  .nav svg{width:23px;height:23px}
+  .nav.on{background:transparent;color:var(--ink)}
+  .nav.on svg{color:var(--sky)}
+  .nav .count{position:absolute;top:2px;left:calc(50% + 6px)}
+  main{padding-bottom:110px}
+}
+
+/* ---------- Fit the phone screen exactly (no zooming / sideways scrolling) ---------- */
+html,body{max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{touch-action:manipulation}
+.doc-row>div:nth-child(2){min-width:0;flex:1 1 170px}
+.doc-row b{word-break:break-word}
+.rep-row>div:nth-child(2){min-width:0}
+@media (max-width:700px){
+  input,select,textarea,.inp,td input{font-size:16px!important}   /* stops iPhone zooming in when typing */
+  .doc-row{flex-wrap:wrap}
+  .doc-row>.right,.doc-row>button.right{margin-left:54px}
+  .rep-row{flex-wrap:wrap}.rep-row .chips{margin-left:60px;justify-content:flex-start}
+  .card table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .viewer-bg{padding:calc(10px + env(safe-area-inset-top)) 8px calc(10px + env(safe-area-inset-bottom))}
+  .viewer-head{flex-wrap:wrap}
+}
+@media (display-mode: standalone){
+  #login{padding-top:calc(40px + env(safe-area-inset-top))}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= SIGN-IN ================= -->
+<section id="login">
+  <div class="login-wrap">
+    <div id="loginInstall"></div>
+    <div class="login-card">
+      <img src="logo.png" class="login-logo" alt="Prime Life Diagnostics">
+
+      <div id="scrSignin" class="hidden">
+        <h2>Welcome to your patient portal</h2>
+        <p class="sub">Sign in to view your results and letters</p>
+        <div class="seg"><button id="tabIn" class="on" onclick="setTab('in')">Sign in</button><button id="tabUp" onclick="setTab('up')">Create account</button></div>
+        <form onsubmit="doSignIn(event)">
+          <div class="field"><label>Email address</label><input class="inp" id="inEmail" type="email" autocomplete="email" required></div>
+          <div class="field"><label>Password</label><input class="inp" id="inPw" type="password" autocomplete="current-password" required></div>
+          <div class="login-links"><span></span><button type="button" class="linkbtn" onclick="showScreen('scrForgot')">Forgotten your password?</button></div>
+          <button class="btn block" type="submit">Sign in</button>
+        </form>
+      </div>
+
+      <div id="scrSignup" class="hidden">
+        <h2>Create your account</h2>
+        <p class="sub">Use the same email address you gave the clinic</p>
+        <div class="seg"><button class="" onclick="setTab('in')">Sign in</button><button class="on" onclick="setTab('up')">Create account</button></div>
+        <form onsubmit="doSignUp(event)">
+          <div class="field"><label>Email address</label><input class="inp" id="upEmail" type="email" autocomplete="email" required></div>
+          <div class="field"><label>Choose a password (at least 10 characters)</label><input class="inp" id="upPw" type="password" autocomplete="new-password" minlength="10" required></div>
+          <div class="field"><label>Confirm password</label><input class="inp" id="upPw2" type="password" autocomplete="new-password" minlength="10" required></div>
+          <button class="btn block" type="submit">Create account</button>
+        </form>
+      </div>
+
+      <div id="scrForgot" class="hidden">
+        <h2>Reset your password</h2>
+        <p class="sub">We'll email you a link to choose a new one</p>
+        <form onsubmit="doForgot(event)">
+          <div class="field"><label>Email address</label><input class="inp" id="fgEmail" type="email" autocomplete="email" required></div>
+          <button class="btn block" type="submit">Send reset link</button>
+        </form>
+        <p style="text-align:center;margin:16px 0 0"><button class="linkbtn" onclick="setTab('in')">← Back to sign in</button></p>
+      </div>
+
+      <div id="scrReset" class="hidden">
+        <h2>Choose a new password</h2>
+        <p class="sub">At least 10 characters</p>
+        <form onsubmit="doReset(event)">
+          <div class="field"><label>New password</label><input class="inp" id="rsPw" type="password" autocomplete="new-password" minlength="10" required></div>
+          <button class="btn block" type="submit">Save new password</button>
+        </form>
+      </div>
+
+      <div id="scrMfa" class="hidden">
+        <h2 id="mfaTitle">Enter your security code</h2>
+        <p class="sub" id="mfaBody"></p>
+        <div id="mfaQr"></div>
+        <form onsubmit="doMfa(event)">
+          <div class="field" style="margin-top:12px"><input class="inp mfa-code" id="mfaCode" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="000000" required></div>
+          <button class="btn block" type="submit">Verify &amp; continue</button>
+        </form>
+        <p style="text-align:center;margin:16px 0 0"><button class="linkbtn" onclick="logout()">Cancel and sign out</button></p>
+      </div>
+
+      <div id="scrMsg" class="hidden">
+        <h2 id="msgTitle"></h2>
+        <p class="sub" id="msgBody" style="text-align:left"></p>
+        <p id="msgBack" style="text-align:center;margin:16px 0 0"><button class="linkbtn" onclick="setTab('in')">← Back to sign in</button></p>
+      </div>
+
+      <div class="secure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Secure, encrypted connection</div>
+    </div>
+    <div class="login-foot">Your blood tests<span>.</span> Simplified<span>.</span></div>
+    <p id="backLink" style="text-align:center;margin-top:10px"><a href="/" class="linkbtn" style="color:var(--muted);font-weight:500;text-decoration:none">← Back to primelifediagnostics.co.uk</a></p>
+  </div>
+</section>
+
+<!-- ================= APP ================= -->
+<section id="app" class="app hidden">
+  <header class="topbar"><div class="topbar-in">
+    <a class="brand" onclick="go(role==='patient'?'dashboard':'clinic-home')" style="cursor:pointer"><img src="logo-icon.png" alt=""><span class="wordmark"><span class="a">PRIME <b>LIFE</b></span><span class="b">DIAGNOSTICS</span></span></a>
+    <nav id="navItems"></nav>
+    <div class="who"><div class="who-av" id="whoAv"></div><div class="who-txt"><b id="whoName"></b><span id="whoRole"></span></div><button onclick="logout()">Sign out</button></div>
+  </div></header>
+  <main id="view"></main>
+</section>
+
+<div class="toast" id="toast"></div>
+<div id="modalRoot"></div>
+<div id="busy" class="hidden"><div class="box"><div class="spin"></div><span id="busyMsg">Loading…</span></div></div>
+
+<script src="native.js" onerror="void 0"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
