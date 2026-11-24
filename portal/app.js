@@ -169,13 +169,13 @@ function toPatient(row){
       const letterDoc=docs.find(d=>d.report_id===r.id&&d.kind==="letter"), labDoc=docs.find(d=>d.report_id===r.id&&d.kind==="lab_report");
       return {id:r.id,title:r.title,date:r.collected_on||r.created_at.slice(0,10),received:r.reported_on||r.created_at.slice(0,10),ref:r.specimen_no||"",status:r.status,doctor:r.doctor_name||"",note:r.note||"",releasedAt:r.released_at,
         letter:letterDoc?fileFor(letterDoc):null,letterDocId:letterDoc?.id,labFile:labDoc?fileFor(labDoc):null,
-        markers:(r.results||[]).slice().sort((a,b)=>a.position-b.position).map(x=>({name:x.name,value:x.value==null?null:Number(x.value),text:x.text_value||undefined,flag:x.flag||"",unit:x.unit||"",min:x.ref_min==null?null:Number(x.ref_min),max:x.ref_max==null?null:Number(x.ref_max),section:x.section||"Other",labNote:x.lab_note?x.lab_note.split("\n"):undefined}))};
+        markers:(r.results||[]).slice().sort((a,b)=>a.position-b.position).map(x=>({name:x.name,value:x.value==null?null:Number(x.value),text:x.text_value||undefined,qual:x.result_status||undefined,flag:x.flag||"",unit:x.unit||"",min:x.ref_min==null?null:Number(x.ref_min),max:x.ref_max==null?null:Number(x.ref_max),section:x.section||"Other",labNote:x.lab_note?x.lab_note.split("\n"):undefined}))};
     }),
     docs:docs.map(d=>({name:d.name,date:d.created_at.slice(0,10),size:sizeTxt(d.size_bytes||0),by:d.uploaded_by_name||"Clinic",file:fileFor(d),kind:d.kind,docId:d.id}))};
   return p;
 }
 function resultRows(rid,markers){
-  return markers.filter(m=>m.name).map((m,i)=>({report_id:rid,position:i,section:m.section||"Other",name:m.name,value:(m.value===""||m.value==null||isNaN(+m.value))?null:+m.value,text_value:m.text||null,unit:m.unit||null,ref_min:m.min==null||m.min===""?null:+m.min,ref_max:m.max==null||m.max===""?null:+m.max,flag:m.flag||null,lab_note:m.labNote?m.labNote.join("\n"):null}));
+  return markers.filter(m=>m.name).map((m,i)=>({report_id:rid,position:i,section:m.section||"Other",name:m.name,value:(m.value===""||m.value==null||isNaN(+m.value))?null:+m.value,text_value:(m.value===""||m.value==null||isNaN(+m.value))?(m.text||null):null,result_status:m.qual||null,unit:m.unit||null,ref_min:m.min==null||m.min===""?null:+m.min,ref_max:m.max==null||m.max===""?null:+m.max,flag:m.flag||null,lab_note:m.labNote?m.labNote.join("\n"):null}));
 }
 async function saveResults(rid,markers){
   must(await sb.from("results").delete().eq("report_id",rid),"Saving results");
@@ -235,6 +235,15 @@ async function boot(){
    PLAIN-ENGLISH LIBRARY (matched to Inuvi test names)
    ============================================================ */
 const LIB=[
+ {re:/rubella/i,name:"Rubella (German measles) immunity",what:"Checks for antibodies to rubella, which show whether you are protected (immune) from past vaccination or infection."},
+ {re:/varicella|\bvzv\b|chicken ?pox/i,name:"Chickenpox (varicella) immunity",what:"Checks for antibodies to the chickenpox virus, which show whether you are protected from past infection or vaccination."},
+ {re:/measles/i,name:"Measles immunity",what:"Checks for antibodies to measles, which show whether you are protected from past vaccination or infection."},
+ {re:/mumps/i,name:"Mumps immunity",what:"Checks for antibodies to mumps, which show whether you are protected from past vaccination or infection."},
+ {re:/anti-?hbs|hbsab|hep(?:atitis)? ?b (?:surface )?antibod/i,name:"Hepatitis B immunity",what:"Checks for antibodies that protect you against hepatitis B, usually from vaccination."},
+ {re:/hep(?:atitis)? ?b (?:surface )?antigen|hbsag/i,name:"Hepatitis B infection test",what:"Looks for a current hepatitis B infection."},
+ {re:/hep(?:atitis)? ?c/i,name:"Hepatitis C test",what:"Looks for signs of hepatitis C infection."},
+ {re:/\bhiv\b/i,name:"HIV test",what:"Looks for signs of HIV infection."},
+ {re:/syphilis|treponem/i,name:"Syphilis test",what:"Looks for antibodies that show a current or past syphilis infection."},
  {re:/^hb ?a1c/i,name:"HbA1c (average blood sugar)",what:"Your average blood sugar level over the last 2–3 months.",high:"A raised HbA1c can mean your blood sugar has been running high. 42–47 is the 'prediabetes' range and 48 or above may mean diabetes. Your doctor will advise you on next steps."},
  {re:/^calcium/i,name:"Calcium",what:"A mineral needed for strong bones, muscles and nerves.",low:"A low calcium can be linked to low vitamin D.",high:"A raised calcium is worth discussing with your doctor, who may repeat the test."},
  {re:/^uric acid/i,name:"Uric Acid",what:"A waste product from breaking down certain foods. High levels can cause gout.",high:"Raised uric acid can be linked to diet, alcohol, dehydration or gout."},
@@ -303,6 +312,11 @@ function parseInuvi(lines){
   const g=(re,s)=>{const m=s.match(re);return m?m[1].trim():null};
   const mrow=/^(.+?)\s+(?:([HL])\s+)?(\d+(?:\.\d+)?)\s*(?:([A-Za-zµ%\/\^0-9.]+(?:\/[0-9.a-z]+)?))?\s*(?:(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)|([<>])\s*(\d+(?:\.\d+)?))?\s*$/;
   const txtrow=/^(.+?)\s+([A-Z][A-Z ]{3,})$/;
+  const crow=/^(.+?)\s+(?:([HL])\s+)?([<>]=?\s?\d+(?:\.\d+)?)\s*([A-Za-zµ%\/\^0-9.]+(?:\/[0-9.a-z]+)?)?\s*(?:(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)|([<>])\s*(\d+(?:\.\d+)?))?\s*$/;
+  const QKW="(?:weak(?:ly)?\\s+|low\\s+)?positive|negative|not\\s+detected|none\\s+detected|detected|non[- ]?reactive|reactive|equivocal|borderline|indeterminate|inconclusive|non[- ]?immune|not\\s+immune|immune|absent|present|not\\s+seen|nil";
+  const qrow=new RegExp("^(.+?)\\s+(?:([HL])\\s+)?("+QKW+")\\b(.*)$","i");
+  const QREST=/^\s*(?:[<>]?=?\s*\d+(?:\.\d+)?\s*[A-Za-zµ%\/\^0-9.]*\s*(?:(?:\d+(?:\.\d+)?\s*-\s*\d+(?:\.\d+)?|[<>]\s*\d+(?:\.\d+)?))?)?\s*$/;
+  const QKW_ONLY=new RegExp("^(?:"+QKW+")$","i");
   for(let raw of lines){
     const s=raw.replace(/\s+/g," ").trim(); if(!s||/^_+$/.test(s)) continue;
     let v;
@@ -320,12 +334,25 @@ function parseInuvi(lines){
     const sec=SECTIONS.find(x=>x.toLowerCase()===s.toLowerCase());
     if(sec){if(sec!=="Laboratory Information")section=sec;inComment=false;last=null;continue}
     if(/^Comments\b/.test(s)){inComment=true;const rest=s.replace(/^Comments\s*/,"");if(rest&&last)(last.labNote=last.labNote||[]).push(rest);continue}
+    const q=s.match(qrow);
+    if(q && !inComment && /[A-Za-z]{2}/.test(q[1]) && q[1].trim().length>=3 && !inCommentLike(q[1]) && (QREST.test(q[4])||QKW_ONLY.test(q[4].trim()))){
+      last={name:q[1].replace(/\*+/g,"").replace(/\s+/g," ").trim(),value:null,text:(q[3]+" "+(QKW_ONLY.test(q[4].trim())?q[4].trim():"")).trim(),flag:q[2]||"",unit:"",min:null,max:null,section};
+      const extra=QKW_ONLY.test(q[4].trim())?"":q[4].trim(); if(extra)(last.labNote=last.labNote||[]).push("Lab value: "+extra);
+      markers.push(last);inComment=false;continue;
+    }
     const m=s.match(mrow);
-    if(m && /[A-Za-z]{2}/.test(m[1]) && !/^[<>]/.test(m[1]) && !/:$/.test(m[1].trim()) && !inCommentLike(m[1])){
+    if(m && /[A-Za-z]{2}/.test(m[1]) && !/[<>]=?\s?\d/.test(m[1]) && !/^[<>]/.test(m[1]) && !/:$/.test(m[1].trim()) && !inCommentLike(m[1])){
       const name=m[1].replace(/\*+/g,"").replace(/\s*\((?:g\/L|mmol\/mol)\)\s*$/i,"").replace(/\s+/g," ").trim();
       let min=null,max=null;
       if(m[5]!=null){min=+m[5];max=+m[6]} else if(m[7]==="<"){max=+m[8]} else if(m[7]===">"){min=+m[8]}
       last={name,value:+m[3],flag:m[2]||"",unit:m[4]||"",min,max,section};markers.push(last);inComment=false;continue;
+    }
+    const c=s.match(crow);
+    if(c && /[A-Za-z]{2}/.test(c[1]) && !/:$/.test(c[1].trim()) && !inCommentLike(c[1])){
+      const name=c[1].replace(/\*+/g,"").replace(/\s+/g," ").trim();
+      let min=null,max=null;
+      if(c[5]!=null){min=+c[5];max=+c[6]} else if(c[7]==="<"){max=+c[8]} else if(c[7]===">"){min=+c[8]}
+      last={name,value:null,text:c[3].replace(/\s+/g,""),flag:c[2]||"",unit:c[4]||"",min,max,section};markers.push(last);inComment=false;continue;
     }
     const t=s.match(txtrow);
     if(t && !inComment && /^[A-Za-z]/.test(t[1])){last={name:t[1].replace(/\*+/g,"").trim(),value:null,text:t[2].trim(),unit:"",min:null,max:null,section};markers.push(last);continue}
@@ -380,8 +407,38 @@ function letterCard(r){if(!r.letter)return"";const f=FILES[r.letter];
 /* ============================================================
    STATUS + RANGE LOGIC
    ============================================================ */
+/* Text results (Negative, Positive, Immune, Not detected, <0.6 …) */
+const NOTREP_RE=/insufficient|haemoly|hemoly|not received|cancel|unable|no sample|not tested|not done|clotted|leaked|lipaem|see comment|not reported|test not|sample error|unsuitable/i;
+const IMMUNITY_RE=/rubella|measles|mumps|varicella|\bvzv\b|chicken ?pox|anti-?hbs|hbsab|hep(?:atitis)? ?b (?:surface )?antibod|immunity/i;
+function isText(m){return m.text!=null&&m.text!==""&&(m.value==null||m.value===""||isNaN(+m.value))}
+function niceText(t){t=String(t).trim();return t===t.toUpperCase()?t.charAt(0)+t.slice(1).toLowerCase():t}
+function valTxt(m){return isText(m)?niceText(m.text):(m.value!=null&&m.value!==""?String(m.value):"–")}
+function censored(m){const c=isText(m)&&String(m.text).trim().match(/^([<>])=?\s*(\d+(?:\.\d+)?)$/);return c?{op:c[1],n:+c[2]}:null}
+function textStatus(m){
+  const t=String(m.text).toLowerCase().trim(), imm=IMMUNITY_RE.test(m.name||"");
+  if(NOTREP_RE.test(t)) return {key:"grey",label:"Not reported",notrep:true,text:true};
+  const QL={green:"As expected",amber:"Review",red:"Abnormal",grey:"No status"};
+  const st=k=>({key:k,label:QL[k],text:true});
+  if(m.qual) return st(m.qual);
+  const c=censored(m);
+  if(c){ // e.g. "<0.6" with a range: judge it against the limits
+    if(m.max!=null&&c.op===">"&&c.n>=m.max) return {key:"red",label:"High",text:true};
+    if(m.min!=null&&c.op==="<"&&c.n<=m.min) return {key:"red",label:"Low",text:true};
+    if(m.max!=null&&c.op==="<"&&c.n<=m.max&&m.min==null) return st("green");
+    if(m.min!=null&&c.op===">"&&c.n>=m.min&&m.max==null) return st("green");
+    if(m.qual) return st(m.qual);
+    return st("grey");
+  }
+  if(/equivocal|borderline|indeterminate|inconclusive|low positive|weak(ly)? positive|weak reactive/.test(t)) return st("amber");
+  if(/non[- ]?immune|not immune/.test(t)) return st("amber");
+  if(/immune/.test(t)) return st("green");
+  if(/^(negative|neg\b|not detected|none detected|non[- ]?reactive|absent|normal|nil\b|not seen)/.test(t)) return st(imm?"amber":"green");
+  if(/positive|\bdetected|reactive|present|abnormal/.test(t)) return st(imm?"green":"red");
+  return st("grey");
+}
 function statusOf(m){
-  if(m.value==null||m.value===""||isNaN(+m.value)) return {key:"grey",label:m.text?"Not reported":"No value"};
+  if(isText(m)) return textStatus(m);
+  if(m.value==null||m.value===""||isNaN(+m.value)) return {key:"grey",label:"No value"};
   const v=+m.value, mn=m.min, mx=m.max;
   if(mn==null&&mx==null) return {key:"grey",label:"No range given"};
   if(mn!=null && v<mn) return {key:"red",label:"Low"};
@@ -404,10 +461,12 @@ function scale(m){
 }
 function fmt(n){return n==null?"":(+n).toString()}
 const ZC={red:"#f2a8a3",amber:"#f5cf86",green:"#8fd6b0",grey:"#dde3ea"};
-function rangeText(m){ if(m.min!=null&&m.max!=null) return `${m.min} – ${m.max}`; if(m.max!=null) return `below ${m.max}`; if(m.min!=null) return `above ${m.min}`; return "no range given"; }
+function rangeText(m){ if(isText(m)&&!censored(m)) return "text result"; if(m.min!=null&&m.max!=null) return `${m.min} – ${m.max}`; if(m.max!=null) return `below ${m.max}`; if(m.min!=null) return `above ${m.min}`; return "no range given"; }
 function unitTxt(u){return (u||"").replace(/10\^9\/L/,"×10⁹/L").replace(/10\^12\/L/,"×10¹²/L").replace(/^ug\/L/,"µg/L").replace(/^umol\/L/,"µmol/L").replace("1.73m2","1.73m²").replace("mMol/Mol","mmol/mol")}
 function barHTML(m){
-  const st=statusOf(m); if(st.key==="grey") return `<div class="small muted">${m.text?esc(m.text.toLowerCase()):"No reference range on the lab report"}</div>`;
+  const st=statusOf(m);
+  if(st.text) return st.notrep?`<div class="small muted">Not reported (${esc(String(m.text).toLowerCase())})</div>`:`<div class="qual ${st.key}"><span>Result</span><b>${esc(niceText(m.text))}</b></div>`;
+  if(st.key==="grey") return `<div class="small muted">No reference range on the lab report</div>`;
   const s=scale(m);
   return `<div class="bar-wrap"><div class="pin ${st.key==='red'?'out':''}" style="left:${s.pos}%"><b>${m.value}</b><i></i></div>
     <div class="bar">${s.zones.map(z=>`<span style="width:${z[1]}%;background:${ZC[z[0]]}"></span>`).join("")}</div>
@@ -444,7 +503,7 @@ function pDash(V){
   <div class="grid g2" style="margin-top:16px">
     <div class="card"><h3>Results to look at</h3>
       ${flagged.length?flagged.map(m=>{const s=statusOf(m);return `<div class="flag-row">
-        <div><b>${esc(info(m).name)}</b><div class="small muted">${m.value} ${unitTxt(m.unit)}</div></div>${barHTML(m)}<span class="chip ${s.key}">${s.label}</span></div>`}).join(""):`<p class="muted">Everything is within range.</p>`}
+        <div><b>${esc(info(m).name)}</b><div class="small muted">${esc(valTxt(m))} ${unitTxt(m.unit)}</div></div>${barHTML(m)}<span class="chip ${s.key}">${s.label}</span></div>`}).join(""):`<p class="muted">Everything is within range.</p>`}
     </div>
     <div class="card"><h3>From your doctor</h3>
       <div class="doc-note"><div class="doc-av">${initials(latest.doctor)}</div><div style="flex:1"><b>${esc(latest.doctor)}</b><div class="small muted" style="margin-bottom:6px">${dt(latest.received)}</div>${latest.note?`<div style="font-size:14px">${esc(latest.note)}</div>`:""}${letterCard(latest)}</div></div>
@@ -484,15 +543,15 @@ function markerCard(m,patient){
   const hist = patient.reports.filter(x=>x.status==="released").sort((a,b)=>a.date.localeCompare(b.date)).map(x=>({d:x.date,m:x.markers.find(y=>y.name===m.name)})).filter(x=>x.m&&x.m.value!=null);
   return `<div class="marker" onclick="this.classList.toggle('open')">
     <div class="m-head">
-      <div class="m-name">${esc(I.name)}<small>${I.name!==m.name?esc(m.name)+" · ":""}Range ${rangeText(m)} ${unitTxt(m.unit)}</small></div>
-      <div class="m-val">${m.value!=null?m.value:"–"}<small>${unitTxt(m.unit)}</small></div>
+      <div class="m-name">${esc(I.name)}<small>${I.name!==m.name?esc(m.name)+" · ":""}${isText(m)&&!censored(m)?"Reported as a text result":"Range "+rangeText(m)+" "+unitTxt(m.unit)}</small></div>
+      <div class="m-val">${isText(m)&&!censored(m)&&!s.notrep?"":esc(valTxt(m))}<small>${isText(m)&&!censored(m)?"":unitTxt(m.unit)}</small></div>
       <div class="bar-cell">${barHTML(m)}</div>
       <div class="status-cell"><span class="chip ${s.key}">${s.label}</span></div>
     </div>
     <div class="m-detail">
       <div class="explain"><p><b>What is it?</b> ${esc(I.what||"A blood marker measured by the laboratory.")}</p>
-        ${s.key==="green"?`<p><b>What does my result mean?</b> Your result is within the normal range.</p>`:msg?`<p><b>What does my result mean?</b> ${esc(msg)}</p>`:s.key==="grey"?"":`<p><b>What does my result mean?</b> Your result is ${s.label.toLowerCase()}. Please see your doctor's comments.</p>`}
-        ${m.text?`<p><b>Lab note:</b> This test couldn't be reported (${esc(m.text.toLowerCase())}). Your clinic will let you know if it needs repeating.</p>`:""}
+        ${s.text&&!s.notrep&&s.key==="green"?`<p><b>What does my result mean?</b> Your result is <b>${esc(valTxt(m).toLowerCase())}</b>, which is the expected result.</p>`:s.text&&!s.notrep?`<p><b>What does my result mean?</b> Your result is <b>${esc(valTxt(m).toLowerCase())}</b>. Please see your doctor's comments.</p>`:s.key==="green"?`<p><b>What does my result mean?</b> Your result is within the normal range.</p>`:msg?`<p><b>What does my result mean?</b> ${esc(msg)}</p>`:s.key==="grey"?"":`<p><b>What does my result mean?</b> Your result is ${s.label.toLowerCase()}. Please see your doctor's comments.</p>`}
+        ${s.notrep?`<p><b>Lab note:</b> This test couldn't be reported (${esc(m.text.toLowerCase())}). Your clinic will let you know if it needs repeating.</p>`:""}
         ${m.labNote?`<p class="small"><b>Lab comment:</b> ${esc(m.labNote.join(" "))}</p>`:""}
         <p class="small muted">This is general information. Your doctor's comments are specific to you.</p></div>
       <div class="trend"><b class="small">Your trend</b>${trendSVG(hist,m)}</div>
@@ -618,17 +677,18 @@ function reviewTable(markers,src){
   return `<table><tr><th>Test (as on Inuvi report)</th><th>Result</th><th>Unit</th><th>Min</th><th>Max</th><th style="width:26%">Where it falls</th><th>Status</th><th></th></tr>
   ${markers.map((m,i)=>{const s=statusOf(m);const head=m.section!==lastSec?`<tr><td colspan="8" style="background:#f6f9fb;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)">${esc(m.section)}</td></tr>`:"";lastSec=m.section;
    return head+`<tr><td><input value="${esc(m.name)}" onchange="editM('${src}',${i},'name',this.value)">${m.labNote?`<div class="small muted" style="margin-top:3px">Lab comment attached</div>`:""}</td>
-   <td><input class="num" value="${m.value??""}" placeholder="${m.text?esc(m.text):"–"}" onchange="editM('${src}',${i},'value',this.value)">${m.flag?`<div class="small" style="color:var(--red);font-weight:700">Lab flag: ${m.flag}</div>`:""}</td>
+   <td><input class="num" value="${esc(String(m.value??m.text??""))}" placeholder="e.g. 4.2 or Negative" title="Type a number, or text such as Negative, Positive, Not detected, <0.5" onchange="editM('${src}',${i},'value',this.value)">${m.flag?`<div class="small" style="color:var(--red);font-weight:700">Lab flag: ${m.flag}</div>`:""}</td>
    <td style="white-space:nowrap" class="small">${unitTxt(m.unit)}</td>
    <td><input class="num" value="${m.min??''}" placeholder="–" onchange="editM('${src}',${i},'min',this.value)"></td>
    <td><input class="num" value="${m.max??''}" placeholder="–" onchange="editM('${src}',${i},'max',this.value)"></td>
-   <td>${barHTML(m)}</td><td><span class="chip ${s.key}">${s.label}</span></td>
+   <td>${barHTML(m)}</td><td><span class="chip ${s.key}">${esc(s.label)}</span>${s.text&&!s.notrep?`<select class="qual-sel" title="Change the colour for this text result" onchange="editM('${src}',${i},'qual',this.value)"><option value=""${m.qual?"":" selected"}>Auto</option><option value="green"${m.qual==="green"?" selected":""}>Normal (green)</option><option value="amber"${m.qual==="amber"?" selected":""}>Borderline (amber)</option><option value="red"${m.qual==="red"?" selected":""}>Abnormal (red)</option><option value="grey"${m.qual==="grey"?" selected":""}>No colour (grey)</option></select>`:""}</td>
    <td><button class="back" style="margin:0;color:var(--red)" title="Remove" onclick="delM('${src}',${i})">✕</button></td></tr>`}).join("")}</table>`;
 }
 function listFor(src){if(src==="up")return up.markers;const p=db.patients.find(x=>x.id===ctx.pid);return p.reports.find(r=>r.id===ctx.rid).markers}
 function editM(src,i,k,v){const m=listFor(src)[i];
   if(src!=="up"){const n=document.getElementById("docNote");if(n)ctx.draft=n.value}
-  if(k==="name")m.name=v; else if(k==="value"){m.value=v===""?null:parseFloat(v);if(v!=="")delete m.text} else m[k]=v===""?null:parseFloat(v);
+  if(k==="name")m.name=v; else if(k==="value"){v=String(v).trim();if(v===""){m.value=null;delete m.text}else if(/^-?\d+(\.\d+)?$/.test(v)){m.value=parseFloat(v);delete m.text;delete m.qual}else{m.value=null;m.text=v}}
+  else if(k==="qual"){if(v)m.qual=v;else delete m.qual} else m[k]=v===""?null:parseFloat(v);
   m.flag="";render();}
 function delM(src,i){if(src!=="up"){const n=document.getElementById("docNote");if(n)ctx.draft=n.value}listFor(src).splice(i,1);render()}/* =====================================================================
    PATIENT: profile + view logging
@@ -801,11 +861,13 @@ async function removeLetter(){keepDraft();const {p,r}=curReport();if(!r.letterDo
 function wireLetterDrop(){const d=$("letterDrop");if(!d)return;d.ondragover=e=>{e.preventDefault();d.classList.add("over")};d.ondragleave=()=>d.classList.remove("over");d.ondrop=e=>{e.preventDefault();d.classList.remove("over");attachLetter(e.dataTransfer.files[0])}}
 function suggestNote(){
   const {p,r}=curReport();
-  const out=r.markers.filter(m=>statusOf(m).key==="red"), bord=r.markers.filter(m=>statusOf(m).key==="amber"), nr=r.markers.filter(m=>m.text);
+  const out=r.markers.filter(m=>statusOf(m).key==="red"), bord=r.markers.filter(m=>statusOf(m).key==="amber"), nr=r.markers.filter(m=>statusOf(m).notrep);
   let t=`Hello ${p.name.split(" ")[0]}, thank you for your blood test. `;
   if(!out.length&&!bord.length) t+="All of your results are within the normal range, which is reassuring. ";
-  else{ if(out.length) t+=`These results are outside the normal range: ${out.map(m=>`${info(m).name} (${statusOf(m).label.toLowerCase()})`).join(", ")}. `;
-    if(bord.length) t+=`These are within range but close to the limit: ${bord.map(m=>info(m).name).join(", ")}. `; }
+  else{ if(out.length) t+=`These results are outside the normal range: ${out.map(m=>`${info(m).name} (${isText(m)&&!censored(m)?valTxt(m).toLowerCase():statusOf(m).label.toLowerCase()})`).join(", ")}. `;
+    const bn=bord.filter(m=>!isText(m)), bt=bord.filter(m=>isText(m));
+    if(bn.length) t+=`These are within range but close to the limit: ${bn.map(m=>info(m).name).join(", ")}. `;
+    if(bt.length) t+=`These results need a closer look: ${bt.map(m=>`${info(m).name} (${valTxt(m).toLowerCase()})`).join(", ")}. `; }
   if(nr.length) t+=`The lab couldn't report ${nr.map(m=>m.name).join(", ")} on this sample. `;
   t+="[Add your advice and any next steps here.]";
   $("docNote").value=t; toast("Draft added. Please edit it before releasing.");
