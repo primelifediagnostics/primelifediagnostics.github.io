@@ -478,9 +478,11 @@ nav {
                     alt="Prime Life Diagnostics"
                     class="h-14 md:h-16 w-auto"
                 >
-                 <span class="text-[#1a237e]">Prime</span>
+                 <span class="hidden sm:inline">
+    <span class="text-[#1a237e]">Prime</span>
     <span class="text-[#2196f3]"> Life</span>
     <span class="text-[#757575]"> Diagnostics</span>
+                 </span>
 
             </a>
 
@@ -519,6 +521,12 @@ nav {
                     FAQs
                 </a>
 
+                <a href="/portal/"
+                   class="inline-flex items-center gap-2 text-sm font-medium text-[#1a237e] border border-[#1a237e]/30 rounded-full px-4 py-2 hover:bg-[#1a237e] hover:text-white transition">
+                    <i data-feather="user" class="w-4 h-4"></i>
+                    Patient Login
+                </a>
+
                 <a href="appointment.html"
                    class="btn-primary text-sm px-5 py-3">
                     Book Now
@@ -527,16 +535,27 @@ nav {
             </div>
 
 
-            <!-- Mobile button -->
+            <!-- Mobile: Patient Login button + menu button -->
 
-            <button
-                id="menu-btn"
-                class="lg:hidden text-gray-700"
-                aria-label="Open menu">
+            <div class="flex items-center gap-3 lg:hidden">
 
-                <i data-feather="menu"></i>
+                <a href="/portal/"
+                   class="inline-flex items-center gap-1.5 text-sm font-semibold text-white bg-[#1a237e] rounded-full px-4 py-2 shadow-sm whitespace-nowrap"
+                   aria-label="Patient Login">
+                    <i data-feather="user" class="w-4 h-4"></i>
+                    <span><span class="hidden sm:inline">Patient </span>Login</span>
+                </a>
 
-            </button>
+                <button
+                    id="menu-btn"
+                    class="text-gray-700"
+                    aria-label="Open menu">
+
+                    <i data-feather="menu"></i>
+
+                </button>
+
+            </div>
 
         </div>
 
@@ -594,6 +613,12 @@ nav {
         <a href="FAQs.html"
            class="text-xl text-gray-700">
             FAQs
+        </a>
+
+        <a href="/portal/"
+           class="text-xl text-[#1a237e] font-medium inline-flex items-center gap-2">
+            <i data-feather="user"></i>
+            Patient Login
         </a>
 
         <a href="appointment.html"
@@ -1985,6 +2010,11 @@ nav {
                     <a href="appointment.html"
                        class="block text-gray-400 hover:text-white">
                         Book Appointment
+                    </a>
+
+                    <a href="/portal/"
+                       class="block text-gray-400 hover:text-white">
+                        Patient Login
                     </a>
 
                 </div>
