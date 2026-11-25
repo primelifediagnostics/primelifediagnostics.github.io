@@ -598,7 +598,7 @@ function cHome(V){
     <div class="card stat"><span class="k">Active patients</span><span class="v">${db.patients.length}</span></div>
     <div class="card stat green"><span class="k">Reports released</span><span class="v">${recent.length}</span></div></div>
   <div class="card" style="margin-top:16px"><h3>Awaiting review</h3>
-  ${q.length?`<table><tr><th>Patient</th><th>Test</th><th>Received</th><th>Flags</th><th></th></tr>
+  ${q.length?`<table class="queue-tbl"><tr><th>Patient</th><th>Test</th><th>Received</th><th>Flags</th><th></th></tr>
    ${q.map(({p,r})=>`<tr class="click" onclick="go('review',{pid:'${p.id}',rid:'${r.id}',navParent:'clinic-home'})"><td><b>${esc(p.name)}</b><div class="small muted">${p.no} · DOB ${p.dob}</div></td><td>${esc(r.title)}<div class="small muted">Specimen ${esc(r.ref)}</div></td><td>${dt(r.received)}</td><td>${flagChips(counts(r.markers))}</td><td style="white-space:nowrap"><button class="btn navy">Review</button> <button class="btn ghost" style="color:var(--red);border-color:#f3c9c6" onclick="event.stopPropagation();deleteReport('${p.id}','${r.id}')">Delete</button></td></tr>`).join("")}</table>`:'<p class="muted">Nothing waiting. All caught up.</p>'}</div>
   <div class="card" style="margin-top:16px"><h3>Recently released</h3><table><tr><th>Patient</th><th>Test</th><th>Released</th><th>Reviewed by</th></tr>
   ${recent.slice(0,6).map(({p,r})=>`<tr class="click" onclick="go('patient',{pid:'${p.id}',navParent:'patients'})"><td><b>${esc(p.name)}</b></td><td>${esc(r.title)}</td><td>${dt(r.received)}</td><td>${esc(r.doctor)}</td></tr>`).join("")}</table></div>`;}
@@ -849,7 +849,7 @@ function cReview(V){
   const p=db.patients.find(x=>x.id===ctx.pid), r=p&&p.reports.find(x=>x.id===ctx.rid); if(!r) return go("clinic-home");
   const c=counts(r.markers), isRel=r.status==="released", L=r.letter?FILES[r.letter]:null;
   V.innerHTML=`<button class="back" onclick="go('clinic-home')">← Review queue</button>
-  <div class="top"><div><h1>${esc(p.name)} · ${esc(r.title)}</h1><p class="sub">${p.no} · DOB ${p.dob} · Sample ${dt(r.date)} · Inuvi specimen ${esc(r.ref||"–")}</p></div>
+  <div class="top"><div><h1>${esc(p.name)} · ${esc(r.title)} <button class="btn ghost small" style="vertical-align:middle;font-size:13px;padding:5px 12px" onclick="renameReportModal()">✎ Edit test name</button></h1><p class="sub">${p.no} · DOB ${p.dob} · Sample ${dt(r.date)} · Inuvi specimen ${esc(r.ref||"–")}</p></div>
    <div class="row">${r.labFile?`<button class="btn ghost" onclick="openViewer('${r.labFile}')">${ICON.doc} Lab PDF</button>`:""}${isRel?'<span class="chip green">Released to patient</span>':'<span class="chip amber">Awaiting doctor review</span>'}</div></div>
   <div class="grid g3" style="margin-bottom:18px">
    <div class="card stat green"><span class="k">In range</span><span class="v">${c.green}</span></div>
@@ -905,6 +905,17 @@ function suggestNote(){
   t+="[Add your advice and any next steps here.]";
   $("docNote").value=t; toast("Draft added. Please edit it before releasing.");
 }
+function renameReportModal(){keepDraft();const {r}=curReport();
+  modal(`<h3>Edit test name</h3><p class="small muted">This is the name the patient sees for this report, e.g. "Advanced Health Check" or "Pregnancy Screen".</p>
+   <div class="field"><label>Test / package name</label><input class="inp" id="rnTitle" maxlength="120" value="${esc(r.title||"")}"></div>
+   <div class="row"><button class="btn ghost" onclick="closeModal()">Cancel</button><button class="btn right" onclick="renameReport()">Save name</button></div>`);
+  setTimeout(()=>{const i=$("rnTitle");if(i){i.focus();i.select()}},50)}
+async function renameReport(){const {p,r}=curReport();const t=($("rnTitle").value||"").trim();
+  if(!t) return toast("Please enter a name.");
+  if(t===r.title) return closeModal();
+  await guard(async()=>{must(await sb.from("reports").update({title:t}).eq("id",r.id),"Couldn't rename report");
+    audit("renamed_report",{patient_id:p.id,report_id:r.id,details:{from:r.title,to:t}});
+    closeModal(); await reloadPatient(p.id); toast("Test name updated."); render()},"Saving…")}
 async function deleteReport(pid,rid){
   const p=db.patients.find(x=>x.id===pid), r=p&&p.reports.find(x=>x.id===rid); if(!r) return;
   const rel=r.status==="released";
