@@ -166,9 +166,9 @@ function toPatient(row){
   const docs=(row.documents||[]).slice().sort((a,b)=>b.created_at.localeCompare(a.created_at));
   const p={id:row.id,no:row.patient_no,name:row.full_name,dob:row.dob?ukDate(row.dob):"–",dobIso:row.dob,sex:row.sex||"",email:row.email||"",phone:row.phone||"",user_id:row.user_id,
     reports:(row.reports||[]).map(r=>{
-      const letterDoc=docs.find(d=>d.report_id===r.id&&d.kind==="letter"), labDoc=docs.find(d=>d.report_id===r.id&&d.kind==="lab_report");
+      const letterDocs=docs.filter(d=>d.report_id===r.id&&d.kind==="letter").reverse(), letterDoc=letterDocs[0], labDoc=docs.find(d=>d.report_id===r.id&&d.kind==="lab_report");
       return {id:r.id,title:r.title,date:r.collected_on||r.created_at.slice(0,10),received:r.reported_on||r.created_at.slice(0,10),ref:r.specimen_no||"",status:r.status,doctor:r.doctor_name||"",note:r.note||"",releasedAt:r.released_at,
-        letter:letterDoc?fileFor(letterDoc):null,letterDocId:letterDoc?.id,labFile:labDoc?fileFor(labDoc):null,
+        letter:letterDoc?fileFor(letterDoc):null,letterDocId:letterDoc?.id,letters:letterDocs.map(d=>({file:fileFor(d),docId:d.id})),labFile:labDoc?fileFor(labDoc):null,
         markers:(r.results||[]).slice().sort((a,b)=>a.position-b.position).map(x=>({name:x.name,value:x.value==null?null:Number(x.value),text:x.text_value||undefined,qual:x.result_status||undefined,flag:x.flag||"",unit:x.unit||"",min:x.ref_min==null?null:Number(x.ref_min),max:x.ref_max==null?null:Number(x.ref_max),section:x.section||"Other",labNote:x.lab_note?x.lab_note.split("\n"):undefined}))};
     }),
     docs:docs.map(d=>({name:d.name,date:d.created_at.slice(0,10),size:sizeTxt(d.size_bytes||0),by:d.uploaded_by_name||"Clinic",file:fileFor(d),kind:d.kind,docId:d.id}))};
@@ -401,8 +401,8 @@ async function openViewer(id){
     } else B.innerHTML=`<p class="muted" style="text-align:center">This file type can't be previewed here. Use the Download button above.</p>`;
   }catch(e){B.innerHTML=`<p class="muted" style="text-align:center">Sorry, this file couldn't be opened (${esc(e.message)}).</p>`}
 }
-function letterCard(r){if(!r.letter)return"";const f=FILES[r.letter];
-  return `<div class="letter-card" onclick="event.stopPropagation()">${fileIcon(f.name)}<div><b>Letter from ${esc(r.doctor||"your doctor")}</b><div class="small muted">${esc(f.name)} · ${sizeTxt(f.size)}</div></div><button class="btn right" onclick="openViewer('${r.letter}')">Open letter</button></div>`}
+function letterCard(r){const L=(r.letters&&r.letters.length)?r.letters:(r.letter?[{file:r.letter}]:[]);if(!L.length)return"";
+  return L.map((x,i)=>{const f=FILES[x.file];return `<div class="letter-card" onclick="event.stopPropagation()">${fileIcon(f.name)}<div style="min-width:0"><b>${L.length>1?`Document ${i+1} from `:"Letter from "}${esc(r.doctor||"your doctor")}</b><div class="small muted" style="overflow-wrap:anywhere">${esc(f.name)} · ${sizeTxt(f.size)}</div></div><button class="btn right" onclick="openViewer('${x.file}')">Open</button></div>`}).join("")}
 
 /* ============================================================
    STATUS + RANGE LOGIC
@@ -595,23 +595,31 @@ function cPatients(V){
 let up={step:1,pid:null,file:null,markers:[],meta:{}};
 function cUpload(V){
   const steps=["Upload Inuvi PDF","Read the report","Check & send to review"];
-  V.innerHTML=`<div class="top"><div><h1>Upload lab report</h1><p class="sub">Drop in the PDF that Inuvi Diagnostics emailed you. The system reads every result, matches the patient and flags anything out of range, so nobody has to type results in.</p></div></div>
+  V.innerHTML=`<div class="top"><div><h1>Upload lab report ${up.step>1?queueInfo():""}</h1><p class="sub">Drop in the PDF that Inuvi Diagnostics emailed you. The system reads every result, matches the patient and flags anything out of range, so nobody has to type results in.</p></div></div>
   <div class="steps">${steps.map((s,i)=>`<div class="step ${up.step===i+1?'on':up.step>i+1?'done':''}"><b>${up.step>i+1?'✓':i+1}</b>${s}</div>`).join("")}</div>
   <div class="card" id="upBody"></div>`;
   const B=document.getElementById("upBody");
   if(up.step===1){
     B.innerHTML=`<div class="drop" id="drop">
-        <div style="font-size:34px">📄</div><p style="margin:6px 0 4px;font-weight:700">Drag the Inuvi PDF here</p><p class="small muted" style="margin:0 0 14px">or</p>
-        <label class="btn navy">Choose PDF file<input type="file" accept="application/pdf" hidden onchange="pickFile(this.files[0])"></label>
-        <p class="small muted" style="margin:18px auto 0;max-width:460px">Nothing is saved until you check the results and click <b>Send to doctor for review</b>.</p></div>`;
+        <div style="font-size:34px">📄</div><p style="margin:6px 0 4px;font-weight:700">Drag the Inuvi PDFs here</p><p class="small muted" style="margin:0 0 14px">or</p>
+        <label class="btn navy">Choose PDF files<input type="file" accept="application/pdf" multiple hidden onchange="pickFiles([...this.files]);this.value=''"></label>
+        <p class="small muted" style="margin:18px auto 0;max-width:460px">You can choose several PDFs at once; you'll check them one after another. Nothing is saved until you check the results and click <b>Send to doctor for review</b>.</p></div>`;
     const d=document.getElementById("drop");
     d.ondragover=e=>{e.preventDefault();d.classList.add("over")};d.ondragleave=()=>d.classList.remove("over");
-    d.ondrop=e=>{e.preventDefault();d.classList.remove("over");pickFile(e.dataTransfer.files[0])};
+    d.ondrop=e=>{e.preventDefault();d.classList.remove("over");pickFiles([...e.dataTransfer.files])};
   } else if(up.step===2){
     B.innerHTML=`<h3>Reading ${esc(up.file.name)}…</h3><div class="progress"><div id="prog"></div></div><div class="log" id="log"></div>`;
   } else renderUploadReview(B);
 }
 function pickFile(f){if(!f)return;if(f.type!=="application/pdf"&&!/\.pdf$/i.test(f.name))return toast("Please choose a PDF file.");up.file=f;up.step=2;render();readPdf(f)}
+function pickFiles(list){const pdfs=(list||[]).filter(f=>f&&(f.type==="application/pdf"||/\.pdf$/i.test(f.name)));
+  if(!pdfs.length)return toast("Please choose PDF files.");
+  if(pdfs.length<list.length)toast(`${list.length-pdfs.length} file(s) skipped: only PDFs can be read.`);
+  up.fixedPid=up.pid||null; up.queue=pdfs.slice(1); up.total=pdfs.length; up.done=0; pickFile(pdfs[0])}
+function queueInfo(){return up.total>1?`<span class="chip teal">PDF ${up.done+1} of ${up.total}</span> `:""}
+function nextInQueue(){const f=up.queue&&up.queue.shift(); if(!f) return false;
+  const keep={queue:up.queue,total:up.total,done:up.done+1,fixedPid:up.fixedPid};
+  up={step:1,pid:keep.fixedPid,file:null,markers:[],meta:{},...keep}; go("upload",{navParent:"upload"}); pickFile(f); return true}
 function logLine(t){const l=document.getElementById("log");if(l){l.textContent+=t+"\n";l.scrollTop=l.scrollHeight}}
 function setProg(p){const e=document.getElementById("prog");if(e)e.style.width=p+"%"}
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
@@ -631,7 +639,7 @@ async function readPdf(file){
     }
     await runParse(lines,false);
   }catch(e){logLine("Sorry, this PDF couldn't be read ("+e.message+").");logLine("Please check it is the PDF Inuvi emailed you, then try again.");setProg(100);
-    const B=document.getElementById("upBody");if(B)B.insertAdjacentHTML("beforeend",`<div class="row" style="margin-top:14px"><button class="btn ghost" onclick="up.step=1;render()">Back</button></div>`)}
+    const B=document.getElementById("upBody");if(B)B.insertAdjacentHTML("beforeend",`<div class="row" style="margin-top:14px"><button class="btn ghost" onclick="up.step=1;render()">Back</button>${up.queue&&up.queue.length?`<button class="btn" onclick="skipThis()">Skip to next PDF →</button>`:""}</div>`)}
 }
 function nameKey(n){return (n||"").toLowerCase().replace(/[^a-z ]/g,"").split(/\s+/).filter(Boolean).sort().join(" ")}
 function normDob(d){const m=(d||"").match(/(\d{1,2})\/(\d{1,2})\/(\d{2,4})/);return m?`${+m[1]}/${+m[2]}/${m[3].length===2?"19"+m[3]:m[3]}`:""}
@@ -651,6 +659,7 @@ async function runParse(lines,slow){
   await say(res.markers.length?`Done: ${res.markers.length} results read. ${c.red} out of range, ${c.amber} borderline.`:"No results recognised in this PDF. Is it an Inuvi report?",100,900);
   if(!slow)await wait(900);
   if(res.markers.length){up.step=3;render()}
+  else{const B=document.getElementById("upBody");if(B)B.insertAdjacentHTML("beforeend",`<div class="row" style="margin-top:14px"><button class="btn ghost" onclick="up.step=1;render()">Back</button>${up.queue&&up.queue.length?`<button class="btn" onclick="skipThis()">Skip to next PDF →</button>`:""}</div>`)}
 }
 function renderUploadReview(B){
   const p=db.patients.find(x=>x.id===up.pid), c=counts(up.markers);
@@ -667,8 +676,8 @@ function renderUploadReview(B){
     <div class="field" style="margin:12px 0 0"><label>Test / package name</label><input class="inp" id="upTitle" value="${esc(up.meta.title||guessTitle(up.markers))}" onchange="up.meta.title=this.value"></div></div></div>
   ${reviewTable(up.markers,"up")}
   <div class="row" style="margin-top:12px"><button class="btn ghost" onclick="up.markers.push({name:'',value:'',unit:'',min:null,max:null,section:'Other'});render()">+ Add a result</button></div>
-  <div class="row" style="margin-top:22px;border-top:1px solid var(--line);padding-top:18px"><button class="btn ghost" onclick="up={step:1,pid:null,file:null,markers:[],meta:{}};render()">Start again</button>
-  <button class="btn right" ${p?"":"disabled"} onclick="saveUpload()">Send to doctor for review →</button></div>`;
+  <div class="row" style="margin-top:22px;border-top:1px solid var(--line);padding-top:18px"><button class="btn ghost" onclick="up={step:1,pid:null,file:null,markers:[],meta:{}};render()">Start again</button>${up.queue&&up.queue.length?`<button class="btn ghost" onclick="skipThis()">Skip this PDF</button>`:""}
+  <button class="btn right" ${p?"":"disabled"} onclick="saveUpload()">${up.queue&&up.queue.length?"Send to review &amp; open next PDF →":"Send to doctor for review →"}</button></div>`;
 }
 function titleName(n){if(!n)return"";const parts=n.split(/\s+/);const sur=parts.shift();return [...parts,sur].map(w=>w.charAt(0).toUpperCase()+w.slice(1).toLowerCase()).join(" ")}
 function guessTitle(ms){const secs=new Set(ms.map(m=>m.section));if(secs.size>=8)return"Advanced Health Check";if(secs.has("Sex Hormones"))return"Hormone Check";if(secs.has("Lipid Profile"))return"Cholesterol Check";return"Blood Test"}
@@ -746,11 +755,15 @@ function cPatient(V){
    <div class="row"><button class="btn ghost" onclick="editPatientModal('${p.id}')">Edit details</button>${p.user_id?"":`<button class="btn ghost" onclick="inviteModal('${p.id}')">Invite to portal</button>`}<button class="btn" onclick="up={step:1,pid:'${p.id}',file:null,markers:[],meta:{}};go('upload',{navParent:'upload'})">${ICON.up} Upload report</button></div></div>
   <div class="card"><h3>Reports</h3>${p.reports.length?`<table><tr><th>Test</th><th>Sample date</th><th>Status</th><th>Flags</th></tr>${p.reports.slice().sort((a,b)=>b.date.localeCompare(a.date)).map(r=>`<tr class="click" onclick="go('review',{pid:'${p.id}',rid:'${r.id}',navParent:'patients'})"><td><b>${esc(r.title)}</b><div class="small muted">Specimen ${esc(r.ref||"–")}</div></td><td>${dt(r.date)}</td><td>${r.status==="released"?'<span class="chip green">Released to patient</span>':'<span class="chip amber">Awaiting review</span>'}</td><td>${flagChips(counts(r.markers))}</td></tr>`).join("")}</table>`:'<p class="muted">No reports yet. Upload an Inuvi PDF to add one.</p>'}</div>
   <div class="card" style="margin-top:18px"><h3>Documents</h3>${p.docs.length?p.docs.map(d=>`<div class="doc-row">${fileIcon(d.name)}<div><b>${esc(d.name)}</b><div class="small muted">${dt(d.date)} · ${d.size} · ${esc(d.by)}${d.kind==="lab_report"?" · Lab report":d.kind==="letter"?" · Doctor's letter":""}</div></div><div class="right row"><button class="btn ghost" onclick="openViewer('${d.file}')">Open</button>${d.kind==="other"?`<button class="btn ghost" style="color:var(--red)" onclick="removeDoc('${p.id}','${d.docId}')">Remove</button>`:""}</div></div>`).join(""):'<p class="muted">None.</p>'}
-   <div style="margin-top:12px"><label class="btn ghost" style="display:inline-flex">+ Upload document for patient<input type="file" accept=".pdf,.docx" hidden onchange="addDoc('${p.id}',this)"></label>
-   <span class="small muted" style="margin-left:8px">The patient can see documents you add here.</span></div></div>`;
+   <div style="margin-top:12px"><label class="btn ghost" style="display:inline-flex">+ Upload documents for patient<input type="file" accept=".pdf,.docx" multiple hidden onchange="addDoc('${p.id}',this)"></label>
+   <span class="small muted" style="margin-left:8px">You can choose several files at once. The patient can see documents you add here.</span></div></div>`;
 }
-async function addDoc(pid,inp){const f=inp.files[0];if(!f)return;
-  await guard(async()=>{await uploadFile(pid,"docs",f,null,"other",null,true);await reloadPatient(pid);audit("uploaded_document",{patient_id:pid,details:{name:f.name}});toast("Document added to the patient's record.");render()},"Uploading…")}
+async function addDoc(pid,inp){const all=[...(inp.files||[])];inp.value="";if(!all.length)return;
+  const ok=all.filter(f=>/\.(pdf|docx)$/i.test(f.name)), bad=all.length-ok.length;
+  if(!ok.length) return toast("Please choose Word (.docx) or PDF files.");
+  await guard(async()=>{let n=0;for(const f of ok){n++;setBusyText(`Uploading ${n} of ${ok.length}…`);await uploadFile(pid,"docs",f,null,"other",null,true);audit("uploaded_document",{patient_id:pid,details:{name:f.name}})}
+    await reloadPatient(pid);toast(`${ok.length} document${ok.length>1?"s":""} added to the patient's record.${bad?` ${bad} skipped (only .docx and PDF).`:""}`);render()},"Uploading…")}
+function setBusyText(t){const el=document.getElementById("busyMsg");if(el)el.textContent=t}
 async function removeDoc(pid,docId){
   if(!await confirmBox("Remove this document? The patient will no longer see it."))return;
   await guard(async()=>{await deleteDocument(docId);await reloadPatient(pid);audit("removed_document",{patient_id:pid});render()},"Removing…")}
@@ -788,6 +801,7 @@ async function savePatient(pid){const v=readPatientForm();if(!v)return;
 /* =====================================================================
    CLINIC: save an uploaded Inuvi report
    ===================================================================== */
+function skipThis(){ if(!nextInQueue()){up={step:1,pid:null,file:null,markers:[],meta:{}};render()} }
 async function saveUpload(){
   const p=db.patients.find(x=>x.id===up.pid); if(!p) return toast("Choose a patient first.");
   const valid=up.markers.filter(m=>m.name); if(!valid.length) return toast("Add at least one result first.");
@@ -798,7 +812,10 @@ async function saveUpload(){
     if(up.buf) await uploadFile(p.id,rep.id,{name:up.file.name,size:up.file.size,type:"application/pdf"},up.buf,"lab_report",rep.id,true);
     audit("uploaded_report",{patient_id:p.id,report_id:rep.id,details:{specimen:up.meta.specimen,results:valid.length}});
     await reloadPatient(p.id);
+    const batch=up.total>1, total=up.total;
+    if(nextInQueue()){ toast("Saved. Reading the next PDF…"); return; }
     up={step:1,pid:null,file:null,markers:[],meta:{}};
+    if(batch){ toast(`All ${total} reports saved and added to the review queue.`); go("clinic-home"); return; }
     toast("Report saved and added to the review queue.");
     go("review",{pid:p.id,rid:rep.id,navParent:"clinic-home"});
   },"Saving report…");
@@ -826,12 +843,12 @@ function cReview(V){
    <div class="card stat red"><span class="k">Out of range</span><span class="v">${c.red}</span></div></div>
   <div class="card" style="margin-bottom:18px"><h3>Doctor's comments to the patient</h3>
    <div class="grid" style="grid-template-columns:1fr 1fr 220px;gap:16px">
-    <div><label>Doctor's letter (Word or PDF)</label>
-     ${L?`<div class="letter-card" style="margin-top:0">${fileIcon(L.name)}<div><b style="word-break:break-all">${esc(L.name)}</b><div class="small muted">${sizeTxt(L.size)}</div></div>
-       <div class="row" style="gap:6px"><button class="btn ghost" onclick="openViewer('${r.letter}')">Preview</button><button class="btn ghost" style="color:var(--red)" onclick="removeLetter()">Remove</button></div></div>`
-     :`<div class="letter-drop" id="letterDrop"><p style="margin:0 0 8px;font-weight:600">Drag the letter here</p>
-       <label class="btn navy">Choose .docx or .pdf<input type="file" accept=".pdf,.docx" hidden onchange="attachLetter(this.files[0])"></label>
-       <p class="small muted" style="margin:8px 0 0">The patient opens it straight from their report.</p></div>`}</div>
+    <div><label>Doctor's letters / documents (Word or PDF)</label>
+     ${(r.letters||[]).map(x=>{const F=FILES[x.file];return `<div class="letter-card" style="margin-top:0;margin-bottom:8px">${fileIcon(F.name)}<div style="min-width:0"><b style="word-break:break-all">${esc(F.name)}</b><div class="small muted">${sizeTxt(F.size)}</div></div>
+       <div class="row" style="gap:6px"><button class="btn ghost" onclick="openViewer('${x.file}')">Preview</button><button class="btn ghost" style="color:var(--red)" onclick="removeLetter('${x.docId}')">Remove</button></div></div>`}).join("")}
+     <div class="letter-drop" id="letterDrop"${(r.letters||[]).length?' style="padding:12px"':""}><p style="margin:0 0 8px;font-weight:600">${(r.letters||[]).length?"Add more files":"Drag letters or documents here"}</p>
+       <label class="btn navy">Choose .docx or .pdf<input type="file" accept=".pdf,.docx" multiple hidden onchange="attachLetter([...this.files]);this.value=''"></label>
+       <p class="small muted" style="margin:8px 0 0">You can add several. The patient opens them straight from their report.</p></div></div>
     <div><label>Short message (optional)</label>
      <textarea class="inp" id="docNote" rows="5" placeholder="e.g. Please read my letter for full details.">${esc(ctx.draft??r.note)}</textarea>
      <button class="btn ghost small" style="margin-top:8px" onclick="suggestNote()">Suggest a draft</button></div>
@@ -844,21 +861,22 @@ function cReview(V){
 }
 function curReport(){const p=db.patients.find(x=>x.id===ctx.pid);return {p,r:p.reports.find(x=>x.id===ctx.rid)}}
 function keepDraft(){const n=$("docNote");if(n)ctx.draft=n.value}
-async function attachLetter(f){
-  if(!f)return; const k=fileKind(f.name);
-  if(k==="doc") return toast("Please save it as .docx (Word: File › Save As › Word Document) or as a PDF.");
-  if(k!=="pdf"&&k!=="docx") return toast("Please choose a Word (.docx) or PDF file.");
+async function attachLetter(files){
+  files=(Array.isArray(files)?files:[files]).filter(Boolean); if(!files.length)return;
+  if(files.some(f=>fileKind(f.name)==="doc")) toast("Old .doc files can't be opened by patients. Save them as .docx (Word: File › Save As › Word Document) or PDF.");
+  const ok=files.filter(f=>["pdf","docx"].includes(fileKind(f.name)));
+  if(!ok.length){ if(!files.some(f=>fileKind(f.name)==="doc")) toast("Please choose Word (.docx) or PDF files."); return; }
   keepDraft(); const {p,r}=curReport();
   await guard(async()=>{
-    if(r.letterDocId) await deleteDocument(r.letterDocId);
-    await uploadFile(p.id,r.id,f,null,"letter",r.id,true);
-    audit("attached_letter",{patient_id:p.id,report_id:r.id,details:{name:f.name}});
-    await reloadPatient(p.id); toast("Letter attached."); render();
-  },"Uploading letter…");
+    let n=0; for(const f of ok){ n++; setBusyText(`Uploading ${n} of ${ok.length}…`);
+      await uploadFile(p.id,r.id,f,null,"letter",r.id,true);
+      audit("attached_letter",{patient_id:p.id,report_id:r.id,details:{name:f.name}}); }
+    await reloadPatient(p.id); toast(ok.length>1?`${ok.length} files attached.`:"Letter attached."); render();
+  },"Uploading…");
 }
-async function removeLetter(){keepDraft();const {p,r}=curReport();if(!r.letterDocId)return;
-  await guard(async()=>{await deleteDocument(r.letterDocId);await reloadPatient(p.id);render()},"Removing…")}
-function wireLetterDrop(){const d=$("letterDrop");if(!d)return;d.ondragover=e=>{e.preventDefault();d.classList.add("over")};d.ondragleave=()=>d.classList.remove("over");d.ondrop=e=>{e.preventDefault();d.classList.remove("over");attachLetter(e.dataTransfer.files[0])}}
+async function removeLetter(docId){keepDraft();const {p,r}=curReport();docId=docId||r.letterDocId;if(!docId)return;
+  await guard(async()=>{await deleteDocument(docId);await reloadPatient(p.id);render()},"Removing…")}
+function wireLetterDrop(){const d=$("letterDrop");if(!d)return;d.ondragover=e=>{e.preventDefault();d.classList.add("over")};d.ondragleave=()=>d.classList.remove("over");d.ondrop=e=>{e.preventDefault();d.classList.remove("over");attachLetter([...e.dataTransfer.files])}}
 function suggestNote(){
   const {p,r}=curReport();
   const out=r.markers.filter(m=>statusOf(m).key==="red"), bord=r.markers.filter(m=>statusOf(m).key==="amber"), nr=r.markers.filter(m=>statusOf(m).notrep);
@@ -888,7 +906,7 @@ async function saveReview(releaseIt){
     audit(releaseIt?"released_report":"saved_review",{patient_id:p.id,report_id:r.id});
     delete ctx.draft; const fresh=await reloadPatient(p.id);
     if(releaseIt){
-      modal(`<h3>Report released ✓</h3><p>${esc(p.name)} can now see this report${fresh.reports.find(x=>x.id===r.id)?.letter?" and your letter":""} when they sign in to the portal.</p>
+      modal(`<h3>Report released ✓</h3><p>${esc(p.name)} can now see this report${fresh.reports.find(x=>x.id===r.id)?.letters?.length?" and your letter"+(fresh.reports.find(x=>x.id===r.id).letters.length>1?"s":""):""} when they sign in to the portal.</p>
        ${p.user_id?"":`<p class="small" style="color:#a86a05">${esc(p.name)} hasn't created a portal account yet. Use <b>Invite to portal</b> on their record to send them the sign-up steps.</p>`}
        <p class="small muted">Tip: let the patient know their results are ready (by text or email), without including any results in the message.</p>
        <div class="row"><button class="btn ghost" onclick="closeModal();go('clinic-home')">Back to queue</button><button class="btn right" onclick="closeModal();go('patient',{pid:'${p.id}',navParent:'patients'})">Open patient record</button></div>`);
