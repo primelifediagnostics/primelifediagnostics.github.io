@@ -599,7 +599,7 @@ function cHome(V){
     <div class="card stat green"><span class="k">Reports released</span><span class="v">${recent.length}</span></div></div>
   <div class="card" style="margin-top:16px"><h3>Awaiting review</h3>
   ${q.length?`<table><tr><th>Patient</th><th>Test</th><th>Received</th><th>Flags</th><th></th></tr>
-   ${q.map(({p,r})=>`<tr class="click" onclick="go('review',{pid:'${p.id}',rid:'${r.id}',navParent:'clinic-home'})"><td><b>${esc(p.name)}</b><div class="small muted">${p.no} · DOB ${p.dob}</div></td><td>${esc(r.title)}<div class="small muted">Specimen ${esc(r.ref)}</div></td><td>${dt(r.received)}</td><td>${flagChips(counts(r.markers))}</td><td><button class="btn navy">Review</button></td></tr>`).join("")}</table>`:'<p class="muted">Nothing waiting. All caught up.</p>'}</div>
+   ${q.map(({p,r})=>`<tr class="click" onclick="go('review',{pid:'${p.id}',rid:'${r.id}',navParent:'clinic-home'})"><td><b>${esc(p.name)}</b><div class="small muted">${p.no} · DOB ${p.dob}</div></td><td>${esc(r.title)}<div class="small muted">Specimen ${esc(r.ref)}</div></td><td>${dt(r.received)}</td><td>${flagChips(counts(r.markers))}</td><td style="white-space:nowrap"><button class="btn navy">Review</button> <button class="btn ghost" style="color:var(--red);border-color:#f3c9c6" onclick="event.stopPropagation();deleteReport('${p.id}','${r.id}')">Delete</button></td></tr>`).join("")}</table>`:'<p class="muted">Nothing waiting. All caught up.</p>'}</div>
   <div class="card" style="margin-top:16px"><h3>Recently released</h3><table><tr><th>Patient</th><th>Test</th><th>Released</th><th>Reviewed by</th></tr>
   ${recent.slice(0,6).map(({p,r})=>`<tr class="click" onclick="go('patient',{pid:'${p.id}',navParent:'patients'})"><td><b>${esc(p.name)}</b></td><td>${esc(r.title)}</td><td>${dt(r.received)}</td><td>${esc(r.doctor)}</td></tr>`).join("")}</table></div>`;}
 function cPatients(V){
@@ -868,6 +868,7 @@ function cReview(V){
      <button class="btn ghost small" style="margin-top:8px" onclick="suggestNote()">Suggest a draft</button></div>
     <div><div class="field"><label>Reviewed by</label><select class="inp" id="docName">${doctorOptions(r)}</select></div></div></div>
    <div class="row" style="margin-top:18px"><button class="btn ghost" onclick="go('patient',{pid:'${p.id}',navParent:'patients'})">View patient record</button>
+    <button class="btn ghost" style="color:var(--red);border-color:#f3c9c6" onclick="deleteReport('${p.id}','${r.id}')">Delete report</button>
     <button class="btn ghost right" onclick="saveReview(false)">Save changes</button>
     <button class="btn" onclick="saveReview(true)">${isRel?'Update released report':'Approve &amp; release to patient'}</button></div></div>
   <div class="card"><h3>Results</h3><p class="small muted" style="margin-top:-8px">Edit any value or range if it was read incorrectly, then click Save changes.</p>${reviewTable(r.markers,"rev")}</div>`;
@@ -903,6 +904,19 @@ function suggestNote(){
   if(nr.length) t+=`The lab couldn't report ${nr.map(m=>m.name).join(", ")} on this sample. `;
   t+="[Add your advice and any next steps here.]";
   $("docNote").value=t; toast("Draft added. Please edit it before releasing.");
+}
+async function deleteReport(pid,rid){
+  const p=db.patients.find(x=>x.id===pid), r=p&&p.reports.find(x=>x.id===rid); if(!r) return;
+  const rel=r.status==="released";
+  if(!await confirmBox(`Delete "${r.title}" for ${p.name}${r.ref?" (specimen "+r.ref+")":""}? This removes its results, the lab PDF and any letters attached to it.${rel?" The patient will no longer see it.":""} This can't be undone.`)) return;
+  await guard(async()=>{
+    const docs=must(await sb.from("documents").select("id,storage_path").eq("report_id",rid),"Deleting report")||[];
+    if(docs.length) await sb.storage.from(BUCKET).remove(docs.map(d=>d.storage_path));
+    if(docs.length) must(await sb.from("documents").delete().eq("report_id",rid),"Deleting report");
+    must(await sb.from("reports").delete().eq("id",rid),"Deleting report");
+    audit("deleted_report",{patient_id:pid,report_id:rid,details:{title:r.title,specimen:r.ref||null,was_released:rel}});
+    await reloadPatient(pid); toast("Report deleted."); go("clinic-home");
+  },"Deleting…");
 }
 async function saveReview(releaseIt){
   const {p,r}=curReport();
