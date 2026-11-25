@@ -235,6 +235,11 @@ async function boot(){
    PLAIN-ENGLISH LIBRARY (matched to Inuvi test names)
    ============================================================ */
 const LIB=[
+ {re:/rubella.*\bigm\b|\bigm\b.*rubella/i,name:"Rubella recent infection test (IgM)",what:"Looks for a recent rubella (German measles) infection. A negative result means no sign of recent infection."},
+ {re:/toxoplasma.*\bigm\b/i,name:"Toxoplasma recent infection test (IgM)",what:"Looks for a recent infection with Toxoplasma, a parasite caught from undercooked meat, soil or cat litter. A negative result means no sign of recent infection."},
+ {re:/toxoplasma/i,name:"Toxoplasma past infection test (IgG)",what:"Looks for antibodies showing a past infection with Toxoplasma, a parasite caught from undercooked meat, soil or cat litter. A negative result means you have not had it before."},
+ {re:/(cytomegalo|\bcmv\b).*\bigm\b/i,name:"Cytomegalovirus (CMV) recent infection test (IgM)",what:"Looks for a recent infection with cytomegalovirus (CMV), a common virus. A negative result means no sign of recent infection."},
+ {re:/cytomegalo|\bcmv\b/i,name:"Cytomegalovirus (CMV) past infection test (IgG)",what:"Looks for antibodies showing a past infection with cytomegalovirus (CMV), a common virus that most people catch at some point. A negative result means you have not had it before."},
  {re:/rubella/i,name:"Rubella (German measles) immunity",what:"Checks for antibodies to rubella, which show whether you are protected (immune) from past vaccination or infection."},
  {re:/varicella|\bvzv\b|chicken ?pox/i,name:"Chickenpox (varicella) immunity",what:"Checks for antibodies to the chickenpox virus, which show whether you are protected from past infection or vaccination."},
  {re:/measles/i,name:"Measles immunity",what:"Checks for antibodies to measles, which show whether you are protected from past vaccination or infection."},
@@ -305,12 +310,17 @@ function sectionName(s){return SECTION_NAMES[s]||s}
 /* ============================================================
    INUVI PDF PARSER
    ============================================================ */
-const SECTIONS=["Laboratory Information","Biochemistry","Urea & Electrolytes","Lipid Profile","Thyroid Profile","Vitamins","Liver Function Test","Iron Status Profile","Sex Hormones","Haematology","White Cell Differential","Bone Profile","Diabetes","Inflammation","Hormones","Kidney Function","Full Blood Count","Immunology","Serology","Prostate","Cardiac","Pancreas","Endocrinology","Tumour Markers"];
+const SECTIONS=["Laboratory Information","Biochemistry","Urea & Electrolytes","Lipid Profile","Thyroid Profile","Vitamins","Liver Function Test","Iron Status Profile","Sex Hormones","Haematology","White Cell Differential","Bone Profile","Diabetes","Inflammation","Hormones","Kidney Function","Full Blood Count","Immunology","Serology","Prostate","Cardiac","Pancreas","Endocrinology","Tumour Markers","Virology","Toxoplasma","Microbiology","Infection Screen","Sexual Health","Antenatal Screen","Allergy"];
+function looksLikeTest(n){return /(\bIg[GMAE]\b|\babs?\b|antibod|antigen|[#*]\s*$|[#*]\s+[#*])/i.test(n)&&!/considered|values|result|suggest|evidence|please/i.test(n)&&n.trim().split(/\s+/).length<=9}
+function cleanName(n){return n.replace(/[#*]+/g,"").replace(/\s+/g," ").trim()}
+const INFECT_RE=/\bIg[GMAE]\b|antibod|\babs?\b|antigen|toxoplasma|cytomegalo|\bcmv\b|rubella|measles|mumps|varicella|\bvzv\b|hepatitis|\bhbs|\bhcv\b|\bhiv\b|syphilis|treponem|herpes|\bhsv\b|epstein|\bebv\b|parvovirus|chlamydia|gonorr/i;
+const INFECT_SECS=/virology|serology|toxoplasma|microbiology|infection|sexual|antenatal|immunology/i;
+function infectSection(name,sec){return INFECT_RE.test(name)&&!INFECT_SECS.test(sec||"")?"Infection & Immunity":sec}
 function inCommentLike(n){return /^(Please|Fasting|Male|Female|Follicular|Ovulation|Luteal|Post-meno)/i.test(n.trim())}
 function parseInuvi(lines){
   const meta={},markers=[];let section="Other",inComment=false,last=null,started=false;
   const g=(re,s)=>{const m=s.match(re);return m?m[1].trim():null};
-  const mrow=/^(.+?)\s+(?:([HL])\s+)?(\d+(?:\.\d+)?)\s*(?:([A-Za-zµ%\/\^0-9.]+(?:\/[0-9.a-z]+)?))?\s*(?:(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)|([<>])\s*(\d+(?:\.\d+)?))?\s*$/;
+  const mrow=/^(.+?)\s+(?:([HL])\s+)?(\d+(?:\.\d+)?)\s*(?:([A-Za-zµ%\/\^0-9.]+(?:\/[0-9.a-z]+)?))?\s*(?:(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)|([<>])\s*(\d+(?:\.\d+)?)\s*-?)?\s*$/;
   const txtrow=/^(.+?)\s+([A-Z][A-Z ]{3,})$/;
   const crow=/^(.+?)\s+(?:([HL])\s+)?([<>]=?\s?\d+(?:\.\d+)?)\s*([A-Za-zµ%\/\^0-9.]+(?:\/[0-9.a-z]+)?)?\s*(?:(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)|([<>])\s*(\d+(?:\.\d+)?))?\s*$/;
   const QKW="(?:weak(?:ly)?\\s+|low\\s+)?positive|negative|not\\s+detected|none\\s+detected|detected|non[- ]?reactive|reactive|equivocal|borderline|indeterminate|inconclusive|non[- ]?immune|not\\s+immune|immune|absent|present|not\\s+seen|nil";
@@ -330,32 +340,34 @@ function parseInuvi(lines){
     if(/^Test\s+Result\s+Units/.test(s)){started=true;inComment=false;continue}
     if(!started) continue;
     if(/Authorised by|End of report/i.test(s)){started=false;inComment=false;continue}
-    if(/^(FINAL REPORT|Page\(s\)|Key for report|#Referred|\*\*\*|Inuvi Diagnostics)/i.test(s)||/^Sample Specimen Type/i.test(s)) continue;
+    if(/^(FINAL REPORT|Page\(s\)|Key for report|#Referred|\*\*\*|Inuvi Diagnostics|AMENDED REPORT|AMENDED|ADDITIONAL REPORT)/i.test(s)||/^Sample Specimen Type/i.test(s)) continue;
     const sec=SECTIONS.find(x=>x.toLowerCase()===s.toLowerCase());
     if(sec){if(sec!=="Laboratory Information")section=sec;inComment=false;last=null;continue}
     if(/^Comments\b/.test(s)){inComment=true;const rest=s.replace(/^Comments\s*/,"");if(rest&&last)(last.labNote=last.labNote||[]).push(rest);continue}
     const q=s.match(qrow);
-    if(q && !inComment && /[A-Za-z]{2}/.test(q[1]) && q[1].trim().length>=3 && !inCommentLike(q[1]) && (QREST.test(q[4])||QKW_ONLY.test(q[4].trim()))){
-      last={name:q[1].replace(/\*+/g,"").replace(/\s+/g," ").trim(),value:null,text:(q[3]+" "+(QKW_ONLY.test(q[4].trim())?q[4].trim():"")).trim(),flag:q[2]||"",unit:"",min:null,max:null,section};
+    if(q && (!inComment || looksLikeTest(q[1])) && /[A-Za-z]{2}/.test(q[1]) && q[1].trim().length>=3 && !inCommentLike(q[1]) && (QREST.test(q[4])||QKW_ONLY.test(q[4].trim()))){
+      last={name:cleanName(q[1]),value:null,text:(q[3]+" "+(QKW_ONLY.test(q[4].trim())?q[4].trim():"")).trim(),flag:q[2]||"",unit:"",min:null,max:null,section:infectSection(cleanName(q[1]),section)};
       const extra=QKW_ONLY.test(q[4].trim())?"":q[4].trim(); if(extra)(last.labNote=last.labNote||[]).push("Lab value: "+extra);
       markers.push(last);inComment=false;continue;
     }
     const m=s.match(mrow);
     if(m && /[A-Za-z]{2}/.test(m[1]) && !/[<>]=?\s?\d/.test(m[1]) && !/^[<>]/.test(m[1]) && !/:$/.test(m[1].trim()) && !inCommentLike(m[1])){
-      const name=m[1].replace(/\*+/g,"").replace(/\s*\((?:g\/L|mmol\/mol)\)\s*$/i,"").replace(/\s+/g," ").trim();
+      const name=cleanName(m[1]).replace(/\s*\((?:g\/L|mmol\/mol)\)\s*$/i,"").trim();
       let min=null,max=null;
       if(m[5]!=null){min=+m[5];max=+m[6]} else if(m[7]==="<"){max=+m[8]} else if(m[7]===">"){min=+m[8]}
-      last={name,value:+m[3],flag:m[2]||"",unit:m[4]||"",min,max,section};markers.push(last);inComment=false;continue;
+      let flag=m[2]||"";
+      if(m[7]==="<"&&isImmunityTest(name)){min=+m[8];max=null;flag=""} // e.g. Rubella IgG 122 IU/mL, "<10" = not immune, so above 10 is good
+      last={name,value:+m[3],flag,unit:m[4]||"",min,max,section:infectSection(name,section)};markers.push(last);inComment=false;continue;
     }
     const c=s.match(crow);
     if(c && /[A-Za-z]{2}/.test(c[1]) && !/:$/.test(c[1].trim()) && !inCommentLike(c[1])){
-      const name=c[1].replace(/\*+/g,"").replace(/\s+/g," ").trim();
+      const name=cleanName(c[1]);
       let min=null,max=null;
       if(c[5]!=null){min=+c[5];max=+c[6]} else if(c[7]==="<"){max=+c[8]} else if(c[7]===">"){min=+c[8]}
-      last={name,value:null,text:c[3].replace(/\s+/g,""),flag:c[2]||"",unit:c[4]||"",min,max,section};markers.push(last);inComment=false;continue;
+      last={name,value:null,text:c[3].replace(/\s+/g,""),flag:c[2]||"",unit:c[4]||"",min,max,section:infectSection(name,section)};markers.push(last);inComment=false;continue;
     }
     const t=s.match(txtrow);
-    if(t && !inComment && /^[A-Za-z]/.test(t[1])){last={name:t[1].replace(/\*+/g,"").trim(),value:null,text:t[2].trim(),unit:"",min:null,max:null,section};markers.push(last);continue}
+    if(t && !inComment && /^[A-Za-z]/.test(t[1])){last={name:cleanName(t[1]),value:null,text:t[2].trim(),unit:"",min:null,max:null,section:infectSection(cleanName(t[1]),section)};markers.push(last);continue}
     if(inComment&&last){(last.labNote=last.labNote||[]).push(s);continue}
     if(/^[A-Za-z][A-Za-z &\-\/]{2,40}$/.test(s)){section=s;last=null;continue}
   }
@@ -410,12 +422,13 @@ function letterCard(r){const L=(r.letters&&r.letters.length)?r.letters:(r.letter
 /* Text results (Negative, Positive, Immune, Not detected, <0.6 …) */
 const NOTREP_RE=/insufficient|haemoly|hemoly|not received|cancel|unable|no sample|not tested|not done|clotted|leaked|lipaem|see comment|not reported|test not|sample error|unsuitable/i;
 const IMMUNITY_RE=/rubella|measles|mumps|varicella|\bvzv\b|chicken ?pox|anti-?hbs|hbsab|hep(?:atitis)? ?b (?:surface )?antibod|immunity/i;
+function isImmunityTest(n){return IMMUNITY_RE.test(n||"")&&!/\bIgM\b/i.test(n||"")}
 function isText(m){return m.text!=null&&m.text!==""&&(m.value==null||m.value===""||isNaN(+m.value))}
 function niceText(t){t=String(t).trim();return t===t.toUpperCase()?t.charAt(0)+t.slice(1).toLowerCase():t}
 function valTxt(m){return isText(m)?niceText(m.text):(m.value!=null&&m.value!==""?String(m.value):"–")}
 function censored(m){const c=isText(m)&&String(m.text).trim().match(/^([<>])=?\s*(\d+(?:\.\d+)?)$/);return c?{op:c[1],n:+c[2]}:null}
 function textStatus(m){
-  const t=String(m.text).toLowerCase().trim(), imm=IMMUNITY_RE.test(m.name||"");
+  const t=String(m.text).toLowerCase().trim(), imm=isImmunityTest(m.name);
   if(NOTREP_RE.test(t)) return {key:"grey",label:"Not reported",notrep:true,text:true};
   const QL={green:"As expected",amber:"Review",red:"Abnormal",grey:"No status"};
   const st=k=>({key:k,label:QL[k],text:true});
@@ -441,6 +454,7 @@ function statusOf(m){
   if(m.value==null||m.value===""||isNaN(+m.value)) return {key:"grey",label:"No value"};
   const v=+m.value, mn=m.min, mx=m.max;
   if(mn==null&&mx==null) return {key:"grey",label:"No range given"};
+  if(mn!=null&&mx==null&&isImmunityTest(m.name)) return v>=mn?{key:"green",label:"Immune"}:{key:"amber",label:"Not immune"};
   if(mn!=null && v<mn) return {key:"red",label:"Low"};
   if(mx!=null && v>mx) return {key:"red",label:"High"};
   if(mn!=null && mx!=null){ const b=(mx-mn)*0.08; if(v<mn+b) return {key:"amber",label:"Low-normal",dir:"low"}; if(v>mx-b) return {key:"amber",label:"High-normal",dir:"high"}; }
