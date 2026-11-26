@@ -134,6 +134,16 @@ h3{margin:0 0 14px;font-size:16px;font-weight:600;color:var(--ink)}
   .queue-tbl td{display:block;border:0!important;padding:3px 0!important}
   .queue-tbl td:last-child{padding-top:10px!important;display:flex;gap:8px}
   .queue-tbl td:last-child .btn{flex:1;justify-content:center}
+  .queue-tbl td .chip{margin:2px 4px 2px 0}
+  .stack-tbl,.stack-tbl tbody{display:block;width:100%}
+  .stack-tbl tr:first-child{display:none}
+  .stack-tbl tr{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
+  .stack-tbl td{display:block;border:0!important;padding:2px 0!important;overflow-wrap:anywhere;font-size:14px}
+  .stack-tbl td[data-l]:before{content:attr(data-l) ": ";color:var(--muted);font-size:12.5px}
+  .stats-row{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important}
+  .stats-row .card{padding:12px 10px 12px 14px}
+  .stats-row .k{font-size:9.5px;letter-spacing:.6px;line-height:1.25}
+  .stats-row .v{font-size:24px}
 }
 
 .rep-row{display:flex;align-items:center;gap:16px;padding:16px 8px;border-bottom:1px solid var(--line);cursor:pointer;border-radius:12px;transition:.15s}
