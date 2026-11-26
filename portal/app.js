@@ -677,7 +677,7 @@ async function runParse(lines,slow){
 }
 function renderUploadReview(B){
   const p=db.patients.find(x=>x.id===up.pid), c=counts(up.markers);
-  B.innerHTML=`<div class="grid" style="grid-template-columns:1.2fr 1fr;gap:20px;margin-bottom:18px">
+  B.innerHTML=`<div class="grid up-grid" style="grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px;margin-bottom:18px">
    <div><h3 style="margin:0 0 4px">Read from the PDF</h3>
     <p class="small muted" style="margin:0">Name on report: <b>${esc(up.meta.name||"–")}</b> · DOB <b>${esc(up.meta.dob||"–")}</b> · Sex ${esc(up.meta.sex||"–")}<br>Specimen ${esc(up.meta.specimen||"–")} · Collected ${esc(up.meta.collected||"–")} · Reported ${esc(up.meta.reported||"–")}</p>
     <div style="margin-top:10px">${flagChips(c)} <span class="chip grey">${up.markers.length} results</span></div></div>
@@ -697,13 +697,13 @@ function titleName(n){if(!n)return"";const parts=n.split(/\s+/);const sur=parts.
 function guessTitle(ms){const secs=new Set(ms.map(m=>m.section));if(secs.size>=8)return"Advanced Health Check";if(secs.has("Sex Hormones"))return"Hormone Check";if(secs.has("Lipid Profile"))return"Cholesterol Check";return"Blood Test"}
 function reviewTable(markers,src){
   let lastSec=null;
-  return `<table><tr><th>Test (as on Inuvi report)</th><th>Result</th><th>Unit</th><th>Min</th><th>Max</th><th style="width:26%">Where it falls</th><th>Status</th><th></th></tr>
-  ${markers.map((m,i)=>{const s=statusOf(m);const head=m.section!==lastSec?`<tr><td colspan="8" style="background:#f6f9fb;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)">${esc(m.section)}</td></tr>`:"";lastSec=m.section;
-   return head+`<tr><td><input value="${esc(m.name)}" onchange="editM('${src}',${i},'name',this.value)">${m.labNote?`<div class="small muted" style="margin-top:3px">Lab comment attached</div>`:""}</td>
-   <td><input class="num" value="${esc(String(m.value??m.text??""))}" placeholder="e.g. 4.2 or Negative" title="Type a number, or text such as Negative, Positive, Not detected, <0.5" onchange="editM('${src}',${i},'value',this.value)">${m.flag?`<div class="small" style="color:var(--red);font-weight:700">Lab flag: ${m.flag}</div>`:""}</td>
+  return `<table class="rv-tbl"><tr><th>Test (as on Inuvi report)</th><th>Result</th><th>Unit</th><th>Min</th><th>Max</th><th style="width:26%">Where it falls</th><th>Status</th><th></th></tr>
+  ${markers.map((m,i)=>{const s=statusOf(m);const head=m.section!==lastSec?`<tr class="rv-sec"><td colspan="8" style="background:#f6f9fb;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)">${esc(m.section)}</td></tr>`:"";lastSec=m.section;
+   return head+`<tr class="rv-row"><td><input value="${esc(m.name)}" onchange="editM('${src}',${i},'name',this.value)">${m.labNote?`<div class="small muted" style="margin-top:3px">Lab comment attached</div>`:""}</td>
+   <td data-l="Result"><input class="num" value="${esc(String(m.value??m.text??""))}" placeholder="e.g. 4.2 or Negative" title="Type a number, or text such as Negative, Positive, Not detected, <0.5" onchange="editM('${src}',${i},'value',this.value)">${m.flag?`<div class="small" style="color:var(--red);font-weight:700">Lab flag: ${m.flag}</div>`:""}</td>
    <td style="white-space:nowrap" class="small">${unitTxt(m.unit)}</td>
-   <td><input class="num" value="${m.min??''}" placeholder="–" onchange="editM('${src}',${i},'min',this.value)"></td>
-   <td><input class="num" value="${m.max??''}" placeholder="–" onchange="editM('${src}',${i},'max',this.value)"></td>
+   <td data-l="Min"><input class="num" value="${m.min??''}" placeholder="–" onchange="editM('${src}',${i},'min',this.value)"></td>
+   <td data-l="Max"><input class="num" value="${m.max??''}" placeholder="–" onchange="editM('${src}',${i},'max',this.value)"></td>
    <td>${barHTML(m)}</td><td><span class="chip ${s.key}">${esc(s.label)}</span>${s.text&&!s.notrep?`<select class="qual-sel" title="Change the colour for this text result" onchange="editM('${src}',${i},'qual',this.value)"><option value=""${m.qual?"":" selected"}>Auto</option><option value="green"${m.qual==="green"?" selected":""}>Normal (green)</option><option value="amber"${m.qual==="amber"?" selected":""}>Borderline (amber)</option><option value="red"${m.qual==="red"?" selected":""}>Abnormal (red)</option><option value="grey"${m.qual==="grey"?" selected":""}>No colour (grey)</option></select>`:""}</td>
    <td><button class="back" style="margin:0;color:var(--red)" title="Remove" onclick="delM('${src}',${i})">✕</button></td></tr>`}).join("")}</table>`;
 }
@@ -851,12 +851,12 @@ function cReview(V){
   V.innerHTML=`<button class="back" onclick="go('clinic-home')">← Review queue</button>
   <div class="top"><div><h1>${esc(p.name)} · ${esc(r.title)} <button class="btn ghost small" style="vertical-align:middle;font-size:13px;padding:5px 12px" onclick="renameReportModal()">✎ Edit test name</button></h1><p class="sub">${p.no} · DOB ${p.dob} · Sample ${dt(r.date)} · Inuvi specimen ${esc(r.ref||"–")}</p></div>
    <div class="row">${r.labFile?`<button class="btn ghost" onclick="openViewer('${r.labFile}')">${ICON.doc} Lab PDF</button>`:""}${isRel?'<span class="chip green">Released to patient</span>':'<span class="chip amber">Awaiting doctor review</span>'}</div></div>
-  <div class="grid g3" style="margin-bottom:18px">
+  <div class="grid g3 stats-row" style="margin-bottom:18px">
    <div class="card stat green"><span class="k">In range</span><span class="v">${c.green}</span></div>
    <div class="card stat amber"><span class="k">Borderline</span><span class="v">${c.amber}</span></div>
    <div class="card stat red"><span class="k">Out of range</span><span class="v">${c.red}</span></div></div>
   <div class="card" style="margin-bottom:18px"><h3>Doctor's comments to the patient</h3>
-   <div class="grid" style="grid-template-columns:1fr 1fr 220px;gap:16px">
+   <div class="grid rv-grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr) 220px;gap:16px">
     <div><label>Doctor's letters / documents (Word or PDF)</label>
      ${(r.letters||[]).map(x=>{const F=FILES[x.file];return `<div class="letter-card" style="margin-top:0;margin-bottom:8px">${fileIcon(F.name)}<div style="min-width:0"><b style="word-break:break-all">${esc(F.name)}</b><div class="small muted">${sizeTxt(F.size)}</div></div>
        <div class="row" style="gap:6px"><button class="btn ghost" onclick="openViewer('${x.file}')">Preview</button><button class="btn ghost" style="color:var(--red)" onclick="removeLetter('${x.docId}')">Remove</button></div></div>`}).join("")}
@@ -867,7 +867,7 @@ function cReview(V){
      <textarea class="inp" id="docNote" rows="5" placeholder="e.g. Please read my letter for full details.">${esc(ctx.draft??r.note)}</textarea>
      <button class="btn ghost small" style="margin-top:8px" onclick="suggestNote()">Suggest a draft</button></div>
     <div><div class="field"><label>Reviewed by</label><select class="inp" id="docName">${doctorOptions(r)}</select></div></div></div>
-   <div class="row" style="margin-top:18px"><button class="btn ghost" onclick="go('patient',{pid:'${p.id}',navParent:'patients'})">View patient record</button>
+   <div class="row rv-actions" style="margin-top:18px"><button class="btn ghost" onclick="go('patient',{pid:'${p.id}',navParent:'patients'})">View patient record</button>
     <button class="btn ghost" style="color:var(--red);border-color:#f3c9c6" onclick="deleteReport('${p.id}','${r.id}')">Delete report</button>
     <button class="btn ghost right" onclick="saveReview(false)">Save changes</button>
     <button class="btn" onclick="saveReview(true)">${isRel?'Update released report':'Approve &amp; release to patient'}</button></div></div>
